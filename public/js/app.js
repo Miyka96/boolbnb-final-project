@@ -84,17 +84,30 @@
 /******/ 	return __webpack_require__(__webpack_require__.s = 0);
 /******/ })
 /************************************************************************/
-/******/ ([
-/* 0 */
-/*!***************************************************************!*\
+/******/ ({
+
+/***/ "./resources/sass/app.scss":
+/*!*********************************!*\
+  !*** ./resources/sass/app.scss ***!
+  \*********************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+
+/***/ 0:
+/*!*************************************************************!*\
   !*** multi ./resources/js/admin.js ./resources/sass/app.scss ***!
-  \***************************************************************/
+  \*************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 !(function webpackMissingModule() { var e = new Error("Cannot find module 'D:\\Users\\Simone\\Documents\\Progetti\\boolbnb-final-project\\resources\\js\\admin.js'"); e.code = 'MODULE_NOT_FOUND'; throw e; }());
-!(function webpackMissingModule() { var e = new Error("Cannot find module 'D:\\Users\\Simone\\Documents\\Progetti\\boolbnb-final-project\\resources\\sass\\app.scss'"); e.code = 'MODULE_NOT_FOUND'; throw e; }());
+module.exports = __webpack_require__(/*! D:\Users\Simone\Documents\Progetti\boolbnb-final-project\resources\sass\app.scss */"./resources/sass/app.scss");
 
 
 /***/ })
-/******/ ]);
+
+/******/ });

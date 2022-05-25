@@ -1,6 +1,6 @@
 <template>
-   <div>
-      Ciao ciao
+   <div class="container">
+      Ciao
    </div>
 </template>
 
@@ -10,6 +10,6 @@ export default {
 }
 </script>
 
-<style>
+<style lang="scss" scoped>
 
 </style>

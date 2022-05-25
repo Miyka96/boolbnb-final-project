@@ -11,7 +11,7 @@
 
    <!-- Styles -->
    {{-- <script src="https://cdn.tailwindcss.com"></script> --}}
-   <link href="{{ asset('css/front.css') }}" rel="stylesheet">
+   <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
 <body>
    Home.blade
