@@ -1,9 +1,11 @@
 <?php
 
+use App\Visualization;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
 {
+
     /**
      * Seed the application's database.
      *
@@ -11,7 +13,13 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        $this->call(VisualizationTableSeeder::class);
-        $this->call(SponsorshipTableSeeder::class);
+        $this->call([
+            VisualizationSeeder::class,
+            SponsorshipSeeder::class,
+            ServiceSeeder::class,
+            MessageSeeder::class,
+            PositionSeeder::class,
+            HouseSeeder::class,
+        ]);
     }
 }
