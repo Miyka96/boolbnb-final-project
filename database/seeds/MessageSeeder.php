@@ -20,10 +20,10 @@ class MessageSeeder extends Seeder
             $message->name = $faker->name();
             $message->email = $faker->email();
             $message->telephone = $faker->phoneNumber();
-            $message->content = $faker->paragraph();
+            $message->content = $faker->realTextBetween($minNbChars = 160, $maxNbChars = 200, $indexSize = 2);
             $message->sent_at = $faker->dateTime('now');
             $message->is_read= $faker->boolean();
-            
+
             $message->save();
         }
     }
