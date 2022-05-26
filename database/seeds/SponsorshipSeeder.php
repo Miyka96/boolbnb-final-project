@@ -1,7 +1,6 @@
 <?php
 
 use App\Sponsorship;
-use Faker\Generator as Faker;
 use Illuminate\Database\Seeder;
 
 class SponsorshipSeeder extends Seeder
@@ -11,7 +10,7 @@ class SponsorshipSeeder extends Seeder
      *
      * @return void
      */
-    public function run(Faker $faker)
+    public function run()
     {
         $sponsorship = new Sponsorship();
         $sponsorship->name = 'Sponsor Giornaliera';
@@ -27,5 +26,7 @@ class SponsorshipSeeder extends Seeder
         $sponsorship->name = 'Sponsor mensile';
         $sponsorship->price = 149.99;
         $sponsorship->duration = 30;
+
+        $sponsorship->save();
     }
 }
