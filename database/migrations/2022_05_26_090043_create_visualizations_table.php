@@ -16,13 +16,6 @@ class CreateVisualizationsTable extends Migration
         Schema::create('visualizations', function (Blueprint $table) {
             $table->id();
             $table->dateTime('date');
-
-            $table->unsignedBigInteger('house_id');
-            $table->foreign('house_id')
-            ->references('id')
-            ->on('houses')
-            ->onDelete('cascade');
-
             $table->ipAddress('ip');
             $table->timestamps();
         });
