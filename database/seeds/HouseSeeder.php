@@ -4,6 +4,7 @@ use App\House;
 use App\Service;
 use App\Position;
 use App\User;
+use App\Sponsorship;
 use Illuminate\Database\Seeder;
 use Faker\Generator as Faker;
 
@@ -28,6 +29,9 @@ class HouseSeeder extends Seeder
       //assign random user_id to house
       $users = User::all();
       $usersId = $users->pluck('id')->all();
+      // assign random sponsorship_id to house
+      $sponsorship= Sponsorship::all();
+      $sponsorshipId= $sponsorship->pluck('id')->all();
 
       for($i=0; $i < 100; $i++) {
          $house = new House();
@@ -47,6 +51,9 @@ class HouseSeeder extends Seeder
          
          $serviceNum = $faker->numberBetween(2,5);
          $house->services()->sync($faker->randomElements($serviceId , $serviceNum) );
+
+         $sponsorNum = $faker->numberBetween(0,2);
+         $house->sponsorships()->sync($faker->randomElements($sponsorshipId, $sponsorNum) );
       }
    }
 }

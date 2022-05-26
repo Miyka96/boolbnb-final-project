@@ -26,4 +26,7 @@ class House extends Model
    public function user() {
       return $this->belongsTo('App\User');
    }
+   public function sponsorships(){
+      return $this->belongsToMany('App\Sponsorship');
+   }
 }
