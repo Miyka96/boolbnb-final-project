@@ -14,17 +14,21 @@ class SponsorshipSeeder extends Seeder
     {
         $sponsorship = new Sponsorship();
         $sponsorship->name = 'Sponsor Giornaliera';
-        $sponsorship->price = 9.99;
+        $sponsorship->price = 2.99;
         $sponsorship->duration = '24:00:00';
+
+        $sponsorship->save();
 
         $sponsorship = new Sponsorship();
         $sponsorship->name = 'Sponsor Settimanale';
-        $sponsorship->price = 49.99;
+        $sponsorship->price = 5.99;
         $sponsorship->duration ='72:00:00';
+
+        $sponsorship->save();
 
         $sponsorship = new Sponsorship();
         $sponsorship->name = 'Sponsor Mensile';
-        $sponsorship->price = 149.99;
+        $sponsorship->price = 9.99;
         $sponsorship->duration = '144:00:00';
 
         $sponsorship->save();
