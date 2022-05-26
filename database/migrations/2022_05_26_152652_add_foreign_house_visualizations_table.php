@@ -16,8 +16,9 @@ class AddForeignHouseVisualizationsTable extends Migration
         Schema::table('visualizations', function (Blueprint $table) {
             $table->unsignedBigInteger('house_id');
             $table->foreign('house_id')
-            ->references('id')
-            ->on('houses');
+               ->references('id')
+               ->on('houses')
+               ->onDelete('cascade');
         });
     }
 

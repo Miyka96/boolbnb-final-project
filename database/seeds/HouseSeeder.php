@@ -3,6 +3,7 @@
 use App\House;
 use App\Service;
 use App\Position;
+use App\User;
 use Illuminate\Database\Seeder;
 use Faker\Generator as Faker;
 
@@ -24,6 +25,10 @@ class HouseSeeder extends Seeder
       $position= Position::all();
       $positionId= $position->pluck('id')->all();
 
+      //assign random user_id to house
+      $users = User::all();
+      $usersId = $users->pluck('id')->all();
+
       for($i=0; $i < 100; $i++) {
          $house = new House();
 
@@ -36,6 +41,7 @@ class HouseSeeder extends Seeder
          $house->is_visible = $faker->boolean();
          $house->cost_per_night = $faker->randomFloat(2, 10, 10000);   
          $house->position_id = $faker->randomElement($positionId);
+         $house->user_id = $faker->randomElement( $usersId );
 
          $house->save();
          
