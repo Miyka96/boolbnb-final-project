@@ -17,4 +17,8 @@ class House extends Model
    public function visualizations(){
       return $this->hasMany('App\Visualization');
    }
+   
+   public function messages(){
+      return $this->hasMany('App\Message');
+   }
 }
