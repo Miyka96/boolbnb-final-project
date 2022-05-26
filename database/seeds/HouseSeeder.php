@@ -14,6 +14,11 @@ class HouseSeeder extends Seeder
     */
    public function run(Faker $faker)
    {
+
+      // assign random service_id to house
+      $service= Service::all();
+      $serviceId= $service->pluck('id')->all();
+
       for($i=0; $i < 100; $i++) {
          $house = new House();
 
@@ -24,9 +29,12 @@ class HouseSeeder extends Seeder
          $house->square_meters = $faker->numberBetween(20,10000);
          $house->image = $faker->url();
          $house->is_visible = $faker->boolean();
-         $house->cost_per_night = $faker->randomFloat(2, 10, 10000);
-      
+         $house->cost_per_night = $faker->randomFloat(2, 10, 10000);   
+
          $house->save();
+         
+         $serviceNum = $faker->numberBetween(2,5);
+         $house->services()->sync($faker->randomElements($serviceId , $serviceNum) );
       }
    }
 }
