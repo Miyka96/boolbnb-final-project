@@ -15,20 +15,20 @@ class CreateHouseSponsorshipTable extends Migration
     {
         Schema::create('house_sponsorship', function (Blueprint $table) {
 
-            $table->unsignedBigInteger('order_num');
-            // $table->bigInteger('house_id');
-            // $table->bigInteger('sponsorship_id');
+            $table->id('order_id');
 
-            $table->foreign('house_id')->references('id')->on('houses')->onDelete('cascade');
+            $table->unsignedBigInteger('house_id');
+            $table->unsignedBigInteger('sponsorship_id');
+
+            $table->foreign('house_id')
+               ->references('id')
+               ->on('houses')
+               ->onDelete('cascade');
+
             $table->foreign('sponsorship_id')->references('id')->on('sponsorships')->onDelete('no action');
 
-            $table->primary(['order_num','house_id','sponsorship_id']);
-
-            // $table->dropPrimary('house_id');
-            // $table->dropPrimary('sponsorship_id');
-
-            $table->dateTime('sponsor_start');
-            $table->dateTime('sponsor_end');
+            $table->dateTime('sponsor_start')->nullable();
+            $table->dateTime('sponsor_end')->nullable();
         });
     }
 
