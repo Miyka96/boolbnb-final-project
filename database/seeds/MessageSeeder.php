@@ -3,6 +3,7 @@
 use Illuminate\Database\Seeder;
 use Faker\Generator as Faker;
 use App\Message;
+use App\House;
 
 class MessageSeeder extends Seeder
 {
@@ -13,18 +14,22 @@ class MessageSeeder extends Seeder
      */
     public function run(Faker $faker)
     {
-        for ($i=0; $i < 100 ; $i++) { 
-            
-            $message = new Message();
+      $houses = House::all();
+      $housesId = $houses->pluck('id')->all();
 
-            $message->name = $faker->name();
-            $message->email = $faker->email();
-            $message->telephone = $faker->phoneNumber();
-            $message->content = $faker->realTextBetween($minNbChars = 160, $maxNbChars = 200, $indexSize = 2);
-            $message->sent_at = $faker->dateTime('now');
-            $message->is_read= $faker->boolean();
+      for ($i=0; $i < 100 ; $i++) { 
+         
+         $message = new Message();
 
-            $message->save();
-        }
+         $message->name = $faker->name();
+         $message->email = $faker->email();
+         $message->telephone = $faker->phoneNumber();
+         $message->content = $faker->realTextBetween($minNbChars = 160, $maxNbChars = 200, $indexSize = 2);
+         $message->sent_at = $faker->dateTime('now');
+         $message->is_read= $faker->boolean();
+         $message->house_id = $faker->randomElement( $housesId );
+
+         $message->save();
+      }
     }
 }
