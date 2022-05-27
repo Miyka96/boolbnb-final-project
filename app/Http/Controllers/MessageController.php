@@ -17,7 +17,7 @@ class MessageController extends Controller
 
         $messages = Message::all();
 
-        return view('user.messages', compact('messages'));
+        return view('user.messages-index', compact('messages'));
     }
 
     /**
@@ -27,7 +27,7 @@ class MessageController extends Controller
      */
     public function create()
     {
-        //
+
     }
 
     /**
