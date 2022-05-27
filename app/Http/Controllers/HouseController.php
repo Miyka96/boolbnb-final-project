@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\House;
 use Illuminate\Http\Request;
+use App\Service;
 
 class HouseController extends Controller
 {
@@ -14,9 +15,9 @@ class HouseController extends Controller
     */
    public function index()
    {
-      $houses = House::with(['positions'])->all();
+      $houses = House::with(['positions'])->all(); // magari aggiunger limit
 
-      return view('houses.blade', compact('posts')); // vista my-apartments
+      return view('user.houses', compact('houses')); // vista my-apartments
    }
 
    /**
@@ -28,7 +29,7 @@ class HouseController extends Controller
    {
       $services = Service::orderBy('name')->get();
 
-      return view('', compact( $services )); // ritorna vista con form creazione house
+      return view('user.house.show', compact( $services )); // ritorna vista con form creazione house
    }
 
    /**
@@ -46,8 +47,8 @@ class HouseController extends Controller
          'toilets_num' => 'required|numeric|min:1',  // serve il max?
          'square_meters' => 'required|numeric|min:20',  // serve il max?
          'position_id' => 'required|exists:positions,id',
-         'image' => 'required|url',
-         'is_visible' => 'required|boolean', // possibile array di immagini
+         'image' => 'required|url', // possibile array di immagini
+         'is_visible' => 'boolean',
          'user_id' => 'required|exists:users,id',
          'cost_per_night' => 'required|numeric|min:10|max:1000' //da gestire il float?
       ]);
@@ -60,7 +61,7 @@ class HouseController extends Controller
       $house->fill( $data );
       $house->save();
 
-      return redirect()->route(''); // aggiungere rotta dell'utente
+      return redirect()->route('user.houses');
    }
 
    /**
@@ -69,10 +70,10 @@ class HouseController extends Controller
     * @param  \App\House  $house
     * @return \Illuminate\Http\Response
     */
-   public function show(House $house)
-   {
-      //
-   }
+    public function show(House $house)
+    {
+       return view('user.house.show', compact('house'));
+    }
 
    /**
     * Show the form for editing the specified resource.
@@ -84,7 +85,7 @@ class HouseController extends Controller
    {
       $services = Service::orderBy('name')->get();
 
-      return view('', compact( $services )); // ritorna vista con form modifica house
+      return view('user.house.edit', compact( $services )); // ritorna vista con form modifica house
    }
 
    /**
@@ -113,7 +114,7 @@ class HouseController extends Controller
 
       $house->update( $data );
 
-      return redirect()->route(''); // aggiungere rotta dell'utente
+      return redirect()->route('user.houses'); // aggiungere rotta dell'utente
    }
 
    /**
@@ -126,6 +127,6 @@ class HouseController extends Controller
    {
       $house->delete();
 
-      return redirect()->route(''); // aggiungere rotta dell'utente
+      return redirect()->route('user.houses'); // aggiungere rotta dell'utente
    }
 }
