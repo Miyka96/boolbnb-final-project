@@ -3,19 +3,19 @@ import VueRouter from 'vue-router';
 
 Vue.use(VueRouter);
 
-import Contact from '../pages/Contact.vue';
-import Ciao from '../pages/Ciao.vue';
+import LandingPage from '../pages/LandingPage.vue';
+import Search from '../pages/Search.vue';
 
 const routes = [
    {
-      path: '/contact',
-      name: 'contact',
-      component: Contact,
+      path: '/home',
+      name: 'home',
+      component: LandingPage,
    },
    {
-      path: '/ciao',
-      name: 'ciao',
-      component: Ciao,
+      path: '/search',
+      name: 'search',
+      component: Search,
    },
 ];
 
