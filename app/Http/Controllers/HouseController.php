@@ -26,11 +26,11 @@ class HouseController extends Controller
     *
     * @return \Illuminate\Http\Response
     */
-   public function create()
+   public function create(House $house)
    {
       $services = Service::orderBy('name')->get();
 
-      return view('user.house-create', compact('services')); // ritorna vista con form creazione house
+      return view('user.house-create', compact(['services','house'])); // ritorna vista con form creazione house
    }
 
    /**
@@ -86,7 +86,7 @@ class HouseController extends Controller
    {
       $services = Service::orderBy('name')->get();
 
-      return view('user.house.edit', compact( $services )); // ritorna vista con form modifica house
+      return view('user.house-edit', compact(['services','house'])); // ritorna vista con form modifica house
    }
 
    /**
