@@ -28,6 +28,7 @@ class MessageController extends Controller
     public function create()
     {
 
+        return view('user.message-create');
     }
 
     /**
@@ -38,7 +39,27 @@ class MessageController extends Controller
      */
     public function store(Request $request)
     {
-        //
+
+        // COMPLETARE VALIDAZIONI
+        // SISTEMARE PROBLEMA 'sent_at'
+        // SISTEMARE PROBLEMA 'is_read'
+
+        $request->validate([
+            'name' => 'required|min:5',
+            'email' => 'required|min:10',
+            'telephone' => 'required|min:10',
+            'content' => 'required|min:5',
+        ]);
+
+        $data = $request->all();
+
+        $message = new Message();
+
+        $message->fill($data);
+
+        $message->save();
+
+        return redirect()->route('user.messages.index');
     }
 
     /**
