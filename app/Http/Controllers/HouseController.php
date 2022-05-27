@@ -14,7 +14,9 @@ class HouseController extends Controller
     */
    public function index()
    {
-      
+      $houses = House::with(['positions'])->all();
+
+      return view('houses.blade', compact('posts')); // vista my-apartments
    }
 
    /**
@@ -24,7 +26,9 @@ class HouseController extends Controller
     */
    public function create()
    {
-      
+      $services = Service::orderBy('name')->get();
+
+      return view('', compact( $services )); // ritorna vista con form creazione house
    }
 
    /**
@@ -37,8 +41,26 @@ class HouseController extends Controller
    {
       $request->validate([
          'title' => 'required|string|min:5|max:255',
-         // 'room_num' => 'required|'
-      ])
+         'room_num' => 'required|numeric|min:1', // serve il max?
+         'beds_num' => 'required|numeric|min:1',  // serve il max?
+         'toilets_num' => 'required|numeric|min:1',  // serve il max?
+         'square_meters' => 'required|numeric|min:20',  // serve il max?
+         'position_id' => 'required|exists:positions,id',
+         'image' => 'required|url',
+         'is_visible' => 'required|boolean', // possibile array di immagini
+         'user_id' => 'required|exists:users,id',
+         'cost_per_night' => 'required|numeric|min:10|max:1000' //da gestire il float?
+      ]);
+
+      $data = $request->all();
+
+      // metodo per cattura utente
+
+      $house = new House();
+      $house->fill( $data );
+      $house->save();
+
+      return redirect()->route(''); // aggiungere rotta dell'utente
    }
 
    /**
@@ -60,7 +82,9 @@ class HouseController extends Controller
     */
    public function edit(House $house)
    {
-      //
+      $services = Service::orderBy('name')->get();
+
+      return view('', compact( $services )); // ritorna vista con form modifica house
    }
 
    /**
@@ -72,7 +96,24 @@ class HouseController extends Controller
     */
    public function update(Request $request, House $house)
    {
-      //
+      $request->validate([
+         'title' => 'required|string|min:5|max:255',
+         'room_num' => 'required|numeric|min:1', // serve il max?
+         'beds_num' => 'required|numeric|min:1',  // serve il max?
+         'toilets_num' => 'required|numeric|min:1',  // serve il max?
+         'square_meters' => 'required|numeric|min:20',  // serve il max?
+         'position_id' => 'required|exists:positions,id',
+         'image' => 'required|url',
+         'is_visible' => 'required|boolean', // possibile array di immagini
+         'user_id' => 'required|exists:users,id',
+         'cost_per_night' => 'required|numeric|min:10|max:1000' //da gestire il float?
+      ]);
+
+      $data = $request->all();
+
+      $house->update( $data );
+
+      return redirect()->route(''); // aggiungere rotta dell'utente
    }
 
    /**
@@ -83,6 +124,8 @@ class HouseController extends Controller
     */
    public function destroy(House $house)
    {
-      //
+      $house->delete();
+
+      return redirect()->route(''); // aggiungere rotta dell'utente
    }
 }
