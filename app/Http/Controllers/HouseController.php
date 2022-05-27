@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\House;
 use Illuminate\Http\Request;
 use App\Service;
+use App\Position;
 
 class HouseController extends Controller
 {
@@ -15,7 +16,7 @@ class HouseController extends Controller
     */
    public function index()
    {
-      $houses = House::with(['positions'])->all(); // magari aggiunger limit
+      $houses = House::with(['position'])->get(); // magari aggiunger limit
 
       return view('user.houses', compact('houses')); // vista my-apartments
    }
@@ -29,7 +30,7 @@ class HouseController extends Controller
    {
       $services = Service::orderBy('name')->get();
 
-      return view('user.house.show', compact( $services )); // ritorna vista con form creazione house
+      return view('user.house-create', compact('services')); // ritorna vista con form creazione house
    }
 
    /**
@@ -72,7 +73,7 @@ class HouseController extends Controller
     */
     public function show(House $house)
     {
-       return view('user.house.show', compact('house'));
+       return view('user.house-show', compact('house'));
     }
 
    /**
