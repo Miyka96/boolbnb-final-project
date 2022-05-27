@@ -36,7 +36,7 @@ class HouseSeeder extends Seeder
       for($i=0; $i < 100; $i++) {
          $house = new House();
 
-         $house->title = $faker->words(7, true);
+         $house->title = $faker->city(); 
          $house->room_num = $faker->numberBetween(1,10);
          $house->beds_num = $faker->numberBetween(1,10);
          $house->toilet_nums = $faker->numberBetween(1,10);
@@ -57,3 +57,7 @@ class HouseSeeder extends Seeder
       }
    }
 }
+
+// mancano controlli sul rapporto mq/numero di stanze
+// concatenare nome città reale al posto del nome + parola random (array di parole tipo "house, apartment" etc)
+
