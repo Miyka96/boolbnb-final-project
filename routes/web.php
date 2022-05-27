@@ -22,7 +22,6 @@ Auth::routes();
 Route::middleware('auth')
    ->name('user.')
    ->prefix('user')
-   ->namespace('User')
    ->group(function () {
 
    Route::get('/', 'UserController@show');
@@ -39,7 +38,7 @@ Route::middleware('auth')
 
 Route::resource('visualizations', 'VisualizationController')->only('store'); // associata alla funzione che apre la card prima di accedere alla show
 
-// Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/home', 'HomeController@index')->name('home');
 
 Route::fallback(function() {
    return view('home');
