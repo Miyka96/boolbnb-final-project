@@ -14,7 +14,10 @@ class MessageController extends Controller
      */
     public function index()
     {
-        //
+
+        $messages = Message::all();
+
+        return view('user.messages-index', compact('messages'));
     }
 
     /**
@@ -24,7 +27,7 @@ class MessageController extends Controller
      */
     public function create()
     {
-        //
+
     }
 
     /**
