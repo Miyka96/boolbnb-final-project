@@ -1,8 +1,8 @@
 <template>
    <div>
       <ul>
-         <li><router-link :to="{ name: 'ciao' }">Ciao</router-link></li>
-         <li><router-link :to="{ name: 'contact' }">Contact</router-link></li>
+         <li><router-link :to="{ name: 'home' }">Home</router-link></li>
+         <li><router-link :to="{ name: 'search' }">Search</router-link></li>
       </ul>
       <router-view></router-view>
    </div>

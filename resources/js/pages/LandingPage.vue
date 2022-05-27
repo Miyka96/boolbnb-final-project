@@ -1,6 +1,6 @@
 <template>
    <div>
-      Contatti
+      Landing Page
    </div>
 </template>
 
