@@ -7,79 +7,125 @@ use Illuminate\Http\Request;
 
 class HouseController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
-    {
-        //
-    }
+   /**
+    * Display a listing of the resource.
+    *
+    * @return \Illuminate\Http\Response
+    */
+   public function index()
+   {
+      $houses = House::with(['positions'])->all();
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
+      return view('houses.blade', compact('posts')); // vista my-apartments
+   }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
-    }
+   /**
+    * Show the form for creating a new resource.
+    *
+    * @return \Illuminate\Http\Response
+    */
+   public function create()
+   {
+      $services = Service::orderBy('name')->get();
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\House  $house
-     * @return \Illuminate\Http\Response
-     */
-    public function show(House $house)
-    {
-        //
-    }
+      return view('', compact( $services )); // ritorna vista con form creazione house
+   }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\House  $house
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(House $house)
-    {
-        //
-    }
+   /**
+    * Store a newly created resource in storage.
+    *
+    * @param  \Illuminate\Http\Request  $request
+    * @return \Illuminate\Http\Response
+    */
+   public function store(Request $request)
+   {
+      $request->validate([
+         'title' => 'required|string|min:5|max:255',
+         'room_num' => 'required|numeric|min:1', // serve il max?
+         'beds_num' => 'required|numeric|min:1',  // serve il max?
+         'toilets_num' => 'required|numeric|min:1',  // serve il max?
+         'square_meters' => 'required|numeric|min:20',  // serve il max?
+         'position_id' => 'required|exists:positions,id',
+         'image' => 'required|url',
+         'is_visible' => 'required|boolean', // possibile array di immagini
+         'user_id' => 'required|exists:users,id',
+         'cost_per_night' => 'required|numeric|min:10|max:1000' //da gestire il float?
+      ]);
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\House  $house
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, House $house)
-    {
-        //
-    }
+      $data = $request->all();
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\House  $house
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(House $house)
-    {
-        //
-    }
+      // metodo per cattura utente
+
+      $house = new House();
+      $house->fill( $data );
+      $house->save();
+
+      return redirect()->route(''); // aggiungere rotta dell'utente
+   }
+
+   /**
+    * Display the specified resource.
+    *
+    * @param  \App\House  $house
+    * @return \Illuminate\Http\Response
+    */
+   public function show(House $house)
+   {
+      //
+   }
+
+   /**
+    * Show the form for editing the specified resource.
+    *
+    * @param  \App\House  $house
+    * @return \Illuminate\Http\Response
+    */
+   public function edit(House $house)
+   {
+      $services = Service::orderBy('name')->get();
+
+      return view('', compact( $services )); // ritorna vista con form modifica house
+   }
+
+   /**
+    * Update the specified resource in storage.
+    *
+    * @param  \Illuminate\Http\Request  $request
+    * @param  \App\House  $house
+    * @return \Illuminate\Http\Response
+    */
+   public function update(Request $request, House $house)
+   {
+      $request->validate([
+         'title' => 'required|string|min:5|max:255',
+         'room_num' => 'required|numeric|min:1', // serve il max?
+         'beds_num' => 'required|numeric|min:1',  // serve il max?
+         'toilets_num' => 'required|numeric|min:1',  // serve il max?
+         'square_meters' => 'required|numeric|min:20',  // serve il max?
+         'position_id' => 'required|exists:positions,id',
+         'image' => 'required|url',
+         'is_visible' => 'required|boolean', // possibile array di immagini
+         'user_id' => 'required|exists:users,id',
+         'cost_per_night' => 'required|numeric|min:10|max:1000' //da gestire il float?
+      ]);
+
+      $data = $request->all();
+
+      $house->update( $data );
+
+      return redirect()->route(''); // aggiungere rotta dell'utente
+   }
+
+   /**
+    * Remove the specified resource from storage.
+    *
+    * @param  \App\House  $house
+    * @return \Illuminate\Http\Response
+    */
+   public function destroy(House $house)
+   {
+      $house->delete();
+
+      return redirect()->route(''); // aggiungere rotta dell'utente
+   }
 }
