@@ -14,14 +14,36 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('home'); // nel componente home.blade.php è montatto App.vue
 });
-
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::middleware('auth')
+   ->name('user.')
+   ->prefix('user')
+   ->namespace('User')
+   ->group(function () {
+
+   Route::get('/', 'UserController@show');
+
+   Route::resource('houses', 'HouseController');
+
+   Route::resource('messages', 'MessageController')->only(['index', 'create', 'store']);
+
+   Route::resource('sponporships', 'SponsorshipController'); //metodo custom per attivazione sponsorship
+
+   // rotta statische a partire dalla show
+
+});
+
+Route::resource('visualizations', 'VisualizationController')->only('store'); // associata alla funzione che apre la card prima di accedere alla show
+
+// Route::get('/home', 'HomeController@index')->name('home');
 
 Route::fallback(function() {
    return view('home');
 });
+
+// rotta error 404
+
