@@ -14,7 +14,7 @@
    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
 <body>
-   Home.blade
+   {{--  qui è montato VUE --}}
    <div id="root">
       <router-view></router-view>
    </div>
