@@ -1933,7 +1933,44 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-/* harmony default export */ __webpack_exports__["default"] = ({});
+/* harmony default export */ __webpack_exports__["default"] = ({
+  name: 'Search',
+  data: function data() {
+    return {
+      houses: [],
+      lastPage: 0,
+      currentPage: 1
+    };
+  },
+  methods: {
+    fetchHouses: function fetchHouses() {
+      var _this = this;
+
+      var page = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 1;
+      //default value
+      axios.get('/api/houses', {
+        params: {
+          page: page // equivalente a page: page
+
+        }
+      }).then(function (res) {
+        console.log(res.data);
+        var houses = res.data.houses;
+        var data = houses.data,
+            last_page = houses.last_page,
+            current_page = houses.current_page;
+        _this.houses = data;
+        _this.currentPage = current_page;
+        _this.lastPage = last_page;
+      })["catch"](function (err) {
+        console.warn(err);
+      });
+    }
+  },
+  mounted: function mounted() {
+    this.fetchHouses();
+  }
+});
 
 /***/ }),
 
@@ -17897,7 +17934,7 @@ var app = new Vue({
     return h(_views_App_vue__WEBPACK_IMPORTED_MODULE_0__["default"]);
   },
   router: _router__WEBPACK_IMPORTED_MODULE_1__["default"]
-}).$mount('#app');
+}); //.$mount('#app')
 
 /***/ }),
 
@@ -18151,7 +18188,7 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\Users\Micae\dev\boolbnb-final-project\resources\js\front.js */"./resources/js/front.js");
+module.exports = __webpack_require__(/*! D:\Users\Simone\Documents\Progetti\boolbnb-final-project\resources\js\front.js */"./resources/js/front.js");
 
 
 /***/ })
