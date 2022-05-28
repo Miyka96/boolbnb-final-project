@@ -6,6 +6,7 @@ use App\House;
 use Illuminate\Http\Request;
 use App\Service;
 use App\Position;
+use Illuminate\Support\Facades\Auth;
 
 class HouseController extends Controller
 {
@@ -15,7 +16,7 @@ class HouseController extends Controller
     * @return \Illuminate\Http\Response
     */
    public function index()
-   {
+   {  
       $houses = House::with(['position'])->get(); // magari aggiunger limit
 
       return view('user.houses', compact('houses')); // vista my-apartments
@@ -28,6 +29,7 @@ class HouseController extends Controller
     */
    public function create(House $house)
    {
+
       $services = Service::orderBy('name')->get();
 
       return view('user.house-create', compact(['services','house'])); // ritorna vista con form creazione house
@@ -41,6 +43,8 @@ class HouseController extends Controller
     */
    public function store(Request $request)
    {
+      $user_logged_in = Auth::user();
+
       $request->validate([
          'title' => 'required|string|min:5|max:255',
          'room_num' => 'required|numeric|min:1', // serve il max?
@@ -50,7 +54,7 @@ class HouseController extends Controller
          'position_id' => 'required|exists:positions,id',
          'image' => 'required|url', // possibile array di immagini
          'is_visible' => 'boolean',
-         'user_id' => 'required|exists:users,id',
+         // 'user_id' => 'required|exists:users,id',
          'cost_per_night' => 'required|numeric|min:10|max:1000' //da gestire il float?
       ]);
 
@@ -61,7 +65,6 @@ class HouseController extends Controller
       $house = new House();
       $house->fill( $data );
       $house->save();
-
       return redirect()->route('user.houses');
    }
 
@@ -98,6 +101,7 @@ class HouseController extends Controller
     */
    public function update(Request $request, House $house)
    {
+
       $request->validate([
          'title' => 'required|string|min:5|max:255',
          'room_num' => 'required|numeric|min:1', // serve il max?

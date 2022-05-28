@@ -18,7 +18,7 @@ class CreateHousesTable extends Migration
             $table->string('title');
             $table->tinyInteger('room_num');
             $table->tinyInteger('beds_num');
-            $table->tinyInteger('toilet_nums');
+            $table->tinyInteger('toilets_num');
             $table->smallInteger('square_meters');
             $table->string('image');
             $table->boolean('is_visible')->default(true);

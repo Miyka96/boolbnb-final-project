@@ -7,6 +7,22 @@ use App\User;
 
 class House extends Model
 {
+
+   protected $fillable = [
+      'title',
+      'room_num',
+      'beds_num',
+      'toilets_num',
+      'square_meters',
+      'position_id',
+      'image',
+      'is_visible',
+      'user_id',
+      'cost_per_night'
+   ];
+
+
+
    public function services() {
       return $this->belongsToMany('App\Service');
    }

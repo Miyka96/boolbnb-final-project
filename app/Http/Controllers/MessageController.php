@@ -27,7 +27,8 @@ class MessageController extends Controller
      */
     public function create()
     {
-
+        // create message dovrebbe stare in entrambi i router, anche quello vue. Serve API ? 
+        
     }
 
     /**
