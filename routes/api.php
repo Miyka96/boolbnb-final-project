@@ -18,13 +18,18 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-// api services per filtro ricerca avanzata
+// Route::namespace('Api')->group(function() {
 
-// api houses
+//    Route::get('services', 'ServiceController@show')->name('services'); 
+   
+//    Route::get('houses', 'HouseController@index')->name('houses');
+// });
 
 Route::namespace('Api')->group(function() {
 
-   Route::get('services', 'ServiceController@show')->name('services'); 
+   Route::resource('houses','HouseController')
+      ->parameters(['houses' => 'house:id'])
+      ->only(['index','show']);
    
-   Route::get('houses', 'HouseController@index')->name('houses');
+   Route::get('services', 'ServiceController@index')->name('services'); 
 });

@@ -15,4 +15,4 @@ const app = new Vue({
    el: '#root',
    render: h => h(App),
    router
-}).$mount('#app')
+}); //.$mount('#app')
