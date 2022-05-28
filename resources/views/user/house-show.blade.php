@@ -2,6 +2,6 @@
 
 @section('content')
 
-    Show appartamento n {{$house->id}}
+    Show/ edit appartamento {{$house->title}}
 
 @endsection

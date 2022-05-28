@@ -16,7 +16,7 @@ class HouseController extends Controller
     * @return \Illuminate\Http\Response
     */
    public function index()
-   {
+   {  
       $houses = House::with(['position'])->get(); // magari aggiunger limit
 
       return view('user.houses', compact('houses')); // vista my-apartments
