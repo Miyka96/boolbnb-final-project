@@ -1,16 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
+@extends('layouts.app')
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-</head>
-
-<body>
-
+@section('content')
     Pagina create house:
+
+    {{-- RISOLVERE PROBLEMA POSITION ID --}}
 
     <div class="container">
         <h1>Create a new house</h1>
@@ -29,33 +22,25 @@
             {{-- rooms --}}
             <div class="form-group">
                 <label for="room_num">Rooms Number</label>
-                <select class="form-control" id="room_num" name="room_num">
-                    <input type="number" value="{{ old('room_num') }}">
-                </select>
+                <input type="number" class="form-control" name="room_num" id="room_num" value="{{ old('room_num') }}">
             </div>
 
             {{-- beds --}}
             <div class="form-group">
                 <label for="beds_num">Beds Number</label>
-                <select class="form-control" id="beds_num" name="beds_num">
-                    <input type="number" value="{{ old('beds_num') }}">
-                </select>
+                <input type="number" class="form-control" name="beds_num" id="beds_num" value="{{ old('beds_num') }}">
             </div>
 
             {{-- toilets --}}
             <div class="form-group">
                 <label for="toilets_num">Toilets Number</label>
-                <select class="form-control" id="toilets_num" name="toilets_num">
-                    <input type="number" value="{{ old('toilets_num') }}">
-                </select>
+                <input type="number" class="form-control" name="toilets_num" id="toilets_num" value="{{ old('toilets_num') }}">
             </div>
 
             {{-- square meters --}}
             <div class="form-group">
                 <label for="square_meters">Square Meters</label>
-                <select class="form-control" id="square_meters" name="square_meters">
-                    <input type="number" value="{{ old('square_meters') }}">
-                </select>
+                <input type="number" class="form-control" name="square_meters" id="square_meters" value="{{ old('square_meters') }}">
             </div>
 
             {{-- position???? --}}
@@ -73,9 +58,7 @@
 
             <div class="form-group">
                 <label for="cost_per_night">Cost per night</label>
-                <select class="form-control" id="cost_per_night" name="cost_per_night">
-                    <input type="number" value="{{ old('cost_per_night') }}">
-                </select>
+                <input type="number" class="form-control" name="cost_per_night" id="cost_per_night" value="{{ old('cost_per_night') }}">
             </div>
 
 
@@ -116,7 +99,5 @@
 
         </form>
     </div>
+@endsection
 
-</body>
-
-</html>
