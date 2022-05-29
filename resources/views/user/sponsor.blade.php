@@ -8,16 +8,24 @@
     
 @foreach ($sponsorship as $sponsor)
 
-    <div class="card px-4 mx-4" style="width: 18rem;">
-        {{-- <img class="card-img-top" src="..." alt="Card image cap"> --}}
-        <div class="card-body">
-          <h5 class="card-title">{{$sponsor->name}}</h5>
-          <p class="card-text">Durata: {{$sponsor->duration}}</p>
-          <p class="card-text">Prezzo: {{$sponsor->price}}</p>
+<form action="{{ route('') }}" method="post">
 
-          <button class="btn btn-primary">Acquista</button>
-        </div>
-      </div>
+  @csrf
+
+  <div class="card px-4 mx-4" style="width: 18rem;">
+    {{-- <img class="card-img-top" src="..." alt="Card image cap"> --}}
+    <div class="card-body">
+      <h5 class="card-title">{{$sponsor->name}}</h5>
+      {{-- qui bisogna fixare la visualizzazione della durata: passare da visualizzazione ore a giorni. Serve Carbon? --}}
+      <p class="card-text">Durata: {{$sponsor->duration}}</p>
+      <p class="card-text">Prezzo: {{$sponsor->price}}</p>
+
+      <button class="btn btn-primary" type="submit">Acquista</button>
+    </div>
+  </div>
+
+
+</form>
 
 
 @endforeach

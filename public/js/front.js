@@ -18098,15 +18098,26 @@ vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(vue_router__WEBPACK_IMPORTED_MODU
 var routes = [{
   path: '/home',
   name: 'home',
-  component: _pages_LandingPage_vue__WEBPACK_IMPORTED_MODULE_2__["default"]
+  component: _pages_LandingPage_vue__WEBPACK_IMPORTED_MODULE_2__["default"],
+  meta: {
+    title: 'WowLidays'
+  }
 }, {
   path: '/search',
   name: 'search',
-  component: _pages_Search_vue__WEBPACK_IMPORTED_MODULE_3__["default"]
+  component: _pages_Search_vue__WEBPACK_IMPORTED_MODULE_3__["default"],
+  meta: {
+    title: 'WowLidays'
+  }
 }];
 var router = new vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]({
   mode: 'history',
   routes: routes
+}); // aggiunto meta title a viste vueRouter
+
+router.beforeEach(function (toRoute, fromRoute, next) {
+  window.document.title = toRoute.meta.title;
+  next();
 });
 /* harmony default export */ __webpack_exports__["default"] = (router);
 
