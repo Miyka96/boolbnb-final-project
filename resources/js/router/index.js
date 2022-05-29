@@ -5,6 +5,7 @@ Vue.use(VueRouter);
 
 import LandingPage from '../pages/LandingPage.vue';
 import Search from '../pages/Search.vue';
+import House from '../pages/House.vue';
 
 const routes = [
    {
@@ -21,6 +22,14 @@ const routes = [
       component: Search,
       meta: {
          title: 'Wowlidays - Ricerca avanzata'
+      }
+   },
+   {
+      path: '/house/:id',
+      name: 'house.show',
+      component: House,
+      meta: {
+         title: 'Wowlidays - Dettaglio casa'
       }
    },
 ];
