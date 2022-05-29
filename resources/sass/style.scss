@@ -1,1 +1,32 @@
 // REGOLE DI RESET & CLASSI GENERICHE
+
+// SCROLLBAR
+body {
+   overflow: overlay;
+
+   &::-webkit-scrollbar {
+      // background-color: yellow;
+      // color: red;
+      width: 18px;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      right: 0;
+   }
+
+   &::-webkit-scrollbar-track {
+      background-color: transparent;
+   }
+
+   &::-webkit-scrollbar-thumb {
+      background-color: rgba($color: black, $alpha: 0.2);
+      border-radius: 20px;
+      border: 4px solid transparent;
+      background-clip: content-box;
+      // transition: background-color ease-in-out 2s;
+
+      &:hover {
+         background-color: rgba($color: black, $alpha: 0.4);
+      }
+   }
+}
