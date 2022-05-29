@@ -1,9 +1,9 @@
 <template>
    <div>
-      <ul>
+      <!-- <ul>
          <li><router-link :to="{ name: 'home' }">Home</router-link></li>
          <li><router-link :to="{ name: 'search' }">Search</router-link></li>
-      </ul>
+      </ul> -->
       <router-view></router-view>
    </div>
 </template>
