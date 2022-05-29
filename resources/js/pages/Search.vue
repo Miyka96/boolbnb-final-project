@@ -1,6 +1,6 @@
 <template>
    <div class="container">
-     Pagina ricerca avanzata
+     <h2>Ricerca avanzata</h2>
    </div>
 </template>
 

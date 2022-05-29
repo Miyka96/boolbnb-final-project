@@ -12,7 +12,7 @@ const routes = [
       name: 'home',
       component: LandingPage,
       meta: {
-         title: 'WowLidays'
+         title: 'Wowlidays - Home'
       }
    },
    {
@@ -20,7 +20,7 @@ const routes = [
       name: 'search',
       component: Search,
       meta: {
-         title: 'WowLidays'
+         title: 'Wowlidays - Ricerca avanzata'
       }
    },
 ];
