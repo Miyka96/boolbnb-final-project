@@ -11,17 +11,31 @@ const routes = [
       path: '/home',
       name: 'home',
       component: LandingPage,
+      meta: {
+         title: 'WowLidays'
+      }
    },
    {
       path: '/search',
       name: 'search',
       component: Search,
+      meta: {
+         title: 'WowLidays'
+      }
    },
 ];
 
 const router = new VueRouter({
    mode: 'history',
    routes
+});
+
+// aggiunto meta title a viste vueRouter
+
+router.beforeEach((toRoute, fromRoute, next) => {
+   window.document.title = toRoute.meta.title;
+
+   next();
 });
 
 export default router;
