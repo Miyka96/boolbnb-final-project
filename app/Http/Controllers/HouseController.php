@@ -43,8 +43,6 @@ class HouseController extends Controller
     */
    public function store(Request $request)
    {
-      $user_logged_in = Auth::user();
-
       $request->validate([
          'title' => 'required|string|min:5|max:255',
          'room_num' => 'required|numeric|min:1', // serve il max?
@@ -54,18 +52,17 @@ class HouseController extends Controller
          'position_id' => 'required|exists:positions,id',
          'image' => 'required|url', // possibile array di immagini
          'is_visible' => 'boolean',
-         // 'user_id' => 'required|exists:users,id',
+         'user_id' => 'required',
          'cost_per_night' => 'required|numeric|min:10|max:1000' //da gestire il float?
       ]);
 
       $data = $request->all();
 
       // metodo per cattura utente
-
       $house = new House();
       $house->fill( $data );
       $house->save();
-      return redirect()->route('user.houses');
+      return redirect()->route('user.houses.index');
    }
 
    /**
