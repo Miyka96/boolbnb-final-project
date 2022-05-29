@@ -8,7 +8,7 @@ import Search from '../pages/Search.vue';
 
 const routes = [
    {
-      path: '/home',
+      path: '/',
       name: 'home',
       component: LandingPage,
       meta: {

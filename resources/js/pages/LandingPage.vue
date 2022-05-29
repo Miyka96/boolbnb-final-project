@@ -1,12 +1,18 @@
 <template>
-   <div>
+   <div id="home">
+      <Banner/>
       Landing Page
    </div>
 </template>
 
 <script>
-export default {
+import Banner from '../components/MainBanner.vue';
 
+export default {
+   components: {
+      Banner,
+   },
+   
 }
 </script>
 
