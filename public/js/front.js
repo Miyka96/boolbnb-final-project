@@ -1994,7 +1994,7 @@ __webpack_require__.r(__webpack_exports__);
   props: {
     house: {
       type: Object,
-      require: __webpack_require__("./resources/js/components sync recursive")
+      required: required
     }
   }
 });
@@ -2124,12 +2124,15 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 
+ // import PolaroidVue from '../components/PolaroidVue.vue'
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   components: {
     Banner: _components_MainBanner_vue__WEBPACK_IMPORTED_MODULE_0__["default"],
-    CardsShowcase: _components_CardShowcase_vue__WEBPACK_IMPORTED_MODULE_1__["default"]
+    CardsShowcase: _components_CardShowcase_vue__WEBPACK_IMPORTED_MODULE_1__["default"] // PolaroidVue
+
   }
 });
 
@@ -19031,25 +19034,6 @@ module.exports = g;
 
 /***/ }),
 
-/***/ "./resources/js/components sync recursive":
-/*!**************************************!*\
-  !*** ./resources/js/components sync ***!
-  \**************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-function webpackEmptyContext(req) {
-	var e = new Error("Cannot find module '" + req + "'");
-	e.code = 'MODULE_NOT_FOUND';
-	throw e;
-}
-webpackEmptyContext.keys = function() { return []; };
-webpackEmptyContext.resolve = webpackEmptyContext;
-module.exports = webpackEmptyContext;
-webpackEmptyContext.id = "./resources/js/components sync recursive";
-
-/***/ }),
-
 /***/ "./resources/js/components/CardShowcase.vue":
 /*!**************************************************!*\
   !*** ./resources/js/components/CardShowcase.vue ***!
@@ -19619,7 +19603,18 @@ var state = vue__WEBPACK_IMPORTED_MODULE_0___default.a.observable({
   bannerText: ['Enjoy', 'your', 'trip'] // solo stringhe
 
 });
-/* harmony default export */ __webpack_exports__["default"] = (state);
+/* harmony default export */ __webpack_exports__["default"] = (state); // animazione componente SectionVue, che ovviamente qui da errori quindi ggwp 
+// export function thumbAnimation(){
+//    let tl = gsap.timeline({default: {duration: 3}});
+//    tl.to('.card', {borderTopColor: '#bad', delay: 0.3})
+//    .to('.card', {borderRightColor: '#bad'}, '-=0.2')
+//    .to('.card', {borderBottomColor: '#bad'}, '-=0.2')
+//    .to('.card', {borderLeftColor: '#bad'}, '-=0.2')
+//    // animation for img-wrapper 
+//    gsap.fromTo('.img-wrapper', {height: 0, backgroundColor: 'transparent'}, {delay: 1, duration: 1, height: '500px', backgroundColor: '#bad'})
+//    // animation
+//    gsap.to('.img', {delay: 2, duration: 0.5, opacity: 1})
+// }
 
 /***/ }),
 
@@ -19699,7 +19694,7 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! D:\Users\Simone\Documents\Progetti\boolbnb-final-project\resources\js\front.js */"./resources/js/front.js");
+module.exports = __webpack_require__(/*! C:\Users\Micae\dev\boolbnb-final-project\resources\js\front.js */"./resources/js/front.js");
 
 
 /***/ })

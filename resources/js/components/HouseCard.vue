@@ -18,7 +18,7 @@ export default {
    props: {
       house: {
          type: Object,
-         require
+         required
       }
    }
 }
