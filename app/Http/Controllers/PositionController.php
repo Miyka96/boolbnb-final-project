@@ -35,7 +35,27 @@ class PositionController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'latitude' => 'numeric|required',
+            'longitude' => 'numeric|required', 
+            'address' => 'required|string|min:5', 
+            'city' => 'required|string|min:5', 
+            'country' => 'required|string|min:5',
+            'zip_code' => 'numeric|required|min:3',
+         ]);
+
+         $data = $request->all();
+         $position= new Position($data);
+
+
+         $position->latitude='asd';
+         $position->longitude='asd';
+
+
+         $position->fill($data);
+         $position->save();
+
+         return redirect()->route('user.houses.create');
     }
 
     /**

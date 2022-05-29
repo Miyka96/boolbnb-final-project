@@ -33,6 +33,7 @@ Route::middleware('auth')
    Route::resource('sponporships', 'SponsorshipController'); //metodo custom per attivazione sponsorship
 
    // rotta statische a partire dalla show
+   Route::post('position', 'PositionController@store')->name('position.store');
 
 });
 
