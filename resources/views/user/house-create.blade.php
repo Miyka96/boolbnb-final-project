@@ -3,14 +3,18 @@
 @section('content')
     Pagina create house:
 
+@php
+$id = Auth::id();
+@endphp
+
     {{-- RISOLVERE PROBLEMA POSITION ID --}}
 
     <div class="container">
         <h1>Create a new house</h1>
 
         <form action="{{ route('user.houses.store') }}" method="post">
-            @csrf
-
+            @csrf              
+                <input type="hidden" name="user_id" id="user_id" value="{{$id}}">
             {{-- title --}}
 
             <div class="form-group">
@@ -44,7 +48,11 @@
             </div>
 
             {{-- position???? --}}
-            <h4>------------>Manca il form Position?? boh aiuto<-----------</h4> 
+            <h4>------------>Temporaneamente position id è un campo del form<-----------</h4> 
+            <div class="form-group">
+                <label for="position_id">Position id</label>
+                <input type="number" class="form-control" name="position_id" id="position_id" value="{{ old('position_id') }}">
+            </div>
 
             {{-- image --}}
 
