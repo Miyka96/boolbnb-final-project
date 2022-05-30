@@ -1994,7 +1994,7 @@ __webpack_require__.r(__webpack_exports__);
   props: {
     house: {
       type: Object,
-      required: required
+      require: __webpack_require__("./resources/js/components sync recursive")
     }
   }
 });
@@ -19034,6 +19034,25 @@ module.exports = g;
 
 /***/ }),
 
+/***/ "./resources/js/components sync recursive":
+/*!**************************************!*\
+  !*** ./resources/js/components sync ***!
+  \**************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+function webpackEmptyContext(req) {
+	var e = new Error("Cannot find module '" + req + "'");
+	e.code = 'MODULE_NOT_FOUND';
+	throw e;
+}
+webpackEmptyContext.keys = function() { return []; };
+webpackEmptyContext.resolve = webpackEmptyContext;
+module.exports = webpackEmptyContext;
+webpackEmptyContext.id = "./resources/js/components sync recursive";
+
+/***/ }),
+
 /***/ "./resources/js/components/CardShowcase.vue":
 /*!**************************************************!*\
   !*** ./resources/js/components/CardShowcase.vue ***!
@@ -19694,7 +19713,7 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\Users\Micae\dev\boolbnb-final-project\resources\js\front.js */"./resources/js/front.js");
+module.exports = __webpack_require__(/*! D:\Users\Simone\Documents\Progetti\boolbnb-final-project\resources\js\front.js */"./resources/js/front.js");
 
 
 /***/ })

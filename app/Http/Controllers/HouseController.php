@@ -116,7 +116,7 @@ class HouseController extends Controller
 
       $house->update( $data );
 
-      return redirect()->route('user.houses'); // aggiungere rotta dell'utente
+      return redirect()->route('user.houses.index'); // aggiungere rotta dell'utente
    }
 
    /**
@@ -129,6 +129,6 @@ class HouseController extends Controller
    {
       $house->delete();
 
-      return redirect()->route('user.houses'); // aggiungere rotta dell'utente
+      return redirect()->route('user.houses.index'); // aggiungere rotta dell'utente
    }
 }
