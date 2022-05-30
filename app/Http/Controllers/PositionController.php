@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Position;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Http;
+use Illuminate\Support\Arr;
 
 class PositionController extends Controller
 {
@@ -57,15 +58,18 @@ class PositionController extends Controller
 
         // request http
         $response = Http::get("https://api.tomtom.com/search/2/geocode/$address.' '.$city.' '.$country.json?key=DINngHSiTz58Z5fDF5pThkg1IrJA87je&limit=1")->json();
-        dd($response);
+        $arrayRes= Arr::dot($response);
 
-
-
-
-        //  $position->fill($data);
-        //  $position->save();
-
-        //  return redirect()->route('user.houses.create');
+        if( $arrayRes['summary.totalResults']> 0 && ['results.0.matchConfidence.score'] >= 0.88) { 
+            $position->latitude = $arrayRes['results.0.position.lat'];
+            $position->longitude = $arrayRes['results.0.position.lon'];
+            $position->fill($data);
+            $position->save();
+            return redirect()->route('user.houses.create')->with('message', 'Posizione appartamento registrata correttamente');
+        }
+        else{
+            return redirect()->route('user.houses.create')->with('error','Indirizzo inserito non valido, controlla i dati inseriti');
+        }
     }
 
     /**
