@@ -67,6 +67,12 @@
 
 
 
+        {{-- php section --}}
+        @php
+
+        @endphp
+
+
 
         {{-- FORM PER HOUSE --}}
         <form action="{{ route('user.houses.store') }}" method="post">
@@ -110,7 +116,8 @@
             ------------>Temporaneamente position id è un campo del form<----------- <div class="form-group">
                 <label for="position_id">Position id</label>
                 <input type="number" class="form-control" name="position_id" id="position_id"
-                    value="{{ old('position_id') }}">
+                    value="{{ $positionId }}">
+
     </div>
 
     {{-- image --}}

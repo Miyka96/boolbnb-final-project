@@ -65,7 +65,8 @@ class PositionController extends Controller
             $position->longitude = $arrayRes['results.0.position.lon'];
             $position->fill($data);
             $position->save();
-            return redirect()->route('user.houses.create')->with('message', 'Posizione appartamento registrata correttamente');
+            $positionId = $position->id;
+            return redirect()->route('user.houses.create',['message'=> 'Posizione appartamento registrata correttamente', 'positionId'=>$positionId ]);
         }
         else{
             return redirect()->route('user.houses.create')->with('error','Indirizzo inserito non valido, controlla i dati inseriti');
