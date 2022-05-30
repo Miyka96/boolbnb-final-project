@@ -2,13 +2,15 @@
 
 @section('content')
 
-<h1 class="text-center py-5">Sponsorizzazioni:</h1>
+<h1 class="text-center py-5 mt-5">Sponsorizzazioni:</h1>
 
 <div class="container-fluid d-flex justify-content-center">
     
 @foreach ($sponsorship as $sponsor)
 
-<form action="{{ route('') }}" method="post">
+<form 
+{{-- action="{{ route('') }}"  --}}
+method="post">
 
   @csrf
 
