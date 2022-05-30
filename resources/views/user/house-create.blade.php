@@ -44,6 +44,14 @@
                 Confirm house position
             </button>
 
+            @if (Session::has('message'))
+                <div class="alert alert-info">{{ Session::get('message') }}</div>
+            @endif
+
+            @if (Session::has('error'))
+                <div class="alert alert-danger">{{ Session::get('error') }}</div>
+            @endif
+
             @if ($errors->any())
                 <div class="alert alert-danger">
                     <ul>
@@ -55,8 +63,6 @@
                     </ul>
                 </div>
             @endif
-
-
         </form>
 
 
@@ -101,66 +107,65 @@
             </div>
 
             {{-- position???? --}}
-            ------------>Temporaneamente position id è un campo del form<-----------
-                    <div class="form-group">
-                        <label for="position_id">Position id</label>
-                        <input type="number" class="form-control" name="position_id" id="position_id"
-                            value="{{ old('position_id') }}">
-                    </div>
+            ------------>Temporaneamente position id è un campo del form<----------- <div class="form-group">
+                <label for="position_id">Position id</label>
+                <input type="number" class="form-control" name="position_id" id="position_id"
+                    value="{{ old('position_id') }}">
+    </div>
 
-                    {{-- image --}}
+    {{-- image --}}
 
-                    <div class="form-group">
-                        <label for="image">House image</label>
-                        <input type="text" class="form-control" name="image" id="image"
-                            placeholder="Insert House image url" value="{{ old('image') }}">
-                    </div>
+    <div class="form-group">
+        <label for="image">House image</label>
+        <input type="text" class="form-control" name="image" id="image" placeholder="Insert House image url"
+            value="{{ old('image') }}">
+    </div>
 
-                    {{-- cost per night --}}
+    {{-- cost per night --}}
 
-                    <div class="form-group">
-                        <label for="cost_per_night">Cost per night</label>
-                        <input type="number" class="form-control" name="cost_per_night" id="cost_per_night"
-                            value="{{ old('cost_per_night') }}">
-                    </div>
+    <div class="form-group">
+        <label for="cost_per_night">Cost per night</label>
+        <input type="number" class="form-control" name="cost_per_night" id="cost_per_night"
+            value="{{ old('cost_per_night') }}">
+    </div>
 
 
-                    {{-- services --}}
-                    <label>Services</label>
-                    <div class="d-flex" style="gap: 1rem;">
-                        @foreach ($services as $service)
-                            <div class="form-group form-check">
-                                <input type="checkbox" {{ $house->services->contains($service) ? 'checked' : '' }}
-                                    class="form-check-input" value="{{ $service->id }}" name="services[]"
-                                    id="services-{{ $service->id }}">
-                                <label class="form-check-label"
-                                    for="services-{{ $service->id }}">{{ $service->name }}</label>
-                            </div>
-                        @endforeach
-                    </div>
-                    @error('services.*')
-                        <div class="text-danger">'The selected service is invalid</div>
-                    @enderror
+    {{-- services --}}
+    <label>Services</label>
+    <div class="d-flex" style="gap: 1rem;">
+        @foreach ($services as $service)
+            <div class="form-group form-check">
+                <input type="checkbox" {{ $house->services->contains($service) ? 'checked' : '' }}
+                    class="form-check-input" value="{{ $service->id }}" name="services[]"
+                    id="services-{{ $service->id }}">
+                <label class="form-check-label" for="services-{{ $service->id }}">{{ $service->name }}</label>
+            </div>
+        @endforeach
+    </div>
+    @error('services.*')
+        <div class="text-danger">'The selected service is invalid</div>
+    @enderror
 
 
 
-                    {{-- create btn --}}
-                    <button class="btn btn-primary" type="submit">
-                        Create
-                    </button>
+    {{-- create btn --}}
+    <button class="btn btn-primary" type="submit">
+        Create
+    </button>
 
-                    @if ($errors->any())
-                        <div class="alert alert-danger">
-                            <ul>
-                                @foreach ($errors->all() as $error)
-                                    <li>
-                                        {{ $error }}
-                                    </li>
-                                @endforeach
-                            </ul>
-                        </div>
-                    @endif
+    @if ($errors->any())
+        <div class="alert alert-danger">
+            <ul>
+                @foreach ($errors->all() as $error)
+                    <li>
+                        {{ $error }}
+                    </li>
+                @endforeach
+            </ul>
+        </div>
+    @endif
 
-        </form>
+
+    </form>
     </div>
 @endsection
