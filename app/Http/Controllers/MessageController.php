@@ -39,7 +39,23 @@ class MessageController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'name' => 'required|string|min:4',
+            'email' => 'required|email',
+            'telephone' => 'required|numeric|min:8',  
+            'content' => 'required|string|min:20'
+         ]);
+   
+         $data = $request->all();
+
+         $message = new Message();
+
+         $message->sent_at = now();
+         $message->is_read= 0;
+
+         $message->fill( $data );
+         $message->save();
+         return redirect()->route('home');
     }
 
     /**
