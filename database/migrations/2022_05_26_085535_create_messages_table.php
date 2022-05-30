@@ -21,7 +21,6 @@ class CreateMessagesTable extends Migration
             $table->string('telephone')->nullable();
             $table->text('content');
             $table->datetime('sent_at');
-            $table->boolean('is_read');
 
             $table->timestamps();
         });

@@ -51,7 +51,6 @@ class MessageController extends Controller
          $message = new Message();
 
          $message->sent_at = now();
-         $message->is_read= 0;
 
          $message->fill( $data );
          $message->save();

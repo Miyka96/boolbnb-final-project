@@ -16,6 +16,5 @@ class Message extends Model
       'telephone',
       'content',
       'sent_at',
-      'is_read'
    ];
 }

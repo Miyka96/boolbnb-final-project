@@ -2,12 +2,16 @@
 
 @section('content')
 
+
+@php
+$id = Auth::id();
+@endphp
     <div class="container mt-4 py-5">
 
         Edit appartamento n {{ $house->id }}
 
 
-        <form action="{{ route('user.houses.update') }}" method="post">
+        <form action="{{ route('user.houses.update', $house) }}" method="post">
             @csrf
             <input type="hidden" name="user_id" id="user_id" value="{{ $id }}">
             {{-- title --}}
