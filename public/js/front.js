@@ -19694,7 +19694,7 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\Users\Micae\dev\boolbnb-final-project\resources\js\front.js */"./resources/js/front.js");
+module.exports = __webpack_require__(/*! C:\Users\eduar\OneDrive\Desktop\Boolean\Progetto Finale\Repo Ufficiale\boolbnb-final-project\resources\js\front.js */"./resources/js/front.js");
 
 
 /***/ })
