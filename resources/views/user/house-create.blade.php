@@ -18,26 +18,8 @@
          <div class="form-group">
             <label for="address">House address</label>
             <input type="text" class="form-control" name="address" id="address" placeholder="Insert house address"
-               value="{{ old('address') }}">
+               value="">
          </div>
-         {{-- city --}}
-         <div class="form-group">
-            <label for="city">House city</label>
-            <input type="text" class="form-control" name="city" id="city" placeholder="Insert house city"
-               value="{{ old('city') }}">
-         </div>
-         {{-- country --}}
-         <div class="form-group">
-            <label for="country">House country</label>
-            <input type="text" class="form-control" name="country" id="country" placeholder="Insert house country"
-               value="{{ old('country') }}">
-         </div>
-         {{-- zip code --}}
-         <div class="form-group">
-            <label for="zip_code">Zip Code</label>
-            <input type="number" class="form-control" name="zip_code" id="zip_code" value="{{ old('zip_code') }}">
-         </div>
-
 
          {{-- create btn --}}
          <button class="btn btn-primary" type="submit">
@@ -182,4 +164,36 @@
 
       </form>
    </div>
+
+
+
+
+   <script>
+
+         const addressInput = document.getElementById('address');
+
+         addressInput.addEventListener('keydown', function (evt) {
+
+            const addressInput = document.getElementById('address').value;
+
+            axios.get(`https://api.tomtom.com/search/2/search/${addressInput}.json`,{
+               params: {
+                  key: 'DINngHSiTz58Z5fDF5pThkg1IrJA87je',
+                  typeahead: true,
+                  limit: 6
+               }
+            })
+            
+            .then( res => {
+               console.log( res.data )
+               this.addressList = res.data
+            })
+            .catch( err => {
+               console.warn( err )
+            })
+
+         });
+
+   </script>
+
 @endsection
