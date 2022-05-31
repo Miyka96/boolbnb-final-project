@@ -7,7 +7,7 @@
         flex-wrap: wrap;
         min-height: 100vh;
         width: 100%;
-        padding: 50px 0;
+        padding: 100px 0;
     
         .card_wrapper{
             width: 100%;
@@ -61,7 +61,8 @@
         .content{
             padding: 20px;
             text-align: center;
-    
+            color: white;
+             
             h2{
                 position: absolute;
                 top: -10px;
@@ -72,7 +73,6 @@
     
             h3{
                 font-size: 1.8rem;
-                color: #fff;
                 z-index: 1;
                 transition: 0.5s;
                 margin-bottom: 15px;
@@ -81,13 +81,13 @@
             p{
                 font-size: 1rem;
                 font-weight: 300;
-                color: rgba(255, 255, 255, 0.9);
                 z-index: 1;
                 transition: 0.5s;
+                color: rgba(white, 0.7);
             }
     
             i{
-                color: white;
+                font-size: 20px;
             }
     
             a{
@@ -118,6 +118,7 @@
         display: flex;
         align-items: center;
         flex-direction: column;
+        padding: 0;
     
         .close{
             width: 100%;

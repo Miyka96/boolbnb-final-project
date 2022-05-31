@@ -11002,7 +11002,7 @@ body::-webkit-scrollbar-thumb:hover {
   flex-wrap: wrap;
   min-height: 100vh;
   width: 100%;
-  padding: 50px 0;
+  padding: 100px 0;
 }
 
 .sponsorship_page .card_wrapper {
@@ -11054,6 +11054,7 @@ body::-webkit-scrollbar-thumb:hover {
 .sponsorship_page .content {
   padding: 20px;
   text-align: center;
+  color: white;
 }
 
 .sponsorship_page .content h2 {
@@ -11066,7 +11067,6 @@ body::-webkit-scrollbar-thumb:hover {
 
 .sponsorship_page .content h3 {
   font-size: 1.8rem;
-  color: #fff;
   z-index: 1;
   transition: 0.5s;
   margin-bottom: 15px;
@@ -11075,23 +11075,23 @@ body::-webkit-scrollbar-thumb:hover {
 .sponsorship_page .content p {
   font-size: 1rem;
   font-weight: 300;
-  color: rgba(255, 255, 255, 0.9);
   z-index: 1;
   transition: 0.5s;
+  color: rgba(255, 255, 255, 0.7);
 }
 
 .sponsorship_page .content i {
-  color: white;
+  font-size: 20px;
 }
 
 .sponsorship_page .content a {
   position: relative;
   display: inline-block;
   padding: 8px 20px;
-  background: #072c4a;
+  background: #ffffff;
   border-radius: 5px;
   text-decoration: none;
-  color: #ffffff;
+  color: #1a266c;
   margin-top: 20px;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
   transition: 0.5s;
@@ -11110,6 +11110,7 @@ body::-webkit-scrollbar-thumb:hover {
   display: flex;
   align-items: center;
   flex-direction: column;
+  padding: 0;
 }
 
 .sponsorship_page .container .close {
