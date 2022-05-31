@@ -14,6 +14,11 @@
          @csrf
          @method('PUT')
 
+         @php
+            dd($house);
+            // $house = request()->house;
+         @endphp
+
          <input type="hidden" name="user_id" id="user_id" value="{{ $id }}">
 
          {{-- title --}}
