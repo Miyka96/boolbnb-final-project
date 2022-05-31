@@ -4,20 +4,17 @@
     $cards = [
       [
         'icon' => 'fa-solid fa-bullhorn',
-        'price' => 'Prezzo1',
-        'time' => 'Durata sponsorizzazione1'
-        ],
+      ],
       [
         'icon' => 'fa-regular fa-comments',
-        'price' => 'Prezzo2',
-        'time' => 'Durata sponsorizzazione2'
-        ],
+      ],
       [
         'icon' => 'fa-solid fa-chart-line',
-        'price' => 'Prezzo3',
-        'time' => 'Durata sponsorizzazione3'
-        ],       
+      ],       
     ];
+
+    $i = 1;
+    $j = 0;
     
 @endphp
 
@@ -61,17 +58,17 @@
 @foreach ($sponsorship as $sponsor)
 
 <form 
-{{-- action="{{ route('') }}"  --}}
-{{-- method="post">
+action="{{ route('') }}" 
+method="post">
 
-  @csrf
+  @csrf 
 
-  <div class="card px-4 mx-4" style="width: 18rem;">  --}}
-    {{-- <img class="card-img-top" src="..." alt="Card image cap"> --}}
-    {{-- <div class="card-body">
-      <h5 class="card-title">{{$sponsor->name}}</h5> --}}
-      {{-- qui bisogna fixare la visualizzazione della durata: passare da visualizzazione ore a giorni. Serve Carbon? --}}
-      {{-- <p class="card-text">Durata: {{$sponsor->duration}}</p>
+  <div class="card px-4 mx-4" style="width: 18rem;"> 
+    <img class="card-img-top" src="..." alt="Card image cap">
+    <div class="card-body">
+      <h5 class="card-title">{{$sponsor->name}}</h5>
+      qui bisogna fixare la visualizzazione della durata: passare da visualizzazione ore a giorni. Serve Carbon?
+      <p class="card-text">Durata: {{$sponsor->duration}}</p>
       <p class="card-text">Prezzo: {{$sponsor->price}}</p>
 
       <button class="btn btn-primary" type="submit">Acquista</button>
@@ -90,16 +87,23 @@
   <h1 class="text-center">Porta più visitatori al tuo appartamento</h1>
   <div class="card_wrapper">
 
-    @foreach ($cards as $i=>$card)
+    @foreach ($sponsorship as $sponsor)
 
       <div class="card">
-          <div class="box @php echo 'sponsor_'.($i+1).'_bg'  @endphp">
+          <div class="box @php echo 'sponsor_'.($i).'_bg'  @endphp">
           <div class="content">
-              <h2>{{$i+1}}</h2>
-              <i class="@php echo $card['icon'] @endphp"></i>
-              <h3>{{ $card['price'] }}</h3>
-              <p>{{ $card['time'] }}</p>
-              <a onclick="paymentDisplay(@php echo ($i+1) @endphp)" href="#">Start Sponsorship</a>
+              {{-- contatore numero in bg --}}
+              <h2>{{$i}}</h2>
+              
+              <i class="@php echo $cards[($j)]['icon']; $j++; @endphp"></i>
+
+              <h1>{{$sponsor->name}}</h1>
+              <h3>{{$sponsor->price}} €</h3>
+
+              {{-- formattazione data --}}
+              <p>@php $ore = explode(':',($sponsor->duration)); echo $giorni = floor($ore[0] / 24); if($giorni == 1) echo ' Giorno'; else echo ' Giorni' @endphp </p>
+
+              <a onclick="paymentDisplay(@php echo ($i); $i++; @endphp)" href="#">Start Sponsorship</a>
           </div>
           </div>
       </div>
@@ -112,15 +116,14 @@
       <div class="close">
           <i onclick="paymentHide()" class="fa-regular fa-circle-xmark"></i>
       </div>
-      <form action="" method="POST">
-      <div class="input_wrapper">
+      <form class="input_wrapper" action="" method="POST">
+        @csrf
           <input type="text" name="card_num" placeholder="inserisci il numero della carta">
           <input type="text" name="card_cvc" placeholder="inserisci il cvc della carta">
           <input type="text" name="card_date" placeholder="inserisci la data di scadenza della carta">
           <div class="button_wrapper d-flex justify-content-center">
               <button type="submit" id="button_carta" class="button">Start Sponsorship</button>
           </div>
-      </div>
       </form>
   </div>
 
