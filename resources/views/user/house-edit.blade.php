@@ -14,112 +14,204 @@
          @csrf
          @method('PUT')
 
-         @php
-            // dd($house);
-            // $house = request()->house;
-         @endphp
-
-         <input type="hidden" name="user_id" id="user_id" value="{{ $id }}">
-
-         {{-- title --}}
+         {{-- User id --}}
          <div class="form-group">
-            <label for="title">House title</label>
-            <input type="text" class="form-control" name="title" id="title" placeholder="Insert House title"
-               value="{{ $house->title }}">
+            <input
+               type="number"
+               class="form-control"
+               name="user_id"
+               id="user_id"
+               hidden
+               required
+               min="1"
+               value="{{ $id ? $id : null }}"
+            >
          </div>
 
-         {{-- rooms --}}
+         {{-- Titolo --}}
          <div class="form-group">
-            <label for="room_num">Rooms Number</label>
-            <input type="number" class="form-control" name="room_num" id="room_num" value="{{ $house->room_num }}">
+            <label for="title">Titolo</label>
+            <input
+               type="text"
+               class="form-control"
+               name="title"
+               id="title"
+               required
+               minlength="5"
+               maxlength="255"
+               placeholder="Inserisci il titolo"
+               value="{{ $house->title }}"
+            >
          </div>
 
-         {{-- beds --}}
+         {{-- Num camere --}}
          <div class="form-group">
-            <label for="beds_num">Beds Number</label>
-            <input type="number" class="form-control" name="beds_num" id="beds_num" value="{{ $house->beds_num }}">
+            <label for="room_num">Camere</label>
+            <input
+               type="number"
+               class="@error('room_num') is-invalid @enderror form-control"
+               name="room_num"
+               id="room_num"
+               required
+               min="1"
+               max="15"
+               placeholder="Inserisci il numero di camere"
+               value="{{ $house->room_num }}"
+            >
+            @error('room_num')
+               <div class="alert alert-danger">{{ $message }}</div>
+            @enderror
          </div>
 
-         {{-- toilets --}}
+         {{-- Num letti --}}
          <div class="form-group">
-            <label for="toilets_num">Toilets Number</label>
-            <input type="number" class="form-control" name="toilets_num" id="toilets_num"
-               value="{{ $house->toilets_num }}">
+            <label for="beds_num">Posti letto</label>
+            <input
+               type="number"
+               class="@error('beds_num') is-invalid @enderror form-control"
+               name="beds_num"
+               id="beds_num"
+               required
+               min="1"
+               max="30"
+               placeholder="Inserisci il numero di posti letto"
+               value="{{ $house->beds_num }}"
+            >
+            @error('beds_num')
+               <div class="alert alert-danger">{{ $message }}</div>
+            @enderror
          </div>
 
-         {{-- square meters --}}
+         {{-- Num bagni --}}
          <div class="form-group">
-            <label for="square_meters">Square Meters</label>
-            <input type="number" class="form-control" name="square_meters" id="square_meters"
-               value="{{ $house->square_meters }}">
+            <label for="toilets_num">Bagni</label>
+            <input
+               type="number"
+               class="@error('toilets_num') is-invalid @enderror form-control"
+               name="toilets_num"
+               id="toilets_num"
+               required
+               min="1"
+               max="15"
+               placeholder="Inserisci il numero di bagni"
+               value="{{ $house->toilets_num }}"
+            >
+            @error('toilets_num')
+               <div class="alert alert-danger">{{ $message }}</div>
+            @enderror
          </div>
 
-         {{-- position id --}}
+         {{-- Metri quadrati --}}
          <div class="form-group">
-            {{-- <label for="position_id">Position id</label> --}}
-            <input hidden type="number" class="form-control" name="position_id" id="position_id"
-               value="{{ $house->position_id }}">
+            <label for="square_meters">Metri quadrati</label>
+            <input
+               type="number"
+               class="@error('square_meters') is-invalid @enderror form-control"
+               name="square_meters"
+               id="square_meters"
+               required
+               min="20"
+               max="300"
+               placeholder="Inserisci il numero di metri quadri"
+               value="{{ $house->square_meters }}"
+            >
+            @error('square_meters')
+               <div class="alert alert-danger">{{ $message }}</div>
+            @enderror
          </div>
 
-         {{-- image --}}
+         {{-- Position id --}}
          <div class="form-group">
-            <label for="image">House image</label>
-            <input type="text" class="form-control" name="image" id="image" placeholder="Insert House image url"
-               value="{{ $house->image }}">
+            <input
+               type="number"
+               class="@error('position_id') is-invalid @enderror form-control"
+               name="position_id"
+               id="position_id"
+               hidden
+               required
+               min="1"
+               value="{{ $house->position_id }}"
+            >
+            @error('position_id')
+               <div class="alert alert-danger">{{ $message }}</div>
+            @enderror
          </div>
 
-         {{-- cost per night --}}
+         {{-- Url immagine --}}
          <div class="form-group">
-            <label for="cost_per_night">Cost per night</label>
-            <input type="number" class="form-control" name="cost_per_night" id="cost_per_night"
-               value="{{ $house->cost_per_night }}">
+            <label for="image">Immagine</label>
+            <input
+               type="url"
+               class="@error('image') is-invalid @enderror form-control"
+               name="image"
+               id="image"
+               required
+               {{-- pattern="[/^(http|https):\/\/]" --}}
+               placeholder="Inserisci l'url dell'immagine"
+               value="{{ $house->image }}"
+            >
+            @error('image')
+               <div class="alert alert-danger">{{ $message }}</div>
+            @enderror
          </div>
 
+         {{-- Costo per notte --}}
+         <div class="form-group">
+            <label for="cost_per_night">Costo per notte (&euro;)</label>
+            <input
+               type="number"
+               class="@error('cost_per_night') is-invalid @enderror form-control"
+               name="cost_per_night"
+               id="cost_per_night"
+               required
+               min="10"
+               max="1000"
+               step="0.01"
+               placeholder="Inserisci il numero di metri quadri"
+               value="{{ $house->cost_per_night }}"
+            >
+            @error('cost_per_night')
+               <div class="alert alert-danger">{{ $message }}</div>
+            @enderror
+         </div>
 
-         {{-- services --}}
-         <label>Services</label>
+         {{-- Servizi --}}
+         <label>Servizi aggiuntivi</label>
          <div class="d-flex" style="gap: 1rem;">
             @foreach ($services as $service)
                <div class="form-group form-check">
-                  <input type="checkbox" {{ $house->services->contains($service) ? 'checked' : '' }}
-                     class="form-check-input" value="{{ $service->id }}" name="services[]"
-                     id="services-{{ $service->id }}">
+                  <input
+                     type="checkbox" {{ $house->services->contains($service) ? 'checked' : '' }}
+                     class="form-check-input"
+                     value="{{ $service->id }}"
+                     name="services[]"
+                     id="services-{{ $service->id }}"
+                  >
                   <label class="form-check-label" for="services-{{ $service->id }}">{{ $service->name }}</label>
                </div>
             @endforeach
          </div>
          @error('services.*')
-            <div class="text-danger">'The selected service is invalid</div>
+            <div class="text-danger">Il servizio selezionato non è corretto.</div>
          @enderror
 
-         {{-- Is visible --}}
+         {{-- Visibilità --}}
          <div class="form-group">
             <label for="is_visible">Visibilità</label>
-            <select class="form-control @error('is_visible') is-invalid @enderror" id="is_visible" name="is_visible">
-               <option {{ old('is_visible') == $house->is_visible ? 'selected' : '' }} value="1">Visibile</option>
-               <option {{ old('is_visible') == $house->is_visible ? 'selected' : '' }} value="0">Non visibile</option>
-            </select>
-
-            @error('is_visible')
-               <div class="alert alert-danger">{{ $message }}</div>
-            @enderror
+            <div class="form-check form-check-inline d-flex">
+               <input class="form-check-input" type="radio" name="is_visible" id="is_visible1" value="1" {{ $house->is_visible == 1 ? 'checked' : '' }}>
+               <label class="form-check-label" for="is_visible1">Visibile</label>
+            </div>
+            <div class="form-check form-check-inline d-flex">
+               <input class="form-check-input" type="radio" name="is_visible" id="is_visible2" value="0" {{ $house->is_visible == 0 ? 'checked' : '' }}>
+               <label class="form-check-label" for="is_visible2">Non visibile</label>
+            </div>
          </div>
 
          {{-- create btn --}}
          <button class="btn btn-primary" type="submit">
-            Aggiorna dati Appartamento
+            Aggiorna informazioni casa
          </button>
-
-         @if ($errors->any())
-            <div class="alert alert-danger">
-               <ul>
-                  @foreach ($errors->all() as $error)
-                     <li>{{ $error }}</li>
-                  @endforeach
-               </ul>
-            </div>
-         @endif
-
       </form>
    </div>
 @endsection
