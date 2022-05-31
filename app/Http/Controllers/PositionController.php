@@ -57,9 +57,10 @@ class PositionController extends Controller
 
 
         // request http
-        $response = Http::get("https://api.tomtom.com/search/2/geocode/$address.' '.$city.' '.$country.json?key=DINngHSiTz58Z5fDF5pThkg1IrJA87je&limit=1")->json();
-        $arrayRes= Arr::dot($response);
-
+        $response = Http::get("https://api.tomtom.com/search/2/geocode/$address.' '.$city.' '.$country.json?key=DINngHSiTz58Z5fDF5pThkg1IrJA87je&limit=5")->json();
+        $arrayRes= $response;
+        
+        dd($arrayRes);
         if( $arrayRes['summary.totalResults']> 0 && ['results.0.matchConfidence.score'] >= 0.88) { 
             $position->latitude = $arrayRes['results.0.position.lat'];
             $position->longitude = $arrayRes['results.0.position.lon'];
@@ -71,6 +72,7 @@ class PositionController extends Controller
         else{
             return redirect()->route('user.houses.create')->with('error','Indirizzo inserito non valido, controlla i dati inseriti');
         }
+
     }
 
     /**
