@@ -4,7 +4,7 @@
     Pagina create house:
 
    @php
-   $id = Auth::id();
+      $id = Auth::id();
    @endphp
 
    {{-- RISOLVERE PROBLEMA POSITION ID --}}
@@ -76,8 +76,8 @@
       <form action="{{ route('user.houses.store') }}" method="post">
          @csrf
          <input type="hidden" name="user_id" id="user_id" value="{{ $id }}">
+         
          {{-- title --}}
-
          <div class="form-group">
             <label for="title">House title</label>
             <input type="text" class="form-control" name="title" id="title" placeholder="Insert House title"

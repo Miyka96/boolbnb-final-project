@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Message;
 use Illuminate\Http\Request;
+use App\House;
 
 class MessageController extends Controller
 {
@@ -54,7 +55,7 @@ class MessageController extends Controller
 
          $message->fill( $data );
          $message->save();
-         return redirect()->route('home');
+         return redirect()->route('user.houses.index'); //indirizzare verso la show
     }
 
     /**

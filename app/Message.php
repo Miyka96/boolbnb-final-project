@@ -16,5 +16,6 @@ class Message extends Model
       'telephone',
       'content',
       'sent_at',
+      'house_id'
    ];
 }
