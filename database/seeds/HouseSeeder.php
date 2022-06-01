@@ -37,10 +37,12 @@ class HouseSeeder extends Seeder
          $house = new House();
 
          $house->title = $faker->city(); 
-         $house->room_num = $faker->numberBetween(1,10);
-         $house->beds_num = $faker->numberBetween(1,10);
-         $house->toilets_num = $faker->numberBetween(1,10);
-         $house->square_meters = $faker->numberBetween(20,1000);
+         $house->square_meters = $faker->numberBetween(20,300);
+         
+         $house->room_num = max(1, round( $house->square_meters / 20 * $faker->randomFloat(2, 0.75, 1.25) ) );
+         $house->toilets_num = max(1, round( $house->room_num / 3 ) );
+         $house->beds_num = max(1, round( $house->room_num * $faker->randomFloat(2, 1, 2) ) );
+
          $house->image = $faker->url();
          $house->is_visible = $faker->boolean();
          $house->cost_per_night = $faker->randomFloat(2, 10, 1000);   
