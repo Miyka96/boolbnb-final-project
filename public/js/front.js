@@ -2089,10 +2089,20 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
-      house: null
+      houses: []
     };
   },
   methods: {
@@ -2100,8 +2110,7 @@ __webpack_require__.r(__webpack_exports__);
       var _this = this;
 
       axios.get("/api/houses/".concat(this.$route.params.id)).then(function (res) {
-        console.log(res.data);
-        _this.house = res.data.house;
+        _this.houses = res.data;
       })["catch"](function (err) {
         console.warn(err);
       });
@@ -3600,11 +3609,38 @@ var render = function () {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "p-5" }, [
-    _c("h1", [_vm._v("Casa")]),
-    _vm._v(" "),
-    _c("h2", [_vm._v(_vm._s(_vm.$route.params.id))]),
-  ])
+  return _c(
+    "div",
+    { staticClass: "p-5" },
+    [
+      _c("h1", [_vm._v("Casa")]),
+      _vm._v(" "),
+      _c("h2", [_vm._v(_vm._s(_vm.$route.params.id))]),
+      _vm._v(" "),
+      _vm._l(_vm.houses, function (el) {
+        return _c(
+          "div",
+          { key: el.id },
+          [
+            _vm._v(
+              "\n      " +
+                _vm._s(el.title) +
+                "\n      " +
+                _vm._s(el.beds_num) +
+                "\n      "
+            ),
+            _vm._l(el.messages, function (mess) {
+              return _c("div", { key: mess.id }, [
+                _vm._v("\n         " + _vm._s(mess.name) + "\n      "),
+              ])
+            }),
+          ],
+          2
+        )
+      }),
+    ],
+    2
+  )
 }
 var staticRenderFns = []
 render._withStripped = true
