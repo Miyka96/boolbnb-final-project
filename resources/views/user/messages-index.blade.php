@@ -20,12 +20,6 @@
             </span>
             <p>
                 {{ $message->content }}
-
-                @if ()
-                    <span id="ms-read">
-
-                    </span>
-                @endif
                 
             </p>
         

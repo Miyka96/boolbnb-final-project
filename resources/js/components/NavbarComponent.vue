@@ -14,7 +14,8 @@ import PillComponent from './PillComponent.vue';
 import SearchbarComponent from './SearchbarComponent.vue';
 
     export default {
-  components: { PillComponent, LogoComponent, SearchbarComponent },
+        name: "Navbar",
+        components: { PillComponent, LogoComponent, SearchbarComponent },
         
     }
 </script>
