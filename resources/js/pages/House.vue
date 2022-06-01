@@ -3,6 +3,16 @@
       <h1>Casa</h1>
       <h2>{{ $route.params.id }}</h2>
 
+      <div v-for="el in houses" :key="el.id">
+         {{el.title}}
+         {{el.beds_num}}
+         <div v-for="mess in el.messages" :key="mess.id">
+            {{mess.name}}
+         </div>
+
+         
+      </div>
+
       <!-- <form action="{{ route('user.houses.store') }}" method="post">
          @csrf
          <div class="form-group">
@@ -18,15 +28,14 @@
 export default {
    data() {
       return {
-         house: null,
+         houses: [],
       }
    },
    methods: {
       fetchHouse() {
          axios.get(`/api/houses/${ this.$route.params.id }`)
          .then( res => {
-            console.log( res.data )
-            this.house = res.data.house
+            this.houses = res.data
          })
          .catch( err => {
             console.warn( err )
