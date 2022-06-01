@@ -28,7 +28,8 @@ Route::middleware('auth')
 
    Route::resource('houses', 'HouseController');
 
-   Route::resource('messages', 'MessageController')->only(['index', 'create', 'store']);
+   Route::resource('messages', 'MessageController')->only(['create', 'store']);
+   Route::get('/messages/{house_id}', 'MessageController@index')->name('messages.index');
 
    Route::resource('sponporships', 'SponsorshipController'); //metodo custom per attivazione sponsorship
 

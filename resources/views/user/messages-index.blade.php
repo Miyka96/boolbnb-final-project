@@ -1,48 +1,50 @@
 @extends('layouts.app')
 
 @section('content')
-
     <div class="ms-messages p-4 m-4">
 
-        <h3>
-            Messages
-        </h3>
 
+        <h3 class="mb-3 d-block">
+            Messaggi
+        </h3>
         @foreach ($messages as $message)
+        @if($message->house_id == Route::current()->parameter('house_id'))
             <h5>
                 {{ $message->name }}
             </h5>
             <span class="d-none d-sm-inline ml-1">
-                sent at 
+                sent at
             </span>
             <span>
                 {{ $message->sent_at }}
             </span>
             <p>
                 {{ $message->content }}
-                
+
             </p>
-        
+            @endif
+        @endforeach
+        <div class=" container-fluid d-block">
+            <p >Al momento non ci sono messaggi</p>
+        </div>
+
     </div>
-        
-    @endforeach
 
     <script>
-            let paragraphs = document.querySelectorAll("p");
+        let paragraphs = document.querySelectorAll("p");
 
-            for (let i = 0; i < paragraphs.length; i++) {
-                paragraphs[i].onclick = function() {
-                    this.classList.toggle('ms-active-height');
+        for (let i = 0; i < paragraphs.length; i++) {
+            paragraphs[i].onclick = function() {
+                this.classList.toggle('ms-active-height');
 
-                    setTimeout(messageRead => {
-                        this.classList.remove('ms-read');
-                    }, 500);
-                }
+                setTimeout(messageRead => {
+                    this.classList.remove('ms-read');
+                }, 500);
             }
+        }
     </script>
 
     <style lang="scss" scoped>
-
         .ms-active-height {
             height: auto !important;
         }
@@ -52,11 +54,11 @@
         }
 
         ::-webkit-scrollbar-track {
-            background: #f1f1f1; 
+            background: #f1f1f1;
         }
-        
+
         ::-webkit-scrollbar-thumb {
-            background: #C9C4BE; 
+            background: #C9C4BE;
         }
 
         .ms-messages {
@@ -70,7 +72,8 @@
             margin: 0 auto;
         }
 
-        h3, p {
+        h3,
+        p {
             border-bottom: 1px solid #C9C4BE;
             padding-bottom: 5px;
             margin: 6px 0px;
@@ -112,6 +115,5 @@
             border-right: 5px solid #FF385C;
         }
 
-</style>
-
+    </style>
 @endsection
