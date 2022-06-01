@@ -181,7 +181,8 @@
             @foreach ($services as $service)
                <div class="form-group form-check">
                   <input
-                     type="checkbox" {{ $house->services->contains($service) ? 'checked' : '' }}
+                     type="checkbox"
+                     {{ $house->services->contains($service) ? 'checked' : '' }}
                      class="form-check-input"
                      value="{{ $service->id }}"
                      name="services[]"
