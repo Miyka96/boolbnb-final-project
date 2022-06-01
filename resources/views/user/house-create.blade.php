@@ -17,13 +17,13 @@
          @csrf
          {{-- Indirizzo --}}
          <div class="form-group">
-            <label for="address">House address</label>
+            <label for="address">Indirizzo e numero civico</label>
             <input type="text" class="form-control" name="address" id="address" placeholder="Insert house address"
                value="{{ old('address') }}">
          </div>
          {{-- Città --}}
          <div class="form-group">
-            <label for="city">House city</label>
+            <label for="city">Città</label>
             <input type="text" class="form-control" name="city" id="city" placeholder="Insert house city"
                value="{{ old('city') }}">
          </div>

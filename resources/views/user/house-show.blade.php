@@ -2,7 +2,6 @@
 
 @section('content')
 
-    Show/ edit appartamento {{$house->title}}
 
    <div class="container py-5 my-5">
       <form action="{{ route('user.messages.store') }}" method="post">
@@ -16,7 +15,7 @@
          <div class="form-group">
             <label for="name">Nome*</label>
             <input type="text" class="form-control" name="name" id="name" placeholder="Inserisci il tuo nome"
-               value="{{ old('name') }}">
+               value="{{ Auth::user()->name ? Auth::user()->name : old('name')}} ">
             @error('name')
                <div class="alert alert-danger">{{ $message }}</div>
             @enderror
@@ -25,7 +24,7 @@
          <div class="form-group">
             <label for="email">Email*</label>
             <input type="text" class="form-control" name="email" id="email" placeholder="Inserisci la tua email"
-               value="{{ old('email') }}">
+            value="{{ Auth::user()->email ? Auth::user()->email : old('email')}} ">
             @error('email')
                <div class="alert alert-danger">{{ $message }}</div>
             @enderror
@@ -34,7 +33,7 @@
          <div class="form-group">
             <label for="telephone">Telefono</label>
             <input type="text" class="form-control" name="telephone" id="telephone" placeholder="Inserisci il tuo n. di telefono"
-               value="{{ old('telephone') }}">
+            value="{{ Auth::user()->telephone ? Auth::user()->telephone : old('telephone')}} ">
             @error('telephone')
                <div class="alert alert-danger">{{ $message }}</div>
             @enderror
