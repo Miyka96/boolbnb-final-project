@@ -3,26 +3,78 @@ import Vue from 'vue';
 // Inserire qui variabili da passare ai componenti
 const state = Vue.observable(
    {
-      bannerText: ['Enjoy', 'your', 'trip'], // solo stringhe
-      // validations: [
-      //    house = {
-      //       title: {
-      //          required: true,
-      //          minlength: 5,
-      //          maxlength: 255
-      //       }
-      //    },
-      // ]
+      bannerText: ['Enjoy', 'your', 'trip']
    }
 );
 
 export default state;
 
-// Controlli client side
-export function houseValidation() {
-   console.log('ciao')
+// Submit function
+const createSubmit = document.getElementById('create-submit')
+
+if( createSubmit ) {
+   createSubmit.addEventListener("click", function(e) {
+
+      if( !titleValidation() ) { // validazioni NON a buon fine
+         console.log('prevent')
+         e.preventDefault()
+      } else { // validazioni a buon fine
+         console.log(' notprevent')
+      }
+      // createSubmit.unbind().submit()
+   })
 }
 
+// TITOLO
+const title = document.getElementById('title')
+if( title ) {
+   title.addEventListener("change", titleValidation);
+}
+
+function titleValidation() {
+   const titleValue = title.value.trim()
+
+   const error = document.getElementById('title-error')
+   let errorMessage = ''
+   error.className = 'alert alert-danger'
+   title.parentElement.append(error)
+
+   if( !titleValue instanceof String ) {
+      errorMessage = 'Il titolo deve essere una stringa'
+      setErrorFor(title)
+      error.innerHTML = errorMessage
+      // console.log(errorMessage)
+   } else if(titleValue.length < 5) {
+      errorMessage = 'Il titolo deve essere di almeno 5 caratteri'
+      setErrorFor(title)
+      error.innerHTML = errorMessage
+      // console.log(errorMessage)
+   } else if(titleValue.length > 255) {
+      errorMessage = 'Il titolo deve essere al massimo di 255 caratteri'
+      setErrorFor(title)
+      error.innerHTML = errorMessage
+      // console.log(errorMessage)
+   } else {
+      error.className = ''
+      error.innerHTML = ''
+      setSuccessFor(title)
+      // console.log("success")
+      return true
+   }
+
+   return false
+}
+
+function setErrorFor(input) {
+   input.className = 'form-control is-invalid'
+}
+
+function setSuccessFor(input) {
+   input.className = 'form-control is-valid'
+}
+
+
+// APPUNTI MICA ----
 
 // animazione componente SectionVue, che ovviamente qui da errori quindi ggwp 
 

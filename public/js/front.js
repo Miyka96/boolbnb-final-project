@@ -19598,34 +19598,81 @@ router.beforeEach(function (toRoute, fromRoute, next) {
 /*!*******************************!*\
   !*** ./resources/js/store.js ***!
   \*******************************/
-/*! exports provided: default, houseValidation */
+/*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "houseValidation", function() { return houseValidation; });
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.common.js");
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(vue__WEBPACK_IMPORTED_MODULE_0__);
  // Inserire qui variabili da passare ai componenti
 
 var state = vue__WEBPACK_IMPORTED_MODULE_0___default.a.observable({
-  bannerText: ['Enjoy', 'your', 'trip'] // solo stringhe
-  // validations: [
-  //    house = {
-  //       title: {
-  //          required: true,
-  //          minlength: 5,
-  //          maxlength: 255
-  //       }
-  //    },
-  // ]
-
+  bannerText: ['Enjoy', 'your', 'trip']
 });
-/* harmony default export */ __webpack_exports__["default"] = (state); // Controlli client side
+/* harmony default export */ __webpack_exports__["default"] = (state); // Submit function
 
-function houseValidation() {
-  console.log('ciao');
-} // animazione componente SectionVue, che ovviamente qui da errori quindi ggwp 
+var createSubmit = document.getElementById('create-submit');
+
+if (createSubmit) {
+  createSubmit.addEventListener("click", function (e) {
+    if (!titleValidation()) {
+      // validazioni NON a buon fine
+      console.log('prevent');
+      e.preventDefault();
+    } else {
+      // validazioni a buon fine
+      console.log(' notprevent');
+    } // createSubmit.unbind().submit()
+
+  });
+} // TITOLO
+
+
+var title = document.getElementById('title');
+
+if (title) {
+  title.addEventListener("change", titleValidation);
+}
+
+function titleValidation() {
+  var titleValue = title.value.trim();
+  var error = document.getElementById('title-error');
+  var errorMessage = '';
+  error.className = 'alert alert-danger';
+  title.parentElement.append(error);
+
+  if (!titleValue instanceof String) {
+    errorMessage = 'Il titolo deve essere una stringa';
+    setErrorFor(title);
+    error.innerHTML = errorMessage; // console.log(errorMessage)
+  } else if (titleValue.length < 5) {
+    errorMessage = 'Il titolo deve essere di almeno 5 caratteri';
+    setErrorFor(title);
+    error.innerHTML = errorMessage; // console.log(errorMessage)
+  } else if (titleValue.length > 255) {
+    errorMessage = 'Il titolo deve essere al massimo di 255 caratteri';
+    setErrorFor(title);
+    error.innerHTML = errorMessage; // console.log(errorMessage)
+  } else {
+    error.className = '';
+    error.innerHTML = '';
+    setSuccessFor(title); // console.log("success")
+
+    return true;
+  }
+
+  return false;
+}
+
+function setErrorFor(input) {
+  input.className = 'form-control is-invalid';
+}
+
+function setSuccessFor(input) {
+  input.className = 'form-control is-valid';
+} // APPUNTI MICA ----
+// animazione componente SectionVue, che ovviamente qui da errori quindi ggwp 
 // export function thumbAnimation(){
 //    let tl = gsap.timeline({default: {duration: 3}});
 //    tl.to('.card', {borderTopColor: '#bad', delay: 0.3})
@@ -19716,7 +19763,7 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\Users\eduar\OneDrive\Desktop\Boolean\Progetto Finale\Repo Ufficiale\boolbnb-final-project\resources\js\front.js */"./resources/js/front.js");
+module.exports = __webpack_require__(/*! D:\Users\Simone\Documents\Progetti\boolbnb-final-project\resources\js\front.js */"./resources/js/front.js");
 
 
 /***/ })

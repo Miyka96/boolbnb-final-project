@@ -58,7 +58,7 @@
 
 
       {{-- HOUSE FORM --}}
-      <form action="{{ route('user.houses.store') }}" method="post">
+      <form action="{{ route('user.houses.store') }}" method="post" id="create-house-form">
          @csrf
 
          {{-- User id --}}
@@ -80,7 +80,7 @@
             <label for="title">Titolo</label>
             <input
                type="text"
-               class="@error('title') is-invalid @enderror form-control"
+               class="form-control"
                name="title"
                id="title"
                required
@@ -89,9 +89,8 @@
                placeholder="Inserisci il titolo"
                value="{{ old('title') }}"
             >
-            @error('title')
-               <div class="alert alert-danger">{{ $message }}</div>
-            @enderror
+
+            <div id="title-error"></div>
          </div>
 
          {{-- Num camere --}}
@@ -260,7 +259,7 @@
          </div>
 
          {{-- Submit btn --}}
-         <button class="btn btn-primary" type="submit">
+         <button id="create-submit" class="btn btn-primary" type="submit">
             Create
          </button>
       </form>
