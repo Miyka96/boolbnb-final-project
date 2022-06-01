@@ -1,5 +1,5 @@
 <template>
-  <div class="container-fluid">
+  <div class="container-fluid mt-5">
     <div class="container">
       <div class="row align-items-center d-flex flex-wrap">
         <!-- first col -->
@@ -14,7 +14,7 @@
         <!-- second col -->
         <div class="col-12 col-sm-12 col-md-5 col-lg-5 col-xl-5 py-5 d-flex justify-content-center">
           <div class="card">
-            <div class="img-wrapper">
+            <div class="img-wrapper mt-4">
               <img
                 class="img"
                 src="https://images.unsplash.com/photo-1559823321-87e3d7979527?crop=entropy&cs=tinysrgb&fm=jpg&ixlib=rb-1.2.1&q=80&raw_url=true&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=465"
@@ -29,7 +29,7 @@
 </template>
 
 <script>
-import { thumbAnimation } from '../store'
+import { thumbAnimation } from '../store.js'
 export default {
   name: "SectionVue",
   mounted(){

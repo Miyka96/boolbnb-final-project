@@ -15,8 +15,8 @@ class MessageController extends Controller
      */
     public function index()
     {
-
-        $messages = Message::all();
+        
+        $messages= Message::with(['house'])->get();
 
         return view('user.messages-index', compact('messages'));
     }

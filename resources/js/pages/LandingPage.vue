@@ -1,21 +1,21 @@
 <template>
    <div id="home">
       <Banner/>
+      <SectionVue/>
       <CardsShowcase/>
-      <!-- <PolaroidVue/> -->
    </div>
 </template>
 
 <script>
 import Banner from '../components/MainBanner.vue';
 import CardsShowcase from '../components/CardShowcase.vue';
-// import PolaroidVue from '../components/PolaroidVue.vue'
+import SectionVue from '../components/SectionVue.vue';
 
 export default {
    components: {
       Banner,
       CardsShowcase,
-      // PolaroidVue
+      SectionVue,
    },
    
 }

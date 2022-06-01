@@ -12624,11 +12624,12 @@ module.exports = g;
 /*!*******************************!*\
   !*** ./resources/js/store.js ***!
   \*******************************/
-/*! exports provided: default */
+/*! exports provided: default, thumbAnimation */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "thumbAnimation", function() { return thumbAnimation; });
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.common.js");
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(vue__WEBPACK_IMPORTED_MODULE_0__);
  // Inserire qui variabili da passare ai componenti
@@ -12637,18 +12638,40 @@ var state = vue__WEBPACK_IMPORTED_MODULE_0___default.a.observable({
   bannerText: ['Enjoy', 'your', 'trip']
 });
 /* harmony default export */ __webpack_exports__["default"] = (state); // APPUNTI MICA ----
-// animazione componente SectionVue, che ovviamente qui da errori quindi ggwp 
-// export function thumbAnimation(){
-//    let tl = gsap.timeline({default: {duration: 3}});
-//    tl.to('.card', {borderTopColor: '#bad', delay: 0.3})
-//    .to('.card', {borderRightColor: '#bad'}, '-=0.2')
-//    .to('.card', {borderBottomColor: '#bad'}, '-=0.2')
-//    .to('.card', {borderLeftColor: '#bad'}, '-=0.2')
-//    // animation for img-wrapper 
-//    gsap.fromTo('.img-wrapper', {height: 0, backgroundColor: 'transparent'}, {delay: 1, duration: 1, height: '500px', backgroundColor: '#bad'})
-//    // animation
-//    gsap.to('.img', {delay: 2, duration: 0.5, opacity: 1})
-// }
+
+function thumbAnimation() {
+  var tl = gsap.timeline({
+    "default": {
+      duration: 3
+    }
+  });
+  tl.to('.card', {
+    borderTopColor: '#bad',
+    delay: 0.3
+  }).to('.card', {
+    borderRightColor: '#bad'
+  }, '-=0.2').to('.card', {
+    borderBottomColor: '#bad'
+  }, '-=0.2').to('.card', {
+    borderLeftColor: '#bad'
+  }, '-=0.2'); // animation for img-wrapper 
+
+  gsap.fromTo('.img-wrapper', {
+    height: 0,
+    backgroundColor: 'transparent'
+  }, {
+    delay: 1,
+    duration: 1,
+    height: '500px',
+    backgroundColor: '#bad'
+  }); // animation
+
+  gsap.to('.img', {
+    delay: 2,
+    duration: 0.5,
+    opacity: 1
+  });
+}
 
 /***/ }),
 
@@ -12659,7 +12682,7 @@ var state = vue__WEBPACK_IMPORTED_MODULE_0___default.a.observable({
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! D:\Users\Simone\Documents\Progetti\boolbnb-final-project\resources\js\store.js */"./resources/js/store.js");
+module.exports = __webpack_require__(/*! C:\Users\Micae\dev\boolbnb-final-project\resources\js\store.js */"./resources/js/store.js");
 
 
 /***/ })
