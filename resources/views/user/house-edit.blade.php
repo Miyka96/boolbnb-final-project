@@ -42,6 +42,7 @@
                placeholder="Inserisci il titolo"
                value="{{ $house->title }}"
             >
+            <div id="title-error"></div>
          </div>
 
          {{-- Num camere --}}
@@ -49,7 +50,7 @@
             <label for="room_num">Camere</label>
             <input
                type="number"
-               class="@error('room_num') is-invalid @enderror form-control"
+               class="form-control"
                name="room_num"
                id="room_num"
                required
@@ -58,9 +59,7 @@
                placeholder="Inserisci il numero di camere"
                value="{{ $house->room_num }}"
             >
-            @error('room_num')
-               <div class="alert alert-danger">{{ $message }}</div>
-            @enderror
+            <div id="room_num-error"></div>
          </div>
 
          {{-- Num letti --}}
@@ -68,7 +67,7 @@
             <label for="beds_num">Posti letto</label>
             <input
                type="number"
-               class="@error('beds_num') is-invalid @enderror form-control"
+               class="form-control"
                name="beds_num"
                id="beds_num"
                required
@@ -77,9 +76,7 @@
                placeholder="Inserisci il numero di posti letto"
                value="{{ $house->beds_num }}"
             >
-            @error('beds_num')
-               <div class="alert alert-danger">{{ $message }}</div>
-            @enderror
+            <div id="beds_num-error"></div>
          </div>
 
          {{-- Num bagni --}}
@@ -87,7 +84,7 @@
             <label for="toilets_num">Bagni</label>
             <input
                type="number"
-               class="@error('toilets_num') is-invalid @enderror form-control"
+               class="form-control"
                name="toilets_num"
                id="toilets_num"
                required
@@ -96,9 +93,7 @@
                placeholder="Inserisci il numero di bagni"
                value="{{ $house->toilets_num }}"
             >
-            @error('toilets_num')
-               <div class="alert alert-danger">{{ $message }}</div>
-            @enderror
+            <div id="toilets_num-error"></div>
          </div>
 
          {{-- Metri quadrati --}}
@@ -106,7 +101,7 @@
             <label for="square_meters">Metri quadrati</label>
             <input
                type="number"
-               class="@error('square_meters') is-invalid @enderror form-control"
+               class="form-control"
                name="square_meters"
                id="square_meters"
                required
@@ -115,9 +110,7 @@
                placeholder="Inserisci il numero di metri quadri"
                value="{{ $house->square_meters }}"
             >
-            @error('square_meters')
-               <div class="alert alert-danger">{{ $message }}</div>
-            @enderror
+            <div id="square_meters-error"></div>
          </div>
 
          {{-- Position id --}}
@@ -142,7 +135,7 @@
             <label for="image">Immagine</label>
             <input
                type="url"
-               class="@error('image') is-invalid @enderror form-control"
+               class="form-control"
                name="image"
                id="image"
                required
@@ -150,9 +143,7 @@
                placeholder="Inserisci l'url dell'immagine"
                value="{{ $house->image }}"
             >
-            @error('image')
-               <div class="alert alert-danger">{{ $message }}</div>
-            @enderror
+            <div id="image-error"></div>
          </div>
 
          {{-- Costo per notte --}}
@@ -160,7 +151,7 @@
             <label for="cost_per_night">Costo per notte (&euro;)</label>
             <input
                type="number"
-               class="@error('cost_per_night') is-invalid @enderror form-control"
+               class="form-control"
                name="cost_per_night"
                id="cost_per_night"
                required
@@ -170,9 +161,7 @@
                placeholder="Inserisci il numero di metri quadri"
                value="{{ $house->cost_per_night }}"
             >
-            @error('cost_per_night')
-               <div class="alert alert-danger">{{ $message }}</div>
-            @enderror
+            <div id="cost_per_night-error"></div>
          </div>
 
          {{-- Servizi --}}
@@ -192,9 +181,7 @@
                </div>
             @endforeach
          </div>
-         @error('services.*')
-            <div class="text-danger">Il servizio selezionato non è corretto.</div>
-         @enderror
+
 
          {{-- Visibilità --}}
          <div class="form-group">
@@ -210,8 +197,8 @@
          </div>
 
          {{-- create btn --}}
-         <button class="btn btn-primary" type="submit">
-            Aggiorna informazioni casa
+         <button id="house-submit" class="btn btn-primary" type="submit">
+            Aggiorna informazioni
          </button>
       </form>
    </div>
