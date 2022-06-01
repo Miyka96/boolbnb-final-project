@@ -54,26 +54,12 @@
          @if (Session::has('error'))
             <div class="alert alert-danger">{{ Session::get('error') }}</div>
          @endif
-
-         {{-- Che fa? --}}
-         @if ($errors->any())
-            <div class="alert alert-danger">
-               <ul>
-                     @foreach ($errors->all() as $error)
-                        <li>
-                           {{ $error }}
-                        </li>
-                     @endforeach
-               </ul>
-            </div>
-         @endif
       </form>
 
 
       {{-- HOUSE FORM --}}
       <form action="{{ route('user.houses.store') }}" method="post">
          @csrf
-         {{-- <input type="hidden" name="user_id" id="user_id" value="{{ $id }}"> --}}
 
          {{-- User id --}}
          <div class="form-group">
@@ -94,7 +80,7 @@
             <label for="title">Titolo</label>
             <input
                type="text"
-               class="form-control"
+               class="@error('title') is-invalid @enderror form-control"
                name="title"
                id="title"
                required
@@ -103,6 +89,9 @@
                placeholder="Inserisci il titolo"
                value="{{ old('title') }}"
             >
+            @error('title')
+               <div class="alert alert-danger">{{ $message }}</div>
+            @enderror
          </div>
 
          {{-- Num camere --}}
@@ -110,7 +99,7 @@
             <label for="room_num">Camere</label>
             <input
                type="number"
-               class="form-control"
+               class="@error('room_num') is-invalid @enderror form-control"
                name="room_num"
                id="room_num"
                required
@@ -119,6 +108,9 @@
                placeholder="Inserisci il numero di camere"
                value="{{ old('room_num') }}"
             >
+            @error('room_num')
+               <div class="alert alert-danger">{{ $message }}</div>
+            @enderror
          </div>
 
          {{-- Num letti --}}
@@ -126,7 +118,7 @@
             <label for="beds_num">Posti letto</label>
             <input
                type="number"
-               class="form-control"
+               class="@error('beds_num') is-invalid @enderror form-control"
                name="beds_num"
                id="beds_num"
                required
@@ -135,6 +127,9 @@
                placeholder="Inserisci il numero di posti letto"
                value="{{ old('beds_num') }}"
             >
+            @error('beds_num')
+               <div class="alert alert-danger">{{ $message }}</div>
+            @enderror
          </div>
 
          {{-- Num bagni --}}
@@ -142,7 +137,7 @@
             <label for="toilets_num">Bagni</label>
             <input
                type="number"
-               class="form-control"
+               class="@error('toilets_num') is-invalid @enderror form-control"
                name="toilets_num"
                id="toilets_num"
                required
@@ -151,6 +146,9 @@
                placeholder="Inserisci il numero di bagni"
                value="{{ old('toilets_num') }}"
             >
+            @error('toilets_num')
+               <div class="alert alert-danger">{{ $message }}</div>
+            @enderror
          </div>
 
          {{-- Metri quadrati --}}
@@ -158,7 +156,7 @@
             <label for="square_meters">Metri quadrati</label>
             <input
                type="number"
-               class="form-control"
+               class="@error('square_meters') is-invalid @enderror form-control"
                name="square_meters"
                id="square_meters"
                required
@@ -167,13 +165,16 @@
                placeholder="Inserisci il numero di metri quadri"
                value="{{ old('square_meters') }}"
             >
+            @error('square_meters')
+               <div class="alert alert-danger">{{ $message }}</div>
+            @enderror
          </div>
 
          {{-- Position id --}}
          <div class="form-group">
             <input
                type="number"
-               class="form-control"
+               class="@error('position_id') is-invalid @enderror form-control"
                name="position_id"
                id="position_id"
                hidden
@@ -181,6 +182,9 @@
                min="1"
                value="{{ Session::has('positionId') ? Session::get('positionId') : null }}"
             >
+            @error('position_id')
+               <div class="alert alert-danger">{{ $message }}</div>
+            @enderror
          </div>
 
          {{-- Url immagine --}}
@@ -188,14 +192,17 @@
             <label for="image">Immagine</label>
             <input
                type="url"
-               class="form-control"
+               class="@error('image') is-invalid @enderror form-control"
                name="image"
                id="image"
                required
-               pattern="\https://.*|\http://.*"
+               {{-- pattern="[/^(http|https):\/\/]" --}}
                placeholder="Inserisci l'url dell'immagine"
                value="{{ old('image') }}"
             >
+            @error('image')
+               <div class="alert alert-danger">{{ $message }}</div>
+            @enderror
          </div>
 
          {{-- Costo per notte --}}
@@ -203,16 +210,19 @@
             <label for="cost_per_night">Costo per notte (&euro;)</label>
             <input
                type="number"
-               class="form-control"
+               class="@error('cost_per_night') is-invalid @enderror form-control"
                name="cost_per_night"
                id="cost_per_night"
                required
                min="10"
                max="1000"
-               step="0,01"
+               step="0.01"
                placeholder="Inserisci il numero di metri quadri"
                value="{{ old('cost_per_night') }}"
             >
+            @error('cost_per_night')
+               <div class="alert alert-danger">{{ $message }}</div>
+            @enderror
          </div>
 
          {{-- Servizi --}}
@@ -238,12 +248,6 @@
 
          {{-- Visibilità --}}
          <div class="form-group">
-            {{-- <label for="is_visible">Visibilità</label>
-            <select class="form-control @error('is_visible') is-invalid @enderror" id="is_visible" name="is_visible">
-               <option selected value="1">Visibile</option>
-               <option value="0">Non visibile</option>
-            </select> --}}
-
             <label for="is_visible">Visibilità</label>
             <div class="form-check form-check-inline d-flex">
                <input class="form-check-input" type="radio" name="is_visible" id="is_visible1" value="1" checked>
@@ -253,28 +257,12 @@
                <input class="form-check-input" type="radio" name="is_visible" id="is_visible2" value="0">
                <label class="form-check-label" for="is_visible2">Non visibile</label>
             </div>
- 
-            {{-- @error('is_visible')
-               <div class="alert alert-danger">{{ $message }}</div>
-            @enderror --}}
          </div>
 
          {{-- Submit btn --}}
          <button class="btn btn-primary" type="submit">
             Create
          </button>
-
-         @if ($errors->any())
-            <div class="alert alert-danger">
-                  <ul>
-                     @foreach ($errors->all() as $error)
-                        <li>
-                              {{ $error }}
-                        </li>
-                     @endforeach
-                  </ul>
-            </div>
-         @endif
       </form>
    </div>
 @endsection

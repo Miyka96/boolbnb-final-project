@@ -60,8 +60,16 @@ class HouseController extends Controller
 
       // metodo per cattura utente
       $house = new House();
+
       $house->fill( $data );
       $house->save();
+
+      if( array_key_exists('services', $data) ) {
+         $house->services()->sync( $data['services'] );
+      } else {
+         $house->services()->sync([]);
+      }
+
       return redirect()->route('user.houses.index');
    }
 
@@ -115,6 +123,12 @@ class HouseController extends Controller
       $data = $request->all();
 
       $house->update( $data );
+
+      if( array_key_exists('services', $data) ) {
+         $house->services()->sync( $data['services'] );
+      } else {
+         $house->services()->sync([]);
+      }
 
       return redirect()->route('user.houses.index'); // aggiungere rotta dell'utente
    }

@@ -19598,20 +19598,34 @@ router.beforeEach(function (toRoute, fromRoute, next) {
 /*!*******************************!*\
   !*** ./resources/js/store.js ***!
   \*******************************/
-/*! exports provided: default */
+/*! exports provided: default, houseValidation */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "houseValidation", function() { return houseValidation; });
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.common.js");
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(vue__WEBPACK_IMPORTED_MODULE_0__);
  // Inserire qui variabili da passare ai componenti
 
 var state = vue__WEBPACK_IMPORTED_MODULE_0___default.a.observable({
   bannerText: ['Enjoy', 'your', 'trip'] // solo stringhe
+  // validations: [
+  //    house = {
+  //       title: {
+  //          required: true,
+  //          minlength: 5,
+  //          maxlength: 255
+  //       }
+  //    },
+  // ]
 
 });
-/* harmony default export */ __webpack_exports__["default"] = (state); // animazione componente SectionVue, che ovviamente qui da errori quindi ggwp 
+/* harmony default export */ __webpack_exports__["default"] = (state); // Controlli client side
+
+function houseValidation() {
+  console.log('ciao');
+} // animazione componente SectionVue, che ovviamente qui da errori quindi ggwp 
 // export function thumbAnimation(){
 //    let tl = gsap.timeline({default: {duration: 3}});
 //    tl.to('.card', {borderTopColor: '#bad', delay: 0.3})
