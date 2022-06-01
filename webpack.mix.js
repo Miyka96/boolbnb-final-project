@@ -17,3 +17,5 @@ mix.js('resources/js/admin.js', 'public/js')
 mix.js('resources/js/front.js', 'public/js');
 
 mix.js('resources/js/store.js', 'public/js');
+
+mix.js('resources/js/clientsideValidation.js', 'public/js');

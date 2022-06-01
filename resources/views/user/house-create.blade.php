@@ -89,7 +89,6 @@
                placeholder="Inserisci il titolo"
                value="{{ old('title') }}"
             >
-
             <div id="title-error"></div>
          </div>
 
@@ -98,7 +97,7 @@
             <label for="room_num">Camere</label>
             <input
                type="number"
-               class="@error('room_num') is-invalid @enderror form-control"
+               class="form-control"
                name="room_num"
                id="room_num"
                required
@@ -107,9 +106,7 @@
                placeholder="Inserisci il numero di camere"
                value="{{ old('room_num') }}"
             >
-            @error('room_num')
-               <div class="alert alert-danger">{{ $message }}</div>
-            @enderror
+            <div id="room-num-error"></div>
          </div>
 
          {{-- Num letti --}}
