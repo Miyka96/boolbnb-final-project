@@ -19598,34 +19598,20 @@ router.beforeEach(function (toRoute, fromRoute, next) {
 /*!*******************************!*\
   !*** ./resources/js/store.js ***!
   \*******************************/
-/*! exports provided: default, houseValidation */
+/*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "houseValidation", function() { return houseValidation; });
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.common.js");
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(vue__WEBPACK_IMPORTED_MODULE_0__);
  // Inserire qui variabili da passare ai componenti
 
 var state = vue__WEBPACK_IMPORTED_MODULE_0___default.a.observable({
-  bannerText: ['Enjoy', 'your', 'trip'] // solo stringhe
-  // validations: [
-  //    house = {
-  //       title: {
-  //          required: true,
-  //          minlength: 5,
-  //          maxlength: 255
-  //       }
-  //    },
-  // ]
-
+  bannerText: ['Enjoy', 'your', 'trip']
 });
-/* harmony default export */ __webpack_exports__["default"] = (state); // Controlli client side
-
-function houseValidation() {
-  console.log('ciao');
-} // animazione componente SectionVue, che ovviamente qui da errori quindi ggwp 
+/* harmony default export */ __webpack_exports__["default"] = (state); // APPUNTI MICA ----
+// animazione componente SectionVue, che ovviamente qui da errori quindi ggwp 
 // export function thumbAnimation(){
 //    let tl = gsap.timeline({default: {duration: 3}});
 //    tl.to('.card', {borderTopColor: '#bad', delay: 0.3})
@@ -19716,7 +19702,7 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\Users\Micae\dev\boolbnb-final-project\resources\js\front.js */"./resources/js/front.js");
+module.exports = __webpack_require__(/*! D:\Users\Simone\Documents\Progetti\boolbnb-final-project\resources\js\front.js */"./resources/js/front.js");
 
 
 /***/ })

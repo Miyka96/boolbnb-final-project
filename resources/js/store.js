@@ -3,26 +3,13 @@ import Vue from 'vue';
 // Inserire qui variabili da passare ai componenti
 const state = Vue.observable(
    {
-      bannerText: ['Enjoy', 'your', 'trip'], // solo stringhe
-      // validations: [
-      //    house = {
-      //       title: {
-      //          required: true,
-      //          minlength: 5,
-      //          maxlength: 255
-      //       }
-      //    },
-      // ]
+      bannerText: ['Enjoy', 'your', 'trip']
    }
 );
 
 export default state;
 
-// Controlli client side
-export function houseValidation() {
-   console.log('ciao')
-}
-
+// APPUNTI MICA ----
 
 // animazione componente SectionVue, che ovviamente qui da errori quindi ggwp 
 
