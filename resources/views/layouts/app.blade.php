@@ -15,6 +15,7 @@
     <script src="{{ asset('js/store.js') }}" defer></script>
     <script src="{{ asset('js/clientsideValidation.js') }}" defer></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
