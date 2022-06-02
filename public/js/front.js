@@ -2178,7 +2178,12 @@ __webpack_require__.r(__webpack_exports__);
     return {
       house: [],
       position: [],
-      services: []
+      services: [],
+      visual_data: {
+        house_id: this.$route.params.id,
+        ip: '',
+        date: ''
+      }
     };
   },
   methods: {
@@ -2193,10 +2198,18 @@ __webpack_require__.r(__webpack_exports__);
       })["catch"](function (err) {
         console.warn(err);
       });
+    },
+    visual: function visual() {
+      axios.post("/send/visualization", this.visual_data).then(function (res) {
+        console.log(res.data);
+      })["catch"](function (error) {
+        console.log(error);
+      });
     }
   },
   mounted: function mounted() {
     this.fetchHouse();
+    this.visual();
   }
 });
 

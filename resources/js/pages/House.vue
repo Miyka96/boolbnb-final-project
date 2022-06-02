@@ -55,10 +55,15 @@ export default {
       house: [],
       position:[],
       services:[],
+      visual_data: {
+        house_id: this.$route.params.id,
+        ip: '',
+        date:''
+      }
     };
   },
   methods: {
-    fetchHouse() {
+  fetchHouse() {
       axios
         .get(`/api/houses/${this.$route.params.id}`)
         .then((res) => {
@@ -72,9 +77,21 @@ export default {
           console.warn(err);
         });
     },
+  visual(){
+      axios
+        .post("/send/visualization", this.visual_data)
+        .then((res) => {
+            console.log(res.data)
+          })
+        .catch((error) => {
+          console.log(error);
+          })
+    }
   },
+
   mounted() {
     this.fetchHouse();
+    this.visual();
   },
 };
 </script>
