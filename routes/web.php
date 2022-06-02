@@ -42,6 +42,8 @@ Route::resource('visualizations', 'VisualizationController')->only('store'); // 
 
 Route::get('/home', 'HomeController@index')->name('home');
 
+Route::any('/send/message', 'SendMessageController@send');
+
 Route::fallback(function() {
    return view('home');
 });

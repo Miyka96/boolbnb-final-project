@@ -6,6 +6,7 @@ Vue.use(VueRouter);
 import LandingPage from '../pages/LandingPage.vue';
 import Search from '../pages/Search.vue';
 import House from '../pages/House.vue';
+import Message from '../pages/Message.vue';
 
 const routes = [
    {
@@ -30,6 +31,14 @@ const routes = [
       component: House,
       meta: {
          title: 'Wowlidays - Dettaglio casa'
+      }
+   },
+   {
+      path: '/house/:id/message',
+      name: 'house.message',
+      component: Message,
+      meta: {
+         title: 'Wowlidays - Richiedi Informazioni'
       }
    },
 ];
