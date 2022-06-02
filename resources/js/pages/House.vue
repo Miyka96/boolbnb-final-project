@@ -45,19 +45,6 @@
         </p>
       <router-link tag="a" :to="{ name: 'house.message', params: { id: $route.params.id } }">Invia Messaggio</router-link>
     </div>
-
-    <!-- <div v-for="mess in el.messages" :key="mess.id">
-      {{ mess.name }}
-    </div> -->
-
-    <!-- <form action="{{ route('user.houses.store') }}" method="post">
-         @csrf
-         <div class="form-group">
-            <label for="title">House title</label>
-            <input type="text" class="form-control" name="title" id="title" placeholder="Insert House title"
-               value="{{ old('title') }}">
-         </div>
-      </form> -->
   </div>
 </template>
 
