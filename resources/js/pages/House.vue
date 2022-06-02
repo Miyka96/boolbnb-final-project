@@ -29,6 +29,7 @@
         </li>
         <li class="list-group-item" v-else>{{ el.toilets_num }} bagni</li>
       </ul>
+      <router-link tag="a" :to="{ name: 'house.message', params: { id: $route.params.id } }">Invia Messaggio</router-link>
     </div>
 
     <!-- <div v-for="mess in el.messages" :key="mess.id">
