@@ -4,46 +4,47 @@
 
     <h1>Casa n. {{ $route.params.id }}</h1>
 
-    <div v-for="el in houses" :key="el.id" class="card-lg" style="width: 18rem">
+    <div class="card-lg" style="width: 18rem">
       <img
         src="https://picsum.photos/300/300"
         class="card-img-top"
-        :alt="el.title"
+        :alt="house.title"
       />
       <div class="card-body">
-        <h5 class="card-title">{{ el.title }}</h5>
+        <h5 class="card-title">{{ house.title }}</h5>
         <p class="card-text">
           <strong>Prezzo per notte:</strong>
           <br />
-          €{{ el.cost_per_night }}
+          €{{ house.cost_per_night }}
         </p>
       </div>
       <ul class="list-group list-group-flush">
-        <li class="list-group-item text-danger" v-if="el.is_visible == 1">
+        <li class="list-group-item text-danger" v-if="house.is_visible == 1">
           Annuncio in vetrina!
         </li>
         <li class="list-group-item" v-else>Annuncio standard.</li>
-        <li class="list-group-item">{{ el.square_meters }}m²</li>
-        <li class="list-group-item" v-if="el.toilets_num == 1">
-          {{ el.toilets_num }} bagno
+        <li class="list-group-item">{{ house.square_meters }}m²</li>
+        <li class="list-group-item" v-if="house.toilets_num == 1">
+          {{ house.toilets_num }} bagno
         </li>
-        <li class="list-group-item" v-else>{{ el.toilets_num }} bagni</li>
+        <li class="list-group-item" v-else>{{ house.toilets_num }} bagni</li>
       </ul>
+        <p class="card-text">
+          <strong>Posizione</strong>
+          <br />
+          {{ position.address }}
+          <br>
+          {{position.city}}
+          <br>
+          {{position.country}}
+        </p>
+
+        <strong>Servizi</strong>
+        <p v-for="el in services" :key="el.id" class="card-text">
+          {{ el.name }}
+        </p>
       <router-link tag="a" :to="{ name: 'house.message', params: { id: $route.params.id } }">Invia Messaggio</router-link>
     </div>
-
-    <!-- <div v-for="mess in el.messages" :key="mess.id">
-      {{ mess.name }}
-    </div> -->
-
-    <!-- <form action="{{ route('user.houses.store') }}" method="post">
-         @csrf
-         <div class="form-group">
-            <label for="title">House title</label>
-            <input type="text" class="form-control" name="title" id="title" placeholder="Insert House title"
-               value="{{ old('title') }}">
-         </div>
-      </form> -->
   </div>
 </template>
 
@@ -51,7 +52,9 @@
 export default {
   data() {
     return {
-      houses: [],
+      house: [],
+      position:[],
+      services:[],
     };
   },
   methods: {
@@ -59,7 +62,10 @@ export default {
       axios
         .get(`/api/houses/${this.$route.params.id}`)
         .then((res) => {
-          this.houses = res.data;
+          this.house = res.data.house;
+          this.position= res.data.house.position
+          this.services= res.data.house.services
+
           console.log(res.data.house);
         })
         .catch((err) => {

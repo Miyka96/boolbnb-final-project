@@ -2172,10 +2172,13 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
-      houses: []
+      house: [],
+      position: [],
+      services: []
     };
   },
   methods: {
@@ -2183,7 +2186,9 @@ __webpack_require__.r(__webpack_exports__);
       var _this = this;
 
       axios.get("/api/houses/".concat(this.$route.params.id)).then(function (res) {
-        _this.houses = res.data;
+        _this.house = res.data.house;
+        _this.position = res.data.house.position;
+        _this.services = res.data.house.services;
         console.log(res.data.house);
       })["catch"](function (err) {
         console.warn(err);
@@ -3911,85 +3916,97 @@ var render = function () {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c(
-    "div",
-    { staticClass: "container p-5" },
-    [
-      _c("br"),
-      _vm._v(" "),
-      _c("h1", [_vm._v("Casa n. " + _vm._s(_vm.$route.params.id))]),
-      _vm._v(" "),
-      _vm._l(_vm.houses, function (el) {
-        return _c(
-          "div",
-          {
-            key: el.id,
-            staticClass: "card-lg",
-            staticStyle: { width: "18rem" },
-          },
-          [
-            _c("img", {
-              staticClass: "card-img-top",
-              attrs: { src: "https://picsum.photos/300/300", alt: el.title },
-            }),
+  return _c("div", { staticClass: "container p-5" }, [
+    _c("br"),
+    _vm._v(" "),
+    _c("h1", [_vm._v("Casa n. " + _vm._s(_vm.$route.params.id))]),
+    _vm._v(" "),
+    _c(
+      "div",
+      { staticClass: "card-lg", staticStyle: { width: "18rem" } },
+      [
+        _c("img", {
+          staticClass: "card-img-top",
+          attrs: { src: "https://picsum.photos/300/300", alt: _vm.house.title },
+        }),
+        _vm._v(" "),
+        _c("div", { staticClass: "card-body" }, [
+          _c("h5", { staticClass: "card-title" }, [
+            _vm._v(_vm._s(_vm.house.title)),
+          ]),
+          _vm._v(" "),
+          _c("p", { staticClass: "card-text" }, [
+            _c("strong", [_vm._v("Prezzo per notte:")]),
             _vm._v(" "),
-            _c("div", { staticClass: "card-body" }, [
-              _c("h5", { staticClass: "card-title" }, [
-                _vm._v(_vm._s(el.title)),
-              ]),
-              _vm._v(" "),
-              _c("p", { staticClass: "card-text" }, [
-                _c("strong", [_vm._v("Prezzo per notte:")]),
-                _vm._v(" "),
-                _c("br"),
-                _vm._v("\n        €" + _vm._s(el.cost_per_night) + "\n      "),
-              ]),
-            ]),
-            _vm._v(" "),
-            _c("ul", { staticClass: "list-group list-group-flush" }, [
-              el.is_visible == 1
-                ? _c("li", { staticClass: "list-group-item text-danger" }, [
-                    _vm._v("\n        Annuncio in vetrina!\n      "),
-                  ])
-                : _c("li", { staticClass: "list-group-item" }, [
-                    _vm._v("Annuncio standard."),
-                  ]),
-              _vm._v(" "),
-              _c("li", { staticClass: "list-group-item" }, [
-                _vm._v(_vm._s(el.square_meters) + "m²"),
-              ]),
-              _vm._v(" "),
-              el.toilets_num == 1
-                ? _c("li", { staticClass: "list-group-item" }, [
-                    _vm._v(
-                      "\n        " + _vm._s(el.toilets_num) + " bagno\n      "
-                    ),
-                  ])
-                : _c("li", { staticClass: "list-group-item" }, [
-                    _vm._v(_vm._s(el.toilets_num) + " bagni"),
-                  ]),
-            ]),
-            _vm._v(" "),
-            _c(
-              "router-link",
-              {
-                attrs: {
-                  tag: "a",
-                  to: {
-                    name: "house.message",
-                    params: { id: _vm.$route.params.id },
-                  },
-                },
-              },
-              [_vm._v("Invia Messaggio")]
+            _c("br"),
+            _vm._v(
+              "\n        €" + _vm._s(_vm.house.cost_per_night) + "\n      "
             ),
-          ],
-          1
-        )
-      }),
-    ],
-    2
-  )
+          ]),
+        ]),
+        _vm._v(" "),
+        _c("ul", { staticClass: "list-group list-group-flush" }, [
+          _vm.house.is_visible == 1
+            ? _c("li", { staticClass: "list-group-item text-danger" }, [
+                _vm._v("\n        Annuncio in vetrina!\n      "),
+              ])
+            : _c("li", { staticClass: "list-group-item" }, [
+                _vm._v("Annuncio standard."),
+              ]),
+          _vm._v(" "),
+          _c("li", { staticClass: "list-group-item" }, [
+            _vm._v(_vm._s(_vm.house.square_meters) + "m²"),
+          ]),
+          _vm._v(" "),
+          _vm.house.toilets_num == 1
+            ? _c("li", { staticClass: "list-group-item" }, [
+                _vm._v(
+                  "\n        " +
+                    _vm._s(_vm.house.toilets_num) +
+                    " bagno\n      "
+                ),
+              ])
+            : _c("li", { staticClass: "list-group-item" }, [
+                _vm._v(_vm._s(_vm.house.toilets_num) + " bagni"),
+              ]),
+        ]),
+        _vm._v(" "),
+        _c("p", { staticClass: "card-text" }, [
+          _c("strong", [_vm._v("Posizione")]),
+          _vm._v(" "),
+          _c("br"),
+          _vm._v("\n        " + _vm._s(_vm.position.address) + "\n        "),
+          _c("br"),
+          _vm._v("\n        " + _vm._s(_vm.position.city) + "\n        "),
+          _c("br"),
+          _vm._v("\n        " + _vm._s(_vm.position.country) + "\n      "),
+        ]),
+        _vm._v(" "),
+        _c("strong", [_vm._v("Servizi")]),
+        _vm._v(" "),
+        _vm._l(_vm.services, function (el) {
+          return _c("p", { key: el.id, staticClass: "card-text" }, [
+            _vm._v("\n        " + _vm._s(el.name) + "\n      "),
+          ])
+        }),
+        _vm._v(" "),
+        _c(
+          "router-link",
+          {
+            attrs: {
+              tag: "a",
+              to: {
+                name: "house.message",
+                params: { id: _vm.$route.params.id },
+              },
+            },
+          },
+          [_vm._v("Invia Messaggio")]
+        ),
+      ],
+      2
+    ),
+  ])
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -20446,7 +20463,7 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /Users/asiademartino/Desktop/progetto_finale/boolbnb-final-project/resources/js/front.js */"./resources/js/front.js");
+module.exports = __webpack_require__(/*! C:\Users\Micae\dev\boolbnb-final-project\resources\js\front.js */"./resources/js/front.js");
 
 
 /***/ })
