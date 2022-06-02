@@ -2149,6 +2149,28 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -2161,6 +2183,7 @@ __webpack_require__.r(__webpack_exports__);
 
       axios.get("/api/houses/".concat(this.$route.params.id)).then(function (res) {
         _this.houses = res.data;
+        console.log(res.data.house);
       })["catch"](function (err) {
         console.warn(err);
       });
@@ -3791,31 +3814,63 @@ var render = function () {
   var _c = _vm._self._c || _h
   return _c(
     "div",
-    { staticClass: "p-5" },
+    { staticClass: "container p-5" },
     [
-      _c("h1", [_vm._v("Casa")]),
+      _c("br"),
       _vm._v(" "),
-      _c("h2", [_vm._v(_vm._s(_vm.$route.params.id))]),
+      _c("h1", [_vm._v("Casa n. " + _vm._s(_vm.$route.params.id))]),
       _vm._v(" "),
       _vm._l(_vm.houses, function (el) {
         return _c(
           "div",
-          { key: el.id },
+          {
+            key: el.id,
+            staticClass: "card-lg",
+            staticStyle: { width: "18rem" },
+          },
           [
-            _vm._v(
-              "\n      " +
-                _vm._s(el.title) +
-                "\n      " +
-                _vm._s(el.beds_num) +
-                "\n      "
-            ),
-            _vm._l(el.messages, function (mess) {
-              return _c("div", { key: mess.id }, [
-                _vm._v("\n         " + _vm._s(mess.name) + "\n      "),
-              ])
+            _c("img", {
+              staticClass: "card-img-top",
+              attrs: { src: "https://picsum.photos/300/300", alt: el.title },
             }),
-          ],
-          2
+            _vm._v(" "),
+            _c("div", { staticClass: "card-body" }, [
+              _c("h5", { staticClass: "card-title" }, [
+                _vm._v(_vm._s(el.title)),
+              ]),
+              _vm._v(" "),
+              _c("p", { staticClass: "card-text" }, [
+                _c("strong", [_vm._v("Prezzo per notte:")]),
+                _vm._v(" "),
+                _c("br"),
+                _vm._v("\n        €" + _vm._s(el.cost_per_night) + "\n      "),
+              ]),
+            ]),
+            _vm._v(" "),
+            _c("ul", { staticClass: "list-group list-group-flush" }, [
+              el.is_visible == 1
+                ? _c("li", { staticClass: "list-group-item text-danger" }, [
+                    _vm._v("\n        Annuncio in vetrina!\n      "),
+                  ])
+                : _c("li", { staticClass: "list-group-item" }, [
+                    _vm._v("Annuncio standard."),
+                  ]),
+              _vm._v(" "),
+              _c("li", { staticClass: "list-group-item" }, [
+                _vm._v(_vm._s(el.square_meters) + "m²"),
+              ]),
+              _vm._v(" "),
+              el.toilets_num == 1
+                ? _c("li", { staticClass: "list-group-item" }, [
+                    _vm._v(
+                      "\n        " + _vm._s(el.toilets_num) + " bagno\n      "
+                    ),
+                  ])
+                : _c("li", { staticClass: "list-group-item" }, [
+                    _vm._v(_vm._s(el.toilets_num) + " bagni"),
+                  ]),
+            ]),
+          ]
         )
       }),
     ],
@@ -20034,7 +20089,7 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\Users\Micae\dev\boolbnb-final-project\resources\js\front.js */"./resources/js/front.js");
+module.exports = __webpack_require__(/*! /Users/marcocorallo/Desktop/boolbnb-final-project/resources/js/front.js */"./resources/js/front.js");
 
 
 /***/ })
