@@ -2285,18 +2285,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -2637,7 +2625,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "@charset \"UTF-8\";\nimg[data-v-40fc0132] {\n  width: 100%;\n  height: 100%;\n  -o-object-fit: cover;\n     object-fit: cover;\n  -o-object-position: center;\n     object-position: center;\n  display: block;\n}\n.collage-wrapper[data-v-40fc0132] {\n  width: 100%;\n  height: 500px;\n  display: flex;\n}\n.collage-wrapper .big-picture[data-v-40fc0132] {\n  width: 85%;\n  height: 100%;\n}\n.collage-wrapper .small-pictures[data-v-40fc0132] {\n  width: 15%;\n  height: 100%;\n}\n.collage-wrapper .small-pictures figure[data-v-40fc0132] {\n  height: 25%;\n}\n.box-shadow[data-v-40fc0132] {\n  box-shadow: 0 4px 10px -4px #333;\n}\nul li[data-v-40fc0132]:before {\n  content: \"\\2714\\FE0F   \";\n}", ""]);
+exports.push([module.i, "@charset \"UTF-8\";\nimg[data-v-40fc0132] {\n  width: 100%;\n  height: 100%;\n  -o-object-fit: cover;\n     object-fit: cover;\n  -o-object-position: center;\n     object-position: center;\n  display: block;\n}\n.collage-wrapper[data-v-40fc0132] {\n  width: 100%;\n  height: 480px;\n  display: flex;\n}\n.collage-wrapper .big-pic[data-v-40fc0132] {\n  width: 85%;\n  height: 100%;\n}\n.collage-wrapper .small-pics[data-v-40fc0132] {\n  width: 15%;\n  height: 100%;\n}\n.collage-wrapper .small-pics figure[data-v-40fc0132] {\n  margin: 0;\n  padding: 0;\n  height: 25%;\n}\n.box-shadow[data-v-40fc0132] {\n  box-shadow: 0 4px 10px -4px #333;\n}\nul[data-v-40fc0132] {\n  list-style: none;\n}\nul li[data-v-40fc0132]:before {\n  content: \"\\2714\\FE0F   \";\n}", ""]);
 
 // exports
 
@@ -4130,7 +4118,7 @@ var render = function () {
         _vm._v(" "),
         _c("div", { staticClass: "row rounded-lg overflow-hidden" }, [
           _c("div", { staticClass: "collage-wrapper" }, [
-            _c("figure", { staticClass: "big-picture" }, [
+            _c("figure", { staticClass: "big-pic" }, [
               _c("img", {
                 attrs: {
                   src: "https://as2.ftcdn.net/v2/jpg/00/06/67/49/1000_F_6674908_DkuzLQe3Yznwoh2xC1WPyMIYnaOaaNpd.jpg",
@@ -4139,7 +4127,7 @@ var render = function () {
               }),
             ]),
             _vm._v(" "),
-            _c("div", { staticClass: "small-pictures" }, [
+            _c("div", { staticClass: "small-pics" }, [
               _c("figure", [
                 _c("img", {
                   attrs: {
@@ -4219,7 +4207,79 @@ var render = function () {
         ]
       ),
       _vm._v(" "),
-      _vm._m(0),
+      _c("div", { staticClass: "container p-4 bg-light" }, [
+        _c("div", { staticClass: "row pb-2" }, [
+          _c("div", { staticClass: "col-12 p-0" }, [
+            _c("h2", [
+              _vm._v(
+                _vm._s(_vm.position.address) + ", " + _vm._s(_vm.position.city)
+              ),
+            ]),
+            _vm._v(" "),
+            _c("h4", { staticClass: "text-danger" }, [
+              _vm._v("€" + _vm._s(_vm.house.cost_per_night) + " per notte"),
+            ]),
+          ]),
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "row" }, [
+          _c("div", { staticClass: "col-sm-12 col-lg-8 p-0" }, [
+            _vm._m(0),
+            _vm._v(" "),
+            _c("p", [
+              _vm._v(
+                "\n          Questa location ha\n          " +
+                  _vm._s(_vm.house.toilets_num) +
+                  "\n          "
+              ),
+              _vm.house.toilets_num == 1
+                ? _c("span", [_vm._v("bagno.")])
+                : _c("span", [_vm._v("bagni.")]),
+            ]),
+            _vm._v(" "),
+            _c("p", [
+              _vm.house.beds_num == 1
+                ? _c("span", [_vm._v("C'è")])
+                : _c("span", [_vm._v("Ci sono")]),
+              _vm._v(
+                "\n          " + _vm._s(_vm.house.beds_num) + "\n          "
+              ),
+              _vm.house.beds_num == 1
+                ? _c("span", [_vm._v("comodissimo")])
+                : _c("span", [_vm._v("comodissimi")]),
+              _vm._v(" "),
+              _vm.house.beds_num == 1
+                ? _c("span", [_vm._v("posto")])
+                : _c("span", [_vm._v("posti")]),
+              _vm._v("\n          letto!\n        "),
+            ]),
+            _vm._v(" "),
+            _c("p", [_vm._v("Bagni: " + _vm._s(_vm.house.toilets_num))]),
+            _vm._v(" "),
+            _c("p", [_vm._v("Bagni: " + _vm._s(_vm.house.toilets_num))]),
+            _vm._v(" "),
+            _c("p", [_vm._v("Bagni: " + _vm._s(_vm.house.toilets_num))]),
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "col-sm-12 col-lg-4 p-0 pl-lg-4 pl-sm-0" }, [
+            _vm._m(1),
+            _vm._v(" "),
+            _c(
+              "ul",
+              _vm._l(_vm.services, function (service) {
+                return _c("li", { key: service.id }, [
+                  _vm._v(
+                    "\n            " + _vm._s(service.name) + "\n          "
+                  ),
+                ])
+              }),
+              0
+            ),
+          ]),
+        ]),
+        _vm._v(" "),
+        _vm._m(2),
+      ]),
       _vm._v(" "),
       _vm._l(_vm.services, function (el) {
         return _c("p", { key: el.id, staticClass: "card-text" }, [
@@ -4246,73 +4306,39 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "container p-4 bg-light" }, [
-      _c("div", { staticClass: "row pb-2" }, [
-        _c("div", { staticClass: "col-12 p-0" }, [
-          _c("h2", [_vm._v("Title / position / price per night")]),
-        ]),
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "row" }, [
-        _c("div", { staticClass: "col-sm-12 col-lg-8 p-0" }, [
-          _c("strong", [_c("h5", [_vm._v("Description")])]),
+    return _c("strong", [_c("h5", [_vm._v("Descrizione")])])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("strong", [_c("h5", [_vm._v("Servizi extra")])])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "row py-5" }, [
+      _c("div", { staticClass: "col-sm-12 col-lg-6" }, [
+        _c("div", { staticClass: "row text-center" }, [
+          _c("div", { staticClass: "col-6 p-0" }, [
+            _c("h4", [_vm._v("Check-in date")]),
+            _vm._v(" "),
+            _c("input", { attrs: { type: "date", name: "", id: "" } }),
+          ]),
           _vm._v(" "),
-          _c("p", [
-            _vm._v(
-              "\n          Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis\n          obcaecati itaque ad hic minima? Veniam harum nam numquam ut commodi\n          laborum a voluptates, quam eius amet quaerat nobis corporis enim\n          esse ea distinctio minima eligendi expedita natus delectus fugiat\n          neque? Maxime cumque delectus sed recusandae nihil ullam, doloremque\n          ducimus a quis numquam, laborum quas dicta magni debitis repudiandae\n          suscipit facilis voluptates vitae, sit error placeat cum? Officia,\n          ducimus impedit vel nulla molestias necessitatibus quas natus et.\n          Tempora, quia! Magnam fuga non, illo, atque delectus ipsa omnis\n          autem ut earum aspernatur molestias minima et distinctio dolorum\n          deleniti eius nam sit. Quae tempora asperiores blanditiis quis\n          suscipit culpa voluptatum facilis aspernatur quasi expedita, debitis\n          odit sapiente quo mollitia ducimus velit saepe dolore ratione\n          repellendus natus, nobis voluptatem porro vitae. Quibusdam\n          dignissimos necessitatibus reiciendis impedit dolorem ipsum\n          architecto enim sint praesentium nesciunt, minus magni debitis\n          aliquam modi minima laborum, reprehenderit nulla, porro aspernatur.\n          Officiis, tempore placeat animi saepe, hic asperiores sapiente error\n          velit quae ut fuga ea provident reiciendis corporis perferendis\n          commodi ipsa accusantium quos obcaecati sunt? Sint, optio. Fuga\n          reprehenderit blanditiis id officia, repudiandae ullam, non porro\n          eaque deserunt tempora velit? Impedit, hic! Ipsam, architecto\n          inventore. Animi dolores ipsam porro? Non, quis.\n        "
-            ),
+          _c("div", { staticClass: "col-6 p-0" }, [
+            _c("h4", [_vm._v("Check-out date")]),
+            _vm._v(" "),
+            _c("input", { attrs: { type: "date", name: "", id: "" } }),
           ]),
         ]),
         _vm._v(" "),
-        _c("div", { staticClass: "col-sm-12 col-lg-4 p-0 pl-lg-4 pl-sm-0" }, [
-          _c("strong", [_c("h5", [_vm._v("Additional services")])]),
-          _vm._v(" "),
-          _c("ul", [
-            _c("li", [_vm._v("WI-FI")]),
+        _c("div", { staticClass: "row text-center py-5" }, [
+          _c("div", { staticClass: "col-12 p-0" }, [
+            _c("h4", [_vm._v("Total price")]),
             _vm._v(" "),
-            _c("li", [_vm._v("Air conditioning")]),
-            _vm._v(" "),
-            _c("li", [_vm._v("Washing machine")]),
-            _vm._v(" "),
-            _c("li", [_vm._v("Kitchen")]),
-            _vm._v(" "),
-            _c("li", [_vm._v("Cable TV")]),
-            _vm._v(" "),
-            _c("li", [_vm._v("Room for smokers")]),
-            _vm._v(" "),
-            _c("li", [_vm._v("Front-pool view")]),
-            _vm._v(" "),
-            _c("li", [_vm._v("XXL Bed")]),
-            _vm._v(" "),
-            _c("li", [_vm._v("Blasphemy tolerated")]),
-            _vm._v(" "),
-            _c("li", [_vm._v("Hard-fucking zone")]),
-          ]),
-        ]),
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "row py-5" }, [
-        _c("div", { staticClass: "col-sm-12 col-lg-6" }, [
-          _c("div", { staticClass: "row text-center" }, [
-            _c("div", { staticClass: "col-6 p-0" }, [
-              _c("h4", [_vm._v("Check-in date")]),
-              _vm._v(" "),
-              _c("input", { attrs: { type: "date", name: "", id: "" } }),
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "col-6 p-0" }, [
-              _c("h4", [_vm._v("Check-out date")]),
-              _vm._v(" "),
-              _c("input", { attrs: { type: "date", name: "", id: "" } }),
-            ]),
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "row text-center py-5" }, [
-            _c("div", { staticClass: "col-12 p-0" }, [
-              _c("h4", [_vm._v("Total price")]),
-              _vm._v(" "),
-              _c("p", [_vm._v("€10,000")]),
-            ]),
+            _c("p", [_vm._v("€10,000")]),
           ]),
         ]),
       ]),

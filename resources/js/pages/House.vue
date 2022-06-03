@@ -18,13 +18,13 @@
 
       <div class="row rounded-lg overflow-hidden">
         <div class="collage-wrapper">
-          <figure class="big-picture">
+          <figure class="big-pic">
             <img
               src="https://as2.ftcdn.net/v2/jpg/00/06/67/49/1000_F_6674908_DkuzLQe3Yznwoh2xC1WPyMIYnaOaaNpd.jpg"
               :alt="house.name"
             />
           </figure>
-          <div class="small-pictures">
+          <div class="small-pics">
             <figure>
               <img
                 src="https://as2.ftcdn.net/v2/jpg/00/06/67/49/1000_F_6674908_DkuzLQe3Yznwoh2xC1WPyMIYnaOaaNpd.jpg"
@@ -85,57 +85,45 @@
     <div class="container p-4 bg-light">
       <div class="row pb-2">
         <div class="col-12 p-0">
-          <h2>Title / position / price per night</h2>
+          <h2>{{ position.address }}, {{ position.city }}</h2>
+          <h4 class="text-danger">€{{ house.cost_per_night }} per notte</h4>
         </div>
       </div>
 
       <div class="row">
         <div class="col-sm-12 col-lg-8 p-0">
           <strong>
-            <h5>Description</h5>
+            <h5>Descrizione</h5>
           </strong>
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis
-            obcaecati itaque ad hic minima? Veniam harum nam numquam ut commodi
-            laborum a voluptates, quam eius amet quaerat nobis corporis enim
-            esse ea distinctio minima eligendi expedita natus delectus fugiat
-            neque? Maxime cumque delectus sed recusandae nihil ullam, doloremque
-            ducimus a quis numquam, laborum quas dicta magni debitis repudiandae
-            suscipit facilis voluptates vitae, sit error placeat cum? Officia,
-            ducimus impedit vel nulla molestias necessitatibus quas natus et.
-            Tempora, quia! Magnam fuga non, illo, atque delectus ipsa omnis
-            autem ut earum aspernatur molestias minima et distinctio dolorum
-            deleniti eius nam sit. Quae tempora asperiores blanditiis quis
-            suscipit culpa voluptatum facilis aspernatur quasi expedita, debitis
-            odit sapiente quo mollitia ducimus velit saepe dolore ratione
-            repellendus natus, nobis voluptatem porro vitae. Quibusdam
-            dignissimos necessitatibus reiciendis impedit dolorem ipsum
-            architecto enim sint praesentium nesciunt, minus magni debitis
-            aliquam modi minima laborum, reprehenderit nulla, porro aspernatur.
-            Officiis, tempore placeat animi saepe, hic asperiores sapiente error
-            velit quae ut fuga ea provident reiciendis corporis perferendis
-            commodi ipsa accusantium quos obcaecati sunt? Sint, optio. Fuga
-            reprehenderit blanditiis id officia, repudiandae ullam, non porro
-            eaque deserunt tempora velit? Impedit, hic! Ipsam, architecto
-            inventore. Animi dolores ipsam porro? Non, quis.
+            Questa location ha
+            {{ house.toilets_num }}
+            <span v-if="house.toilets_num == 1">bagno.</span>
+            <span v-else>bagni.</span>
           </p>
+          <p>
+            <span v-if="house.beds_num == 1">C'è</span>
+            <span v-else>Ci sono</span>
+            {{ house.beds_num }}
+            <span v-if="house.beds_num == 1">comodissimo</span>
+            <span v-else>comodissimi</span>
+            <span v-if="house.beds_num == 1">posto</span>
+            <span v-else>posti</span>
+            letto!
+          </p>
+          <p>Bagni: {{ house.toilets_num }}</p>
+          <p>Bagni: {{ house.toilets_num }}</p>
+          <p>Bagni: {{ house.toilets_num }}</p>
         </div>
 
         <div class="col-sm-12 col-lg-4 p-0 pl-lg-4 pl-sm-0">
           <strong>
-            <h5>Additional services</h5>
+            <h5>Servizi extra</h5>
           </strong>
           <ul>
-            <li>WI-FI</li>
-            <li>Air conditioning</li>
-            <li>Washing machine</li>
-            <li>Kitchen</li>
-            <li>Cable TV</li>
-            <li>Room for smokers</li>
-            <li>Front-pool view</li>
-            <li>XXL Bed</li>
-            <li>Blasphemy tolerated</li>
-            <li>Hard-fucking zone</li>
+            <li v-for="service in services" :key="service.id">
+              {{ service.name }}
+            </li>
           </ul>
         </div>
       </div>
@@ -231,19 +219,21 @@ img {
 
 .collage-wrapper {
   width: 100%;
-  height: 500px;
+  height: 480px;
   display: flex;
 
-  .big-picture {
+  .big-pic {
     width: 85%;
     height: 100%;
   }
 
-  .small-pictures {
+  .small-pics {
     width: 15%;
     height: 100%;
 
     figure {
+      margin: 0;
+      padding: 0;
       height: calc(100% / 4);
     }
   }
@@ -251,6 +241,10 @@ img {
 
 .box-shadow {
   box-shadow: 0 4px 10px -4px #333;
+}
+
+ul {
+  list-style: none;
 }
 
 ul li:before {
