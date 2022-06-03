@@ -11,7 +11,7 @@
 <script>
 import LogoNavbar from './LogoComponent.vue';
 import PillLogged from './PillloggedComponent.vue';
-import SearchbarNavbar from './SearchbarnavbarComponent.vue';
+import SearchbarNavbar from './Searchbarnavbar.vue';
 
     export default {
         name: "Navbar",
