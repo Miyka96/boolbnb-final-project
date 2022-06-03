@@ -11262,13 +11262,6 @@ body::-webkit-scrollbar-thumb:hover {
   color: #e51c80 !important;
 }
 
-.login_page .login-wrapper button {
-  color: white;
-  background-color: #e51c80;
-  border-color: #e51c80;
-  width: 160px;
-}
-
 .login_page .form-email-color:focus,
 .login_page .form-pass-color:focus {
   outline: none !important;
@@ -11302,5 +11295,168 @@ body::-webkit-scrollbar-thumb:hover {
   .login_page .column_6 {
     display: none !important;
   }
+}
+
+.login_page .button {
+  display: inline-block;
+  padding: 0.75rem 1.25rem;
+  border-radius: 10rem;
+  color: white;
+  text-transform: uppercase;
+  font-size: 1rem;
+  letter-spacing: 0.15rem;
+  transition: all 0.3s;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  width: 150px;
+  border: none;
+}
+
+.login_page .button:after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #e51c80;
+  border-radius: 10rem;
+  z-index: -2;
+}
+
+.login_page .button:before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0%;
+  height: 100%;
+  background-color: #a2135a;
+  transition: all 0.3s;
+  border-radius: 10rem;
+  z-index: -1;
+}
+
+.login_page .button:hover {
+  color: white;
+}
+
+.login_page .button:hover:before {
+  width: 100%;
+}
+
+.register_page {
+  overflow: hidden;
+  height: 100vh;
+}
+
+.register_page .row {
+  width: 100%;
+  flex-wrap: wrap;
+  padding: 0 4px;
+}
+
+.register_page .banner {
+  height: 100vh;
+  width: 50%;
+}
+
+@media screen and (max-width: 768px) {
+  .register_page .banner {
+    display: none;
+  }
+}
+
+.register_page .register-wrapper {
+  flex-grow: 1;
+}
+
+.register_page .pass-forgot {
+  color: #e51c80 !important;
+}
+
+.register_page .form-email-color:focus,
+.register_page .form-pass-color:focus {
+  outline: none !important;
+  border-color: #e51c80 !important;
+  box-shadow: 0 0 10px #e51c80 !important;
+}
+
+.register_page .column img {
+  margin-top: 25px;
+  padding: 0 !important;
+  flex-grow: 1;
+  aspect-ratio: 9/16;
+  overflow: hidden;
+}
+
+.register_page .column_0 {
+  transform: translateY(-13%);
+}
+
+@media screen and (max-width: 768px) {
+  .register_page .column_0 {
+    display: none !important;
+  }
+}
+
+.register_page .column_6 {
+  transform: translateY(-24%);
+}
+
+@media screen and (max-width: 768px) {
+  .register_page .column_6 {
+    display: none !important;
+  }
+}
+
+.register_page .button {
+  display: inline-block;
+  padding: 0.75rem 1.25rem;
+  border-radius: 10rem;
+  color: white;
+  text-transform: uppercase;
+  font-size: 1rem;
+  letter-spacing: 0.15rem;
+  transition: all 0.3s;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  width: 150px;
+  border: none;
+}
+
+.register_page .button:after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #e51c80;
+  border-radius: 10rem;
+  z-index: -2;
+}
+
+.register_page .button:before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0%;
+  height: 100%;
+  background-color: #a2135a;
+  transition: all 0.3s;
+  border-radius: 10rem;
+  z-index: -1;
+}
+
+.register_page .button:hover {
+  color: white;
+}
+
+.register_page .button:hover:before {
+  width: 100%;
 }
 
