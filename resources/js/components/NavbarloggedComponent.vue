@@ -1,21 +1,21 @@
 <template>
     <div class="container-fluid border-top border-bottom ms_navbar">
         <div class="d-flex justify-content-between align-items-center container py-4 gapx-1">
-            <logo-component/>
-            <searchbar-component/>
-            <pill-component/>
+            <logo-navbar-component/>
+            <searchbar-navbar-component/>
+            <pill-logged-component/>
         </div>
     </div>
 </template>
 
 <script>
-import LogoComponent from './LogoComponent.vue';
-import PillComponent from './PillComponent.vue';
-import SearchbarComponent from './SearchbarComponent.vue';
+import LogoNavbar from './LogoComponent.vue';
+import PillLogged from './PillloggedComponent.vue';
+import SearchbarNavbar from './Searchbarnavbar.vue';
 
     export default {
         name: "Navbar",
-        components: { PillComponent, LogoComponent, SearchbarComponent },
+        components: { PillloggedComponent, LogoComponent, SearchbarnavbarComponent },
         
     }
 </script>

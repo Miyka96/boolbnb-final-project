@@ -7,9 +7,9 @@
 </template>
 
 <script>
-import Banner from '../components/MainBanner.vue';
-import CardsShowcase from '../components/CardShowcase.vue';
-import SectionVue from '../components/SectionVue.vue';
+import Banner from '../components/MainbannerComponent.vue';
+import CardsShowcase from '../components/CardshocaseComponent.vue';
+// import PolaroidVue from '../components/PolaroidVue.vue'
 
 export default {
    components: {
