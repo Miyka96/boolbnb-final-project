@@ -1,49 +1,144 @@
 <template>
-  <div class="container p-5">
+  <div>
     <br />
-
-    <h1>Casa n. {{ $route.params.id }}</h1>
-
-    <div class="card-lg" style="width: 18rem">
-      <img
-        src="https://picsum.photos/300/300"
-        class="card-img-top"
-        :alt="house.title"
-      />
-      <div class="card-body">
-        <h5 class="card-title">{{ house.title }}</h5>
-        <p class="card-text">
-          <strong>Prezzo per notte:</strong>
-          <br />
-          €{{ house.cost_per_night }}
-        </p>
+    <br />
+    <br />
+    <div class="container p-4 bg-light d-none d-md-block">
+      <div class="row">
+        <div class="col-12 p-0">
+          <h2>{{ house.title }}</h2>
+          <h6>
+            Annuncio di
+            <span class="ms__font"
+              >{{ house.user.name }} {{ house.user.surname }}</span
+            >
+          </h6>
+        </div>
       </div>
-      <ul class="list-group list-group-flush">
-        <li class="list-group-item text-danger" v-if="house.is_visible == 1">
-          Annuncio in vetrina!
-        </li>
-        <li class="list-group-item" v-else>Annuncio standard.</li>
-        <li class="list-group-item">{{ house.square_meters }}m²</li>
-        <li class="list-group-item" v-if="house.toilets_num == 1">
-          {{ house.toilets_num }} bagno
-        </li>
-        <li class="list-group-item" v-else>{{ house.toilets_num }} bagni</li>
-      </ul>
-        <p class="card-text">
-          <strong>Posizione</strong>
-          <br />
-          {{ position.address }}
-          <br>
-          {{position.city}}
-          <br>
-          {{position.country}}
-        </p>
 
-        <strong>Servizi</strong>
-        <p v-for="el in services" :key="el.id" class="card-text">
-          {{ el.name }}
-        </p>
-      <router-link tag="a" :to="{ name: 'house.message', params: { id: $route.params.id } }">Invia Messaggio</router-link>
+      <div class="row rounded-lg overflow-hidden py-2">
+        <div class="collage-wrapper">
+          <figure class="big-pic">
+            <img :src="house.image" :alt="house.name" />
+          </figure>
+          <div class="small-pics">
+            <figure>
+              <img :src="house.image" :alt="house.name" />
+            </figure>
+            <figure>
+              <img :src="house.image" :alt="house.name" />
+            </figure>
+            <figure>
+              <img :src="house.image" :alt="house.name" />
+            </figure>
+            <figure>
+              <img :src="house.image" :alt="house.name" />
+            </figure>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ******************** SOLO MOBILE ******************** -->
+
+    <div class="container-fluid d-md-none d-sm-block bg-light">
+      <div class="row py-2">
+        <div class="col-12 text-center">
+          <h2>{{ house.title }}</h2>
+          <h6>
+            Annuncio di
+            <span class="ms__font"
+              >{{ house.user.name }} {{ house.user.surname }}</span
+            >
+          </h6>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-12 p-0">
+          <img :src="house.image" :alt="house.name" />
+        </div>
+      </div>
+    </div>
+
+    <!-- ************************************************************ -->
+
+    <div class="container p-4 bg-light">
+      <div class="row pb-2">
+        <div class="col-12 p-0">
+          <h2>{{ position.address }}, {{ position.city }}</h2>
+          <h5 class="ms__price">€{{ house.cost_per_night }} per notte</h5>
+        </div>
+      </div>
+
+      <div class="row py-2">
+        <div class="col-sm-12 col-lg-8 p-0">
+          <strong>
+            <h3>Descrizione</h3>
+          </strong>
+          <p>Questa struttura è grande {{ house.square_meters }}m².</p>
+          <p>
+            <span v-if="house.toilets_num == 1">È presente</span>
+            <span v-else>Sono presenti</span>
+            {{ house.toilets_num }}
+            <span v-if="house.toilets_num == 1">bagno</span>
+            <span v-else>bagni</span>
+            <span v-if="house.toilets_num == 1">super confortevole.</span>
+            <span v-else>super confortevoli.</span>
+          </p>
+          <p>
+            <span v-if="house.beds_num == 1">C'è</span>
+            <span v-else>Ci sono</span>
+            {{ house.beds_num }}
+            <span v-if="house.beds_num == 1">comodissimo</span>
+            <span v-else>comodissimi</span>
+            <span v-if="house.beds_num == 1">posto</span>
+            <span v-else>posti</span>
+            letto! 😌
+          </p>
+          <p>
+            <span v-if="house.room_num == 1">
+              {{ house.room_num }} stanza comoda e accogliente, con tutto ciò di
+              cui hai bisogno durante la tua permanenza.
+            </span>
+            <span v-else-if="house.room_num >= 5">
+              {{ house.room_num }} stanze. <em class="text-danger">WOW!</em> con
+              tutto questo spazio a disposizione il tuo soggiorno sarà un vero
+              spasso! 🤩
+            </span>
+            <span v-else>
+              {{ house.room_num }} stanze comode e accoglienti, con tutto ciò di
+              cui avete bisogno durante la vostra permanenza.
+            </span>
+          </p>
+        </div>
+
+        <div class="col-sm-12 col-lg-4 p-0 pl-lg-4 pl-sm-0">
+          <strong>
+            <h3>Servizi extra</h3>
+          </strong>
+          <ul>
+            <li
+              class="text-light"
+              v-for="service in services"
+              :key="service.id"
+            >
+              {{ service.name }}
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="row py-5">
+        <div class="col-12 pt-2 text-center">
+          <router-link
+            class="btn rounded-pill text-light ms__btn p-2 rounded"
+            tag="a"
+            :to="{ name: 'house.message', params: { id: $route.params.id } }"
+            >Invia messaggio</router-link
+          >
+        </div>
+      </div>
     </div>
   </div>
 </template>
@@ -53,23 +148,23 @@ export default {
   data() {
     return {
       house: [],
-      position:[],
-      services:[],
+      position: [],
+      services: [],
       visual_data: {
         house_id: this.$route.params.id,
-        ip: '',
-        date:''
-      }
+        ip: "",
+        date: "",
+      },
     };
   },
   methods: {
-  fetchHouse() {
+    fetchHouse() {
       axios
         .get(`/api/houses/${this.$route.params.id}`)
         .then((res) => {
           this.house = res.data.house;
-          this.position= res.data.house.position
-          this.services= res.data.house.services
+          this.position = res.data.house.position;
+          this.services = res.data.house.services;
 
           console.log(res.data.house);
         })
@@ -77,16 +172,16 @@ export default {
           console.warn(err);
         });
     },
-  visual(){
+    visual() {
       axios
         .post("/send/visualization", this.visual_data)
         .then((res) => {
-            console.log(res.data)
-          })
+          console.log(res.data);
+        })
         .catch((error) => {
           console.log(error);
-          })
-    }
+        });
+    },
   },
 
   mounted() {
@@ -97,4 +192,77 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
+.collage-wrapper {
+  width: 100%;
+  height: 480px;
+  display: flex;
+
+  .big-pic {
+    width: 85%;
+    height: 100%;
+  }
+
+  .small-pics {
+    width: 15%;
+    height: 100%;
+
+    figure {
+      margin: 0;
+      padding: 0;
+      height: calc(100% / 4);
+    }
+  }
+}
+
+.box-shadow {
+  box-shadow: 0 4px 10px -4px #333;
+}
+
+ul {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  list-style: none;
+
+  li {
+    max-width: 90px;
+    padding: 5px;
+    border-radius: 20px;
+    text-align: center;
+    text-transform: uppercase;
+    font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+      "Lucida Sans", Arial, sans-serif;
+    font-size: 12px;
+    font-weight: 900;
+    background: #ff385c;
+  }
+}
+
+.ms__btn {
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+  font-weight: 900;
+  background: #ff385c;
+}
+
+.ms__font {
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+  font-weight: 900;
+  font-size: 18px;
+  color: #ff385c;
+}
+
+.ms__price {
+  font-weight: 900;
+  color: #ff385c;
+}
 </style>
