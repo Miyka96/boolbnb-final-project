@@ -6,7 +6,7 @@
             <h5 class="card-title">{{ house.title }}</h5>
             <p class="card-position">{{ house.position.city }}</p>
             <p class="card-price"><strong>&euro;{{ house.cost_per_night }}</strong>/night</p>
-            <p class="card-rating">{{ house.id }}<i class="fa-solid fa-star"></i></p>
+            <!-- <p class="card-rating">{{ house.id }}<i class="fa-solid fa-star"></i></p> -->
          </div>
       </div>
    </router-link>
