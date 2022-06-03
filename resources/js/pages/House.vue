@@ -2,6 +2,8 @@
   <div class="container p-5">
     <br />
 
+    <Map/>
+
     <h1>Casa n. {{ $route.params.id }}</h1>
 
     <div class="card-lg" style="width: 18rem">
@@ -49,7 +51,11 @@
 </template>
 
 <script>
+import Map from '../components/Map.vue'
 export default {
+  components: {
+    Map
+  },
   data() {
     return {
       house: [],
@@ -58,8 +64,8 @@ export default {
       visual_data: {
         house_id: this.$route.params.id,
         ip: '',
-        date:''
-      }
+        date:'',
+      },
     };
   },
   methods: {
