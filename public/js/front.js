@@ -3752,7 +3752,7 @@ var render = function () {
       _c("div", { staticClass: "card", staticStyle: { width: "18rem" } }, [
         _c("img", {
           staticClass: "card-img-top",
-          attrs: { src: "https://picsum.photos/300/300", alt: "" },
+          attrs: { src: _vm.house.image, alt: "" },
         }),
         _vm._v(" "),
         _c("div", { staticClass: "card-body" }, [

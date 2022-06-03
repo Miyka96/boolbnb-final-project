@@ -1,7 +1,7 @@
 <template>
    <router-link tag="a" :to="{ name: 'house.show', params: { id: house.id } }">
       <div class="card" style="width: 18rem;">
-         <img src="https://picsum.photos/300/300" class="card-img-top" alt="">
+         <img :src="house.image" class="card-img-top" alt="">
          <div class="card-body">
             <h5 class="card-title">{{ house.title }}</h5>
             <p class="card-position">{{ house.position.city }}</p>
