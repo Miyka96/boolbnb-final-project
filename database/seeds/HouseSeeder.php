@@ -591,8 +591,8 @@ class HouseSeeder extends Seeder
          $serviceNum = $faker->numberBetween(2,5);
          $house->services()->sync($faker->randomElements($serviceId , $serviceNum) );
 
-         $sponsorNum = $faker->numberBetween(0,2);
-         $house->sponsorships()->sync($faker->randomElements($sponsorshipId, $sponsorNum) );
+         // $sponsorNum = $faker->numberBetween(0,2);
+         // $house->sponsorships()->sync($faker->randomElements($sponsorshipId, $sponsorNum) );
       }
    }
 }

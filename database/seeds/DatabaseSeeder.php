@@ -20,7 +20,8 @@ class DatabaseSeeder extends Seeder
             PositionSeeder::class,
             HouseSeeder::class,
             MessageSeeder::class,
-            VisualizationSeeder::class
+            VisualizationSeeder::class,
+            House_SponsorshipSeeder::class
         ]);
     }
 }
