@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Api;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\House;
+use Carbon\Carbon;
 
 class HouseController extends Controller
 {
@@ -15,9 +16,20 @@ class HouseController extends Controller
     */
    public function index()
    {
-      $houses = House::with(['position', 'user', 'messages', 'services', 'visualizations', 'sponsorships'])
-         ->where('is_visible','=', 1)
+      // $houses = House::with(['position', 'user', 'messages', 'services', 'visualizations', 'sponsorships'])
+      //    ->where('is_visible','=', 1)
+      //    ->paginate(12);
+
+         // TEST QUERY SPONSORSHIPS
+      $houses = House::with(['position', 'user', 'messages', 'services', 'visualizations'])
+         ->join('house_sponsorship', 'house_sponsorship.house_id', '=', 'houses.id')
+         ->where([
+            ['is_visible','=', 1],
+            ['house_sponsorship.sponsor_start', '<=', Carbon::now()->toString()],
+            ['house_sponsorship.sponsor_end', '<', Carbon::now()->toString()], // < perchè funziona al contrario, boh
+         ])
          ->paginate(12);
+
 
       if( $houses ) {
          return response()->json([
