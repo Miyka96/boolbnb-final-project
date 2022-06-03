@@ -9,7 +9,7 @@
 
       <h1>Visualizzazioni Appartamento</h1>
 
-      {{-- chart js static experiment --}}
+      {{-- chart js static experiment NON TOCCARE PLS --}}
 
          <div class="chart-container" style="
          position:relative;
