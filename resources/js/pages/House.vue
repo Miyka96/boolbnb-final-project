@@ -7,47 +7,32 @@
       <div class="row">
         <div class="col-12 p-0">
           <h2>{{ house.title }}</h2>
-          <h4>
+          <h6>
             Annuncio di
-            <span v-for="user in user" :key="user.id">
-              {{ user.name }}
-            </span>
-          </h4>
+            <u class="text-primary"
+              >{{ house.user.name }} {{ house.user.surname }}</u
+            >
+          </h6>
         </div>
       </div>
 
-      <div class="row rounded-lg overflow-hidden">
+      <div class="row rounded-lg overflow-hidden py-2">
         <div class="collage-wrapper">
           <figure class="big-pic">
-            <img
-              src="https://as2.ftcdn.net/v2/jpg/00/06/67/49/1000_F_6674908_DkuzLQe3Yznwoh2xC1WPyMIYnaOaaNpd.jpg"
-              :alt="house.name"
-            />
+            <img :src="house.image" :alt="house.name" />
           </figure>
           <div class="small-pics">
             <figure>
-              <img
-                src="https://as2.ftcdn.net/v2/jpg/00/06/67/49/1000_F_6674908_DkuzLQe3Yznwoh2xC1WPyMIYnaOaaNpd.jpg"
-                :alt="house.name"
-              />
+              <img :src="house.image" :alt="house.name" />
             </figure>
             <figure>
-              <img
-                src="https://as2.ftcdn.net/v2/jpg/00/06/67/49/1000_F_6674908_DkuzLQe3Yznwoh2xC1WPyMIYnaOaaNpd.jpg"
-                :alt="house.name"
-              />
+              <img :src="house.image" :alt="house.name" />
             </figure>
             <figure>
-              <img
-                src="https://as2.ftcdn.net/v2/jpg/00/06/67/49/1000_F_6674908_DkuzLQe3Yznwoh2xC1WPyMIYnaOaaNpd.jpg"
-                :alt="house.name"
-              />
+              <img :src="house.image" :alt="house.name" />
             </figure>
             <figure>
-              <img
-                src="https://as2.ftcdn.net/v2/jpg/00/06/67/49/1000_F_6674908_DkuzLQe3Yznwoh2xC1WPyMIYnaOaaNpd.jpg"
-                :alt="house.name"
-              />
+              <img :src="house.image" :alt="house.name" />
             </figure>
           </div>
         </div>
@@ -60,12 +45,12 @@
       <div class="row py-2">
         <div class="col-12 text-center">
           <h2>{{ house.title }}</h2>
-          <h4>
+          <h6>
             Annuncio di
-            <span v-for="user in user" :key="user.id">
-              {{ user.name }}
-            </span>
-          </h4>
+            <u class="text-primary"
+              >{{ house.user.name }} {{ house.user.surname }}</u
+            >
+          </h6>
         </div>
       </div>
 
@@ -86,20 +71,24 @@
       <div class="row pb-2">
         <div class="col-12 p-0">
           <h2>{{ position.address }}, {{ position.city }}</h2>
-          <h4 class="text-danger">€{{ house.cost_per_night }} per notte</h4>
+          <h5 class="text-danger">€{{ house.cost_per_night }} per notte</h5>
         </div>
       </div>
 
-      <div class="row">
+      <div class="row py-2">
         <div class="col-sm-12 col-lg-8 p-0">
           <strong>
-            <h5>Descrizione</h5>
+            <h3>Descrizione</h3>
           </strong>
+          <p>Questa struttura è grande {{ house.square_meters }}m².</p>
           <p>
-            Questa location ha
+            <span v-if="house.toilets_num == 1">È presente</span>
+            <span v-else>Sono presenti</span>
             {{ house.toilets_num }}
-            <span v-if="house.toilets_num == 1">bagno.</span>
-            <span v-else>bagni.</span>
+            <span v-if="house.toilets_num == 1">bagno</span>
+            <span v-else>bagni</span>
+            <span v-if="house.toilets_num == 1">super confortevole.</span>
+            <span v-else>super confortevoli.</span>
           </p>
           <p>
             <span v-if="house.beds_num == 1">C'è</span>
@@ -109,16 +98,27 @@
             <span v-else>comodissimi</span>
             <span v-if="house.beds_num == 1">posto</span>
             <span v-else>posti</span>
-            letto!
+            letto! 😌
           </p>
-          <p>Bagni: {{ house.toilets_num }}</p>
-          <p>Bagni: {{ house.toilets_num }}</p>
-          <p>Bagni: {{ house.toilets_num }}</p>
+          <p>
+            <span v-if="house.room_num == 1">
+              {{ house.room_num }} stanza comoda e accogliente, con tutto ciò di
+              cui hai bisogno durante la tua permanenza.
+            </span>
+            <span v-else-if="house.room_num >= 5">
+              {{ house.room_num }} stanze. Con tutto questo spazio a
+              disposizione il tuo soggiorno sarò un vero spasso! 🤩
+            </span>
+            <span v-else>
+              {{ house.room_num }} stanze comode e accoglienti, con tutto ciò di
+              cui avete bisogno durante la vostra permanenza.
+            </span>
+          </p>
         </div>
 
         <div class="col-sm-12 col-lg-4 p-0 pl-lg-4 pl-sm-0">
           <strong>
-            <h5>Servizi extra</h5>
+            <h3>Servizi extra</h3>
           </strong>
           <ul>
             <li v-for="service in services" :key="service.id">
@@ -128,30 +128,14 @@
         </div>
       </div>
 
-      <div class="row py-5">
-        <div class="col-sm-12 col-lg-6">
-          <div class="row text-center">
-            <div class="col-6 p-0">
-              <h4>Check-in date</h4>
-              <input type="date" name="" id="" />
-            </div>
-            <div class="col-6 p-0">
-              <h4>Check-out date</h4>
-              <input type="date" name="" id="" />
-            </div>
-          </div>
-          <div class="row text-center py-5">
-            <div class="col-12 p-0">
-              <h4>Total price</h4>
-              <p>€10,000</p>
-            </div>
-          </div>
-        </div>
+      <div class="row py-4">
+        <h1 class="text-info">
+          {{ house.visualizations.length }}
+          <span v-if="house.visualizations.lenght == 1">visualizzazione.</span>
+          <span v-else>visualizzazioni.</span>
+        </h1>
       </div>
     </div>
-    <p v-for="el in services" :key="el.id" class="card-text">
-      {{ el.name }}
-    </p>
     <router-link
       tag="a"
       :to="{ name: 'house.message', params: { id: $route.params.id } }"

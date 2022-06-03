@@ -2269,22 +2269,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -4099,68 +4083,49 @@ var render = function () {
           _c("div", { staticClass: "col-12 p-0" }, [
             _c("h2", [_vm._v(_vm._s(_vm.house.title))]),
             _vm._v(" "),
-            _c(
-              "h4",
-              [
-                _vm._v("\n          Annuncio di\n          "),
-                _vm._l(_vm.user, function (user) {
-                  return _c("span", { key: user.id }, [
-                    _vm._v(
-                      "\n            " + _vm._s(user.name) + "\n          "
-                    ),
-                  ])
-                }),
-              ],
-              2
-            ),
+            _c("h6", [
+              _vm._v("\n          Annuncio di\n          "),
+              _c("u", { staticClass: "text-primary" }, [
+                _vm._v(
+                  _vm._s(_vm.house.user.name) +
+                    " " +
+                    _vm._s(_vm.house.user.surname)
+                ),
+              ]),
+            ]),
           ]),
         ]),
         _vm._v(" "),
-        _c("div", { staticClass: "row rounded-lg overflow-hidden" }, [
+        _c("div", { staticClass: "row rounded-lg overflow-hidden py-2" }, [
           _c("div", { staticClass: "collage-wrapper" }, [
             _c("figure", { staticClass: "big-pic" }, [
               _c("img", {
-                attrs: {
-                  src: "https://as2.ftcdn.net/v2/jpg/00/06/67/49/1000_F_6674908_DkuzLQe3Yznwoh2xC1WPyMIYnaOaaNpd.jpg",
-                  alt: _vm.house.name,
-                },
+                attrs: { src: _vm.house.image, alt: _vm.house.name },
               }),
             ]),
             _vm._v(" "),
             _c("div", { staticClass: "small-pics" }, [
               _c("figure", [
                 _c("img", {
-                  attrs: {
-                    src: "https://as2.ftcdn.net/v2/jpg/00/06/67/49/1000_F_6674908_DkuzLQe3Yznwoh2xC1WPyMIYnaOaaNpd.jpg",
-                    alt: _vm.house.name,
-                  },
+                  attrs: { src: _vm.house.image, alt: _vm.house.name },
                 }),
               ]),
               _vm._v(" "),
               _c("figure", [
                 _c("img", {
-                  attrs: {
-                    src: "https://as2.ftcdn.net/v2/jpg/00/06/67/49/1000_F_6674908_DkuzLQe3Yznwoh2xC1WPyMIYnaOaaNpd.jpg",
-                    alt: _vm.house.name,
-                  },
+                  attrs: { src: _vm.house.image, alt: _vm.house.name },
                 }),
               ]),
               _vm._v(" "),
               _c("figure", [
                 _c("img", {
-                  attrs: {
-                    src: "https://as2.ftcdn.net/v2/jpg/00/06/67/49/1000_F_6674908_DkuzLQe3Yznwoh2xC1WPyMIYnaOaaNpd.jpg",
-                    alt: _vm.house.name,
-                  },
+                  attrs: { src: _vm.house.image, alt: _vm.house.name },
                 }),
               ]),
               _vm._v(" "),
               _c("figure", [
                 _c("img", {
-                  attrs: {
-                    src: "https://as2.ftcdn.net/v2/jpg/00/06/67/49/1000_F_6674908_DkuzLQe3Yznwoh2xC1WPyMIYnaOaaNpd.jpg",
-                    alt: _vm.house.name,
-                  },
+                  attrs: { src: _vm.house.image, alt: _vm.house.name },
                 }),
               ]),
             ]),
@@ -4176,20 +4141,16 @@ var render = function () {
             _c("div", { staticClass: "col-12 text-center" }, [
               _c("h2", [_vm._v(_vm._s(_vm.house.title))]),
               _vm._v(" "),
-              _c(
-                "h4",
-                [
-                  _vm._v("\n          Annuncio di\n          "),
-                  _vm._l(_vm.user, function (user) {
-                    return _c("span", { key: user.id }, [
-                      _vm._v(
-                        "\n            " + _vm._s(user.name) + "\n          "
-                      ),
-                    ])
-                  }),
-                ],
-                2
-              ),
+              _c("h6", [
+                _vm._v("\n          Annuncio di\n          "),
+                _c("u", { staticClass: "text-primary" }, [
+                  _vm._v(
+                    _vm._s(_vm.house.user.name) +
+                      " " +
+                      _vm._s(_vm.house.user.surname)
+                  ),
+                ]),
+              ]),
             ]),
           ]),
           _vm._v(" "),
@@ -4216,25 +4177,38 @@ var render = function () {
               ),
             ]),
             _vm._v(" "),
-            _c("h4", { staticClass: "text-danger" }, [
+            _c("h5", { staticClass: "text-danger" }, [
               _vm._v("€" + _vm._s(_vm.house.cost_per_night) + " per notte"),
             ]),
           ]),
         ]),
         _vm._v(" "),
-        _c("div", { staticClass: "row" }, [
+        _c("div", { staticClass: "row py-2" }, [
           _c("div", { staticClass: "col-sm-12 col-lg-8 p-0" }, [
             _vm._m(0),
             _vm._v(" "),
             _c("p", [
               _vm._v(
-                "\n          Questa location ha\n          " +
-                  _vm._s(_vm.house.toilets_num) +
-                  "\n          "
+                "Questa struttura è grande " +
+                  _vm._s(_vm.house.square_meters) +
+                  "m²."
+              ),
+            ]),
+            _vm._v(" "),
+            _c("p", [
+              _vm.house.toilets_num == 1
+                ? _c("span", [_vm._v("È presente")])
+                : _c("span", [_vm._v("Sono presenti")]),
+              _vm._v(
+                "\n          " + _vm._s(_vm.house.toilets_num) + "\n          "
               ),
               _vm.house.toilets_num == 1
-                ? _c("span", [_vm._v("bagno.")])
-                : _c("span", [_vm._v("bagni.")]),
+                ? _c("span", [_vm._v("bagno")])
+                : _c("span", [_vm._v("bagni")]),
+              _vm._v(" "),
+              _vm.house.toilets_num == 1
+                ? _c("span", [_vm._v("super confortevole.")])
+                : _c("span", [_vm._v("super confortevoli.")]),
             ]),
             _vm._v(" "),
             _c("p", [
@@ -4251,14 +4225,34 @@ var render = function () {
               _vm.house.beds_num == 1
                 ? _c("span", [_vm._v("posto")])
                 : _c("span", [_vm._v("posti")]),
-              _vm._v("\n          letto!\n        "),
+              _vm._v("\n          letto! 😌\n        "),
             ]),
             _vm._v(" "),
-            _c("p", [_vm._v("Bagni: " + _vm._s(_vm.house.toilets_num))]),
-            _vm._v(" "),
-            _c("p", [_vm._v("Bagni: " + _vm._s(_vm.house.toilets_num))]),
-            _vm._v(" "),
-            _c("p", [_vm._v("Bagni: " + _vm._s(_vm.house.toilets_num))]),
+            _c("p", [
+              _vm.house.room_num == 1
+                ? _c("span", [
+                    _vm._v(
+                      "\n            " +
+                        _vm._s(_vm.house.room_num) +
+                        " stanza comoda e accogliente, con tutto ciò di\n            cui hai bisogno durante la tua permanenza.\n          "
+                    ),
+                  ])
+                : _vm.house.room_num >= 5
+                ? _c("span", [
+                    _vm._v(
+                      "\n            " +
+                        _vm._s(_vm.house.room_num) +
+                        " stanze. Con tutto questo spazio a\n            disposizione il tuo soggiorno sarò un vero spasso! 🤩\n          "
+                    ),
+                  ])
+                : _c("span", [
+                    _vm._v(
+                      "\n            " +
+                        _vm._s(_vm.house.room_num) +
+                        " stanze comode e accoglienti, con tutto ciò di\n            cui avete bisogno durante la vostra permanenza.\n          "
+                    ),
+                  ]),
+            ]),
           ]),
           _vm._v(" "),
           _c("div", { staticClass: "col-sm-12 col-lg-4 p-0 pl-lg-4 pl-sm-0" }, [
@@ -4278,14 +4272,19 @@ var render = function () {
           ]),
         ]),
         _vm._v(" "),
-        _vm._m(2),
+        _c("div", { staticClass: "row py-4" }, [
+          _c("h1", { staticClass: "text-info" }, [
+            _vm._v(
+              "\n        " +
+                _vm._s(_vm.house.visualizations.length) +
+                "\n        "
+            ),
+            _vm.house.visualizations.lenght == 1
+              ? _c("span", [_vm._v("visualizzazione.")])
+              : _c("span", [_vm._v("visualizzazioni.")]),
+          ]),
+        ]),
       ]),
-      _vm._v(" "),
-      _vm._l(_vm.services, function (el) {
-        return _c("p", { key: el.id, staticClass: "card-text" }, [
-          _vm._v("\n    " + _vm._s(el.name) + "\n  "),
-        ])
-      }),
       _vm._v(" "),
       _c(
         "router-link",
@@ -4298,7 +4297,7 @@ var render = function () {
         [_vm._v("Invia Messaggio")]
       ),
     ],
-    2
+    1
   )
 }
 var staticRenderFns = [
@@ -4306,43 +4305,13 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("strong", [_c("h5", [_vm._v("Descrizione")])])
+    return _c("strong", [_c("h3", [_vm._v("Descrizione")])])
   },
   function () {
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("strong", [_c("h5", [_vm._v("Servizi extra")])])
-  },
-  function () {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "row py-5" }, [
-      _c("div", { staticClass: "col-sm-12 col-lg-6" }, [
-        _c("div", { staticClass: "row text-center" }, [
-          _c("div", { staticClass: "col-6 p-0" }, [
-            _c("h4", [_vm._v("Check-in date")]),
-            _vm._v(" "),
-            _c("input", { attrs: { type: "date", name: "", id: "" } }),
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "col-6 p-0" }, [
-            _c("h4", [_vm._v("Check-out date")]),
-            _vm._v(" "),
-            _c("input", { attrs: { type: "date", name: "", id: "" } }),
-          ]),
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "row text-center py-5" }, [
-          _c("div", { staticClass: "col-12 p-0" }, [
-            _c("h4", [_vm._v("Total price")]),
-            _vm._v(" "),
-            _c("p", [_vm._v("€10,000")]),
-          ]),
-        ]),
-      ]),
-    ])
+    return _c("strong", [_c("h3", [_vm._v("Servizi extra")])])
   },
 ]
 render._withStripped = true
