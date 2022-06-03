@@ -1,17 +1,37 @@
 <template>
     <div class="d-flex justify-content-center mx-3">
-        <input class="px-3" type="text" placeholder="Cerca l'appartamento dei tuoi sogni">
-        <span class="d-flex justify-content-center align-items-center">
-            <div class="d-flex justify-content-center align-items-center">
-                <i class="fa-solid fa-magnifying-glass"></i>
-            </div>
-        </span>
+    <input type="text" v-model="queryString" class="px-3" placeholder="Cerca l'appartamento dei tuoi sogni">
+        <router-link :to="{ name: 'search' , params: { query: queryString  } }">
+            <span @click="ttSearch()" class="d-flex justify-content-center align-items-center">
+                <div class="d-flex justify-content-center align-items-center">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </div>
+            </span>
+        </router-link>
     </div>
 </template>
 
 <script>
+
+    
+
     export default {
-        
+        data(){
+            return{
+                queryString: "",
+            }
+        },
+        methods: {
+        ttSearch(){
+        axios.get(`https://api.tomtom.com/search/2/search/${this.queryParams}.json?radius=20000&minFuzzyLevel=1&maxFuzzyLevel=2&view=Unified&relatedPois=off&key=DINngHSiTz58Z5fDF5pThkg1IrJA87je`)
+        .then( res =>{
+           console.log(res.data.results)
+           this.lat = res.data.results[0].position.lat
+           this.lon = res.data.results[0].position.lon
+           this.$router.go(0);
+      })
+      }
+        }
     }
 </script>
 
