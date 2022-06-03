@@ -33,7 +33,7 @@
                     @csrf
 
                     <div class="form-group">                        
-                            <label for="email" class="col-form-label text-md-right">Username or Email Address</label>
+                            <label for="email" class="col-form-label text-md-right">Email</label>
                             <input id="email" type="email" class="form-email-color form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
 
                             @error('email')
@@ -47,7 +47,7 @@
                             <div class='d-flex justify-content-between'>
                                 <label for="password" class="col-form-label text-md-right">{{ __('Password') }}</label>
                                 @if (Route::has('password.request'))
-                                <a class="btn pass-forgot" href="{{ route('password.request') }}">Forgot password?</a>
+                                <a class="btn pass-forgot" href="{{ route('password.request') }}">Password dimenticata?</a>
                                 @endif
                             </div>
                             <input id="password" type="password" class="form-pass-color form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
@@ -65,7 +65,7 @@
                                 <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
 
                                 <label class="form-check-label" for="remember">
-                                    {{ __('Remember Me') }}
+                                    Ricordati di me
                                 </label>
                             </div>
                         </div>
