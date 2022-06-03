@@ -2268,12 +2268,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -2614,7 +2608,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "img[data-v-40fc0132] {\n  width: 100%;\n  height: 100%;\n  -o-object-fit: cover;\n     object-fit: cover;\n  -o-object-position: center;\n     object-position: center;\n  display: block;\n}\n.collage-wrapper[data-v-40fc0132] {\n  width: 100%;\n  height: 480px;\n  display: flex;\n}\n.collage-wrapper .big-pic[data-v-40fc0132] {\n  width: 85%;\n  height: 100%;\n}\n.collage-wrapper .small-pics[data-v-40fc0132] {\n  width: 15%;\n  height: 100%;\n}\n.collage-wrapper .small-pics figure[data-v-40fc0132] {\n  margin: 0;\n  padding: 0;\n  height: 25%;\n}\n.box-shadow[data-v-40fc0132] {\n  box-shadow: 0 4px 10px -4px #333;\n}\nul[data-v-40fc0132] {\n  list-style: none;\n}\nul li[data-v-40fc0132] {\n  max-width: 90px;\n  margin: 10px 0;\n  padding: 5px;\n  border-radius: 20px;\n  text-align: center;\n  font-size: 12px;\n  font-weight: 900;\n  background: #ff385c;\n}\n.ms__btn[data-v-40fc0132] {\n  font-weight: 900;\n  background: #ff385c;\n}", ""]);
+exports.push([module.i, "img[data-v-40fc0132] {\n  width: 100%;\n  height: 100%;\n  -o-object-fit: cover;\n     object-fit: cover;\n  -o-object-position: center;\n     object-position: center;\n  display: block;\n}\n.collage-wrapper[data-v-40fc0132] {\n  width: 100%;\n  height: 480px;\n  display: flex;\n}\n.collage-wrapper .big-pic[data-v-40fc0132] {\n  width: 85%;\n  height: 100%;\n}\n.collage-wrapper .small-pics[data-v-40fc0132] {\n  width: 15%;\n  height: 100%;\n}\n.collage-wrapper .small-pics figure[data-v-40fc0132] {\n  margin: 0;\n  padding: 0;\n  height: 25%;\n}\n.box-shadow[data-v-40fc0132] {\n  box-shadow: 0 4px 10px -4px #333;\n}\nul[data-v-40fc0132] {\n  display: flex;\n  flex-direction: column;\n  gap: 20px;\n  list-style: none;\n}\nul li[data-v-40fc0132] {\n  max-width: 90px;\n  padding: 5px;\n  border-radius: 20px;\n  text-align: center;\n  text-transform: uppercase;\n  font-family: \"Trebuchet MS\", \"Lucida Sans Unicode\", \"Lucida Grande\", \"Lucida Sans\", Arial, sans-serif;\n  font-size: 12px;\n  font-weight: 900;\n  background: #ff385c;\n}\n.ms__btn[data-v-40fc0132] {\n  font-family: \"Trebuchet MS\", \"Lucida Sans Unicode\", \"Lucida Grande\", \"Lucida Sans\", Arial, sans-serif;\n  font-weight: 900;\n  background: #ff385c;\n}\n.ms__font[data-v-40fc0132] {\n  font-family: \"Trebuchet MS\", \"Lucida Sans Unicode\", \"Lucida Grande\", \"Lucida Sans\", Arial, sans-serif;\n  font-weight: 900;\n  font-size: 18px;\n  color: #ff385c;\n}\n.ms__price[data-v-40fc0132] {\n  font-weight: 900;\n  color: #ff385c;\n}", ""]);
 
 // exports
 
@@ -4088,7 +4082,7 @@ var render = function () {
           _vm._v(" "),
           _c("h6", [
             _vm._v("\n          Annuncio di\n          "),
-            _c("u", { staticClass: "text-primary" }, [
+            _c("span", { staticClass: "ms__font" }, [
               _vm._v(
                 _vm._s(_vm.house.user.name) +
                   " " +
@@ -4144,7 +4138,7 @@ var render = function () {
             _vm._v(" "),
             _c("h6", [
               _vm._v("\n          Annuncio di\n          "),
-              _c("u", { staticClass: "text-primary" }, [
+              _c("span", { staticClass: "ms__font" }, [
                 _vm._v(
                   _vm._s(_vm.house.user.name) +
                     " " +
@@ -4172,7 +4166,7 @@ var render = function () {
             ),
           ]),
           _vm._v(" "),
-          _c("h5", { staticClass: "text-danger" }, [
+          _c("h5", { staticClass: "ms__price" }, [
             _vm._v("€" + _vm._s(_vm.house.cost_per_night) + " per notte"),
           ]),
         ]),
@@ -4269,40 +4263,29 @@ var render = function () {
         ]),
       ]),
       _vm._v(" "),
-      _c("div", { staticClass: "row py-4" }, [
-        _c("h1", { staticClass: "text-secondary" }, [
-          _vm._v(
-            "\n        " +
-              _vm._s(_vm.house.visualizations.length) +
-              "\n        "
-          ),
-          _vm.house.visualizations.lenght == 1
-            ? _c("span", [_vm._v("visualizzazione.")])
-            : _c("span", [_vm._v("visualizzazioni.")]),
-        ]),
-      ]),
-      _vm._v(" "),
-      _c(
-        "div",
-        { staticClass: "row py-4" },
-        [
-          _c(
-            "router-link",
-            {
-              staticClass: "btn text-light ms__btn p-2 rounded",
-              attrs: {
-                tag: "a",
-                to: {
-                  name: "house.message",
-                  params: { id: _vm.$route.params.id },
+      _c("div", { staticClass: "row py-5" }, [
+        _c(
+          "div",
+          { staticClass: "col-12 pt-2 text-center" },
+          [
+            _c(
+              "router-link",
+              {
+                staticClass: "btn rounded-pill text-light ms__btn p-2 rounded",
+                attrs: {
+                  tag: "a",
+                  to: {
+                    name: "house.message",
+                    params: { id: _vm.$route.params.id },
+                  },
                 },
               },
-            },
-            [_vm._v("Invia messaggio")]
-          ),
-        ],
-        1
-      ),
+              [_vm._v("Invia messaggio")]
+            ),
+          ],
+          1
+        ),
+      ]),
     ]),
   ])
 }

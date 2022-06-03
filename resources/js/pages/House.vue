@@ -9,8 +9,8 @@
           <h2>{{ house.title }}</h2>
           <h6>
             Annuncio di
-            <u class="text-primary"
-              >{{ house.user.name }} {{ house.user.surname }}</u
+            <span class="ms__font"
+              >{{ house.user.name }} {{ house.user.surname }}</span
             >
           </h6>
         </div>
@@ -47,8 +47,8 @@
           <h2>{{ house.title }}</h2>
           <h6>
             Annuncio di
-            <u class="text-primary"
-              >{{ house.user.name }} {{ house.user.surname }}</u
+            <span class="ms__font"
+              >{{ house.user.name }} {{ house.user.surname }}</span
             >
           </h6>
         </div>
@@ -67,7 +67,7 @@
       <div class="row pb-2">
         <div class="col-12 p-0">
           <h2>{{ position.address }}, {{ position.city }}</h2>
-          <h5 class="text-danger">€{{ house.cost_per_night }} per notte</h5>
+          <h5 class="ms__price">€{{ house.cost_per_night }} per notte</h5>
         </div>
       </div>
 
@@ -129,21 +129,15 @@
         </div>
       </div>
 
-      <div class="row py-4">
-        <h1 class="text-secondary">
-          {{ house.visualizations.length }}
-          <span v-if="house.visualizations.lenght == 1">visualizzazione.</span>
-          <span v-else>visualizzazioni.</span>
-        </h1>
-      </div>
-
-      <div class="row py-4">
-        <router-link
-          class="btn text-light ms__btn p-2 rounded"
-          tag="a"
-          :to="{ name: 'house.message', params: { id: $route.params.id } }"
-          >Invia messaggio</router-link
-        >
+      <div class="row py-5">
+        <div class="col-12 pt-2 text-center">
+          <router-link
+            class="btn rounded-pill text-light ms__btn p-2 rounded"
+            tag="a"
+            :to="{ name: 'house.message', params: { id: $route.params.id } }"
+            >Invia messaggio</router-link
+          >
+        </div>
       </div>
     </div>
   </div>
@@ -233,14 +227,19 @@ img {
 }
 
 ul {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
   list-style: none;
 
   li {
     max-width: 90px;
-    margin: 10px 0;
     padding: 5px;
     border-radius: 20px;
     text-align: center;
+    text-transform: uppercase;
+    font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+      "Lucida Sans", Arial, sans-serif;
     font-size: 12px;
     font-weight: 900;
     background: #ff385c;
@@ -248,7 +247,22 @@ ul {
 }
 
 .ms__btn {
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
   font-weight: 900;
   background: #ff385c;
+}
+
+.ms__font {
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+  font-weight: 900;
+  font-size: 18px;
+  color: #ff385c;
+}
+
+.ms__price {
+  font-weight: 900;
+  color: #ff385c;
 }
 </style>
