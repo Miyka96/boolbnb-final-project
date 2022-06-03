@@ -40,6 +40,7 @@
 
 <script>
 export default{
+    name:"FilterComponent",
     data(){
         return {
             alloggi: [
