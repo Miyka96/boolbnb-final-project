@@ -56,11 +56,7 @@
 
       <div class="row">
         <div class="col-12 p-0">
-          <img
-            class="box-shadow"
-            src="https://as2.ftcdn.net/v2/jpg/00/06/67/49/1000_F_6674908_DkuzLQe3Yznwoh2xC1WPyMIYnaOaaNpd.jpg"
-            :alt="house.name"
-          />
+          <img :src="house.image" :alt="house.name" />
         </div>
       </div>
     </div>
@@ -106,8 +102,9 @@
               cui hai bisogno durante la tua permanenza.
             </span>
             <span v-else-if="house.room_num >= 5">
-              {{ house.room_num }} stanze. Con tutto questo spazio a
-              disposizione il tuo soggiorno sarò un vero spasso! 🤩
+              {{ house.room_num }} stanze. <em class="text-danger">WOW!</em> con
+              tutto questo spazio a disposizione il tuo soggiorno sarà un vero
+              spasso! 🤩
             </span>
             <span v-else>
               {{ house.room_num }} stanze comode e accoglienti, con tutto ciò di
@@ -121,7 +118,11 @@
             <h3>Servizi extra</h3>
           </strong>
           <ul>
-            <li v-for="service in services" :key="service.id">
+            <li
+              class="text-light"
+              v-for="service in services"
+              :key="service.id"
+            >
               {{ service.name }}
             </li>
           </ul>
@@ -129,18 +130,22 @@
       </div>
 
       <div class="row py-4">
-        <h1 class="text-info">
+        <h1 class="text-secondary">
           {{ house.visualizations.length }}
           <span v-if="house.visualizations.lenght == 1">visualizzazione.</span>
           <span v-else>visualizzazioni.</span>
         </h1>
       </div>
+
+      <div class="row py-4">
+        <router-link
+          class="btn text-light ms__btn p-2 rounded"
+          tag="a"
+          :to="{ name: 'house.message', params: { id: $route.params.id } }"
+          >Invia messaggio</router-link
+        >
+      </div>
     </div>
-    <router-link
-      tag="a"
-      :to="{ name: 'house.message', params: { id: $route.params.id } }"
-      >Invia Messaggio</router-link
-    >
   </div>
 </template>
 
@@ -229,9 +234,21 @@ img {
 
 ul {
   list-style: none;
+
+  li {
+    max-width: 90px;
+    margin: 10px 0;
+    padding: 5px;
+    border-radius: 20px;
+    text-align: center;
+    font-size: 12px;
+    font-weight: 900;
+    background: #ff385c;
+  }
 }
 
-ul li:before {
-  content: "✔️ ";
+.ms__btn {
+  font-weight: 900;
+  background: #ff385c;
 }
 </style>

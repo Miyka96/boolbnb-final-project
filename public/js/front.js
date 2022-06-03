@@ -2269,6 +2269,11 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -2609,7 +2614,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "@charset \"UTF-8\";\nimg[data-v-40fc0132] {\n  width: 100%;\n  height: 100%;\n  -o-object-fit: cover;\n     object-fit: cover;\n  -o-object-position: center;\n     object-position: center;\n  display: block;\n}\n.collage-wrapper[data-v-40fc0132] {\n  width: 100%;\n  height: 480px;\n  display: flex;\n}\n.collage-wrapper .big-pic[data-v-40fc0132] {\n  width: 85%;\n  height: 100%;\n}\n.collage-wrapper .small-pics[data-v-40fc0132] {\n  width: 15%;\n  height: 100%;\n}\n.collage-wrapper .small-pics figure[data-v-40fc0132] {\n  margin: 0;\n  padding: 0;\n  height: 25%;\n}\n.box-shadow[data-v-40fc0132] {\n  box-shadow: 0 4px 10px -4px #333;\n}\nul[data-v-40fc0132] {\n  list-style: none;\n}\nul li[data-v-40fc0132]:before {\n  content: \"\\2714\\FE0F   \";\n}", ""]);
+exports.push([module.i, "img[data-v-40fc0132] {\n  width: 100%;\n  height: 100%;\n  -o-object-fit: cover;\n     object-fit: cover;\n  -o-object-position: center;\n     object-position: center;\n  display: block;\n}\n.collage-wrapper[data-v-40fc0132] {\n  width: 100%;\n  height: 480px;\n  display: flex;\n}\n.collage-wrapper .big-pic[data-v-40fc0132] {\n  width: 85%;\n  height: 100%;\n}\n.collage-wrapper .small-pics[data-v-40fc0132] {\n  width: 15%;\n  height: 100%;\n}\n.collage-wrapper .small-pics figure[data-v-40fc0132] {\n  margin: 0;\n  padding: 0;\n  height: 25%;\n}\n.box-shadow[data-v-40fc0132] {\n  box-shadow: 0 4px 10px -4px #333;\n}\nul[data-v-40fc0132] {\n  list-style: none;\n}\nul li[data-v-40fc0132] {\n  max-width: 90px;\n  margin: 10px 0;\n  padding: 5px;\n  border-radius: 20px;\n  text-align: center;\n  font-size: 12px;\n  font-weight: 900;\n  background: #ff385c;\n}\n.ms__btn[data-v-40fc0132] {\n  font-weight: 900;\n  background: #ff385c;\n}", ""]);
 
 // exports
 
@@ -4069,18 +4074,72 @@ var render = function () {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c(
-    "div",
-    [
-      _c("br"),
+  return _c("div", [
+    _c("br"),
+    _vm._v(" "),
+    _c("br"),
+    _vm._v(" "),
+    _c("br"),
+    _vm._v(" "),
+    _c("div", { staticClass: "container p-4 bg-light d-none d-md-block" }, [
+      _c("div", { staticClass: "row" }, [
+        _c("div", { staticClass: "col-12 p-0" }, [
+          _c("h2", [_vm._v(_vm._s(_vm.house.title))]),
+          _vm._v(" "),
+          _c("h6", [
+            _vm._v("\n          Annuncio di\n          "),
+            _c("u", { staticClass: "text-primary" }, [
+              _vm._v(
+                _vm._s(_vm.house.user.name) +
+                  " " +
+                  _vm._s(_vm.house.user.surname)
+              ),
+            ]),
+          ]),
+        ]),
+      ]),
       _vm._v(" "),
-      _c("br"),
-      _vm._v(" "),
-      _c("br"),
-      _vm._v(" "),
-      _c("div", { staticClass: "container p-4 bg-light d-none d-md-block" }, [
-        _c("div", { staticClass: "row" }, [
-          _c("div", { staticClass: "col-12 p-0" }, [
+      _c("div", { staticClass: "row rounded-lg overflow-hidden py-2" }, [
+        _c("div", { staticClass: "collage-wrapper" }, [
+          _c("figure", { staticClass: "big-pic" }, [
+            _c("img", { attrs: { src: _vm.house.image, alt: _vm.house.name } }),
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "small-pics" }, [
+            _c("figure", [
+              _c("img", {
+                attrs: { src: _vm.house.image, alt: _vm.house.name },
+              }),
+            ]),
+            _vm._v(" "),
+            _c("figure", [
+              _c("img", {
+                attrs: { src: _vm.house.image, alt: _vm.house.name },
+              }),
+            ]),
+            _vm._v(" "),
+            _c("figure", [
+              _c("img", {
+                attrs: { src: _vm.house.image, alt: _vm.house.name },
+              }),
+            ]),
+            _vm._v(" "),
+            _c("figure", [
+              _c("img", {
+                attrs: { src: _vm.house.image, alt: _vm.house.name },
+              }),
+            ]),
+          ]),
+        ]),
+      ]),
+    ]),
+    _vm._v(" "),
+    _c(
+      "div",
+      { staticClass: "container-fluid d-md-none d-sm-block bg-light" },
+      [
+        _c("div", { staticClass: "row py-2" }, [
+          _c("div", { staticClass: "col-12 text-center" }, [
             _c("h2", [_vm._v(_vm._s(_vm.house.title))]),
             _vm._v(" "),
             _c("h6", [
@@ -4096,209 +4155,156 @@ var render = function () {
           ]),
         ]),
         _vm._v(" "),
-        _c("div", { staticClass: "row rounded-lg overflow-hidden py-2" }, [
-          _c("div", { staticClass: "collage-wrapper" }, [
-            _c("figure", { staticClass: "big-pic" }, [
-              _c("img", {
-                attrs: { src: _vm.house.image, alt: _vm.house.name },
-              }),
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "small-pics" }, [
-              _c("figure", [
-                _c("img", {
-                  attrs: { src: _vm.house.image, alt: _vm.house.name },
-                }),
-              ]),
-              _vm._v(" "),
-              _c("figure", [
-                _c("img", {
-                  attrs: { src: _vm.house.image, alt: _vm.house.name },
-                }),
-              ]),
-              _vm._v(" "),
-              _c("figure", [
-                _c("img", {
-                  attrs: { src: _vm.house.image, alt: _vm.house.name },
-                }),
-              ]),
-              _vm._v(" "),
-              _c("figure", [
-                _c("img", {
-                  attrs: { src: _vm.house.image, alt: _vm.house.name },
-                }),
-              ]),
-            ]),
+        _c("div", { staticClass: "row" }, [
+          _c("div", { staticClass: "col-12 p-0" }, [
+            _c("img", { attrs: { src: _vm.house.image, alt: _vm.house.name } }),
           ]),
+        ]),
+      ]
+    ),
+    _vm._v(" "),
+    _c("div", { staticClass: "container p-4 bg-light" }, [
+      _c("div", { staticClass: "row pb-2" }, [
+        _c("div", { staticClass: "col-12 p-0" }, [
+          _c("h2", [
+            _vm._v(
+              _vm._s(_vm.position.address) + ", " + _vm._s(_vm.position.city)
+            ),
+          ]),
+          _vm._v(" "),
+          _c("h5", { staticClass: "text-danger" }, [
+            _vm._v("€" + _vm._s(_vm.house.cost_per_night) + " per notte"),
+          ]),
+        ]),
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "row py-2" }, [
+        _c("div", { staticClass: "col-sm-12 col-lg-8 p-0" }, [
+          _vm._m(0),
+          _vm._v(" "),
+          _c("p", [
+            _vm._v(
+              "Questa struttura è grande " +
+                _vm._s(_vm.house.square_meters) +
+                "m²."
+            ),
+          ]),
+          _vm._v(" "),
+          _c("p", [
+            _vm.house.toilets_num == 1
+              ? _c("span", [_vm._v("È presente")])
+              : _c("span", [_vm._v("Sono presenti")]),
+            _vm._v(
+              "\n          " + _vm._s(_vm.house.toilets_num) + "\n          "
+            ),
+            _vm.house.toilets_num == 1
+              ? _c("span", [_vm._v("bagno")])
+              : _c("span", [_vm._v("bagni")]),
+            _vm._v(" "),
+            _vm.house.toilets_num == 1
+              ? _c("span", [_vm._v("super confortevole.")])
+              : _c("span", [_vm._v("super confortevoli.")]),
+          ]),
+          _vm._v(" "),
+          _c("p", [
+            _vm.house.beds_num == 1
+              ? _c("span", [_vm._v("C'è")])
+              : _c("span", [_vm._v("Ci sono")]),
+            _vm._v(
+              "\n          " + _vm._s(_vm.house.beds_num) + "\n          "
+            ),
+            _vm.house.beds_num == 1
+              ? _c("span", [_vm._v("comodissimo")])
+              : _c("span", [_vm._v("comodissimi")]),
+            _vm._v(" "),
+            _vm.house.beds_num == 1
+              ? _c("span", [_vm._v("posto")])
+              : _c("span", [_vm._v("posti")]),
+            _vm._v("\n          letto! 😌\n        "),
+          ]),
+          _vm._v(" "),
+          _c("p", [
+            _vm.house.room_num == 1
+              ? _c("span", [
+                  _vm._v(
+                    "\n            " +
+                      _vm._s(_vm.house.room_num) +
+                      " stanza comoda e accogliente, con tutto ciò di\n            cui hai bisogno durante la tua permanenza.\n          "
+                  ),
+                ])
+              : _vm.house.room_num >= 5
+              ? _c("span", [
+                  _vm._v(
+                    "\n            " + _vm._s(_vm.house.room_num) + " stanze. "
+                  ),
+                  _c("em", { staticClass: "text-danger" }, [_vm._v("WOW!")]),
+                  _vm._v(
+                    " con\n            tutto questo spazio a disposizione il tuo soggiorno sarà un vero\n            spasso! 🤩\n          "
+                  ),
+                ])
+              : _c("span", [
+                  _vm._v(
+                    "\n            " +
+                      _vm._s(_vm.house.room_num) +
+                      " stanze comode e accoglienti, con tutto ciò di\n            cui avete bisogno durante la vostra permanenza.\n          "
+                  ),
+                ]),
+          ]),
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "col-sm-12 col-lg-4 p-0 pl-lg-4 pl-sm-0" }, [
+          _vm._m(1),
+          _vm._v(" "),
+          _c(
+            "ul",
+            _vm._l(_vm.services, function (service) {
+              return _c("li", { key: service.id, staticClass: "text-light" }, [
+                _vm._v(
+                  "\n            " + _vm._s(service.name) + "\n          "
+                ),
+              ])
+            }),
+            0
+          ),
+        ]),
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "row py-4" }, [
+        _c("h1", { staticClass: "text-secondary" }, [
+          _vm._v(
+            "\n        " +
+              _vm._s(_vm.house.visualizations.length) +
+              "\n        "
+          ),
+          _vm.house.visualizations.lenght == 1
+            ? _c("span", [_vm._v("visualizzazione.")])
+            : _c("span", [_vm._v("visualizzazioni.")]),
         ]),
       ]),
       _vm._v(" "),
       _c(
         "div",
-        { staticClass: "container-fluid d-md-none d-sm-block bg-light" },
+        { staticClass: "row py-4" },
         [
-          _c("div", { staticClass: "row py-2" }, [
-            _c("div", { staticClass: "col-12 text-center" }, [
-              _c("h2", [_vm._v(_vm._s(_vm.house.title))]),
-              _vm._v(" "),
-              _c("h6", [
-                _vm._v("\n          Annuncio di\n          "),
-                _c("u", { staticClass: "text-primary" }, [
-                  _vm._v(
-                    _vm._s(_vm.house.user.name) +
-                      " " +
-                      _vm._s(_vm.house.user.surname)
-                  ),
-                ]),
-              ]),
-            ]),
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "row" }, [
-            _c("div", { staticClass: "col-12 p-0" }, [
-              _c("img", {
-                staticClass: "box-shadow",
-                attrs: {
-                  src: "https://as2.ftcdn.net/v2/jpg/00/06/67/49/1000_F_6674908_DkuzLQe3Yznwoh2xC1WPyMIYnaOaaNpd.jpg",
-                  alt: _vm.house.name,
+          _c(
+            "router-link",
+            {
+              staticClass: "btn text-light ms__btn p-2 rounded",
+              attrs: {
+                tag: "a",
+                to: {
+                  name: "house.message",
+                  params: { id: _vm.$route.params.id },
                 },
-              }),
-            ]),
-          ]),
-        ]
+              },
+            },
+            [_vm._v("Invia messaggio")]
+          ),
+        ],
+        1
       ),
-      _vm._v(" "),
-      _c("div", { staticClass: "container p-4 bg-light" }, [
-        _c("div", { staticClass: "row pb-2" }, [
-          _c("div", { staticClass: "col-12 p-0" }, [
-            _c("h2", [
-              _vm._v(
-                _vm._s(_vm.position.address) + ", " + _vm._s(_vm.position.city)
-              ),
-            ]),
-            _vm._v(" "),
-            _c("h5", { staticClass: "text-danger" }, [
-              _vm._v("€" + _vm._s(_vm.house.cost_per_night) + " per notte"),
-            ]),
-          ]),
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "row py-2" }, [
-          _c("div", { staticClass: "col-sm-12 col-lg-8 p-0" }, [
-            _vm._m(0),
-            _vm._v(" "),
-            _c("p", [
-              _vm._v(
-                "Questa struttura è grande " +
-                  _vm._s(_vm.house.square_meters) +
-                  "m²."
-              ),
-            ]),
-            _vm._v(" "),
-            _c("p", [
-              _vm.house.toilets_num == 1
-                ? _c("span", [_vm._v("È presente")])
-                : _c("span", [_vm._v("Sono presenti")]),
-              _vm._v(
-                "\n          " + _vm._s(_vm.house.toilets_num) + "\n          "
-              ),
-              _vm.house.toilets_num == 1
-                ? _c("span", [_vm._v("bagno")])
-                : _c("span", [_vm._v("bagni")]),
-              _vm._v(" "),
-              _vm.house.toilets_num == 1
-                ? _c("span", [_vm._v("super confortevole.")])
-                : _c("span", [_vm._v("super confortevoli.")]),
-            ]),
-            _vm._v(" "),
-            _c("p", [
-              _vm.house.beds_num == 1
-                ? _c("span", [_vm._v("C'è")])
-                : _c("span", [_vm._v("Ci sono")]),
-              _vm._v(
-                "\n          " + _vm._s(_vm.house.beds_num) + "\n          "
-              ),
-              _vm.house.beds_num == 1
-                ? _c("span", [_vm._v("comodissimo")])
-                : _c("span", [_vm._v("comodissimi")]),
-              _vm._v(" "),
-              _vm.house.beds_num == 1
-                ? _c("span", [_vm._v("posto")])
-                : _c("span", [_vm._v("posti")]),
-              _vm._v("\n          letto! 😌\n        "),
-            ]),
-            _vm._v(" "),
-            _c("p", [
-              _vm.house.room_num == 1
-                ? _c("span", [
-                    _vm._v(
-                      "\n            " +
-                        _vm._s(_vm.house.room_num) +
-                        " stanza comoda e accogliente, con tutto ciò di\n            cui hai bisogno durante la tua permanenza.\n          "
-                    ),
-                  ])
-                : _vm.house.room_num >= 5
-                ? _c("span", [
-                    _vm._v(
-                      "\n            " +
-                        _vm._s(_vm.house.room_num) +
-                        " stanze. Con tutto questo spazio a\n            disposizione il tuo soggiorno sarò un vero spasso! 🤩\n          "
-                    ),
-                  ])
-                : _c("span", [
-                    _vm._v(
-                      "\n            " +
-                        _vm._s(_vm.house.room_num) +
-                        " stanze comode e accoglienti, con tutto ciò di\n            cui avete bisogno durante la vostra permanenza.\n          "
-                    ),
-                  ]),
-            ]),
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "col-sm-12 col-lg-4 p-0 pl-lg-4 pl-sm-0" }, [
-            _vm._m(1),
-            _vm._v(" "),
-            _c(
-              "ul",
-              _vm._l(_vm.services, function (service) {
-                return _c("li", { key: service.id }, [
-                  _vm._v(
-                    "\n            " + _vm._s(service.name) + "\n          "
-                  ),
-                ])
-              }),
-              0
-            ),
-          ]),
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "row py-4" }, [
-          _c("h1", { staticClass: "text-info" }, [
-            _vm._v(
-              "\n        " +
-                _vm._s(_vm.house.visualizations.length) +
-                "\n        "
-            ),
-            _vm.house.visualizations.lenght == 1
-              ? _c("span", [_vm._v("visualizzazione.")])
-              : _c("span", [_vm._v("visualizzazioni.")]),
-          ]),
-        ]),
-      ]),
-      _vm._v(" "),
-      _c(
-        "router-link",
-        {
-          attrs: {
-            tag: "a",
-            to: { name: "house.message", params: { id: _vm.$route.params.id } },
-          },
-        },
-        [_vm._v("Invia Messaggio")]
-      ),
-    ],
-    1
-  )
+    ]),
+  ])
 }
 var staticRenderFns = [
   function () {
