@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Service;
 use App\Position;
 use Illuminate\Support\Facades\Auth;
+use App\Visualization;
 
 class HouseController extends Controller
 {
@@ -80,8 +81,9 @@ class HouseController extends Controller
     * @return \Illuminate\Http\Response
     */
     public function show(House $house)
-    {
-       return view('user.house-show', compact('house'));
+    {; 
+       $visualizations = Visualization::where('house_id', $house->id)->count();
+       return view('user.house-show', compact('house','visualizations'));
     }
 
    /**

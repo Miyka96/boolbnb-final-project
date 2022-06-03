@@ -4,7 +4,61 @@
 
 
    <div class="container py-5 my-5">
-      <form action="{{ route('user.messages.store') }}" method="post">
+
+      
+
+      <h1>Visualizzazioni Appartamento</h1>
+
+      {{-- chart js static experiment --}}
+
+         <div class="chart-container" style="
+         position:relative;
+         margin: auto;
+         height: 40vh;
+         width: 80vw;">
+         <canvas id="chart"></canvas>
+         </div>
+
+
+         <script>
+            var data = {
+                labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul"],
+                datasets: [{
+                    label: "Visualizzazioni",
+                    backgroundColor: "rgba(255,99,132,0.2)",
+                    borderColor: "rgba(255,99,132,1)",
+                    borderWidth: 2,
+                    hoverBackgroundColor: "rgba(255,99,132,0.4)",
+                    hoverBorderColor: "rgba(255,99,132,1)",
+                    data: [65, 59, 20, 81, 56, 55, 40],
+                }]
+            };
+    
+            var options = {
+                maintainAspectRatio: false,
+                scales: {
+                    y: {
+                        stacked: true,
+                        grid: {
+                            display: true,
+                            color: "rgba(255,99,132,0.2)"
+                        }
+                    },
+                    x: {
+                        grid: {
+                            display: false
+                        }
+                    }
+                }
+            };
+    
+            new Chart('chart', {
+                type: 'bar',
+                options: options,
+                data: data
+            });
+        </script>
+      {{-- <form action="{{ route('user.messages.store') }}" method="post">
          @csrf
 
          @php
@@ -50,15 +104,15 @@
          </div>
 
          {{-- HouseId --}}
-         <div class="form-group">
+         {{-- <div class="form-group">
             <input hidden type="number" class="form-control" name="house_id" id="house_id"
                value="{{ request()->house->id }}">
-         </div>
+         </div> --}}
    
          {{-- Submit --}}
-         <button class="btn btn-outline-primary" type="submit">
+         {{-- <button class="btn btn-outline-primary" type="submit">
             Create
          </button>
-      </form>
+      </form> --}} 
    </div>
 @endsection
