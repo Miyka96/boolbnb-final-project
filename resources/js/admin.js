@@ -16,10 +16,14 @@
   * Eg. ./components/ExampleComponent.vue -> <example-component></example-component>
   */
  
-  const files = require.context('./', true, /\.vue$/i)
-  files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default))
+ // const files = require.context('./', true, /\.vue$/i)
+ // files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default))
+ 
 
- // <footer-component></footer-component>
+
+// Importare componenti qui in questo modo
+// Vue.component('navbar-component', require('./components/navbarComponent.vue').default);
+ 
 
 
  /**
