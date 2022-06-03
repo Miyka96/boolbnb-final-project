@@ -1,13 +1,34 @@
 @extends('layouts.app')
 
-@section('content')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ __('Register') }}</div>
+@php $i = 0 @endphp
 
-                <div class="card-body">
+@section('content')
+<div class="register_page container-fluid d-flex justify-content-between">
+    <div class="row banner">
+
+        {{-- For per il banner tramite DB --}}
+
+        {{-- 
+            @for($j = 0; $j < 6; $j++)
+            @if($i == 3)</div>@endif
+            @if($i == 0 or $i == 3) <div class="column column_@php echo $i @endphp col-6 flex-column d-flex"> @endif
+                <img src="{{$house->image}}">  <!-- Dimensioni per le immagini 325x425 -->
+            @php $i++ @endphp
+            @endfor
+        --}}        
+
+        @for($j = 0; $j < 12; $j++)
+            @if($i == 6)</div>@endif
+            @if($i == 0 or $i == 6) <div class="column column_@php echo $i @endphp col-lg-6 col-md-12 flex-column d-flex"> @endif
+                <img src="https://picsum.photos/1080/1920" alt="">            
+            @php $i++ @endphp
+        @endfor
+        </div>  
+    </div>
+    <div class="row  align-items-center justify-content-center">
+        <div class="col-12 d-flex align-items-center justify-content-center">
+
+                <div class="card-body register-wrapper">
                     <form method="POST" action="{{ route('register') }}">
                         @csrf
 
@@ -91,14 +112,14 @@
 
                         <div class="form-group row mb-0">
                             <div class="col-md-6 offset-md-4">
-                                <button type="submit" class="btn btn-primary">
+                                <button type="submit" class="button">
                                     {{ __('Register') }}
                                 </button>
                             </div>
                         </div>
                     </form>
                 </div>
-            </div>
+
         </div>
     </div>
 </div>

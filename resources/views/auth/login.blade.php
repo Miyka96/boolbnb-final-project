@@ -1,6 +1,7 @@
 @extends('layouts.app')
 
 @php $i = 0 @endphp
+
 @section('content')
 <div class="login_page container-fluid d-flex justify-content-between">
     <div class="row banner">
@@ -69,7 +70,7 @@
                             </div>
                         </div>
                     </div>
-                    <button type="submit" class="btn">{{ __('Login') }}</button>                    
+                    <button type="submit" class="button">{{ __('Login') }}</button>                    
                 </form>
             </div>            
         </div>
