@@ -19,8 +19,8 @@
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Abel&family=Libre+Baskerville:wght@400;700&family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
 
 
     <!-- Styles -->
@@ -29,18 +29,18 @@
 
 <body>
     <div id="app">
-        <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm fixed-top">
-            <div class="container">
-                <a class="navbar-brand" href="{{ url('/') }}">
-                    Wowlidays
+        <nav class="navbar">
+            <div class="container d-flex justify-content-between align-items-center">
+                <a id="ancora_nav" style="width: 50px; height: 50px;" class="navbar-brand d-flex align-items-center fixed-top-left" href="{{ url('/') }}">
+                    <img style="width: 100%; " id="logo_nav" src="{{ asset('img/logoNero.png') }}" alt="">
                 </a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                {{-- <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
                     aria-controls="navbarSupportedContent" aria-expanded="false"
                     aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
-                </button>
+                </button> --}}
 
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                {{-- <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav mr-auto">
                        <li class="nav-item">
@@ -49,11 +49,11 @@
                         <li class="nav-item">
                            <a class="nav-link" href="/search">Search</a>
                         </li>
-                        {{-- hello, qui dentro possiamo inserire i link di navigazione --}}
-                    </ul>
+                        
+                    </ul> --}}
 
                     <!-- Right Side Of Navbar -->
-                    <ul class="navbar-nav ml-auto">
+                    {{-- <ul class="navbar-nav ml-auto"> --}}
                         <!-- Authentication Links -->
                         @guest
                             <li class="nav-item">
@@ -65,8 +65,8 @@
                                 </li>
                             @endif
                         @else
-                            <li class="nav-item dropdown">
-                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button"
+                            <li class="nav-item dropdown drop-custom">
+                                <a id="navbarDropdown" class="fixed-top-right nav-link dropdown-toggle badge badge-pill badge-light" href="#" role="button"
                                     data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     {{ Auth::user()->name }}
                                 </a>
@@ -90,7 +90,7 @@
                                 </div>
                             </li>
                         @endguest
-                    </ul>
+                    {{-- </ul> --}}
                 </div>
             </div>
         </nav>
@@ -101,4 +101,31 @@
     </div>
 </body>
 
+<style scoped>
+    @import '../../sass/_variables';
+
+
+.navbar li{
+    list-style: none;
+}
+
+.navbar a{
+    color: currentColor;
+    text-decoration: none;
+}
+
+.drop-custom{
+    font-size: 25px;
+    color: rgb(220	59	91);
+    background-color: rgba( white, 0.7);
+}
+
+.drop-custom a:hover{
+    color: white;
+    background-color: rgb(220	59	91);
+}
+</style>
+
 </html>
+
+

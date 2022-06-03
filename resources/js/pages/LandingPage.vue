@@ -1,7 +1,7 @@
 <template>
    <div id="home">
+
       <Banner/>
-      <Navbar/>
       <SectionVue/>
       <CardsShowcase/>
    </div>
@@ -11,14 +11,14 @@
 import Banner from '../components/MainBanner.vue';
 import CardsShowcase from '../components/CardShowcase.vue';
 import SectionVue from '../components/SectionVue.vue';
-import Navbar from '../components/NavbarComponent.vue';
+import Search from '../components/SearchbarComponent.vue';
 
 export default {
    components: {
       Banner,
       CardsShowcase,
       SectionVue,
-      Navbar
+      Search
    },
    
 }

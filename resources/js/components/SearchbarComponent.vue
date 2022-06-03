@@ -16,6 +16,7 @@
     
 
     export default {
+        name: 'Search',
         data(){
             return{
                 queryString: "",
@@ -73,6 +74,6 @@
             width: 30px;
             font-size: smaller;
             margin-right: 5px;
-        }
+        }  
     }
 </style>

@@ -1,18 +1,27 @@
 <template>
-   <section id="main-banner" class="debug">
+   <div class="d-flex flex-column">
+      <div class="container d-flex pt-2 fixed-top">
+         <Search/>
+      </div>
+      <section id="main-banner" class="debug">
       <!-- [TODO] AGGIUNGERE SRC VIDEO -->
       <video autoplay muted loop playsinline>
          <source src="" type="video/mp4">
       </video>
       <h2 :class="[activeSlide === i ? 'active' : '', 'banner-text']" v-for="(el,i) in slideWords" :key="i">{{ slideWords[i] }}</h2>
    </section>
+   </div>
 </template>
 
 <script>
 import state from '../store.js';
+import Search from '../components/SearchbarComponent.vue';
 
 export default {
    name: 'MainBanner',
+   components: {
+      Search
+   },
    props: {
 
    },
