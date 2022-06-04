@@ -1,47 +1,39 @@
 <template>
-    <div id="map" ref="mapRef"></div>
+    <section>
+        <div id="map" class="map"></div>
+    </section>
 </template>
 
 <script>
-import { onMounted, ref } from "vue";
-import "@tomtom-international/web-sdk-maps";
 export default {
-    name: "Map",
-    setup() {
-        const mapRef = ref(null);
-        onMounted(() => {
-            var map = tt.map({
-                key: "DINngHSiTz58Z5fDF5pThkg1IrJA87je",
-                container: mapRef.value,
-                style: "tomtom://vector/1/basic-main",
+   name: 'Map',
+   methods: {
+        initializeMap: function() {
+            const map = tt.map({
+            key: '4xOYA50eGLm6ip0bG0fIFwWnKd4PpRau',
+            container: 'map',
+            zoom: 15,
+            center: [9.665420, 45.704690],
             });
+             // aggiunta controlli mappa
             map.addControl(new tt.FullscreenControl());
             map.addControl(new tt.NavigationControl());
-        });
 
-        function addMarker(map) {
-            const tt = window.tt;
-            var location = [-121.91595, 37.36729];
-            var popupOffset = 25;
-
-            var marker = new tt.Marker().setLngLat(location).addTo(map);
-            var popup = new tt.Popup({ offset: popupOffset }).setHTML(
-                "Your address!"
-            );
-            marker.setPopup(popup).togglePopup();
+            new tt.Marker().setLngLat([9.665420, 45.704690]).addTo(map);
         }
-        addMarker(map);
-
-        return {
-            mapRef,
-        };
     },
-};
+    mounted: function() {
+        // this.getMap();
+        this.initializeMap();
+    }
+
+}
 </script>
 
-<style>
+<style lang="scss">
 #map {
-    height: 50vh;
-    width: 50vw;
-}
+           width: 50%;
+           height: 400px;
+       }
+
 </style>
