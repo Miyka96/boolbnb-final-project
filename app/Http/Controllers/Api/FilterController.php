@@ -5,17 +5,16 @@ namespace App\Http\Controllers\Api;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\House;
+use Carbon\Carbon;
 
 class FilterController extends Controller
 {
     public function filteredHouses(){
+        $rooms = 1;
         $houses = House::with(['position', 'user', 'messages', 'services', 'visualizations'])
-         ->join('house_sponsorship', 'house_sponsorship.house_id', '=', 'houses.id')
          ->where([
-            ['is_visible','=', 1],
-            ['house_sponsorship.sponsor_start', '<=', Carbon::now()->toString()],
-            ['house_sponsorship.sponsor_end', '<', Carbon::now()->toString()], // < perchè funziona al contrario, boh
-         ])->get();
+            'room_num' == $rooms
+         ]);
 
 
       if( $houses ) {
