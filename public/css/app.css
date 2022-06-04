@@ -11259,14 +11259,14 @@ body::-webkit-scrollbar-thumb:hover {
 }
 
 .login_page .pass-forgot {
-  color: #e51c80 !important;
+  color: rgb(219, 59, 91) !important;
 }
 
 .login_page .form-email-color:focus,
 .login_page .form-pass-color:focus {
   outline: none !important;
-  border-color: #e51c80 !important;
-  box-shadow: 0 0 10px #e51c80 !important;
+  border-color: rgb(219, 59, 91) !important;
+  box-shadow: 0 0 10px rgb(219, 59, 91) !important;
 }
 
 .login_page .column img {
@@ -11320,7 +11320,7 @@ body::-webkit-scrollbar-thumb:hover {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: #e51c80;
+  background-color: rgb(219, 59, 91);
   border-radius: 10rem;
   z-index: -2;
 }
@@ -11332,7 +11332,7 @@ body::-webkit-scrollbar-thumb:hover {
   left: 0;
   width: 0%;
   height: 100%;
-  background-color: #a2135a;
+  background-color: #aa1f3b;
   transition: all 0.3s;
   border-radius: 10rem;
   z-index: -1;
@@ -11373,14 +11373,14 @@ body::-webkit-scrollbar-thumb:hover {
 }
 
 .register_page .pass-forgot {
-  color: #e51c80 !important;
+  color: rgb(219, 59, 91) !important;
 }
 
 .register_page .form-email-color:focus,
 .register_page .form-pass-color:focus {
   outline: none !important;
-  border-color: #e51c80 !important;
-  box-shadow: 0 0 10px #e51c80 !important;
+  border-color: rgb(219, 59, 91) !important;
+  box-shadow: 0 0 10px rgb(219, 59, 91) !important;
 }
 
 .register_page .column img {
@@ -11434,7 +11434,7 @@ body::-webkit-scrollbar-thumb:hover {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: #e51c80;
+  background-color: rgb(219, 59, 91);
   border-radius: 10rem;
   z-index: -2;
 }
@@ -11446,7 +11446,7 @@ body::-webkit-scrollbar-thumb:hover {
   left: 0;
   width: 0%;
   height: 100%;
-  background-color: #a2135a;
+  background-color: #aa1f3b;
   transition: all 0.3s;
   border-radius: 10rem;
   z-index: -1;
@@ -11458,5 +11458,220 @@ body::-webkit-scrollbar-thumb:hover {
 
 .register_page .button:hover:before {
   width: 100%;
+}
+
+.user_houses {
+  padding: 0 50px;
+}
+
+.user_houses a {
+  text-decoration: none;
+}
+
+.user_houses .card-wrapper {
+  -moz-column-gap: 1%;
+       column-gap: 1%;
+  row-gap: 30px;
+  padding: 30px 0;
+  flex-wrap: wrap;
+}
+
+@media screen and (max-width: 1024px) {
+  .user_houses .card-wrapper {
+    -moz-column-gap: 2%;
+         column-gap: 2%;
+  }
+}
+
+.user_houses .card {
+  width: 23% !important;
+  margin: 0;
+  border-radius: 15px;
+  border: none;
+  background-color: transparent;
+  transition: all ease-in-out 0.3s;
+}
+
+@media screen and (max-width: 1024px) {
+  .user_houses .card {
+    width: 30% !important;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .user_houses .card {
+    width: 47% !important;
+  }
+}
+
+.user_houses .card:hover {
+  transform: scale(1.03);
+}
+
+.user_houses .card img {
+  width: 100%;
+  aspect-ratio: 1;
+  border-radius: 15px;
+}
+
+.user_houses .card .card-body {
+  padding: 12px 0 0 0;
+  font-size: 15px;
+  position: relative;
+}
+
+.user_houses .card .card-body .card-title {
+  font-size: 16px;
+  font-weight: 600;
+  color: #222222;
+  margin-bottom: 0px;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.user_houses .card .card-body p {
+  font-size: 15px;
+  font-weight: 400;
+  color: #717171;
+  margin: 0;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.user_houses .card .card-body p strong {
+  font-size: 15px;
+  font-weight: 600;
+  color: #222222;
+}
+
+.user_houses .card .card-body .card-position {
+  margin-bottom: 6px;
+}
+
+.user_houses .card .card-body .card-rating {
+  color: #222222;
+  position: absolute;
+  top: 12px;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 4px;
+}
+
+.user_houses .card .card-body .card-rating i {
+  font-size: 12px;
+}
+
+.user_houses .card .bottoni-card {
+  width: 100%;
+  row-gap: 13px;
+  justify-content: space-between;
+}
+
+@media screen and (max-width: 768px) {
+  .user_houses .card .bottoni-card {
+    flex-direction: column;
+    row-gap: 5px;
+  }
+}
+
+.user_houses .card .bottoni-card a:first-child {
+  display: none;
+}
+
+.user_houses .card .modifica {
+  width: 47%;
+  background-color: rgb(97, 194, 255);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@media screen and (max-width: 768px) {
+  .user_houses .card .modifica {
+    width: 100%;
+  }
+}
+
+.user_houses .card .elimina-form {
+  width: 47%;
+  height: 40px;
+}
+
+@media screen and (max-width: 768px) {
+  .user_houses .card .elimina-form {
+    width: 100%;
+  }
+}
+
+.user_houses .card .elimina {
+  width: 100%;
+  height: 100%;
+  background: red;
+}
+
+.user_houses .card .messaggi {
+  width: 100%;
+  background-color: rgb(219, 59, 91);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@media screen and (max-width: 375px) {
+  .user_houses .card .messaggi {
+    font-size: 90%;
+  }
+}
+
+@media screen and (max-width: 350px) {
+  .user_houses .card .messaggi {
+    font-size: 70%;
+  }
+}
+
+.user_houses .aggiungi-card {
+  aspect-ratio: 1;
+  border: 3px solid grey;
+  color: rgb(219, 59, 91);
+  font-size: 30px;
+  margin-left: 15px;
+}
+
+@media screen and (max-width: 700px) {
+  .user_houses .aggiungi-card {
+    display: none;
+  }
+}
+
+.user_houses .button {
+  height: 40px;
+  border: none;
+  border-radius: 5px;
+  color: white;
+}
+
+.user_houses .button .icon {
+  display: none;
+}
+
+.user_houses .button:hover .icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.user_houses .button:hover .text {
+  display: none;
+}
+
+.user_houses .aggiungi {
+  color: rgb(219, 59, 91);
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 200px;
 }
 

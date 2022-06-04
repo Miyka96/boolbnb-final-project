@@ -1,0 +1,204 @@
+@import './variables';
+
+.user_houses{
+    padding: 0 50px;
+    a {
+        text-decoration: none;
+     }
+
+     .card-wrapper{
+         column-gap: 1%;
+         row-gap: 30px;
+         padding: 30px 0;
+         flex-wrap: wrap;
+
+         @media screen and (max-width: 1024px){
+            column-gap: 2%;
+        }
+     }
+
+     .card {
+        width: 23%!important;
+        margin: 0;
+        border-radius: 15px;
+        border: none;
+        background-color: transparent;
+        transition: all ease-in-out 0.3s;
+
+        @media screen and (max-width: 1024px){
+            width: 30% !important;
+        }
+
+        @media screen and (max-width: 700px){
+            width: 47% !important;
+        }
+     
+        &:hover {
+           transform: scale(1.03);
+        }
+        
+        img {
+           width: 100%;
+           aspect-ratio: 1;
+           border-radius: 15px;
+        }
+     
+        .card-body {
+           padding: 12px 0 0 0;
+           font-size: 15px;
+           position: relative;
+           // background-color: transparent;
+     
+           .card-title {
+              font-size: 16px;
+              font-weight: 600;
+              color: #222222;
+              margin-bottom: 0px;
+              white-space: nowrap;
+              overflow: hidden;
+           }
+     
+           p {
+              font-size: 15px;
+              font-weight: 400;
+              color:#717171;
+              margin: 0;
+              white-space: nowrap;
+              overflow: hidden;
+     
+              strong {
+                 font-size: 15px;
+                 font-weight: 600;
+                 color: #222222;
+              }
+           }
+     
+           .card-position {
+              margin-bottom: 6px;
+           }
+     
+           .card-rating {
+              color: #222222;
+              position: absolute;
+              top: 12px;
+              right: 0;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              gap: 4px;
+     
+              i {
+                 // margin-left: 4px;
+                 font-size: 12px;
+              }
+           }
+        }
+
+        // Bottoni
+
+        .bottoni-card{
+            width: 100%;
+            row-gap: 13px;
+            justify-content: space-between;
+
+            @media screen and (max-width: 768px) {
+                flex-direction: column;
+                row-gap: 5px;
+            }
+
+            a:first-child{
+                display: none;
+            }
+        }
+
+        .modifica{
+           width: 47%;
+           background-color: rgb(97, 194, 255);
+           display: flex;
+           justify-content: center;
+           align-items: center;
+
+           @media screen and (max-width: 768px){
+               width: 100%;
+           }
+        }
+
+        .elimina-form{
+           width: 47%;
+           height: 40px;
+           @media screen and (max-width: 768px){
+            width: 100%;
+        }
+        }
+
+        .elimina{
+            width: 100%;
+            height: 100%;
+            background: red;
+        }
+
+        
+
+        .messaggi{
+            width: 100%;
+            background-color: $login;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            @media screen and (max-width: 375px){
+                font-size: 90%;
+            }
+
+            @media screen and (max-width: 350px){
+                font-size: 70%;
+            }
+        }
+     }
+
+     .aggiungi-card{
+        aspect-ratio: 1;
+        border: 3px solid grey;
+        color: $login;
+        font-size: 30px;
+        margin-left: 15px;
+
+        @media screen and (max-width: 700px){
+            display: none;
+        }
+     }
+
+     .button {
+        height: 40px;
+        border: none;
+        border-radius: 5px;
+        color: white;
+    }
+    
+    .button .icon {
+        display: none;
+    }
+
+    .button:hover {
+
+        & .icon{
+           display: flex;
+           align-items: center;
+           justify-content: center;
+        }
+    }
+    
+    .button:hover .text {
+        display: none;
+    }
+
+    .aggiungi{
+        color: $login;
+        font-size: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 200px;
+        
+    }
+}
