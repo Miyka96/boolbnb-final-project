@@ -1,15 +1,6 @@
 <template>
     <div class="container-fluid">
         <div class="filter_wrapper d-flex flex-column">
-            <div class="alloggi_wrapper">
-                <h1>Tipo di alloggio</h1>
-                <div class="row">
-                    <div v-for="(item,i) in alloggi" :key="i" class="col-s-5 col-md-5 col-xl alloggi">
-                        <i :class="item.icon"></i>
-                        <span>{{item.name}}</span>
-                    </div>
-                </div>
-            </div>
             <div class="stanze_wrapper">
                 <h1>Stanze, letti e bagni</h1>
                 <h4>Stanze</h4>
@@ -43,25 +34,9 @@ export default{
     name:"FilterComponent",
     data(){
         return {
-            alloggi: [
-                {
-                    'icon' : 'fa-solid fa-house',
-                    'name' : 'Casa'
-                },
-                {
-                    'icon' : 'fa-solid fa-city',
-                    'name' : 'Appartamento'
-                },
-                {
-                    'icon' : 'fa-solid fa-bed',
-                    'name' : 'Pensione'
-                },
-                {
-                    'icon' : 'fa-solid fa-hotel',
-                    'name' : 'Hotel'
-                },
-            ],
-
+            houses: [],
+            lastPage: 0,
+            currentPage: 1,
             numero_stanze: ['Qualsiasi',1,2,3,4,5,6,7,'8+'],
             numero_letti: ['Qualsiasi',1,2,3,4,5,6,7,'8+'],
             numero_bagni: ['Qualsiasi',1,2,3,4,5,6,7,'8+'],
@@ -105,6 +80,26 @@ export default{
                 },
             ]
         }
+    },
+     methods: {
+      fetchHouses(page = 1) { //default value
+         axios.get('/api/houses', {
+            params: {
+               page  // equivalente a page: page
+            }
+         })
+        .then( res => {
+            console.log( res.data )
+            const { houses } = res.data
+            const { data, last_page, current_page } = houses
+            this.houses = data
+            this.currentPage = current_page
+            this.lastPage = last_page
+         })
+         .catch( err => {
+            console.warn( err )
+         })
+      }
     }
 }
 </script>
