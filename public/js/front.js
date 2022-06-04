@@ -2242,9 +2242,8 @@ __webpack_require__.r(__webpack_exports__);
         date: ""
       },
       location: {},
-      locationLong: 0,
-      locationLat: 0,
-      userIpAddress: "",
+      lon: 0,
+      lat: 0,
       TomTomApiKey: "IEix9iHTEHOJolKXAoByVdl4reKermIB"
     };
   },
@@ -2254,7 +2253,7 @@ __webpack_require__.r(__webpack_exports__);
         key: "IEix9iHTEHOJolKXAoByVdl4reKermIB",
         container: "map",
         zoom: 15,
-        center: [this.locationLong, this.locationLat]
+        center: [this.lon, this.lat]
       }); // aggiunta controlli mappa
 
       map.addControl(new tt.FullscreenControl());
@@ -2278,11 +2277,21 @@ __webpack_require__.r(__webpack_exports__);
       })["catch"](function (error) {
         console.log(error);
       });
+    },
+    ttSearch: function ttSearch() {
+      var _this2 = this;
+
+      axios.get("https://api.tomtom.com/search/2/search/".concat(this.position.address, "' '").concat(this.position.city, "' '").concat(this.position.country, ".json?radius=20000&minFuzzyLevel=1&maxFuzzyLevel=2&view=Unified&relatedPois=off&key=DINngHSiTz58Z5fDF5pThkg1IrJA87je")).then(function (res) {
+        console.log(res.data.results);
+        _this2.lat = res.data.results[0].position.lat;
+        _this2.lon = res.data.results[0].position.lon;
+      });
     }
   },
   mounted: function mounted() {
     this.fetchHouse();
     this.visual();
+    this.ttSearch();
   }
 });
 
