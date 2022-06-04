@@ -9,12 +9,19 @@ use Carbon\Carbon;
 
 class FilterController extends Controller
 {
-    public function filteredHouses(){
-        $rooms = 1;
-        $houses = House::with(['position', 'user', 'messages', 'services', 'visualizations'])
+    public function index(Request $request){
+      $fullHouses = House::with(['position','messages','services','visualizations'])->get();
+      $rooms = $request->rooms;
+      $beds = $request->beds;
+      $toilets= $request->toilets;
+
+        $houses = House::with(['position', 'messages', 'services', 'visualizations'])
          ->where([
-            'room_num' == $rooms
-         ]);
+            ['room_num','=', $rooms],
+            ['beds_num','=', $beds],
+            ['toilets_num','=', $toilets],
+         ])
+         ->get();
 
 
       if( $houses ) {
@@ -24,9 +31,11 @@ class FilterController extends Controller
          ]);
       }
 
-      return response()->json([
-         'message' => 'Houses not found',
-         'success' => false
-      ], 404);
+      else{
+         return response()->json([
+            'fullHouses'=> $fullHouses,
+            'success' => true
+         ]);
+      }
     }
 }

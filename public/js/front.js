@@ -2006,44 +2006,108 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "FilterComponent",
   data: function data() {
     return {
+      rooms: [],
+      beds: [],
+      toilets: [],
+      services: [],
       houses: [],
       lastPage: 0,
-      currentPage: 1,
-      numero_stanze: ['Qualsiasi', 1, 2, 3, 4, 5, 6, 7, '8+'],
-      numero_letti: ['Qualsiasi', 1, 2, 3, 4, 5, 6, 7, '8+'],
-      numero_bagni: ['Qualsiasi', 1, 2, 3, 4, 5, 6, 7, '8+'],
-      checkbox: [{
-        'name': 'Wi-fi',
-        'checked': true
-      }, {
-        'name': 'Cucina',
-        'checked': true
-      }, {
-        'name': 'Lavatrice',
-        'checked': true
-      }, {
-        'name': 'Asciugatrice',
-        'checked': true
-      }, {
-        'name': 'Aria condizionata',
-        'checked': true
-      }, {
-        'name': 'Riscaldamento',
-        'checked': true
-      }, {
-        'name': 'TV',
-        'checked': true
-      }, {
-        'name': 'Asciugacapelli',
-        'checked': true
-      }, {
-        'name': 'Ferro da stiro',
-        'checked': true
-      }]
+      currentPage: 1
     };
   },
   methods: {
@@ -2068,6 +2132,17 @@ __webpack_require__.r(__webpack_exports__);
         _this.lastPage = last_page;
       })["catch"](function (err) {
         console.warn(err);
+      });
+    },
+    filter: function filter() {
+      axios.post("/api/filter", JSON.stringify({
+        rooms: this.rooms,
+        beds: this.beds,
+        toilets: this.toilets
+      })).then(function (res) {
+        console.log(res.data);
+      })["catch"](function (error) {
+        console.log(error);
       });
     }
   }
@@ -4433,66 +4508,1021 @@ var render = function () {
         _vm._v(" "),
         _c("h4", [_vm._v("Stanze")]),
         _vm._v(" "),
-        _c(
-          "div",
-          { staticClass: "pill_wrapper" },
-          _vm._l(_vm.numero_stanze, function (el, j) {
-            return _c("span", { key: j, staticClass: "pill" }, [
-              _vm._v(_vm._s(el)),
-            ])
+        _c("span", [
+          _c("label", { attrs: { for: "1" } }, [_vm._v("1")]),
+          _vm._v(" "),
+          _c("input", {
+            directives: [
+              {
+                name: "model",
+                rawName: "v-model",
+                value: _vm.rooms,
+                expression: "rooms",
+              },
+            ],
+            attrs: { type: "checkbox", value: "1", name: "1" },
+            domProps: {
+              checked: Array.isArray(_vm.rooms)
+                ? _vm._i(_vm.rooms, "1") > -1
+                : _vm.rooms,
+            },
+            on: {
+              change: function ($event) {
+                var $$a = _vm.rooms,
+                  $$el = $event.target,
+                  $$c = $$el.checked ? true : false
+                if (Array.isArray($$a)) {
+                  var $$v = "1",
+                    $$i = _vm._i($$a, $$v)
+                  if ($$el.checked) {
+                    $$i < 0 && (_vm.rooms = $$a.concat([$$v]))
+                  } else {
+                    $$i > -1 &&
+                      (_vm.rooms = $$a.slice(0, $$i).concat($$a.slice($$i + 1)))
+                  }
+                } else {
+                  _vm.rooms = $$c
+                }
+              },
+            },
           }),
-          0
-        ),
+        ]),
+        _vm._v(" "),
+        _c("span", [
+          _c("label", { attrs: { for: "2" } }, [_vm._v("2")]),
+          _vm._v(" "),
+          _c("input", {
+            directives: [
+              {
+                name: "model",
+                rawName: "v-model",
+                value: _vm.rooms,
+                expression: "rooms",
+              },
+            ],
+            attrs: { type: "checkbox", value: "2", name: "2" },
+            domProps: {
+              checked: Array.isArray(_vm.rooms)
+                ? _vm._i(_vm.rooms, "2") > -1
+                : _vm.rooms,
+            },
+            on: {
+              change: function ($event) {
+                var $$a = _vm.rooms,
+                  $$el = $event.target,
+                  $$c = $$el.checked ? true : false
+                if (Array.isArray($$a)) {
+                  var $$v = "2",
+                    $$i = _vm._i($$a, $$v)
+                  if ($$el.checked) {
+                    $$i < 0 && (_vm.rooms = $$a.concat([$$v]))
+                  } else {
+                    $$i > -1 &&
+                      (_vm.rooms = $$a.slice(0, $$i).concat($$a.slice($$i + 1)))
+                  }
+                } else {
+                  _vm.rooms = $$c
+                }
+              },
+            },
+          }),
+        ]),
+        _vm._v(" "),
+        _c("span", [
+          _c("label", { attrs: { for: "3" } }, [_vm._v("3")]),
+          _vm._v(" "),
+          _c("input", {
+            directives: [
+              {
+                name: "model",
+                rawName: "v-model",
+                value: _vm.rooms,
+                expression: "rooms",
+              },
+            ],
+            attrs: { type: "checkbox", value: "3", name: "3" },
+            domProps: {
+              checked: Array.isArray(_vm.rooms)
+                ? _vm._i(_vm.rooms, "3") > -1
+                : _vm.rooms,
+            },
+            on: {
+              change: function ($event) {
+                var $$a = _vm.rooms,
+                  $$el = $event.target,
+                  $$c = $$el.checked ? true : false
+                if (Array.isArray($$a)) {
+                  var $$v = "3",
+                    $$i = _vm._i($$a, $$v)
+                  if ($$el.checked) {
+                    $$i < 0 && (_vm.rooms = $$a.concat([$$v]))
+                  } else {
+                    $$i > -1 &&
+                      (_vm.rooms = $$a.slice(0, $$i).concat($$a.slice($$i + 1)))
+                  }
+                } else {
+                  _vm.rooms = $$c
+                }
+              },
+            },
+          }),
+        ]),
+        _vm._v(" "),
+        _c("span", [
+          _c("label", { attrs: { for: "4" } }, [_vm._v("4")]),
+          _vm._v(" "),
+          _c("input", {
+            directives: [
+              {
+                name: "model",
+                rawName: "v-model",
+                value: _vm.rooms,
+                expression: "rooms",
+              },
+            ],
+            attrs: { type: "checkbox", value: "4", name: "4" },
+            domProps: {
+              checked: Array.isArray(_vm.rooms)
+                ? _vm._i(_vm.rooms, "4") > -1
+                : _vm.rooms,
+            },
+            on: {
+              change: function ($event) {
+                var $$a = _vm.rooms,
+                  $$el = $event.target,
+                  $$c = $$el.checked ? true : false
+                if (Array.isArray($$a)) {
+                  var $$v = "4",
+                    $$i = _vm._i($$a, $$v)
+                  if ($$el.checked) {
+                    $$i < 0 && (_vm.rooms = $$a.concat([$$v]))
+                  } else {
+                    $$i > -1 &&
+                      (_vm.rooms = $$a.slice(0, $$i).concat($$a.slice($$i + 1)))
+                  }
+                } else {
+                  _vm.rooms = $$c
+                }
+              },
+            },
+          }),
+        ]),
+        _vm._v(" "),
+        _c("span", [
+          _c("label", { attrs: { for: "5" } }, [_vm._v("5")]),
+          _vm._v(" "),
+          _c("input", {
+            directives: [
+              {
+                name: "model",
+                rawName: "v-model",
+                value: _vm.rooms,
+                expression: "rooms",
+              },
+            ],
+            attrs: { type: "checkbox", value: "5", name: "5" },
+            domProps: {
+              checked: Array.isArray(_vm.rooms)
+                ? _vm._i(_vm.rooms, "5") > -1
+                : _vm.rooms,
+            },
+            on: {
+              change: function ($event) {
+                var $$a = _vm.rooms,
+                  $$el = $event.target,
+                  $$c = $$el.checked ? true : false
+                if (Array.isArray($$a)) {
+                  var $$v = "5",
+                    $$i = _vm._i($$a, $$v)
+                  if ($$el.checked) {
+                    $$i < 0 && (_vm.rooms = $$a.concat([$$v]))
+                  } else {
+                    $$i > -1 &&
+                      (_vm.rooms = $$a.slice(0, $$i).concat($$a.slice($$i + 1)))
+                  }
+                } else {
+                  _vm.rooms = $$c
+                }
+              },
+            },
+          }),
+        ]),
+        _vm._v(" "),
+        _c("span", [
+          _c("label", { attrs: { for: "6" } }, [_vm._v("6")]),
+          _vm._v(" "),
+          _c("input", {
+            directives: [
+              {
+                name: "model",
+                rawName: "v-model",
+                value: _vm.rooms,
+                expression: "rooms",
+              },
+            ],
+            attrs: { type: "checkbox", value: "6", name: "6" },
+            domProps: {
+              checked: Array.isArray(_vm.rooms)
+                ? _vm._i(_vm.rooms, "6") > -1
+                : _vm.rooms,
+            },
+            on: {
+              change: function ($event) {
+                var $$a = _vm.rooms,
+                  $$el = $event.target,
+                  $$c = $$el.checked ? true : false
+                if (Array.isArray($$a)) {
+                  var $$v = "6",
+                    $$i = _vm._i($$a, $$v)
+                  if ($$el.checked) {
+                    $$i < 0 && (_vm.rooms = $$a.concat([$$v]))
+                  } else {
+                    $$i > -1 &&
+                      (_vm.rooms = $$a.slice(0, $$i).concat($$a.slice($$i + 1)))
+                  }
+                } else {
+                  _vm.rooms = $$c
+                }
+              },
+            },
+          }),
+        ]),
+        _vm._v(" "),
+        _c("span", [
+          _c("label", { attrs: { for: "7" } }, [_vm._v("7")]),
+          _vm._v(" "),
+          _c("input", {
+            directives: [
+              {
+                name: "model",
+                rawName: "v-model",
+                value: _vm.rooms,
+                expression: "rooms",
+              },
+            ],
+            attrs: { type: "checkbox", value: "7", name: "7" },
+            domProps: {
+              checked: Array.isArray(_vm.rooms)
+                ? _vm._i(_vm.rooms, "7") > -1
+                : _vm.rooms,
+            },
+            on: {
+              change: function ($event) {
+                var $$a = _vm.rooms,
+                  $$el = $event.target,
+                  $$c = $$el.checked ? true : false
+                if (Array.isArray($$a)) {
+                  var $$v = "7",
+                    $$i = _vm._i($$a, $$v)
+                  if ($$el.checked) {
+                    $$i < 0 && (_vm.rooms = $$a.concat([$$v]))
+                  } else {
+                    $$i > -1 &&
+                      (_vm.rooms = $$a.slice(0, $$i).concat($$a.slice($$i + 1)))
+                  }
+                } else {
+                  _vm.rooms = $$c
+                }
+              },
+            },
+          }),
+        ]),
+        _vm._v(" "),
+        _c("span", [
+          _c("label", { attrs: { for: "8" } }, [_vm._v("8")]),
+          _vm._v(" "),
+          _c("input", {
+            directives: [
+              {
+                name: "model",
+                rawName: "v-model",
+                value: _vm.rooms,
+                expression: "rooms",
+              },
+            ],
+            attrs: { type: "checkbox", value: "8", name: "8" },
+            domProps: {
+              checked: Array.isArray(_vm.rooms)
+                ? _vm._i(_vm.rooms, "8") > -1
+                : _vm.rooms,
+            },
+            on: {
+              change: function ($event) {
+                var $$a = _vm.rooms,
+                  $$el = $event.target,
+                  $$c = $$el.checked ? true : false
+                if (Array.isArray($$a)) {
+                  var $$v = "8",
+                    $$i = _vm._i($$a, $$v)
+                  if ($$el.checked) {
+                    $$i < 0 && (_vm.rooms = $$a.concat([$$v]))
+                  } else {
+                    $$i > -1 &&
+                      (_vm.rooms = $$a.slice(0, $$i).concat($$a.slice($$i + 1)))
+                  }
+                } else {
+                  _vm.rooms = $$c
+                }
+              },
+            },
+          }),
+        ]),
         _vm._v(" "),
         _c("h4", [_vm._v("Letti")]),
         _vm._v(" "),
-        _c(
-          "div",
-          { staticClass: "pill_wrapper" },
-          _vm._l(_vm.numero_letti, function (el, j) {
-            return _c("span", { key: j, staticClass: "pill" }, [
-              _vm._v(_vm._s(el)),
-            ])
+        _c("span", [
+          _c("label", { attrs: { for: "1" } }, [_vm._v("1")]),
+          _vm._v(" "),
+          _c("input", {
+            directives: [
+              {
+                name: "model",
+                rawName: "v-model",
+                value: _vm.beds,
+                expression: "beds",
+              },
+            ],
+            attrs: { type: "checkbox", value: "1", name: "1" },
+            domProps: {
+              checked: Array.isArray(_vm.beds)
+                ? _vm._i(_vm.beds, "1") > -1
+                : _vm.beds,
+            },
+            on: {
+              change: function ($event) {
+                var $$a = _vm.beds,
+                  $$el = $event.target,
+                  $$c = $$el.checked ? true : false
+                if (Array.isArray($$a)) {
+                  var $$v = "1",
+                    $$i = _vm._i($$a, $$v)
+                  if ($$el.checked) {
+                    $$i < 0 && (_vm.beds = $$a.concat([$$v]))
+                  } else {
+                    $$i > -1 &&
+                      (_vm.beds = $$a.slice(0, $$i).concat($$a.slice($$i + 1)))
+                  }
+                } else {
+                  _vm.beds = $$c
+                }
+              },
+            },
           }),
-          0
-        ),
+        ]),
+        _vm._v(" "),
+        _c("span", [
+          _c("label", { attrs: { for: "2" } }, [_vm._v("2")]),
+          _vm._v(" "),
+          _c("input", {
+            directives: [
+              {
+                name: "model",
+                rawName: "v-model",
+                value: _vm.beds,
+                expression: "beds",
+              },
+            ],
+            attrs: { type: "checkbox", value: "2", name: "2" },
+            domProps: {
+              checked: Array.isArray(_vm.beds)
+                ? _vm._i(_vm.beds, "2") > -1
+                : _vm.beds,
+            },
+            on: {
+              change: function ($event) {
+                var $$a = _vm.beds,
+                  $$el = $event.target,
+                  $$c = $$el.checked ? true : false
+                if (Array.isArray($$a)) {
+                  var $$v = "2",
+                    $$i = _vm._i($$a, $$v)
+                  if ($$el.checked) {
+                    $$i < 0 && (_vm.beds = $$a.concat([$$v]))
+                  } else {
+                    $$i > -1 &&
+                      (_vm.beds = $$a.slice(0, $$i).concat($$a.slice($$i + 1)))
+                  }
+                } else {
+                  _vm.beds = $$c
+                }
+              },
+            },
+          }),
+        ]),
+        _vm._v(" "),
+        _c("span", [
+          _c("label", { attrs: { for: "3" } }, [_vm._v("3")]),
+          _vm._v(" "),
+          _c("input", {
+            directives: [
+              {
+                name: "model",
+                rawName: "v-model",
+                value: _vm.beds,
+                expression: "beds",
+              },
+            ],
+            attrs: { type: "checkbox", value: "3", name: "3" },
+            domProps: {
+              checked: Array.isArray(_vm.beds)
+                ? _vm._i(_vm.beds, "3") > -1
+                : _vm.beds,
+            },
+            on: {
+              change: function ($event) {
+                var $$a = _vm.beds,
+                  $$el = $event.target,
+                  $$c = $$el.checked ? true : false
+                if (Array.isArray($$a)) {
+                  var $$v = "3",
+                    $$i = _vm._i($$a, $$v)
+                  if ($$el.checked) {
+                    $$i < 0 && (_vm.beds = $$a.concat([$$v]))
+                  } else {
+                    $$i > -1 &&
+                      (_vm.beds = $$a.slice(0, $$i).concat($$a.slice($$i + 1)))
+                  }
+                } else {
+                  _vm.beds = $$c
+                }
+              },
+            },
+          }),
+        ]),
+        _vm._v(" "),
+        _c("span", [
+          _c("label", { attrs: { for: "4" } }, [_vm._v("4")]),
+          _vm._v(" "),
+          _c("input", {
+            directives: [
+              {
+                name: "model",
+                rawName: "v-model",
+                value: _vm.beds,
+                expression: "beds",
+              },
+            ],
+            attrs: { type: "checkbox", value: "4", name: "4" },
+            domProps: {
+              checked: Array.isArray(_vm.beds)
+                ? _vm._i(_vm.beds, "4") > -1
+                : _vm.beds,
+            },
+            on: {
+              change: function ($event) {
+                var $$a = _vm.beds,
+                  $$el = $event.target,
+                  $$c = $$el.checked ? true : false
+                if (Array.isArray($$a)) {
+                  var $$v = "4",
+                    $$i = _vm._i($$a, $$v)
+                  if ($$el.checked) {
+                    $$i < 0 && (_vm.beds = $$a.concat([$$v]))
+                  } else {
+                    $$i > -1 &&
+                      (_vm.beds = $$a.slice(0, $$i).concat($$a.slice($$i + 1)))
+                  }
+                } else {
+                  _vm.beds = $$c
+                }
+              },
+            },
+          }),
+        ]),
+        _vm._v(" "),
+        _c("span", [
+          _c("label", { attrs: { for: "5" } }, [_vm._v("5")]),
+          _vm._v(" "),
+          _c("input", {
+            directives: [
+              {
+                name: "model",
+                rawName: "v-model",
+                value: _vm.beds,
+                expression: "beds",
+              },
+            ],
+            attrs: { type: "checkbox", value: "5", name: "5" },
+            domProps: {
+              checked: Array.isArray(_vm.beds)
+                ? _vm._i(_vm.beds, "5") > -1
+                : _vm.beds,
+            },
+            on: {
+              change: function ($event) {
+                var $$a = _vm.beds,
+                  $$el = $event.target,
+                  $$c = $$el.checked ? true : false
+                if (Array.isArray($$a)) {
+                  var $$v = "5",
+                    $$i = _vm._i($$a, $$v)
+                  if ($$el.checked) {
+                    $$i < 0 && (_vm.beds = $$a.concat([$$v]))
+                  } else {
+                    $$i > -1 &&
+                      (_vm.beds = $$a.slice(0, $$i).concat($$a.slice($$i + 1)))
+                  }
+                } else {
+                  _vm.beds = $$c
+                }
+              },
+            },
+          }),
+        ]),
+        _vm._v(" "),
+        _c("span", [
+          _c("label", { attrs: { for: "6" } }, [_vm._v("6")]),
+          _vm._v(" "),
+          _c("input", {
+            directives: [
+              {
+                name: "model",
+                rawName: "v-model",
+                value: _vm.beds,
+                expression: "beds",
+              },
+            ],
+            attrs: { type: "checkbox", value: "6", name: "6" },
+            domProps: {
+              checked: Array.isArray(_vm.beds)
+                ? _vm._i(_vm.beds, "6") > -1
+                : _vm.beds,
+            },
+            on: {
+              change: function ($event) {
+                var $$a = _vm.beds,
+                  $$el = $event.target,
+                  $$c = $$el.checked ? true : false
+                if (Array.isArray($$a)) {
+                  var $$v = "6",
+                    $$i = _vm._i($$a, $$v)
+                  if ($$el.checked) {
+                    $$i < 0 && (_vm.beds = $$a.concat([$$v]))
+                  } else {
+                    $$i > -1 &&
+                      (_vm.beds = $$a.slice(0, $$i).concat($$a.slice($$i + 1)))
+                  }
+                } else {
+                  _vm.beds = $$c
+                }
+              },
+            },
+          }),
+        ]),
+        _vm._v(" "),
+        _c("span", [
+          _c("label", { attrs: { for: "7" } }, [_vm._v("7")]),
+          _vm._v(" "),
+          _c("input", {
+            directives: [
+              {
+                name: "model",
+                rawName: "v-model",
+                value: _vm.beds,
+                expression: "beds",
+              },
+            ],
+            attrs: { type: "checkbox", value: "7", name: "7" },
+            domProps: {
+              checked: Array.isArray(_vm.beds)
+                ? _vm._i(_vm.beds, "7") > -1
+                : _vm.beds,
+            },
+            on: {
+              change: function ($event) {
+                var $$a = _vm.beds,
+                  $$el = $event.target,
+                  $$c = $$el.checked ? true : false
+                if (Array.isArray($$a)) {
+                  var $$v = "7",
+                    $$i = _vm._i($$a, $$v)
+                  if ($$el.checked) {
+                    $$i < 0 && (_vm.beds = $$a.concat([$$v]))
+                  } else {
+                    $$i > -1 &&
+                      (_vm.beds = $$a.slice(0, $$i).concat($$a.slice($$i + 1)))
+                  }
+                } else {
+                  _vm.beds = $$c
+                }
+              },
+            },
+          }),
+        ]),
+        _vm._v(" "),
+        _c("span", [
+          _c("label", { attrs: { for: "8" } }, [_vm._v("8")]),
+          _vm._v(" "),
+          _c("input", {
+            directives: [
+              {
+                name: "model",
+                rawName: "v-model",
+                value: _vm.beds,
+                expression: "beds",
+              },
+            ],
+            attrs: { type: "checkbox", value: "8", name: "8" },
+            domProps: {
+              checked: Array.isArray(_vm.beds)
+                ? _vm._i(_vm.beds, "8") > -1
+                : _vm.beds,
+            },
+            on: {
+              change: function ($event) {
+                var $$a = _vm.beds,
+                  $$el = $event.target,
+                  $$c = $$el.checked ? true : false
+                if (Array.isArray($$a)) {
+                  var $$v = "8",
+                    $$i = _vm._i($$a, $$v)
+                  if ($$el.checked) {
+                    $$i < 0 && (_vm.beds = $$a.concat([$$v]))
+                  } else {
+                    $$i > -1 &&
+                      (_vm.beds = $$a.slice(0, $$i).concat($$a.slice($$i + 1)))
+                  }
+                } else {
+                  _vm.beds = $$c
+                }
+              },
+            },
+          }),
+        ]),
         _vm._v(" "),
         _c("h4", [_vm._v("Bagni")]),
         _vm._v(" "),
-        _c(
-          "div",
-          { staticClass: "pill_wrapper" },
-          _vm._l(_vm.numero_bagni, function (el, j) {
-            return _c("span", { key: j, staticClass: "pill" }, [
-              _vm._v(_vm._s(el)),
-            ])
+        _c("span", [
+          _c("label", { attrs: { for: "1" } }, [_vm._v("1")]),
+          _vm._v(" "),
+          _c("input", {
+            directives: [
+              {
+                name: "model",
+                rawName: "v-model",
+                value: _vm.toilets,
+                expression: "toilets",
+              },
+            ],
+            attrs: { type: "checkbox", value: "1", name: "1" },
+            domProps: {
+              checked: Array.isArray(_vm.toilets)
+                ? _vm._i(_vm.toilets, "1") > -1
+                : _vm.toilets,
+            },
+            on: {
+              change: function ($event) {
+                var $$a = _vm.toilets,
+                  $$el = $event.target,
+                  $$c = $$el.checked ? true : false
+                if (Array.isArray($$a)) {
+                  var $$v = "1",
+                    $$i = _vm._i($$a, $$v)
+                  if ($$el.checked) {
+                    $$i < 0 && (_vm.toilets = $$a.concat([$$v]))
+                  } else {
+                    $$i > -1 &&
+                      (_vm.toilets = $$a
+                        .slice(0, $$i)
+                        .concat($$a.slice($$i + 1)))
+                  }
+                } else {
+                  _vm.toilets = $$c
+                }
+              },
+            },
           }),
-          0
-        ),
+        ]),
+        _vm._v(" "),
+        _c("span", [
+          _c("label", { attrs: { for: "2" } }, [_vm._v("2")]),
+          _vm._v(" "),
+          _c("input", {
+            directives: [
+              {
+                name: "model",
+                rawName: "v-model",
+                value: _vm.toilets,
+                expression: "toilets",
+              },
+            ],
+            attrs: { type: "checkbox", value: "2", name: "2" },
+            domProps: {
+              checked: Array.isArray(_vm.toilets)
+                ? _vm._i(_vm.toilets, "2") > -1
+                : _vm.toilets,
+            },
+            on: {
+              change: function ($event) {
+                var $$a = _vm.toilets,
+                  $$el = $event.target,
+                  $$c = $$el.checked ? true : false
+                if (Array.isArray($$a)) {
+                  var $$v = "2",
+                    $$i = _vm._i($$a, $$v)
+                  if ($$el.checked) {
+                    $$i < 0 && (_vm.toilets = $$a.concat([$$v]))
+                  } else {
+                    $$i > -1 &&
+                      (_vm.toilets = $$a
+                        .slice(0, $$i)
+                        .concat($$a.slice($$i + 1)))
+                  }
+                } else {
+                  _vm.toilets = $$c
+                }
+              },
+            },
+          }),
+        ]),
+        _vm._v(" "),
+        _c("span", [
+          _c("label", { attrs: { for: "3" } }, [_vm._v("3")]),
+          _vm._v(" "),
+          _c("input", {
+            directives: [
+              {
+                name: "model",
+                rawName: "v-model",
+                value: _vm.toilets,
+                expression: "toilets",
+              },
+            ],
+            attrs: { type: "checkbox", value: "3", name: "3" },
+            domProps: {
+              checked: Array.isArray(_vm.toilets)
+                ? _vm._i(_vm.toilets, "3") > -1
+                : _vm.toilets,
+            },
+            on: {
+              change: function ($event) {
+                var $$a = _vm.toilets,
+                  $$el = $event.target,
+                  $$c = $$el.checked ? true : false
+                if (Array.isArray($$a)) {
+                  var $$v = "3",
+                    $$i = _vm._i($$a, $$v)
+                  if ($$el.checked) {
+                    $$i < 0 && (_vm.toilets = $$a.concat([$$v]))
+                  } else {
+                    $$i > -1 &&
+                      (_vm.toilets = $$a
+                        .slice(0, $$i)
+                        .concat($$a.slice($$i + 1)))
+                  }
+                } else {
+                  _vm.toilets = $$c
+                }
+              },
+            },
+          }),
+        ]),
+        _vm._v(" "),
+        _c("span", [
+          _c("label", { attrs: { for: "4" } }, [_vm._v("4")]),
+          _vm._v(" "),
+          _c("input", {
+            directives: [
+              {
+                name: "model",
+                rawName: "v-model",
+                value: _vm.toilets,
+                expression: "toilets",
+              },
+            ],
+            attrs: { type: "checkbox", value: "4", name: "4" },
+            domProps: {
+              checked: Array.isArray(_vm.toilets)
+                ? _vm._i(_vm.toilets, "4") > -1
+                : _vm.toilets,
+            },
+            on: {
+              change: function ($event) {
+                var $$a = _vm.toilets,
+                  $$el = $event.target,
+                  $$c = $$el.checked ? true : false
+                if (Array.isArray($$a)) {
+                  var $$v = "4",
+                    $$i = _vm._i($$a, $$v)
+                  if ($$el.checked) {
+                    $$i < 0 && (_vm.toilets = $$a.concat([$$v]))
+                  } else {
+                    $$i > -1 &&
+                      (_vm.toilets = $$a
+                        .slice(0, $$i)
+                        .concat($$a.slice($$i + 1)))
+                  }
+                } else {
+                  _vm.toilets = $$c
+                }
+              },
+            },
+          }),
+        ]),
+        _vm._v(" "),
+        _c("span", [
+          _c("label", { attrs: { for: "5" } }, [_vm._v("5")]),
+          _vm._v(" "),
+          _c("input", {
+            directives: [
+              {
+                name: "model",
+                rawName: "v-model",
+                value: _vm.toilets,
+                expression: "toilets",
+              },
+            ],
+            attrs: { type: "checkbox", value: "5", name: "5" },
+            domProps: {
+              checked: Array.isArray(_vm.toilets)
+                ? _vm._i(_vm.toilets, "5") > -1
+                : _vm.toilets,
+            },
+            on: {
+              change: function ($event) {
+                var $$a = _vm.toilets,
+                  $$el = $event.target,
+                  $$c = $$el.checked ? true : false
+                if (Array.isArray($$a)) {
+                  var $$v = "5",
+                    $$i = _vm._i($$a, $$v)
+                  if ($$el.checked) {
+                    $$i < 0 && (_vm.toilets = $$a.concat([$$v]))
+                  } else {
+                    $$i > -1 &&
+                      (_vm.toilets = $$a
+                        .slice(0, $$i)
+                        .concat($$a.slice($$i + 1)))
+                  }
+                } else {
+                  _vm.toilets = $$c
+                }
+              },
+            },
+          }),
+        ]),
+        _vm._v(" "),
+        _c("span", [
+          _c("label", { attrs: { for: "6" } }, [_vm._v("6")]),
+          _vm._v(" "),
+          _c("input", {
+            directives: [
+              {
+                name: "model",
+                rawName: "v-model",
+                value: _vm.toilets,
+                expression: "toilets",
+              },
+            ],
+            attrs: { type: "checkbox", value: "6", name: "6" },
+            domProps: {
+              checked: Array.isArray(_vm.toilets)
+                ? _vm._i(_vm.toilets, "6") > -1
+                : _vm.toilets,
+            },
+            on: {
+              change: function ($event) {
+                var $$a = _vm.toilets,
+                  $$el = $event.target,
+                  $$c = $$el.checked ? true : false
+                if (Array.isArray($$a)) {
+                  var $$v = "6",
+                    $$i = _vm._i($$a, $$v)
+                  if ($$el.checked) {
+                    $$i < 0 && (_vm.toilets = $$a.concat([$$v]))
+                  } else {
+                    $$i > -1 &&
+                      (_vm.toilets = $$a
+                        .slice(0, $$i)
+                        .concat($$a.slice($$i + 1)))
+                  }
+                } else {
+                  _vm.toilets = $$c
+                }
+              },
+            },
+          }),
+        ]),
+        _vm._v(" "),
+        _c("span", [
+          _c("label", { attrs: { for: "7" } }, [_vm._v("7")]),
+          _vm._v(" "),
+          _c("input", {
+            directives: [
+              {
+                name: "model",
+                rawName: "v-model",
+                value: _vm.toilets,
+                expression: "toilets",
+              },
+            ],
+            attrs: { type: "checkbox", value: "7", name: "7" },
+            domProps: {
+              checked: Array.isArray(_vm.toilets)
+                ? _vm._i(_vm.toilets, "7") > -1
+                : _vm.toilets,
+            },
+            on: {
+              change: function ($event) {
+                var $$a = _vm.toilets,
+                  $$el = $event.target,
+                  $$c = $$el.checked ? true : false
+                if (Array.isArray($$a)) {
+                  var $$v = "7",
+                    $$i = _vm._i($$a, $$v)
+                  if ($$el.checked) {
+                    $$i < 0 && (_vm.toilets = $$a.concat([$$v]))
+                  } else {
+                    $$i > -1 &&
+                      (_vm.toilets = $$a
+                        .slice(0, $$i)
+                        .concat($$a.slice($$i + 1)))
+                  }
+                } else {
+                  _vm.toilets = $$c
+                }
+              },
+            },
+          }),
+        ]),
+        _vm._v(" "),
+        _c("span", [
+          _c("label", { attrs: { for: "8" } }, [_vm._v("8")]),
+          _vm._v(" "),
+          _c("input", {
+            directives: [
+              {
+                name: "model",
+                rawName: "v-model",
+                value: _vm.toilets,
+                expression: "toilets",
+              },
+            ],
+            attrs: { type: "checkbox", value: "8", name: "8" },
+            domProps: {
+              checked: Array.isArray(_vm.toilets)
+                ? _vm._i(_vm.toilets, "8") > -1
+                : _vm.toilets,
+            },
+            on: {
+              change: function ($event) {
+                var $$a = _vm.toilets,
+                  $$el = $event.target,
+                  $$c = $$el.checked ? true : false
+                if (Array.isArray($$a)) {
+                  var $$v = "8",
+                    $$i = _vm._i($$a, $$v)
+                  if ($$el.checked) {
+                    $$i < 0 && (_vm.toilets = $$a.concat([$$v]))
+                  } else {
+                    $$i > -1 &&
+                      (_vm.toilets = $$a
+                        .slice(0, $$i)
+                        .concat($$a.slice($$i + 1)))
+                  }
+                } else {
+                  _vm.toilets = $$c
+                }
+              },
+            },
+          }),
+        ]),
       ]),
       _vm._v(" "),
-      _c("div", { staticClass: "altri_servizi" }, [
-        _c("h1", [_vm._v("Altri servizi")]),
-        _vm._v(" "),
-        _c(
-          "div",
-          { staticClass: "checkbox_wrapper d-flex flex-column flex-wrap" },
-          _vm._l(_vm.checkbox, function (element, g) {
-            return _c("label", { key: g, staticClass: "checkbox" }, [
-              _c("input", { attrs: { type: "checkbox" } }),
-              _vm._v(" "),
-              _c("span", { staticClass: "checkmark" }, [
-                _vm._v(_vm._s(element.name)),
-              ]),
-            ])
-          }),
-          0
-        ),
-      ]),
+      _vm._m(0),
+      _vm._v(
+        "\n            " +
+          _vm._s(_vm.rooms) +
+          " \n            " +
+          _vm._s(_vm.beds) +
+          " \n            " +
+          _vm._s(_vm.toilets) +
+          "\n\n            "
+      ),
+      _c(
+        "button",
+        {
+          on: {
+            click: function ($event) {
+              return _vm.filter()
+            },
+          },
+        },
+        [_vm._v("Filtra risultati")]
+      ),
     ]),
   ])
 }
-var staticRenderFns = []
+var staticRenderFns = [
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "altri_servizi" }, [
+      _c("h1", [_vm._v("Altri servizi")]),
+    ])
+  },
+]
 render._withStripped = true
 
 
