@@ -2100,7 +2100,6 @@ __webpack_require__.r(__webpack_exports__);
   setup: function setup() {
     var mapRef = Object(vue__WEBPACK_IMPORTED_MODULE_0__["ref"])(null);
     Object(vue__WEBPACK_IMPORTED_MODULE_0__["onMounted"])(function () {
-      var tt = window.tt;
       var map = tt.map({
         key: "DINngHSiTz58Z5fDF5pThkg1IrJA87je",
         container: mapRef.value,
@@ -2242,6 +2241,8 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   components: {
@@ -2260,6 +2261,17 @@ __webpack_require__.r(__webpack_exports__);
     };
   },
   methods: {
+    initializeMap: function initializeMap() {
+      var map = tt.map({
+        key: 'IEix9iHTEHOJolKXAoByVdl4reKermIB',
+        container: 'map',
+        zoom: 15,
+        center: [this.locationLong, this.locationLat]
+      }); // aggiunta controlli mappa
+
+      map.addControl(new tt.FullscreenControl());
+      map.addControl(new tt.NavigationControl());
+    },
     fetchHouse: function fetchHouse() {
       var _this = this;
 
@@ -4173,6 +4185,8 @@ var render = function () {
         ],
         2
       ),
+      _vm._v(" "),
+      _c("div", { staticClass: "map", attrs: { id: "map" } }),
     ],
     1
   )

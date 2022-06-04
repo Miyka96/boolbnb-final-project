@@ -10,7 +10,6 @@ export default {
     setup() {
         const mapRef = ref(null);
         onMounted(() => {
-            const tt = window.tt;
             var map = tt.map({
                 key: "DINngHSiTz58Z5fDF5pThkg1IrJA87je",
                 container: mapRef.value,

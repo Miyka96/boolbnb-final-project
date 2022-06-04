@@ -47,6 +47,8 @@
         </p>
       <router-link tag="a" :to="{ name: 'house.message', params: { id: $route.params.id } }">Invia Messaggio</router-link>
     </div>
+
+    <div id="map" class="map"></div>
   </div>
 </template>
 
@@ -69,6 +71,17 @@ export default {
     };
   },
   methods: {
+            initializeMap: function() {
+            const map = tt.map({
+            key: 'IEix9iHTEHOJolKXAoByVdl4reKermIB',
+            container: 'map',
+            zoom: 15,
+            center: [this.locationLong, this.locationLat],
+            });
+             // aggiunta controlli mappa
+            map.addControl(new tt.FullscreenControl());
+            map.addControl(new tt.NavigationControl());
+            },
   fetchHouse() {
       axios
         .get(`/api/houses/${this.$route.params.id}`)
