@@ -10,32 +10,27 @@ use Carbon\Carbon;
 class FilterController extends Controller
 {
     public function index(Request $request){
-      $fullHouses = House::with(['position','messages','services','visualizations'])->get();
       $rooms = $request->rooms;
       $beds = $request->beds;
-      $toilets= $request->toilets;
+      $service= $request->service;
+      $singleService= "";
+      foreach($service as $el){
+         $singleService =$el;
+      }
 
         $houses = House::with(['position', 'messages', 'services', 'visualizations'])
-         ->where([
-            ['room_num','=', $rooms],
-            ['beds_num','=', $beds],
-            ['toilets_num','=', $toilets],
-         ])
+
+        ->join('house_service', 'house_service.house_id', '=', 'houses.id')
+        ->where([
+            ['room_num','>', $rooms],
+            ['beds_num','>', $beds],
+            [ 'house_service.service_id', '=', $singleService],
+        ])
          ->get();
 
-
-      if( $houses ) {
          return response()->json([
             'houses' => $houses,
             'success' => true
          ]);
-      }
-
-      else{
-         return response()->json([
-            'fullHouses'=> $fullHouses,
-            'success' => true
-         ]);
-      }
     }
 }

@@ -1,133 +1,42 @@
 <template>
     <div class="container-fluid">
         <div class="filter_wrapper d-flex flex-column">
-                <div class="stanze_wrapper">
-                    <h1>Stanze, letti e bagni</h1>
-                    <h4>Stanze</h4>
-                    
-                        <span>
-                            <label for="1">1</label>
-                            <input v-model="rooms" type="checkbox" value="1" name="1" >
-                        </span>
-                        <span>
-                            <label for="2">2</label>
-                            <input v-model="rooms" type="checkbox" value="2" name="2">
-                        </span>
-                        <span>
-                            <label for="3">3</label>
-                            <input v-model="rooms" type="checkbox" value="3" name="3">
-                        </span>
-                        <span>
-                            <label for="4">4</label>
-                            <input v-model="rooms" type="checkbox" value="4" name="4">
-                        </span>
-                        <span>
-                            <label for="5">5</label>
-                            <input v-model="rooms" type="checkbox" value="5" name="5">
-                        </span>
-                        <span>
-                            <label for="6">6</label>
-                            <input v-model="rooms" type="checkbox" value="6" name="6">
-                        </span>
-                        <span>
-                            <label for="7">7</label>
-                            <input v-model="rooms" type="checkbox" value="7" name="7">
-                        </span>
-                        <span>
-                            <label for="8">8</label>
-                            <input v-model="rooms" type="checkbox" value="8" name="8">
-                        </span>
+            <form v-on:submit.prevent="submitForm">
 
-                    <h4>Letti</h4>
-
-                        <span>
-                            <label for="1">1</label>
-                            <input v-model="beds" type="checkbox" value="1" name="1" >
-                        </span>
-                        <span>
-                            <label for="2">2</label>
-                            <input v-model="beds" type="checkbox" value="2" name="2">
-                        </span>
-                        <span>
-                            <label for="3">3</label>
-                            <input v-model="beds" type="checkbox" value="3" name="3">
-                        </span>
-                        <span>
-                            <label for="4">4</label>
-                            <input v-model="beds" type="checkbox" value="4" name="4">
-                        </span>
-                        <span>
-                            <label for="5">5</label>
-                            <input v-model="beds" type="checkbox" value="5" name="5">
-                        </span>
-                        <span>
-                            <label for="6">6</label>
-                            <input v-model="beds" type="checkbox" value="6" name="6">
-                        </span>
-                        <span>
-                            <label for="7">7</label>
-                            <input v-model="beds" type="checkbox" value="7" name="7">
-                        </span>
-                        <span>
-                            <label for="8">8</label>
-                            <input v-model="beds" type="checkbox" value="8" name="8">
-                        </span>
-
-                    <h4>Bagni</h4>
-                        <span>
-                            <label for="1">1</label>
-                            <input v-model="toilets" type="checkbox" value="1" name="1" >
-                        </span>
-                        <span>
-                            <label for="2">2</label>
-                            <input v-model="toilets" type="checkbox" value="2" name="2">
-                        </span>
-                        <span>
-                            <label for="3">3</label>
-                            <input v-model="toilets" type="checkbox" value="3" name="3">
-                        </span>
-                        <span>
-                            <label for="4">4</label>
-                            <input v-model="toilets" type="checkbox" value="4" name="4">
-                        </span>
-                        <span>
-                            <label for="5">5</label>
-                            <input v-model="toilets" type="checkbox" value="5" name="5">
-                        </span>
-                        <span>
-                            <label for="6">6</label>
-                            <input v-model="toilets" type="checkbox" value="6" name="6">
-                        </span>
-                        <span>
-                            <label for="7">7</label>
-                            <input v-model="toilets" type="checkbox" value="7" name="7">
-                        </span>
-                        <span>
-                            <label for="8">8</label>
-                            <input v-model="toilets" type="checkbox" value="8" name="8">
-                        </span>
-                </div>
-                <div class="altri_servizi">
+                    <h4>Numero minimo di stanze</h4>
+                    <input v-model="form.rooms" type="number" max="15">
+                    <h4>Numero minimo di letti</h4>
+                    <input v-model="form.beds" type="number" max="25" >
                     <h1>Altri servizi</h1>
-
-                </div>
-                {{rooms}} 
-                {{beds}} 
-                {{toilets}}
-
-                <button @click="filter()">Filtra risultati</button>
+                
+                    <div v-for="el in services" :key="el.id">
+                        <input type="checkbox" :id="el.id" :value="el.id" :name="el.id" v-model="form.service">
+                        <label :for="el.id">{{el.name}}</label>
+                    </div>
+                    <button @click="filter()">Filtra risultati</button>
+            </form>
         </div>
+
+        <!-- filtered houses -->
+        <CardShowcase/>
     </div>
 </template>
 
 <script>
+import CardShowcase from "../components/CardShowcase.vue"
+
 export default{
     name:"FilterComponent",
+    components: {
+        CardShowcase,
+    },
     data(){
         return {
-            rooms:[],
-            beds: [],
-            toilets: [],
+            form:{
+                rooms:"",
+                beds:"",
+                service:[],
+            },
             services:[],
             houses: [],
             lastPage: 0,
@@ -153,13 +62,17 @@ export default{
             console.warn( err )
          })
       },
+      fetchServices(){
+          axios.get('/api/services')
+          .then( res => {
+            console.log(res.data.services)
+            this.services= res.data.services
+          })
+      },
+
     filter() {
       axios
-        .post("/api/filter",JSON.stringify({
-        rooms: this.rooms,
-        beds: this.beds,
-        toilets: this.toilets
-        }))
+        .post("/api/filter",this.form)
         .then((res) => {
           console.log(res.data);
         })
@@ -167,6 +80,9 @@ export default{
           console.log(error);
         });
     },
+    },
+    mounted() {
+        this.fetchServices()
     }
 }
 </script>
