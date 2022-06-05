@@ -12682,15 +12682,7 @@ function thumbAnimation() {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-<<<<<<< HEAD
-<<<<<<< HEAD
 module.exports = __webpack_require__(/*! /Users/marcocorallo/Desktop/boolbnb-final-project/resources/js/store.js */"./resources/js/store.js");
-=======
-module.exports = __webpack_require__(/*! D:\Users\Simone\Documents\Progetti\boolbnb-final-project\resources\js\store.js */"./resources/js/store.js");
->>>>>>> feat/seeder-pivot-dates
-=======
-module.exports = __webpack_require__(/*! C:\Users\Micae\dev\boolbnb-final-project\resources\js\store.js */"./resources/js/store.js");
->>>>>>> test/filter
 
 
 /***/ })
