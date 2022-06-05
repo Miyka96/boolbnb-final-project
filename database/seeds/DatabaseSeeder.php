@@ -21,7 +21,7 @@ class DatabaseSeeder extends Seeder
             HouseSeeder::class,
             MessageSeeder::class,
             VisualizationSeeder::class,
-            House_SponsorshipSeeder::class
+            House_SponsorshipSeeder::class,
         ]);
     }
 }
