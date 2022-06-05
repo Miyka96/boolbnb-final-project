@@ -9,28 +9,32 @@ use Carbon\Carbon;
 
 class FilterController extends Controller
 {
-    public function index(Request $request){
-      $rooms = $request->rooms;
-      $beds = $request->beds;
-      $service= $request->service;
-      $singleService= "";
-      foreach($service as $el){
-         $singleService =$el;
-      }
+    public function index($room_num, $beds_num, $servicesFilter = []){
 
-        $houses = House::with(['position', 'messages', 'services', 'visualizations'])
+      $houses = House::with(['user', 'position', 'messages', 'services', 'visualizations'])
+      // ->join('house_service', 'house_service.house_id', '=', 'houses.id')
+      ->where([
+         ['room_num', '>=', $room_num],
+         ['houses.beds_num','>=', $beds_num],
+         // [TODO] DA SISTEMARE
+         // [function($query) {
+         //    if( isset( $servicesFilter ) && count( $servicesFilter ) > 0 ) {
+         //       $house = House::where('id', 1)->first();
+         //       $houseServices = $house->services;
+         //       $houseServicesId = [];
+         //       foreach ($houseServices as $el) {
+         //          array_push($houseServicesId, $el->id);
+         //       }
+         //       // $houseServicesId contiene TUTTI gli elementi di $servicesFilter ?
+         //       $query->where( count( array_diff($servicesFilter, $houseServicesId) ), 0);
+         //    } 
+         // }],
+      ])
+      ->get();
 
-        ->join('house_service', 'house_service.house_id', '=', 'houses.id')
-        ->where([
-            ['room_num','>', $rooms],
-            ['beds_num','>', $beds],
-            [ 'house_service.service_id', '=', $singleService],
-        ])
-         ->get();
-
-         return response()->json([
-            'houses' => $houses,
-            'success' => true
-         ]);
+      return response()->json([
+         'houses' => $houses,
+         'success' => true
+      ]);
     }
 }

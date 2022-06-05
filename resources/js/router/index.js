@@ -3,7 +3,7 @@ import VueRouter from 'vue-router';
 
 Vue.use(VueRouter);
 
-import LandingPage from '../pages/LandingPage.vue';
+import Home from '../pages/Home.vue';
 import Search from '../pages/Search.vue';
 import House from '../pages/House.vue';
 import Message from '../pages/Message.vue';
@@ -12,13 +12,13 @@ const routes = [
    {
       path: '/',
       name: 'home',
-      component: LandingPage,
+      component: Home,
       meta: {
          title: 'Wowlidays - Home'
       }
    },
    {
-      path: '/search/:query',
+      path: '/search/:query?',
       name: 'search',
       component: Search,
       meta: {
@@ -49,7 +49,6 @@ const router = new VueRouter({
 });
 
 // aggiunto meta title a viste vueRouter
-
 router.beforeEach((toRoute, fromRoute, next) => {
    window.document.title = toRoute.meta.title;
 

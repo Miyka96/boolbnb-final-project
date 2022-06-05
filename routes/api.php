@@ -39,8 +39,5 @@ Route::namespace('Api')->group(function () {
    });
    Route::post('messages_store', 'MessageController@store');
 
-
-
-
-   Route::any('filter', 'FilterController@index');
+   Route::get('filter/{room_num?}/{beds_num?}/{services?}', 'FilterController@index');
 });
