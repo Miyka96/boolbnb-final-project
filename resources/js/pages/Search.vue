@@ -2,15 +2,15 @@
    <div class="container mt-5 py-5">
       <Navbar/>
       <FilterComponent/>
-     <h1 class="pt-4">Case disponibili a <span style="color:#FF385C;">{{queryParams}}</span></h1>
-     lat: {{lat}}
-     lon: {{lon}}
+      <h1 class="pt-4">Case disponibili a <span style="color:#FF385C;">{{queryParams}}</span></h1>
+      lat: {{lat}}
+      lon: {{lon}}
    </div>
 </template>
 
 <script>
-import Navbar from '../components/NavbarComponent.vue';
-import FilterComponent from '../components/FilterComponent.vue'
+import Navbar from '../components/Search/SearchBar.vue'
+import FilterComponent from '../components/Search/FilterComponent.vue'
 
 export default {
    name: 'Search',

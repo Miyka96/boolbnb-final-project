@@ -20,7 +20,7 @@
 </template>
 
 <script>
-import HouseCard from '../components/HouseCard.vue'
+import HouseCard from '../HouseCard.vue'
 
 export default{
    name:"FilterComponent",
@@ -91,7 +91,7 @@ export default{
 </script>
 
 <style scoped lang="scss">
-@import '../../sass/variables';
+@import '../../../sass/_variables.scss';
 
 *{
     margin: 0;

@@ -1,15 +1,19 @@
 <template>
    <section id="main-banner" class="debug">
       <!-- [TODO] AGGIUNGERE SRC VIDEO -->
-      <video autoplay muted loop playsinline>
+      <!-- <video autoplay muted loop playsinline>
          <source src="" type="video/mp4">
-      </video>
+      </video> -->
+      <!-- [TODO] IMMAGINE PLACEHOLDER -->
+      <figure>
+         <img src="https://images.unsplash.com/photo-1517497052582-25e6fe8ec001?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80" alt="">
+      </figure>
       <h2 :class="[activeSlide === i ? 'active' : '', 'banner-text']" v-for="(el,i) in slideWords" :key="i">{{ slideWords[i] }}</h2>
    </section>
 </template>
 
 <script>
-import state from '../store.js';
+import state from '../../store';
 
 export default {
    name: 'MainBanner',
@@ -71,6 +75,22 @@ export default {
       min-height: 100%;
       max-height: 100%;
       object-fit: cover;
+   }
+
+   // [TODO] da rimuovere quando il video sarà inserito
+   figure {
+      min-width: 100%;
+      max-width: 100%;
+      min-height: 100%;
+      max-height: 100%;
+      // object-fit: cover;
+      margin: 0;
+
+      img {
+         min-width: 100%;
+         object-fit: cover;
+         object-position: center;
+      }
    }
 
    .banner-text {
