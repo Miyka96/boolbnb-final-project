@@ -32,28 +32,28 @@ export default {
       }
    },
    methods: {
-      fetchHouses(page = 1) { //default value
-         axios.get('/api/houses', {
-            params: {
-               page  // equivalente a page: page
-            }
-         })
-         .then( res => {
-            console.log( res.data )
-            const { houses } = res.data
-            const { data, last_page, current_page } = houses
-            this.houses = data
-            this.currentPage = current_page
-            this.lastPage = last_page
-         })
-         .catch( err => {
-            console.warn( err )
-         })
-      },
+      // fetchHouses(page = 1) { //default value
+      //    axios.get('/api/houses', {
+      //       params: {
+      //          page  // equivalente a page: page
+      //       }
+      //    })
+      //    .then( res => {
+      //       // console.log( res.data )
+      //       const { houses } = res.data
+      //       const { data, last_page, current_page } = houses
+      //       this.houses = data
+      //       this.currentPage = current_page
+      //       this.lastPage = last_page
+      //    })
+      //    .catch( err => {
+      //       console.warn( err )
+      //    })
+      // },
       ttSearch(){
          axios.get(`https://api.tomtom.com/search/2/search/${this.queryParams}.json?radius=20000&minFuzzyLevel=1&maxFuzzyLevel=2&view=Unified&relatedPois=off&key=DINngHSiTz58Z5fDF5pThkg1IrJA87je`)
         .then( res =>{
-           console.log(res.data.results)
+         //   console.log(res.data.results)
            this.lat = res.data.results[0].position.lat
            this.lon = res.data.results[0].position.lon
       })
@@ -61,7 +61,7 @@ export default {
    },
 
    mounted() {
-      this.fetchHouses();
+      // this.fetchHouses();
       this.ttSearch();
    }
 }

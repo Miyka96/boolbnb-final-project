@@ -1,89 +1,68 @@
 <template>
-    <div class="container-fluid">
-        <div class="filter_wrapper d-flex flex-column">
-            <form v-on:submit.prevent="submitForm">
+   <div class="container-fluid">
+      <div class="filter_wrapper d-flex flex-column">
+         <h4>Numero minimo di stanze</h4>
+         <input v-model="room_num" type="number" max="15">
+         <h4>Numero minimo di letti</h4>
+         <input v-model="beds_num" type="number" max="25" >
+         <h1>Altri servizi</h1>
+      
+         <div v-for="el in servicesApi" :key="el.id">
+            <input type="checkbox" :id="el.id" :value="el.id" :name="el.id" v-model="services">
+            <label :for="el.id">{{el.name}}</label>
+         </div>
+         <button @click="filter(room_num, beds_num, services)">Filtra risultati</button>
+      </div>
 
-                    <h4>Numero minimo di stanze</h4>
-                    <input v-model="form.rooms" type="number" max="15">
-                    <h4>Numero minimo di letti</h4>
-                    <input v-model="form.beds" type="number" max="25" >
-                    <h1>Altri servizi</h1>
-                
-                    <div v-for="el in services" :key="el.id">
-                        <input type="checkbox" :id="el.id" :value="el.id" :name="el.id" v-model="form.service">
-                        <label :for="el.id">{{el.name}}</label>
-                    </div>
-                    <button @click="filter()">Filtra risultati</button>
-            </form>
-        </div>
-
-        <!-- filtered houses -->
-        <CardShowcase/>
-    </div>
+      <!-- filtered houses -->
+      <!-- <CardShowcase/> -->
+   </div>
 </template>
 
 <script>
-import CardShowcase from "../components/CardShowcase.vue"
+// import CardShowcase from "../components/CardShowcase.vue"
 
 export default{
-    name:"FilterComponent",
-    components: {
-        CardShowcase,
-    },
-    data(){
-        return {
-            form:{
-                rooms:"",
-                beds:"",
-                service:[],
-            },
-            services:[],
-            houses: [],
-            lastPage: 0,
-            currentPage: 1,
-        }
-    },
-     methods: {
-      fetchHouses(page = 1) { //default value
-         axios.get('/api/houses', {
-            params: {
-               page  // equivalente a page: page
-            }
+   name:"FilterComponent",
+   components: {
+   //   CardShowcase,
+   },
+   data(){
+      return {
+         room_num: 1,
+         beds_num: 1,
+         services:[],
+         servicesApi:[],
+         houses: [],
+         lastPage: 0,
+         currentPage: 1,
+      }
+   },
+   methods: {
+   fetchServices(){
+         axios.get('/api/services')
+         .then( res => {
+         this.servicesApi = res.data.services
          })
-        .then( res => {
-            console.log( res.data )
-            const { houses } = res.data
-            const { data, last_page, current_page } = houses
-            this.houses = data
-            this.currentPage = current_page
-            this.lastPage = last_page
-         })
-         .catch( err => {
-            console.warn( err )
-         })
-      },
-      fetchServices(){
-          axios.get('/api/services')
-          .then( res => {
-            console.log(res.data.services)
-            this.services= res.data.services
-          })
-      },
+   },
 
-    filter() {
+   filter(room_num = 1, beds_num = 1, services = []) {
+      console.log(this.room_num)
       axios
-        .post("/api/filter",this.form)
-        .then((res) => {
-          console.log(res.data);
-        })
-        .catch((error) => {
-          console.log(error);
-        });
-    },
-    },
-    mounted() {
-        this.fetchServices()
-    }
+         .get(`/api/filter/${room_num}/${beds_num}/${services}`)
+         .then((res) => {
+            console.log('FILTRO');
+            console.log(res.data);
+         })
+         .catch((error) => {
+            console.log(error);
+         });
+   },
+   },
+   mounted() {
+      this.fetchServices();
+      this.filter();
+   }
 }
 </script>
 
