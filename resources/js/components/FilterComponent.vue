@@ -1,5 +1,5 @@
 <template>
-   <div class="container-fluid">
+   <div class="container-fluid d-flex flex-column">
       <div class="filter_wrapper d-flex flex-column">
          <h4>Numero minimo di stanze</h4>
          <input v-model="room_num" type="number" max="15">
@@ -8,56 +8,80 @@
          <h1>Altri servizi</h1>
       
          <div v-for="el in servicesApi" :key="el.id">
-            <input type="checkbox" :id="el.id" :value="el.id" :name="el.id" v-model="services">
+            <input type="checkbox" :id="el.id" :value="el.id" :name="services" v-model="services">
             <label :for="el.id">{{el.name}}</label>
          </div>
          <button @click="filter(room_num, beds_num, services)">Filtra risultati</button>
       </div>
-
-      <!-- filtered houses -->
-      <!-- <CardShowcase/> -->
+      <div class="d-flex flex-wrap">
+         <HouseCard v-for="house in filteredHouses" :key="`HouseCard-${house.id}`" :house="house"/>
+      </div>
    </div>
 </template>
 
 <script>
-// import CardShowcase from "../components/CardShowcase.vue"
+import HouseCard from '../components/HouseCard.vue'
 
 export default{
    name:"FilterComponent",
    components: {
-   //   CardShowcase,
+     HouseCard,
    },
    data(){
       return {
          room_num: 1,
          beds_num: 1,
-         services:[],
-         servicesApi:[],
+         services: [], // checkboxes
+         servicesApi: [],
          houses: [],
+         filteredHouses: [],
          lastPage: 0,
          currentPage: 1,
       }
    },
-   methods: {
-   fetchServices(){
-         axios.get('/api/services')
-         .then( res => {
-         this.servicesApi = res.data.services
-         })
-   },
+   watch: {
+      houses() {
+         if( this.services && this.services.length > 0 ) {
+            this.filteredHouses = []
 
-   filter(room_num = 1, beds_num = 1, services = []) {
-      console.log(this.room_num)
-      axios
-         .get(`/api/filter/${room_num}/${beds_num}/${services}`)
-         .then((res) => {
-            console.log('FILTRO');
-            console.log(res.data);
-         })
-         .catch((error) => {
-            console.log(error);
-         });
+            this.houses.forEach(house => {
+
+               const activeServices = []
+
+               house.services.forEach(service => {
+                  activeServices.push( service.id )
+               })
+
+               // se i servizi della casa contengono tutti i servizi indicati nelle checkboxes
+               if( activeServices && this.services.every(element => { return activeServices.includes(element) }) ) {
+                  this.filteredHouses.push( house )
+               }
+            })
+         } else {
+            this.filteredHouses = this.houses
+         }
+      }
    },
+   methods: {
+      fetchServices(){
+         axios.get('/api/services')
+            .then( res => {
+               this.servicesApi = res.data.services
+            })
+      },
+      filter(room_num = 1, beds_num = 1, services = []) {
+         console.log(this.room_num)
+         axios
+            .get(`/api/filter/${room_num >= 1 ? room_num : 1 }/${beds_num >= 1 ? room_num : 1 }/${services.length > 0 ? services : ''}`)
+            .then((res) => {
+               this.houses = []
+               console.log(res.data)
+               this.houses = res.data.houses
+            })
+            .catch((error) => {
+               console.log(error)
+            })
+      },
    },
    mounted() {
       this.fetchServices();
