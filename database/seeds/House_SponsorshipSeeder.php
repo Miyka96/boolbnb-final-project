@@ -39,7 +39,7 @@ class House_SponsorshipSeeder extends Seeder
             }
 
             // Compilazione record su DB
-            $pivotRecord = DB::table('house_sponsorship')->truncate([
+            $pivotRecord = DB::table('house_sponsorship')->insert([
                'house_id' => $houseId,
                'sponsorship_id' => $sponsorId,
                'sponsor_start' => $startDate,
@@ -50,20 +50,5 @@ class House_SponsorshipSeeder extends Seeder
             $previousEndDate = date('Y-m-d H:i:s', strtotime($startDate . ' + ' . $sponsorDuration . 'hours'));
          }
       }
-
-      // for($i=0; $i < 100; $i++) {
-      //    $sponsor = $faker->randomElement($sponsorships);
-      //    $sponsorId = $sponsor->id;
-      //    $sponsorDuration = $sponsor->duration;
-      //    $startDate = $faker->dateTimeBetween('-2 week', '+2 week')->format('Y-m-d H:i:s');
-
-      //    $pivotRecord = DB::table('house_sponsorship')->insert([
-      //       'house_id' => $faker->randomElement($housesId),
-      //       'sponsorship_id' => $sponsorId,
-      //       'sponsor_start' => $startDate,
-      //       // 'sponsor_end' => $startDate->addHours($sponsorDuration)
-      //       'sponsor_end' => date('Y-m-d H:i:s', strtotime($startDate. ' + ' . $sponsorDuration . 'hours'))
-      //    ]);
-      // }
    }
 }
