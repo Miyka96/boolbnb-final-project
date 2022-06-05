@@ -14,7 +14,7 @@ class ServiceSeeder extends Seeder
     public function run(Faker $faker)
     {
 
-      $services = ['Spa','Garden','Washer','Tv','Books','Wi-fi','Kitchen','Barbecue','Secure-box','Self check-in'];
+      $services = ['Spa','Giardino','Lavatrice','Tv','Libri','Wi-fi','Cucina','Barbecue','Cassaforte','Self check-in', 'Animali ammessi', 'Fumatori', 'Parcheggio'];
 
       foreach ($services as $s){
         $service = new Service();

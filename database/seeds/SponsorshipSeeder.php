@@ -13,23 +13,23 @@ class SponsorshipSeeder extends Seeder
     public function run()
     {
         $sponsorship = new Sponsorship();
-        $sponsorship->name = 'Sponsor Giornaliera';
+        $sponsorship->name = 'Sponsorship Base';
         $sponsorship->price = 2.99;
-        $sponsorship->duration = '24:00:00';
+        $sponsorship->duration = 24;
 
         $sponsorship->save();
 
         $sponsorship = new Sponsorship();
-        $sponsorship->name = 'Sponsor Settimanale';
+        $sponsorship->name = 'Sponsorship Super';
         $sponsorship->price = 5.99;
-        $sponsorship->duration ='72:00:00';
+        $sponsorship->duration = 72;
 
         $sponsorship->save();
 
         $sponsorship = new Sponsorship();
-        $sponsorship->name = 'Sponsor Mensile';
+        $sponsorship->name = 'Sponsorship Ultra';
         $sponsorship->price = 9.99;
-        $sponsorship->duration = '144:00:00';
+        $sponsorship->duration = 144;
 
         $sponsorship->save();
     }

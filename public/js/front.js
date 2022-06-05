@@ -4557,6 +4557,11 @@ var render = function () {
             _c("strong", [_vm._v("€" + _vm._s(_vm.house.cost_per_night))]),
             _vm._v("/night"),
           ]),
+          _vm._v(" "),
+          _c("p", { staticClass: "card-rating" }, [
+            _vm._v(_vm._s(_vm.house.id)),
+            _c("i", { staticClass: "fa-solid fa-star" }),
+          ]),
         ]),
       ]),
     ]

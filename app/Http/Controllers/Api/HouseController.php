@@ -25,8 +25,8 @@ class HouseController extends Controller
          ->join('house_sponsorship', 'house_sponsorship.house_id', '=', 'houses.id')
          ->where([
             ['is_visible','=', 1],
-            ['house_sponsorship.sponsor_start', '<=', Carbon::now()->toString()],
-            ['house_sponsorship.sponsor_end', '<', Carbon::now()->toString()], // < perchè funziona al contrario, boh
+            ['house_sponsorship.sponsor_start', '<=', Carbon::now()],
+            ['house_sponsorship.sponsor_end', '>', Carbon::now()],
          ])
          ->paginate(12);
 
