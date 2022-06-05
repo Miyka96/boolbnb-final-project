@@ -18,7 +18,7 @@ const routes = [
       }
    },
    {
-      path: '/search/:query',
+      path: '/search/:query?',
       name: 'search',
       component: Search,
       meta: {
