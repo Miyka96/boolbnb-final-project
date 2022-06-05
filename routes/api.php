@@ -38,4 +38,9 @@ Route::namespace('Api')->group(function () {
       return Message::create($request->all);
    });
    Route::post('messages_store', 'MessageController@store');
+
+
+
+
+   Route::any('filter', 'FilterController@index');
 });

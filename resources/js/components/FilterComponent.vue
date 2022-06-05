@@ -1,110 +1,88 @@
 <template>
     <div class="container-fluid">
         <div class="filter_wrapper d-flex flex-column">
-            <div class="alloggi_wrapper">
-                <h1>Tipo di alloggio</h1>
-                <div class="row">
-                    <div v-for="(item,i) in alloggi" :key="i" class="col-s-5 col-md-5 col-xl alloggi">
-                        <i :class="item.icon"></i>
-                        <span>{{item.name}}</span>
+            <form v-on:submit.prevent="submitForm">
+
+                    <h4>Numero minimo di stanze</h4>
+                    <input v-model="form.rooms" type="number" max="15">
+                    <h4>Numero minimo di letti</h4>
+                    <input v-model="form.beds" type="number" max="25" >
+                    <h1>Altri servizi</h1>
+                
+                    <div v-for="el in services" :key="el.id">
+                        <input type="checkbox" :id="el.id" :value="el.id" :name="el.id" v-model="form.service">
+                        <label :for="el.id">{{el.name}}</label>
                     </div>
-                </div>
-            </div>
-            <div class="stanze_wrapper">
-                <h1>Stanze, letti e bagni</h1>
-                <h4>Stanze</h4>
-                <div class="pill_wrapper">
-                    <span v-for="(el,j) in numero_stanze" :key="j" class="pill">{{ el }}</span>
-                </div>
-                <h4>Letti</h4>
-                <div class="pill_wrapper">
-                    <span v-for="(el,j) in numero_letti" :key="j" class="pill">{{ el }}</span>
-                </div>
-                <h4>Bagni</h4>
-                <div class="pill_wrapper">
-                    <span v-for="(el,j) in numero_bagni" :key="j" class="pill">{{ el }}</span>
-                </div>
-            </div>
-            <div class="altri_servizi">
-                <h1>Altri servizi</h1>
-                <div class="checkbox_wrapper d-flex flex-column flex-wrap">
-                    <label v-for="(element,g) in checkbox" :key="g" class="checkbox">
-                        <input type="checkbox">
-                        <span class="checkmark">{{ element.name }}</span>   
-                    </label>
-                </div>
-            </div>
+                    <button @click="filter()">Filtra risultati</button>
+            </form>
         </div>
+
+        <!-- filtered houses -->
+        <CardShowcase/>
     </div>
 </template>
 
 <script>
+import CardShowcase from "../components/CardShowcase.vue"
+
 export default{
     name:"FilterComponent",
+    components: {
+        CardShowcase,
+    },
     data(){
         return {
-            alloggi: [
-                {
-                    'icon' : 'fa-solid fa-house',
-                    'name' : 'Casa'
-                },
-                {
-                    'icon' : 'fa-solid fa-city',
-                    'name' : 'Appartamento'
-                },
-                {
-                    'icon' : 'fa-solid fa-bed',
-                    'name' : 'Pensione'
-                },
-                {
-                    'icon' : 'fa-solid fa-hotel',
-                    'name' : 'Hotel'
-                },
-            ],
-
-            numero_stanze: ['Qualsiasi',1,2,3,4,5,6,7,'8+'],
-            numero_letti: ['Qualsiasi',1,2,3,4,5,6,7,'8+'],
-            numero_bagni: ['Qualsiasi',1,2,3,4,5,6,7,'8+'],
-
-            checkbox: [
-                {
-                    'name' : 'Wi-fi',
-                    'checked': true
-                },
-                {
-                    'name' : 'Cucina',
-                    'checked': true
-                },
-                {
-                    'name' : 'Lavatrice',
-                    'checked': true
-                },
-                {
-                    'name' : 'Asciugatrice',
-                    'checked': true
-                },
-                {
-                    'name' : 'Aria condizionata',
-                    'checked': true
-                },
-                {
-                    'name' : 'Riscaldamento',
-                    'checked': true
-                },
-                {
-                    'name' : 'TV',
-                    'checked': true
-                },
-                {
-                    'name' : 'Asciugacapelli',
-                    'checked': true
-                },
-                {
-                    'name' : 'Ferro da stiro',
-                    'checked': true
-                },
-            ]
+            form:{
+                rooms:"",
+                beds:"",
+                service:[],
+            },
+            services:[],
+            houses: [],
+            lastPage: 0,
+            currentPage: 1,
         }
+    },
+     methods: {
+      fetchHouses(page = 1) { //default value
+         axios.get('/api/houses', {
+            params: {
+               page  // equivalente a page: page
+            }
+         })
+        .then( res => {
+            console.log( res.data )
+            const { houses } = res.data
+            const { data, last_page, current_page } = houses
+            this.houses = data
+            this.currentPage = current_page
+            this.lastPage = last_page
+         })
+         .catch( err => {
+            console.warn( err )
+         })
+      },
+      fetchServices(){
+          axios.get('/api/services')
+          .then( res => {
+            console.log(res.data.services)
+            this.services= res.data.services
+          })
+      },
+
+    filter() {
+      axios
+        .post("/api/filter",this.form)
+        .then((res) => {
+          console.log(res.data);
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+    },
+    },
+    mounted() {
+        this.fetchServices()
     }
 }
 </script>

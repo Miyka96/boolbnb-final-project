@@ -1975,6 +1975,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _components_CardShowcase_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../components/CardShowcase.vue */ "./resources/js/components/CardShowcase.vue");
 //
 //
 //
@@ -1999,71 +2000,67 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
+
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "FilterComponent",
+  components: {
+    CardShowcase: _components_CardShowcase_vue__WEBPACK_IMPORTED_MODULE_0__["default"]
+  },
   data: function data() {
     return {
-      alloggi: [{
-        'icon': 'fa-solid fa-house',
-        'name': 'Casa'
-      }, {
-        'icon': 'fa-solid fa-city',
-        'name': 'Appartamento'
-      }, {
-        'icon': 'fa-solid fa-bed',
-        'name': 'Pensione'
-      }, {
-        'icon': 'fa-solid fa-hotel',
-        'name': 'Hotel'
-      }],
-      numero_stanze: ['Qualsiasi', 1, 2, 3, 4, 5, 6, 7, '8+'],
-      numero_letti: ['Qualsiasi', 1, 2, 3, 4, 5, 6, 7, '8+'],
-      numero_bagni: ['Qualsiasi', 1, 2, 3, 4, 5, 6, 7, '8+'],
-      checkbox: [{
-        'name': 'Wi-fi',
-        'checked': true
-      }, {
-        'name': 'Cucina',
-        'checked': true
-      }, {
-        'name': 'Lavatrice',
-        'checked': true
-      }, {
-        'name': 'Asciugatrice',
-        'checked': true
-      }, {
-        'name': 'Aria condizionata',
-        'checked': true
-      }, {
-        'name': 'Riscaldamento',
-        'checked': true
-      }, {
-        'name': 'TV',
-        'checked': true
-      }, {
-        'name': 'Asciugacapelli',
-        'checked': true
-      }, {
-        'name': 'Ferro da stiro',
-        'checked': true
-      }]
+      form: {
+        rooms: "",
+        beds: "",
+        service: []
+      },
+      services: [],
+      houses: [],
+      lastPage: 0,
+      currentPage: 1
     };
+  },
+  methods: {
+    fetchHouses: function fetchHouses() {
+      var _this = this;
+
+      var page = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 1;
+      //default value
+      axios.get('/api/houses', {
+        params: {
+          page: page // equivalente a page: page
+
+        }
+      }).then(function (res) {
+        console.log(res.data);
+        var houses = res.data.houses;
+        var data = houses.data,
+            last_page = houses.last_page,
+            current_page = houses.current_page;
+        _this.houses = data;
+        _this.currentPage = current_page;
+        _this.lastPage = last_page;
+      })["catch"](function (err) {
+        console.warn(err);
+      });
+    },
+    fetchServices: function fetchServices() {
+      var _this2 = this;
+
+      axios.get('/api/services').then(function (res) {
+        console.log(res.data.services);
+        _this2.services = res.data.services;
+      });
+    },
+    filter: function filter() {
+      axios.post("/api/filter", this.form).then(function (res) {
+        console.log(res.data);
+      })["catch"](function (error) {
+        console.log(error);
+      });
+    }
+  },
+  mounted: function mounted() {
+    this.fetchServices();
   }
 });
 
@@ -4420,92 +4417,140 @@ var render = function () {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "container-fluid" }, [
-    _c("div", { staticClass: "filter_wrapper d-flex flex-column" }, [
-      _c("div", { staticClass: "alloggi_wrapper" }, [
-        _c("h1", [_vm._v("Tipo di alloggio")]),
-        _vm._v(" "),
+  return _c(
+    "div",
+    { staticClass: "container-fluid" },
+    [
+      _c("div", { staticClass: "filter_wrapper d-flex flex-column" }, [
         _c(
-          "div",
-          { staticClass: "row" },
-          _vm._l(_vm.alloggi, function (item, i) {
-            return _c(
-              "div",
-              { key: i, staticClass: "col-s-5 col-md-5 col-xl alloggi" },
-              [
-                _c("i", { class: item.icon }),
+          "form",
+          {
+            on: {
+              submit: function ($event) {
+                $event.preventDefault()
+                return _vm.submitForm.apply(null, arguments)
+              },
+            },
+          },
+          [
+            _c("h4", [_vm._v("Numero minimo di stanze")]),
+            _vm._v(" "),
+            _c("input", {
+              directives: [
+                {
+                  name: "model",
+                  rawName: "v-model",
+                  value: _vm.form.rooms,
+                  expression: "form.rooms",
+                },
+              ],
+              attrs: { type: "number", max: "15" },
+              domProps: { value: _vm.form.rooms },
+              on: {
+                input: function ($event) {
+                  if ($event.target.composing) {
+                    return
+                  }
+                  _vm.$set(_vm.form, "rooms", $event.target.value)
+                },
+              },
+            }),
+            _vm._v(" "),
+            _c("h4", [_vm._v("Numero minimo di letti")]),
+            _vm._v(" "),
+            _c("input", {
+              directives: [
+                {
+                  name: "model",
+                  rawName: "v-model",
+                  value: _vm.form.beds,
+                  expression: "form.beds",
+                },
+              ],
+              attrs: { type: "number", max: "25" },
+              domProps: { value: _vm.form.beds },
+              on: {
+                input: function ($event) {
+                  if ($event.target.composing) {
+                    return
+                  }
+                  _vm.$set(_vm.form, "beds", $event.target.value)
+                },
+              },
+            }),
+            _vm._v(" "),
+            _c("h1", [_vm._v("Altri servizi")]),
+            _vm._v(" "),
+            _vm._l(_vm.services, function (el) {
+              return _c("div", { key: el.id }, [
+                _c("input", {
+                  directives: [
+                    {
+                      name: "model",
+                      rawName: "v-model",
+                      value: _vm.form.service,
+                      expression: "form.service",
+                    },
+                  ],
+                  attrs: { type: "checkbox", id: el.id, name: el.id },
+                  domProps: {
+                    value: el.id,
+                    checked: Array.isArray(_vm.form.service)
+                      ? _vm._i(_vm.form.service, el.id) > -1
+                      : _vm.form.service,
+                  },
+                  on: {
+                    change: function ($event) {
+                      var $$a = _vm.form.service,
+                        $$el = $event.target,
+                        $$c = $$el.checked ? true : false
+                      if (Array.isArray($$a)) {
+                        var $$v = el.id,
+                          $$i = _vm._i($$a, $$v)
+                        if ($$el.checked) {
+                          $$i < 0 &&
+                            _vm.$set(_vm.form, "service", $$a.concat([$$v]))
+                        } else {
+                          $$i > -1 &&
+                            _vm.$set(
+                              _vm.form,
+                              "service",
+                              $$a.slice(0, $$i).concat($$a.slice($$i + 1))
+                            )
+                        }
+                      } else {
+                        _vm.$set(_vm.form, "service", $$c)
+                      }
+                    },
+                  },
+                }),
                 _vm._v(" "),
-                _c("span", [_vm._v(_vm._s(item.name))]),
-              ]
-            )
-          }),
-          0
+                _c("label", { attrs: { for: el.id } }, [
+                  _vm._v(_vm._s(el.name)),
+                ]),
+              ])
+            }),
+            _vm._v(" "),
+            _c(
+              "button",
+              {
+                on: {
+                  click: function ($event) {
+                    return _vm.filter()
+                  },
+                },
+              },
+              [_vm._v("Filtra risultati")]
+            ),
+          ],
+          2
         ),
       ]),
       _vm._v(" "),
-      _c("div", { staticClass: "stanze_wrapper" }, [
-        _c("h1", [_vm._v("Stanze, letti e bagni")]),
-        _vm._v(" "),
-        _c("h4", [_vm._v("Stanze")]),
-        _vm._v(" "),
-        _c(
-          "div",
-          { staticClass: "pill_wrapper" },
-          _vm._l(_vm.numero_stanze, function (el, j) {
-            return _c("span", { key: j, staticClass: "pill" }, [
-              _vm._v(_vm._s(el)),
-            ])
-          }),
-          0
-        ),
-        _vm._v(" "),
-        _c("h4", [_vm._v("Letti")]),
-        _vm._v(" "),
-        _c(
-          "div",
-          { staticClass: "pill_wrapper" },
-          _vm._l(_vm.numero_letti, function (el, j) {
-            return _c("span", { key: j, staticClass: "pill" }, [
-              _vm._v(_vm._s(el)),
-            ])
-          }),
-          0
-        ),
-        _vm._v(" "),
-        _c("h4", [_vm._v("Bagni")]),
-        _vm._v(" "),
-        _c(
-          "div",
-          { staticClass: "pill_wrapper" },
-          _vm._l(_vm.numero_bagni, function (el, j) {
-            return _c("span", { key: j, staticClass: "pill" }, [
-              _vm._v(_vm._s(el)),
-            ])
-          }),
-          0
-        ),
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "altri_servizi" }, [
-        _c("h1", [_vm._v("Altri servizi")]),
-        _vm._v(" "),
-        _c(
-          "div",
-          { staticClass: "checkbox_wrapper d-flex flex-column flex-wrap" },
-          _vm._l(_vm.checkbox, function (element, g) {
-            return _c("label", { key: g, staticClass: "checkbox" }, [
-              _c("input", { attrs: { type: "checkbox" } }),
-              _vm._v(" "),
-              _c("span", { staticClass: "checkmark" }, [
-                _vm._v(_vm._s(element.name)),
-              ]),
-            ])
-          }),
-          0
-        ),
-      ]),
-    ]),
-  ])
+      _c("CardShowcase"),
+    ],
+    1
+  )
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -22128,7 +22173,7 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /Users/asiademartino/Desktop/progetto_finale/boolbnb-final-project/resources/js/front.js */"./resources/js/front.js");
+module.exports = __webpack_require__(/*! C:\Users\Micae\dev\boolbnb-final-project\resources\js\front.js */"./resources/js/front.js");
 
 
 /***/ })
