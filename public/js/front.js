@@ -2581,7 +2581,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_MainBanner_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../components/MainBanner.vue */ "./resources/js/components/MainBanner.vue");
 /* harmony import */ var _components_CardShowcase_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../components/CardShowcase.vue */ "./resources/js/components/CardShowcase.vue");
 /* harmony import */ var _components_SectionVue_vue__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../components/SectionVue.vue */ "./resources/js/components/SectionVue.vue");
-/* harmony import */ var _components_NavbarComponent_vue__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../components/NavbarComponent.vue */ "./resources/js/components/NavbarComponent.vue");
 //
 //
 //
@@ -2590,8 +2589,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-
 
 
 
@@ -2599,8 +2596,7 @@ __webpack_require__.r(__webpack_exports__);
   components: {
     Banner: _components_MainBanner_vue__WEBPACK_IMPORTED_MODULE_0__["default"],
     CardsShowcase: _components_CardShowcase_vue__WEBPACK_IMPORTED_MODULE_1__["default"],
-    SectionVue: _components_SectionVue_vue__WEBPACK_IMPORTED_MODULE_2__["default"],
-    Navbar: _components_NavbarComponent_vue__WEBPACK_IMPORTED_MODULE_3__["default"]
+    SectionVue: _components_SectionVue_vue__WEBPACK_IMPORTED_MODULE_2__["default"]
   }
 });
 
@@ -5280,8 +5276,6 @@ var render = function () {
     { attrs: { id: "home" } },
     [
       _c("Banner"),
-      _vm._v(" "),
-      _c("Navbar"),
       _vm._v(" "),
       _c("SectionVue"),
       _vm._v(" "),
@@ -22173,7 +22167,7 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /Users/marcocorallo/Desktop/boolbnb-final-project/resources/js/front.js */"./resources/js/front.js");
+module.exports = __webpack_require__(/*! C:\Users\eduar\OneDrive\Desktop\Boolean\Progetto Finale\Repo Ufficiale\boolbnb-final-project\resources\js\front.js */"./resources/js/front.js");
 
 
 /***/ })

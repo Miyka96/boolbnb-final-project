@@ -12682,7 +12682,7 @@ function thumbAnimation() {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /Users/marcocorallo/Desktop/boolbnb-final-project/resources/js/store.js */"./resources/js/store.js");
+module.exports = __webpack_require__(/*! C:\Users\eduar\OneDrive\Desktop\Boolean\Progetto Finale\Repo Ufficiale\boolbnb-final-project\resources\js\store.js */"./resources/js/store.js");
 
 
 /***/ })
