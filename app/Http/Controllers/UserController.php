@@ -17,8 +17,8 @@ class UserController extends Controller
      */
     public function show(User $user)
     {
-        $houses = House::where('user_id', auth::user()->id)->get();
+        // $houses = House::where('user_id', auth::user()->id)->get();
 
-        return view('user.user', compact('user','houses'));
+        return view('user.user');
     }
 }

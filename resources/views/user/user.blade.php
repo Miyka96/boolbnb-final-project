@@ -1,20 +1,8 @@
 @extends('layouts.app')
 
-@php 
-
-$i = 0;
-
-foreach($houses as $house) {
-    $i++;
-}
-
-@endphp
-
-
-
-
 
 @section('content')
+
     <div class="user_profile">
 
         <div class="container-fluid">
@@ -51,8 +39,6 @@ foreach($houses as $house) {
                                 Visualizza i tuoi appartamenti
                             </a>
                         </button>
-
-                    <h1>Al momento hai <span>{{ $i }}</span> appartamenti</h1>
                     </div>
                   
                 </div>
