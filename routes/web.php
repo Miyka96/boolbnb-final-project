@@ -31,7 +31,8 @@ Route::middleware('auth')
       Route::resource('messages', 'MessageController')->only(['create', 'store']);
       Route::get('/messages/{house_id}', 'MessageController@index')->name('messages.index');
 
-   Route::resource('sponsorships', 'SponsorshipController'); //metodo custom per attivazione sponsorship
+      Route::get('sponsorships/{house_id}', 'SponsorshipController@index')->name('sponsorship.index');
+      Route::post('sponsorship/{house_id}/store', 'SponsorshipController@store')->name('sponsorship.store'); //metodo custom per attivazione sponsorship
 
       // rotta statische a partire dalla show
       Route::post('position', 'PositionController@store')->name('position.store');

@@ -58,7 +58,7 @@
 @foreach ($sponsorship as $sponsor)
 
 <form 
-action="{{ route('') }}" 
+action="{{ route('user.sponsorship.store', $house_id) }}" 
 method="post">
 
   @csrf 
@@ -116,7 +116,7 @@ method="post">
       <div class="close">
           <i onclick="paymentHide()" class="fa-regular fa-circle-xmark"></i>
       </div>
-      <form class="input_wrapper" action="" method="POST">
+      <form class="input_wrapper" action="{{ route('user.sponsorship.store', Route::current()->parameter('house_id')) }}" method="POST">
         @csrf
           <input type="text" name="card_num" placeholder="inserisci il numero della carta">
           <input type="text" name="card_cvc" placeholder="inserisci il cvc della carta">

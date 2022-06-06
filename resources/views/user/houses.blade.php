@@ -44,6 +44,11 @@
                   <i class="icon fa-solid fa-comments"></i>
                </a>
 
+               <a href="{{ route('user.sponsorship.index', $house) }}" class="messaggi button">
+                  <span class="text">Sponsorizza questo appartamento</span>
+                  <i class="icon fa-solid fa-comments"></i>
+               </a>
+
             </div>
 
             
