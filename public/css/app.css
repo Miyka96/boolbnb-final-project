@@ -10996,13 +10996,11 @@ body::-webkit-scrollbar-thumb:hover {
 }
 
 #main-nav {
-  pointer-events: none;
   height: 80px;
 }
 
 #main-nav .navbar-brand {
   padding: 0;
-  pointer-events: auto;
 }
 
 #main-nav .navbar-brand figure {
@@ -11013,10 +11011,6 @@ body::-webkit-scrollbar-thumb:hover {
 #main-nav .navbar-brand figure img {
   display: block;
   height: 32px;
-}
-
-#main-nav .navbar-nav {
-  pointer-events: auto;
 }
 
 #main-nav .navbar-nav .dropdown-menu {

@@ -39,12 +39,12 @@ body {
 
 // NAVBAR
 #main-nav {
-  pointer-events: none;
+  // pointer-events: none;
   height: 80px;
 
   .navbar-brand {
     padding: 0;
-    pointer-events: auto;
+    // pointer-events: auto;
 
     figure {
       margin: 0;
@@ -58,7 +58,7 @@ body {
   }
 
   .navbar-nav {
-    pointer-events: auto;
+    // pointer-events: auto;
 
     .dropdown-menu {
       border-radius: 10px;

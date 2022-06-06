@@ -1,6 +1,6 @@
 <template>
    <div class="container mt-5 py-5">
-      <Navbar/>
+      <!-- <Navbar/> -->
       <FilterComponent/>
       <h1 class="pt-4">Case disponibili a <span style="color:#FF385C;">{{queryParams}}</span></h1>
       lat: {{lat}}
@@ -9,14 +9,14 @@
 </template>
 
 <script>
-import Navbar from '../components/Search/SearchBar.vue'
+// import Navbar from '../components/Search/SearchBar.vue'
 import FilterComponent from '../components/Search/FilterComponent.vue'
 
 export default {
    name: 'Search',
 
    components:{
-      Navbar,
+      // Navbar,
       FilterComponent,
    },
 
