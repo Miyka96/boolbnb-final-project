@@ -261,7 +261,7 @@ function squareMetersValidation() {
     setErrorFor(squareMeters);
     error.innerHTML = errorMessage; // console.log(errorMessage)
   } else if (squareMetersValue < 20 || squareMetersValue > 300) {
-    errorMessage = 'Il numero metri quadri deve essere compreso tra 1 e 300';
+    errorMessage = 'Il numero metri quadri deve essere compreso tra 20 e 300';
     setErrorFor(squareMeters);
     error.innerHTML = errorMessage; // console.log(errorMessage)
   } else {
@@ -360,7 +360,7 @@ function setSuccessFor(input) {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /Users/marcocorallo/Desktop/boolbnb-final-project/resources/js/clientsideValidation.js */"./resources/js/clientsideValidation.js");
+module.exports = __webpack_require__(/*! D:\Users\Simone\Documents\Progetti\boolbnb-final-project\resources\js\clientsideValidation.js */"./resources/js/clientsideValidation.js");
 
 
 /***/ })

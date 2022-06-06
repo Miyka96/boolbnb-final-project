@@ -37284,8 +37284,6 @@ __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js"); //  windo
  */
 // const files = require.context('./', true, /\.vue$/i)
 // files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default))
-// Importare componenti qui in questo modo
-// Vue.component('navbar-component', require('./components/navbarComponent.vue').default);
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
@@ -37361,8 +37359,8 @@ window.axios = __webpack_require__(/*! axios */ "./node_modules/axios/index.js")
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /Users/marcocorallo/Desktop/boolbnb-final-project/resources/js/admin.js */"./resources/js/admin.js");
-module.exports = __webpack_require__(/*! /Users/marcocorallo/Desktop/boolbnb-final-project/resources/sass/app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! D:\Users\Simone\Documents\Progetti\boolbnb-final-project\resources\js\admin.js */"./resources/js/admin.js");
+module.exports = __webpack_require__(/*! D:\Users\Simone\Documents\Progetti\boolbnb-final-project\resources\sass\app.scss */"./resources/sass/app.scss");
 
 
 /***/ })

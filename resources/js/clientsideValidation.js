@@ -182,7 +182,7 @@ function squareMetersValidation() {
       error.innerHTML = errorMessage
       // console.log(errorMessage)
    } else if(squareMetersValue < 20 || squareMetersValue > 300) {
-      errorMessage = 'Il numero metri quadri deve essere compreso tra 1 e 300'
+      errorMessage = 'Il numero metri quadri deve essere compreso tra 20 e 300'
       setErrorFor(squareMeters)
       error.innerHTML = errorMessage
       // console.log(errorMessage)
