@@ -9,8 +9,8 @@
 </template>
 
 <script>
-import Logo from '../Search/LogoComponent.vue';
-import Dropdown from '../Search/DropdownPill.vue';
+import Logo from './LogoComponent.vue';
+import Dropdown from './DropdownPill.vue';
 import SearchBar from '../Search/SearchBar.vue';
 
    export default {
