@@ -1,0 +1,133 @@
+@import './variables';
+
+
+.user_profile{
+
+    a{
+        color: currentColor;
+        text-decoration: none;
+    }
+
+    *{
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+    }
+
+    padding: 80px 20px;
+    padding-top: 100px;
+    
+
+    #Livello_1{
+        height: 100vh;
+        width: auto;
+        position: absolute;
+        top:0;
+        transform: translate(-52%,0);
+        filter: invert(38%) sepia(75%) saturate(3208%) hue-rotate(325deg) brightness(88%) contrast(94%);
+        opacity: 0.4;
+    }
+
+    .col-2{
+        @media (max-width: 576px) { 
+            display: none;
+        }
+    }
+
+    .profilo{
+        border: 2px solid $login;
+        border-radius: 10px;
+        padding: 20px;
+        flex-grow: 1;
+        background-color: white;
+        z-index: 9999;
+
+        .nome{
+            height: 50px;
+
+            @media (max-width: 576px) { 
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 20px;
+            }
+
+            h1{
+                color: $login;
+            }
+        }
+
+        .informazioni-profilo{
+            height: 100%;
+            h3{
+                margin-bottom: 10px;
+            }
+            
+            h5{
+                margin-left: 10px;
+            }
+        }
+
+        .bottone{
+            width: 100%;
+            margin-top: 100px;
+            gap: 50px;
+
+            span{
+                color: $login;
+            }
+
+            h1{
+                @media (max-width: 768px) { 
+                    font-size: 26px;
+                }
+                @media (max-width: 425px) { 
+                    font-size: 20px;
+                }
+            }
+
+            .button {
+                font-size: 100%;
+                white-space: nowrap;
+                font-weight: 200;
+                padding: 13px 50px 13px;
+                outline: 0;
+                border: 1px solid black;
+                border-radius: 5px;
+                cursor: pointer;
+                position: relative;
+                background-color: rgba(0, 0, 0, 0);
+                color: white;
+                height: 60px;
+
+                @media screen and (min-width: 768px) {
+                    font-size: 20px;
+                }
+            }
+    
+            .button::after {
+                content: "";
+                border-radius: 5px;
+                width: 100%;
+                z-index: -1;
+                position: absolute;
+                height: 100%;
+                top: 7px;
+                left: 7px;
+                transition: 0.2s;
+                background-color: $login;
+            }
+    
+            .button:hover::after {
+                top: 0px;
+                left: 0px;
+            }
+        }
+
+        .chart-container{
+            margin-top: 20px;
+        }
+    }
+
+
+    
+}
