@@ -10995,6 +10995,72 @@ body::-webkit-scrollbar-thumb:hover {
   background-color: rgba(0, 0, 0, 0.4);
 }
 
+#main-nav {
+  pointer-events: none;
+  height: 80px;
+}
+
+#main-nav .navbar-brand {
+  padding: 0;
+  pointer-events: auto;
+}
+
+#main-nav .navbar-brand figure {
+  margin: 0;
+  max-height: 32px;
+}
+
+#main-nav .navbar-brand figure img {
+  display: block;
+  height: 32px;
+}
+
+#main-nav .navbar-nav {
+  pointer-events: auto;
+}
+
+#main-nav .navbar-nav .dropdown-menu {
+  border-radius: 10px;
+}
+
+#main-nav #navbarDropdown {
+  padding: 0;
+}
+
+#main-nav #navbarDropdown.dropdown-toggle::after {
+  display: none;
+}
+
+#main-nav #navbarDropdown span {
+  background-color: #f8f9fa;
+  border: 1px solid #C9C4BE;
+  color: #717171;
+  gap: 10px;
+  padding: 4px 6px 4px 11px;
+  cursor: pointer;
+}
+
+#main-nav #navbarDropdown span:hover {
+  box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.1);
+}
+
+#main-nav #navbarDropdown span .fa-bars {
+  font-size: 26px;
+}
+
+#main-nav #navbarDropdown span .fa-circle-user {
+  font-size: 30px;
+}
+
+#main-nav #navbarDropdown span .fa-circle-user.logged {
+  color: #4B8673;
+}
+
+#main-nav #navbarDropdown a {
+  text-decoration: none;
+  color: #717171;
+}
+
 .sponsorship_page {
   display: flex;
   justify-content: center;
@@ -11376,8 +11442,7 @@ body::-webkit-scrollbar-thumb:hover {
   color: rgb(219, 59, 91) !important;
 }
 
-.register_page .form-email-color:focus,
-.register_page .form-pass-color:focus {
+.register_page .form-control:focus {
   outline: none !important;
   border-color: rgb(219, 59, 91) !important;
   box-shadow: 0 0 10px rgb(219, 59, 91) !important;
@@ -11673,5 +11738,143 @@ body::-webkit-scrollbar-thumb:hover {
   align-items: center;
   justify-content: center;
   width: 200px;
+}
+
+.user_houses .aggiungi i {
+  font-size: 30px;
+}
+
+.user_profile {
+  padding: 80px 20px;
+  padding-top: 100px;
+}
+
+.user_profile a {
+  color: currentColor;
+  text-decoration: none;
+}
+
+.user_profile * {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.user_profile #Livello_1 {
+  height: 100vh;
+  width: auto;
+  position: absolute;
+  top: 0;
+  transform: translate(-52%, 0);
+  filter: invert(38%) sepia(75%) saturate(3208%) hue-rotate(325deg) brightness(88%) contrast(94%);
+  opacity: 0.4;
+}
+
+@media (max-width: 576px) {
+  .user_profile .col-2 {
+    display: none;
+  }
+}
+
+.user_profile .profilo {
+  border: 2px solid rgb(219, 59, 91);
+  border-radius: 10px;
+  padding: 20px;
+  flex-grow: 1;
+  background-color: white;
+  z-index: 9999;
+}
+
+.user_profile .profilo .nome {
+  height: 50px;
+}
+
+@media (max-width: 576px) {
+  .user_profile .profilo .nome {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+  }
+}
+
+.user_profile .profilo .nome h1 {
+  color: rgb(219, 59, 91);
+}
+
+.user_profile .profilo .informazioni-profilo {
+  height: 100%;
+}
+
+.user_profile .profilo .informazioni-profilo h3 {
+  margin-bottom: 10px;
+}
+
+.user_profile .profilo .informazioni-profilo h5 {
+  margin-left: 10px;
+}
+
+.user_profile .profilo .bottone {
+  width: 100%;
+  margin-top: 100px;
+  gap: 50px;
+}
+
+.user_profile .profilo .bottone span {
+  color: rgb(219, 59, 91);
+}
+
+@media (max-width: 768px) {
+  .user_profile .profilo .bottone h1 {
+    font-size: 26px;
+  }
+}
+
+@media (max-width: 425px) {
+  .user_profile .profilo .bottone h1 {
+    font-size: 20px;
+  }
+}
+
+.user_profile .profilo .bottone .button {
+  font-size: 100%;
+  white-space: nowrap;
+  font-weight: 200;
+  padding: 13px 50px 13px;
+  outline: 0;
+  border: 1px solid black;
+  border-radius: 5px;
+  cursor: pointer;
+  position: relative;
+  background-color: rgba(0, 0, 0, 0);
+  color: white;
+  height: 60px;
+}
+
+@media screen and (min-width: 768px) {
+  .user_profile .profilo .bottone .button {
+    font-size: 20px;
+  }
+}
+
+.user_profile .profilo .bottone .button::after {
+  content: "";
+  border-radius: 5px;
+  width: 100%;
+  z-index: -1;
+  position: absolute;
+  height: 100%;
+  top: 7px;
+  left: 7px;
+  transition: 0.2s;
+  background-color: rgb(219, 59, 91);
+}
+
+.user_profile .profilo .bottone .button:hover::after {
+  top: 0px;
+  left: 0px;
+}
+
+.user_profile .profilo .chart-container {
+  margin-top: 20px;
 }
 

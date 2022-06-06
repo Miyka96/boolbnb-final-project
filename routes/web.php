@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('home'); // nel componente home.blade.php è montatto App.vue
+   return view('home'); // nel componente home.blade.php è montatto App.vue
 });
 
 Auth::routes();
@@ -24,30 +24,29 @@ Route::middleware('auth')
    ->prefix('user')
    ->group(function () {
 
-   Route::get('/', 'UserController@show');
+      Route::get('/', 'UserController@show');
 
-   Route::resource('houses', 'HouseController');
+      Route::resource('houses', 'HouseController');
 
-   Route::resource('messages', 'MessageController')->only(['create', 'store']);
-   Route::get('/messages/{house_id}', 'MessageController@index')->name('messages.index');
+      Route::resource('messages', 'MessageController')->only(['create', 'store']);
+      Route::get('/messages/{house_id}', 'MessageController@index')->name('messages.index');
 
-   Route::resource('sponporships', 'SponsorshipController'); //metodo custom per attivazione sponsorship
+   Route::resource('sponsorships', 'SponsorshipController'); //metodo custom per attivazione sponsorship
 
-   // rotta statische a partire dalla show
-   Route::post('position', 'PositionController@store')->name('position.store');
-
-});
+      // rotta statische a partire dalla show
+      Route::post('position', 'PositionController@store')->name('position.store');
+   });
 
 Route::resource('visualizations', 'VisualizationController')->only('store'); // associata alla funzione che apre la card prima di accedere alla show
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/home', 'HomeController@index')->name('profile');
 
 Route::any('/send/message', 'SendMessageController@send');
+
 Route::any('/send/visualization', 'VisualizationController@send');
 
-Route::fallback(function() {
+Route::fallback(function () {
    return view('home');
 });
 
 // rotta error 404
-

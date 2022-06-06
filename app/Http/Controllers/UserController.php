@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use App\User;
+use App\House;
 
 class UserController extends Controller
 {
@@ -15,6 +17,8 @@ class UserController extends Controller
      */
     public function show(User $user)
     {
-        return view('user.user', compact('user'));
+        $houses = House::where('user_id', auth::user()->id)->get();
+
+        return view('user.user', compact('user','houses'));
     }
 }
