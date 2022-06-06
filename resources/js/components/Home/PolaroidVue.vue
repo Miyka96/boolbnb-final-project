@@ -9,7 +9,7 @@
             <img class="polaroid__image" :src="el" />
           </div>
         </span>
-        <h2 class="polaroid__title">Title</h2>
+          <h2 class="polaroid__title highlight">Title</h2>
       </div>
     </div>
   </div>
@@ -21,10 +21,10 @@ export default {
   data() {
     return {
       polaroid: [
-        "https://images.unsplash.com/photo-1623166200209-6bd48520d6cb?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=300&q=100",
-        "https://images.unsplash.com/photo-1617883984017-a53b8edabada?crop=entropy&cs=tinysrgb&fm=jpg&ixlib=rb-1.2.1&q=60&raw_url=true&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8aG9saWRheXN8ZW58MHx8MHx8&auto=format&fit=crop&w=300&q=100",
-        "https://images.unsplash.com/photo-1604537529586-87ac173f4310?crop=entropy&cs=tinysrgb&fm=jpg&ixlib=rb-1.2.1&q=60&raw_url=true&ixid=MnwxMjA3fDF8MHxzZWFyY2h8MXx8bW91bnRhaW5zfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=300&q=100",
-        "https://images.unsplash.com/photo-1587241432831-4490df069382?crop=entropy&cs=tinysrgb&fm=jpg&ixlib=rb-1.2.1&q=60&raw_url=true&ixid=MnwxMjA3fDB8MHxzZWFyY2h8OHx8ZGVzZXJ0fGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=300&q=100",
+        "https://images.unsplash.com/photo-1594755260889-29d5fb8e2d1f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=300&q=100",
+        "https://images.unsplash.com/photo-1604321830182-faf7cfca8b55?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=300&q=100",
+        "https://images.unsplash.com/photo-1606054534744-a3b13e35c574?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=300&q=100",
+        "https://images.unsplash.com/photo-1593343747751-f44305731648?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=300&q=100",
       ],
     };
   },
@@ -32,6 +32,9 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap');
+
 .polaroids-list {
   display: flex;
   flex-flow: row wrap;
@@ -78,11 +81,11 @@ export default {
     .polaroid__title {
       margin: 0;
       padding: 20px;
-      font-family: "Amatic SC", sans-serif;
+      font-family: 'Montserrat', sans-serif;
       font-size: 1.8rem;
       font-weight: bold;
       line-height: 1.1;
-      text-transform: uppercase;
+      text-transform: capitalize;
       color: black;
       text-align: center;
     }
@@ -103,4 +106,5 @@ export default {
 .polaroid:nth-child(2n) {
   transform: rotate(-5deg);
 }
+
 </style>

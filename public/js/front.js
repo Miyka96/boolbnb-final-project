@@ -2162,7 +2162,7 @@ __webpack_require__.r(__webpack_exports__);
   name: "PolaroidVue",
   data: function data() {
     return {
-      polaroid: ["https://images.unsplash.com/photo-1623166200209-6bd48520d6cb?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=300&q=100", "https://images.unsplash.com/photo-1617883984017-a53b8edabada?crop=entropy&cs=tinysrgb&fm=jpg&ixlib=rb-1.2.1&q=60&raw_url=true&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8aG9saWRheXN8ZW58MHx8MHx8&auto=format&fit=crop&w=300&q=100", "https://images.unsplash.com/photo-1604537529586-87ac173f4310?crop=entropy&cs=tinysrgb&fm=jpg&ixlib=rb-1.2.1&q=60&raw_url=true&ixid=MnwxMjA3fDF8MHxzZWFyY2h8MXx8bW91bnRhaW5zfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=300&q=100", "https://images.unsplash.com/photo-1587241432831-4490df069382?crop=entropy&cs=tinysrgb&fm=jpg&ixlib=rb-1.2.1&q=60&raw_url=true&ixid=MnwxMjA3fDB8MHxzZWFyY2h8OHx8ZGVzZXJ0fGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=300&q=100"]
+      polaroid: ["https://images.unsplash.com/photo-1594755260889-29d5fb8e2d1f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=300&q=100", "https://images.unsplash.com/photo-1604321830182-faf7cfca8b55?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=300&q=100", "https://images.unsplash.com/photo-1606054534744-a3b13e35c574?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=300&q=100", "https://images.unsplash.com/photo-1593343747751-f44305731648?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=300&q=100"]
     };
   }
 });
@@ -2919,10 +2919,10 @@ exports.push([module.i, "#main-banner[data-v-0e33f90c] {\n  width: 100%;\n  heig
 
 exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-loader/lib/css-base.js */ "./node_modules/css-loader/lib/css-base.js")(false);
 // imports
-
+exports.push([module.i, "@import url(https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap);", ""]);
 
 // module
-exports.push([module.i, ".polaroids-list[data-v-345c9035] {\n  display: flex;\n  flex-flow: row wrap;\n  justify-content: space-evenly;\n  align-items: flex-start;\n  gap: 2%;\n  width: 100%;\n  margin: 0;\n  padding: 0;\n  list-style: none;\n}\n.polaroids-list .polaroid[data-v-345c9035] {\n  flex: 0 1 auto;\n  width: 300px;\n  display: block;\n  margin: 0 0 20px 0;\n  text-decoration: none;\n  background: white;\n  box-shadow: 7px 8px 14px 1px rgba(0, 0, 0, 0.59);\n  transition: all 0.3s ease;\n  transform: rotate(2deg);\n}\n.polaroids-list .polaroid[data-v-345c9035]:hover {\n  transform: translateY(-4px);\n}\n.polaroids-list .polaroid:hover .polaroid__image[data-v-345c9035] {\n  transform: scale(1.03);\n  transition: transform 0.2s linear;\n}\n.polaroids-list .polaroid .polaroid__pad[data-v-345c9035] {\n  position: relative;\n  overflow: hidden;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  height: 260px;\n  border: 20px solid white;\n  border-bottom: 0;\n  background: white;\n}\n.polaroids-list .polaroid .polaroid__pad .polaroid__image[data-v-345c9035] {\n  display: block;\n  max-width: 100%;\n  max-height: 100%;\n}\n.polaroids-list .polaroid .polaroid__title[data-v-345c9035] {\n  margin: 0;\n  padding: 20px;\n  font-family: \"Amatic SC\", sans-serif;\n  font-size: 1.8rem;\n  font-weight: bold;\n  line-height: 1.1;\n  text-transform: uppercase;\n  color: black;\n  text-align: center;\n}\n.img_wrapper[data-v-345c9035] {\n  width: 280px;\n  height: 260px;\n}\n.img_wrapper img[data-v-345c9035] {\n  width: 100%;\n  height: 100%;\n  -o-object-fit: cover;\n     object-fit: cover;\n}\n.polaroid[data-v-345c9035]:nth-child(2n) {\n  transform: rotate(-5deg);\n}", ""]);
+exports.push([module.i, ".polaroids-list[data-v-345c9035] {\n  display: flex;\n  flex-flow: row wrap;\n  justify-content: space-evenly;\n  align-items: flex-start;\n  gap: 2%;\n  width: 100%;\n  margin: 0;\n  padding: 0;\n  list-style: none;\n}\n.polaroids-list .polaroid[data-v-345c9035] {\n  flex: 0 1 auto;\n  width: 300px;\n  display: block;\n  margin: 0 0 20px 0;\n  text-decoration: none;\n  background: white;\n  box-shadow: 7px 8px 14px 1px rgba(0, 0, 0, 0.59);\n  transition: all 0.3s ease;\n  transform: rotate(2deg);\n}\n.polaroids-list .polaroid[data-v-345c9035]:hover {\n  transform: translateY(-4px);\n}\n.polaroids-list .polaroid:hover .polaroid__image[data-v-345c9035] {\n  transform: scale(1.03);\n  transition: transform 0.2s linear;\n}\n.polaroids-list .polaroid .polaroid__pad[data-v-345c9035] {\n  position: relative;\n  overflow: hidden;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  height: 260px;\n  border: 20px solid white;\n  border-bottom: 0;\n  background: white;\n}\n.polaroids-list .polaroid .polaroid__pad .polaroid__image[data-v-345c9035] {\n  display: block;\n  max-width: 100%;\n  max-height: 100%;\n}\n.polaroids-list .polaroid .polaroid__title[data-v-345c9035] {\n  margin: 0;\n  padding: 20px;\n  font-family: \"Montserrat\", sans-serif;\n  font-size: 1.8rem;\n  font-weight: bold;\n  line-height: 1.1;\n  text-transform: capitalize;\n  color: black;\n  text-align: center;\n}\n.img_wrapper[data-v-345c9035] {\n  width: 280px;\n  height: 260px;\n}\n.img_wrapper img[data-v-345c9035] {\n  width: 100%;\n  height: 100%;\n  -o-object-fit: cover;\n     object-fit: cover;\n}\n.polaroid[data-v-345c9035]:nth-child(2n) {\n  transform: rotate(-5deg);\n}", ""]);
 
 // exports
 
@@ -4650,7 +4650,9 @@ var render = function () {
             ]),
           ]),
           _vm._v(" "),
-          _c("h2", { staticClass: "polaroid__title" }, [_vm._v("Title")]),
+          _c("h2", { staticClass: "polaroid__title highlight" }, [
+            _vm._v("Title"),
+          ]),
         ])
       }),
       0
@@ -22136,7 +22138,7 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /Users/asiademartino/Desktop/progetto_finale/boolbnb-final-project/resources/js/front.js */"./resources/js/front.js");
+module.exports = __webpack_require__(/*! C:\Users\Micae\dev\boolbnb-final-project\resources\js\front.js */"./resources/js/front.js");
 
 
 /***/ })
