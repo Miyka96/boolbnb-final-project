@@ -10995,6 +10995,72 @@ body::-webkit-scrollbar-thumb:hover {
   background-color: rgba(0, 0, 0, 0.4);
 }
 
+#main-nav {
+  pointer-events: none;
+  height: 80px;
+}
+
+#main-nav .navbar-brand {
+  padding: 0;
+  pointer-events: auto;
+}
+
+#main-nav .navbar-brand figure {
+  margin: 0;
+  max-height: 32px;
+}
+
+#main-nav .navbar-brand figure img {
+  display: block;
+  height: 32px;
+}
+
+#main-nav .navbar-nav {
+  pointer-events: auto;
+}
+
+#main-nav .navbar-nav .dropdown-menu {
+  border-radius: 10px;
+}
+
+#main-nav #navbarDropdown {
+  padding: 0;
+}
+
+#main-nav #navbarDropdown.dropdown-toggle::after {
+  display: none;
+}
+
+#main-nav #navbarDropdown span {
+  background-color: #f8f9fa;
+  border: 1px solid #C9C4BE;
+  color: #717171;
+  gap: 10px;
+  padding: 4px 6px 4px 11px;
+  cursor: pointer;
+}
+
+#main-nav #navbarDropdown span:hover {
+  box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.1);
+}
+
+#main-nav #navbarDropdown span .fa-bars {
+  font-size: 26px;
+}
+
+#main-nav #navbarDropdown span .fa-circle-user {
+  font-size: 30px;
+}
+
+#main-nav #navbarDropdown span .fa-circle-user.logged {
+  color: #4B8673;
+}
+
+#main-nav #navbarDropdown a {
+  text-decoration: none;
+  color: #717171;
+}
+
 .sponsorship_page {
   display: flex;
   justify-content: center;
