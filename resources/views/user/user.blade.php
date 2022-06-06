@@ -19,10 +19,10 @@ foreach($houses as $house) {
     <div class="user_profile">
 
         <div class="container-fluid">
-            <div class="row">
-                <div class="col-2">
-                    {{-- possibilità di inserire immagine profilo --}}
-                </div>
+            <div class="row justify-content-center">
+                {{-- <div class="col-2">
+                    possibilità di inserire immagine profilo
+                </div> --}}
 
                 {{-- main content --}}
                 <div class="profilo">
@@ -46,17 +46,22 @@ foreach($houses as $house) {
                         </div>
                     </div>
 
-                    <div class="bottone d-flex align-items-center justify-content-center flex-column">
+                    <div class="bottone d-flex align-items-center justify-content-center ">
                         <button class="button"> 
                             <a class="text-white" href="{{ route('user.houses.index') }}">
                                 Visualizza i tuoi appartamenti
                             </a>
                         </button>
+                        <button class="button"> 
+                            <a class="text-white" href="{{ route('user.houses.create') }}">
+                                Aggiungi un appartamento
+                            </a>
+                        </button>
+                        
                     </div>
                   
                 </div>
 
-                <div class="col-2"></div>
             </div>
          
             <?xml version="1.0" encoding="UTF-8" standalone="no"?>
