@@ -11782,7 +11782,6 @@ body::-webkit-scrollbar-thumb:hover {
   padding: 20px;
   flex-grow: 1;
   background-color: white;
-  z-index: 9999;
 }
 
 .user_profile .profilo .nome {

@@ -4,7 +4,7 @@
 
 $i = 0;
 
-foreach($houses as $house) {
+foreach($users as $house) {
     $i++;
 }
 
