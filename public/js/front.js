@@ -2845,11 +2845,11 @@ __webpack_require__.r(__webpack_exports__);
 
       axios__WEBPACK_IMPORTED_MODULE_0___default.a.post("/send/message", this.form).then(function (res) {
         _this.$router.push({
-          name: 'house.show',
+          name: "house.show",
           params: _this.$route.params.id
         });
       })["catch"](function (error) {
-        alert('errore');
+        alert("errore");
       });
     }
   }
@@ -5778,7 +5778,7 @@ var render = function () {
         },
         [
           _c("div", { staticClass: "form-group" }, [
-            _c("label", { attrs: { for: "name" } }, [_vm._v("Name")]),
+            _c("label", { attrs: { for: "name" } }, [_vm._v("Nome completo")]),
             _vm._v(" "),
             _c("input", {
               directives: [
@@ -5790,7 +5790,11 @@ var render = function () {
                 },
               ],
               staticClass: "form-control",
-              attrs: { type: "text", id: "name", placeholder: "Your name" },
+              attrs: {
+                type: "text",
+                id: "name",
+                placeholder: "Inserisci il tuo nome completo...",
+              },
               domProps: { value: _vm.form.name },
               on: {
                 input: function ($event) {
@@ -5804,7 +5808,9 @@ var render = function () {
           ]),
           _vm._v(" "),
           _c("div", { staticClass: "form-group" }, [
-            _c("label", { attrs: { for: "telephone" } }, [_vm._v("Telephone")]),
+            _c("label", { attrs: { for: "telephone" } }, [
+              _vm._v("Numero di telefono"),
+            ]),
             _vm._v(" "),
             _c("input", {
               directives: [
@@ -5820,7 +5826,7 @@ var render = function () {
                 type: "text",
                 name: "telephone",
                 id: "telephone",
-                placeholder: "Inserisci il tuo n. di telefono",
+                placeholder: "Inserisci il tuo numero di telefono...",
               },
               domProps: { value: _vm.form.telephone },
               on: {
@@ -5835,7 +5841,9 @@ var render = function () {
           ]),
           _vm._v(" "),
           _c("div", { staticClass: "form-group" }, [
-            _c("label", { attrs: { for: "email" } }, [_vm._v("Email address")]),
+            _c("label", { attrs: { for: "email" } }, [
+              _vm._v("Indirizzo email"),
+            ]),
             _vm._v(" "),
             _c("input", {
               directives: [
@@ -5850,7 +5858,7 @@ var render = function () {
               attrs: {
                 type: "email",
                 id: "email",
-                placeholder: "name@example.com",
+                placeholder: "mario@rossi.it",
               },
               domProps: { value: _vm.form.email },
               on: {
@@ -5865,9 +5873,7 @@ var render = function () {
           ]),
           _vm._v(" "),
           _c("div", { staticClass: "form-group" }, [
-            _c("label", { attrs: { for: "content" } }, [
-              _vm._v("Your message"),
-            ]),
+            _c("label", { attrs: { for: "content" } }, [_vm._v("Messaggio")]),
             _vm._v(" "),
             _c("textarea", {
               directives: [
@@ -5879,7 +5885,12 @@ var render = function () {
                 },
               ],
               staticClass: "form-control",
-              attrs: { name: "content", id: "content", rows: "3" },
+              attrs: {
+                name: "content",
+                id: "content",
+                rows: "3",
+                placeholder: "Inserisci testo del messaggio...",
+              },
               domProps: { value: _vm.form.content },
               on: {
                 input: function ($event) {
@@ -5904,7 +5915,7 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "form-group" }, [
-      _c("button", { staticClass: "btn btn-primary" }, [_vm._v("Submit")]),
+      _c("button", { staticClass: "btn btn-primary" }, [_vm._v("Invia")]),
     ])
   },
 ]
