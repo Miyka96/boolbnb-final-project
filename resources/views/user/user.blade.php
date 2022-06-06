@@ -1,14 +1,14 @@
 @extends('layouts.app')
 
-@php 
+{{-- @php 
 
 $i = 0;
 
-foreach($users as $house) {
+foreach($houses as $house) {
     $i++;
 }
 
-@endphp
+@endphp --}}
 
 
 
