@@ -43,6 +43,7 @@ class LoginController extends Controller
     public function showLoginForm()
     {
         $houses = House::with(['position'])->get();
+
         return view('auth.login', compact('houses'));
     }
 }
