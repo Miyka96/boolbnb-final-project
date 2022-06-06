@@ -11303,6 +11303,7 @@ body::-webkit-scrollbar-thumb:hover {
   width: 100%;
   flex-wrap: wrap;
   padding: 0 4px;
+  flex-grow: 1;
 }
 
 .login_page .banner {
@@ -11322,6 +11323,18 @@ body::-webkit-scrollbar-thumb:hover {
 
 .login_page .login-wrapper form {
   padding: 0 20%;
+}
+
+@media screen and (max-width: 860px) {
+  .login_page .login-wrapper form {
+    padding: 0 10%;
+  }
+}
+
+@media screen and (max-width: 375px) {
+  .login_page .login-wrapper form {
+    padding: 0;
+  }
 }
 
 .login_page .pass-forgot {
@@ -11436,6 +11449,19 @@ body::-webkit-scrollbar-thumb:hover {
 
 .register_page .register-wrapper {
   flex-grow: 1;
+  padding: 0 20%;
+}
+
+@media screen and (max-width: 860px) {
+  .register_page .register-wrapper {
+    padding: 0 10%;
+  }
+}
+
+@media screen and (max-width: 375px) {
+  .register_page .register-wrapper {
+    padding: 0;
+  }
 }
 
 .register_page .pass-forgot {
@@ -11744,6 +11770,10 @@ body::-webkit-scrollbar-thumb:hover {
   font-size: 30px;
 }
 
+.titolo-house-create {
+  margin-bottom: 20px;
+}
+
 .user_profile {
   padding: 80px 20px;
   padding-top: 100px;
@@ -11780,6 +11810,7 @@ body::-webkit-scrollbar-thumb:hover {
   border: 2px solid rgb(219, 59, 91);
   border-radius: 10px;
   padding: 20px;
+  margin: 100px 18%;
   flex-grow: 1;
   background-color: white;
   z-index: 100;
@@ -11817,6 +11848,12 @@ body::-webkit-scrollbar-thumb:hover {
   width: 100%;
   margin-top: 100px;
   gap: 50px;
+}
+
+@media (max-width: 768px) {
+  .user_profile .profilo .bottone {
+    flex-direction: column;
+  }
 }
 
 .user_profile .profilo .bottone span {

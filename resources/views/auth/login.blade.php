@@ -60,7 +60,7 @@
                     </div>
                     
                     <div class="form-group row">
-                        <div class="col-md-6">
+                        <div class="col-md-8">
                             <div class="form-check">
                                 <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
 
