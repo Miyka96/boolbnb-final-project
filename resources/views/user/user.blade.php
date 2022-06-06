@@ -1,5 +1,18 @@
 @extends('layouts.app')
 
+@php 
+
+$i = 0;
+
+foreach($users as $house) {
+    $i++;
+}
+
+@endphp
+
+
+
+
 
 @section('content')
 
