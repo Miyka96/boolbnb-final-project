@@ -2181,15 +2181,17 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/Home/PolaroidVue.vue?vue&type=script&lang=js&":
-/*!***************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/Home/PolaroidVue.vue?vue&type=script&lang=js& ***!
-  \***************************************************************************************************************************************************************************/
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/Home/PolaroidsWrapper.vue?vue&type=script&lang=js&":
+/*!********************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/Home/PolaroidsWrapper.vue?vue&type=script&lang=js& ***!
+  \********************************************************************************************************************************************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _PolaroidCard_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../PolaroidCard.vue */ "./resources/js/components/PolaroidCard.vue");
+/* harmony import */ var _store__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../store */ "./resources/js/store.js");
 //
 //
 //
@@ -2207,11 +2209,16 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+
+
 /* harmony default export */ __webpack_exports__["default"] = ({
-  name: "PolaroidVue",
+  components: {
+    Polaroid: _PolaroidCard_vue__WEBPACK_IMPORTED_MODULE_0__["default"]
+  },
   data: function data() {
     return {
-      polaroid: ["https://images.unsplash.com/photo-1623166200209-6bd48520d6cb?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=300&q=100", "https://images.unsplash.com/photo-1617883984017-a53b8edabada?crop=entropy&cs=tinysrgb&fm=jpg&ixlib=rb-1.2.1&q=60&raw_url=true&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8aG9saWRheXN8ZW58MHx8MHx8&auto=format&fit=crop&w=300&q=100", "https://images.unsplash.com/photo-1604537529586-87ac173f4310?crop=entropy&cs=tinysrgb&fm=jpg&ixlib=rb-1.2.1&q=60&raw_url=true&ixid=MnwxMjA3fDF8MHxzZWFyY2h8MXx8bW91bnRhaW5zfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=300&q=100", "https://images.unsplash.com/photo-1587241432831-4490df069382?crop=entropy&cs=tinysrgb&fm=jpg&ixlib=rb-1.2.1&q=60&raw_url=true&ixid=MnwxMjA3fDB8MHxzZWFyY2h8OHx8ZGVzZXJ0fGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=300&q=100"]
+      polaroids: _store__WEBPACK_IMPORTED_MODULE_1__["default"].polaroids
     };
   }
 });
@@ -2291,14 +2298,8 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
-  name: "HouseCard",
+  name: 'HouseCard',
   props: {
     house: {
       type: Object,
@@ -2531,6 +2532,35 @@ __webpack_require__.r(__webpack_exports__);
     Logo: _LogoComponent_vue__WEBPACK_IMPORTED_MODULE_0__["default"],
     SearchBar: _Search_SearchBar_vue__WEBPACK_IMPORTED_MODULE_2__["default"],
     Dropdown: _DropdownPill_vue__WEBPACK_IMPORTED_MODULE_1__["default"]
+  }
+});
+
+/***/ }),
+
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/PolaroidCard.vue?vue&type=script&lang=js&":
+/*!***********************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/PolaroidCard.vue?vue&type=script&lang=js& ***!
+  \***********************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+/* harmony default export */ __webpack_exports__["default"] = ({
+  props: {
+    polaroid: {
+      type: Object,
+      required: true
+    }
   }
 });
 
@@ -2784,7 +2814,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_Home_MainBanner_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../components/Home/MainBanner.vue */ "./resources/js/components/Home/MainBanner.vue");
 /* harmony import */ var _components_CardShowcase_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../components/CardShowcase.vue */ "./resources/js/components/CardShowcase.vue");
 /* harmony import */ var _components_Home_SectionVue_vue__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../components/Home/SectionVue.vue */ "./resources/js/components/Home/SectionVue.vue");
-/* harmony import */ var _components_Home_PolaroidVue_vue__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../components/Home/PolaroidVue.vue */ "./resources/js/components/Home/PolaroidVue.vue");
+/* harmony import */ var _components_Home_PolaroidsWrapper_vue__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../components/Home/PolaroidsWrapper.vue */ "./resources/js/components/Home/PolaroidsWrapper.vue");
 /* harmony import */ var _components_FooterComponent_vue__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../components/FooterComponent.vue */ "./resources/js/components/FooterComponent.vue");
 //
 //
@@ -2796,24 +2826,18 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
 
 
- // import Navbar from "../components/Navbar/MainNavbar.vue";
 
 
- // import SearchBar from '../components/Search/SearchBar.vue'
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   components: {
     Banner: _components_Home_MainBanner_vue__WEBPACK_IMPORTED_MODULE_0__["default"],
     CardsShowcase: _components_CardShowcase_vue__WEBPACK_IMPORTED_MODULE_1__["default"],
     SectionVue: _components_Home_SectionVue_vue__WEBPACK_IMPORTED_MODULE_2__["default"],
-    // Navbar,
-    Polaroid: _components_Home_PolaroidVue_vue__WEBPACK_IMPORTED_MODULE_3__["default"],
-    Footer: _components_FooterComponent_vue__WEBPACK_IMPORTED_MODULE_4__["default"] // SearchBar
-
+    PolaroidsWrapper: _components_Home_PolaroidsWrapper_vue__WEBPACK_IMPORTED_MODULE_3__["default"],
+    Footer: _components_FooterComponent_vue__WEBPACK_IMPORTED_MODULE_4__["default"]
   }
 });
 
@@ -7673,10 +7697,10 @@ exports.push([module.i, "#main-banner[data-v-0e33f90c] {\n  width: 100%;\n  heig
 
 /***/ }),
 
-/***/ "./node_modules/css-loader/index.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/Home/PolaroidVue.vue?vue&type=style&index=0&id=345c9035&lang=scss&scoped=true&":
-/*!**************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/css-loader!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--7-2!./node_modules/sass-loader/dist/cjs.js??ref--7-3!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/Home/PolaroidVue.vue?vue&type=style&index=0&id=345c9035&lang=scss&scoped=true& ***!
-  \**************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/***/ "./node_modules/css-loader/index.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/Home/PolaroidsWrapper.vue?vue&type=style&index=0&id=25b4e261&lang=scss&scoped=true&":
+/*!*******************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--7-2!./node_modules/sass-loader/dist/cjs.js??ref--7-3!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/Home/PolaroidsWrapper.vue?vue&type=style&index=0&id=25b4e261&lang=scss&scoped=true& ***!
+  \*******************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -7685,7 +7709,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, ".polaroids-list[data-v-345c9035] {\n  display: flex;\n  flex-flow: row wrap;\n  justify-content: space-evenly;\n  align-items: flex-start;\n  gap: 2%;\n  width: 100%;\n  margin: 0;\n  padding: 0;\n  list-style: none;\n}\n.polaroids-list .polaroid[data-v-345c9035] {\n  flex: 0 1 auto;\n  width: 300px;\n  display: block;\n  margin: 0 0 20px 0;\n  text-decoration: none;\n  background: white;\n  box-shadow: 7px 8px 14px 1px rgba(0, 0, 0, 0.59);\n  transition: all 0.3s ease;\n  transform: rotate(2deg);\n}\n.polaroids-list .polaroid[data-v-345c9035]:hover {\n  transform: translateY(-4px);\n}\n.polaroids-list .polaroid:hover .polaroid__image[data-v-345c9035] {\n  transform: scale(1.03);\n  transition: transform 0.2s linear;\n}\n.polaroids-list .polaroid .polaroid__pad[data-v-345c9035] {\n  position: relative;\n  overflow: hidden;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  height: 260px;\n  border: 20px solid white;\n  border-bottom: 0;\n  background: white;\n}\n.polaroids-list .polaroid .polaroid__pad .polaroid__image[data-v-345c9035] {\n  display: block;\n  max-width: 100%;\n  max-height: 100%;\n}\n.polaroids-list .polaroid .polaroid__title[data-v-345c9035] {\n  margin: 0;\n  padding: 20px;\n  font-family: \"Amatic SC\", sans-serif;\n  font-size: 1.8rem;\n  font-weight: bold;\n  line-height: 1.1;\n  text-transform: uppercase;\n  color: black;\n  text-align: center;\n}\n.img_wrapper[data-v-345c9035] {\n  width: 280px;\n  height: 260px;\n}\n.img_wrapper img[data-v-345c9035] {\n  width: 100%;\n  height: 100%;\n  -o-object-fit: cover;\n     object-fit: cover;\n}\n.polaroid[data-v-345c9035]:nth-child(2n) {\n  transform: rotate(-5deg);\n}", ""]);
+exports.push([module.i, ".polaroids-list[data-v-25b4e261] {\n  justify-content: space-evenly;\n  gap: 2%;\n}", ""]);
 
 // exports
 
@@ -7723,7 +7747,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "a[data-v-9647af16] {\n  text-decoration: none;\n}\n.card[data-v-9647af16] {\n  width: 100% !important;\n  margin: 0;\n  border-radius: 15px;\n  overflow: hidden;\n  border: none;\n  background-color: transparent;\n  transition: all ease-in-out 0.3s;\n}\n.card[data-v-9647af16]:hover {\n  transform: scale(1.03);\n}\n.card img[data-v-9647af16] {\n  width: 100%;\n  aspect-ratio: 1;\n  border-radius: 15px;\n}\n.card .card-body[data-v-9647af16] {\n  padding: 12px 0 0 0;\n  font-size: 15px;\n  position: relative;\n}\n.card .card-body .card-title[data-v-9647af16] {\n  font-size: 16px;\n  font-weight: 600;\n  color: #222222;\n  margin-bottom: 0px;\n  white-space: nowrap;\n  overflow: hidden;\n}\n.card .card-body p[data-v-9647af16] {\n  font-size: 15px;\n  font-weight: 400;\n  color: #717171;\n  margin: 0;\n  white-space: nowrap;\n  overflow: hidden;\n}\n.card .card-body p strong[data-v-9647af16] {\n  font-size: 15px;\n  font-weight: 600;\n  color: #222222;\n}\n.card .card-body .card-position[data-v-9647af16] {\n  margin-bottom: 6px;\n}\n.card .card-body .card-rating[data-v-9647af16] {\n  color: #222222;\n  position: absolute;\n  bottom: 2px;\n  right: 2px;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  gap: 4px;\n}\n.card .card-body .card-rating i[data-v-9647af16] {\n  font-size: 12px;\n}", ""]);
+exports.push([module.i, "a[data-v-9647af16] {\n  text-decoration: none;\n}\n.card[data-v-9647af16] {\n  width: 100% !important;\n  margin: 0;\n  border-radius: 15px;\n  overflow: hidden;\n  border: none;\n  background-color: transparent;\n  transition: all ease-in-out 0.3s;\n}\n.card[data-v-9647af16]:hover {\n  transform: scale(1.03);\n}\n.card img[data-v-9647af16] {\n  width: 100%;\n  aspect-ratio: 1;\n  border-radius: 15px;\n}\n.card .card-body[data-v-9647af16] {\n  padding: 12px 0 0 0;\n  font-size: 15px;\n  position: relative;\n}\n.card .card-body .card-title[data-v-9647af16] {\n  font-size: 16px;\n  font-weight: 600;\n  color: #222222;\n  margin-bottom: 0px;\n  white-space: nowrap;\n  overflow: hidden;\n}\n.card .card-body p[data-v-9647af16] {\n  font-size: 15px;\n  font-weight: 400;\n  color: #717171;\n  margin: 0;\n  white-space: nowrap;\n  overflow: hidden;\n}\n.card .card-body p strong[data-v-9647af16] {\n  font-size: 15px;\n  font-weight: 600;\n  color: #222222;\n}\n.card .card-body .card-position[data-v-9647af16] {\n  margin-bottom: 6px;\n}\n.card .card-body .card-rating[data-v-9647af16] {\n  color: #222222;\n  position: absolute;\n  top: 12px;\n  right: 0;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  gap: 4px;\n}\n.card .card-body .card-rating i[data-v-9647af16] {\n  font-size: 12px;\n}", ""]);
 
 // exports
 
@@ -7819,6 +7843,25 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 // module
 exports.push([module.i, ".ms_navbar[data-v-7c39bfcd] {\n  position: -webkit-sticky;\n  position: sticky;\n}", ""]);
+
+// exports
+
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/index.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/PolaroidCard.vue?vue&type=style&index=0&id=531a4632&lang=scss&scoped=true&":
+/*!**********************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--7-2!./node_modules/sass-loader/dist/cjs.js??ref--7-3!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/PolaroidCard.vue?vue&type=style&index=0&id=531a4632&lang=scss&scoped=true& ***!
+  \**********************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loader/lib/css-base.js */ "./node_modules/css-loader/lib/css-base.js")(false);
+// imports
+exports.push([module.i, "@import url(https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&display=swap);", ""]);
+
+// module
+exports.push([module.i, ".polaroid[data-v-531a4632] {\n  min-width: 19%;\n  max-width: 19%;\n  background: white;\n  color: black;\n  box-shadow: 7px 8px 14px 1px rgba(0, 0, 0, 0.59);\n  transition: all 0.5s ease;\n  padding: 25px;\n  cursor: pointer;\n  text-decoration: none;\n}\n.polaroid.polaroid[data-v-531a4632]:nth-child(2n) {\n  transform: rotate(-3deg);\n}\n.polaroid.polaroid[data-v-531a4632]:nth-child(2n+1) {\n  transform: rotate(3deg);\n}\n.polaroid[data-v-531a4632]:hover {\n  transform: translateY(-4px);\n}\n.polaroid:hover .polaroid__image[data-v-531a4632] {\n  transform: scale(1.03);\n  transition: transform 0.2s linear;\n}\n.polaroid:hover.polaroid[data-v-531a4632] {\n  transform: rotate(0) !important;\n}\n.polaroid figure[data-v-531a4632] {\n  aspect-ratio: 1;\n  background-color: red;\n}\n.polaroid figure .polaroid__image[data-v-531a4632] {\n  display: block;\n  max-width: 100%;\n  max-height: 100%;\n  min-width: 100%;\n  min-height: 100%;\n  -o-object-fit: cover;\n     object-fit: cover;\n}\n.polaroid .polaroid__title[data-v-531a4632] {\n  margin: 0;\n  padding: 5px;\n  font-family: \"Dancing Script\", cursive;\n  font-size: 3rem;\n  line-height: 1.1;\n  text-align: center;\n}", ""]);
 
 // exports
 
@@ -39267,15 +39310,15 @@ if(false) {}
 
 /***/ }),
 
-/***/ "./node_modules/style-loader/index.js!./node_modules/css-loader/index.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/Home/PolaroidVue.vue?vue&type=style&index=0&id=345c9035&lang=scss&scoped=true&":
-/*!******************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/style-loader!./node_modules/css-loader!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--7-2!./node_modules/sass-loader/dist/cjs.js??ref--7-3!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/Home/PolaroidVue.vue?vue&type=style&index=0&id=345c9035&lang=scss&scoped=true& ***!
-  \******************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/***/ "./node_modules/style-loader/index.js!./node_modules/css-loader/index.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/Home/PolaroidsWrapper.vue?vue&type=style&index=0&id=25b4e261&lang=scss&scoped=true&":
+/*!***********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/style-loader!./node_modules/css-loader!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--7-2!./node_modules/sass-loader/dist/cjs.js??ref--7-3!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/Home/PolaroidsWrapper.vue?vue&type=style&index=0&id=25b4e261&lang=scss&scoped=true& ***!
+  \***********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 
-var content = __webpack_require__(/*! !../../../../node_modules/css-loader!../../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../../node_modules/postcss-loader/src??ref--7-2!../../../../node_modules/sass-loader/dist/cjs.js??ref--7-3!../../../../node_modules/vue-loader/lib??vue-loader-options!./PolaroidVue.vue?vue&type=style&index=0&id=345c9035&lang=scss&scoped=true& */ "./node_modules/css-loader/index.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/Home/PolaroidVue.vue?vue&type=style&index=0&id=345c9035&lang=scss&scoped=true&");
+var content = __webpack_require__(/*! !../../../../node_modules/css-loader!../../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../../node_modules/postcss-loader/src??ref--7-2!../../../../node_modules/sass-loader/dist/cjs.js??ref--7-3!../../../../node_modules/vue-loader/lib??vue-loader-options!./PolaroidsWrapper.vue?vue&type=style&index=0&id=25b4e261&lang=scss&scoped=true& */ "./node_modules/css-loader/index.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/Home/PolaroidsWrapper.vue?vue&type=style&index=0&id=25b4e261&lang=scss&scoped=true&");
 
 if(typeof content === 'string') content = [[module.i, content, '']];
 
@@ -39500,6 +39543,36 @@ options.transform = transform
 options.insertInto = undefined;
 
 var update = __webpack_require__(/*! ../../../../node_modules/style-loader/lib/addStyles.js */ "./node_modules/style-loader/lib/addStyles.js")(content, options);
+
+if(content.locals) module.exports = content.locals;
+
+if(false) {}
+
+/***/ }),
+
+/***/ "./node_modules/style-loader/index.js!./node_modules/css-loader/index.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/PolaroidCard.vue?vue&type=style&index=0&id=531a4632&lang=scss&scoped=true&":
+/*!**************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/style-loader!./node_modules/css-loader!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--7-2!./node_modules/sass-loader/dist/cjs.js??ref--7-3!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/PolaroidCard.vue?vue&type=style&index=0&id=531a4632&lang=scss&scoped=true& ***!
+  \**************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+
+var content = __webpack_require__(/*! !../../../node_modules/css-loader!../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../node_modules/postcss-loader/src??ref--7-2!../../../node_modules/sass-loader/dist/cjs.js??ref--7-3!../../../node_modules/vue-loader/lib??vue-loader-options!./PolaroidCard.vue?vue&type=style&index=0&id=531a4632&lang=scss&scoped=true& */ "./node_modules/css-loader/index.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/PolaroidCard.vue?vue&type=style&index=0&id=531a4632&lang=scss&scoped=true&");
+
+if(typeof content === 'string') content = [[module.i, content, '']];
+
+var transform;
+var insertInto;
+
+
+
+var options = {"hmr":true}
+
+options.transform = transform
+options.insertInto = undefined;
+
+var update = __webpack_require__(/*! ../../../node_modules/style-loader/lib/addStyles.js */ "./node_modules/style-loader/lib/addStyles.js")(content, options);
 
 if(content.locals) module.exports = content.locals;
 
@@ -40580,10 +40653,10 @@ render._withStripped = true
 
 /***/ }),
 
-/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/Home/PolaroidVue.vue?vue&type=template&id=345c9035&scoped=true&":
-/*!*******************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/Home/PolaroidVue.vue?vue&type=template&id=345c9035&scoped=true& ***!
-  \*******************************************************************************************************************************************************************************************************************************/
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/Home/PolaroidsWrapper.vue?vue&type=template&id=25b4e261&scoped=true&":
+/*!************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/Home/PolaroidsWrapper.vue?vue&type=template&id=25b4e261&scoped=true& ***!
+  \************************************************************************************************************************************************************************************************************************************/
 /*! exports provided: render, staticRenderFns */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -40595,23 +40668,17 @@ var render = function () {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "container-fluid py-5 my-5" }, [
-    _c(
-      "div",
-      { staticClass: "polaroids-list row d-flex flex-wrap" },
-      _vm._l(_vm.polaroid, function (el) {
-        return _c("div", { key: el.id, staticClass: "polaroid my-4 mx-2" }, [
-          _c("span", { staticClass: "polaroid__pad" }, [
-            _c("div", { staticClass: "img_wrapper" }, [
-              _c("img", { staticClass: "polaroid__image", attrs: { src: el } }),
-            ]),
-          ]),
-          _vm._v(" "),
-          _c("h2", { staticClass: "polaroid__title" }, [_vm._v("Title")]),
-        ])
-      }),
-      0
-    ),
+  return _c("section", { attrs: { id: "polaroid-wrapper" } }, [
+    _c("div", { staticClass: "container-fluid py-5 my-5" }, [
+      _c(
+        "div",
+        { staticClass: "polaroids-list row d-flex flex-wrap" },
+        _vm._l(_vm.polaroids, function (el, i) {
+          return _c("Polaroid", { key: i, attrs: { polaroid: el } })
+        }),
+        1
+      ),
+    ]),
   ])
 }
 var staticRenderFns = []
@@ -40725,35 +40792,32 @@ var render = function () {
       },
     },
     [
-      _c(
-        "div",
-        { staticClass: "card debug", staticStyle: { width: "18rem" } },
-        [
-          _c("img", {
-            staticClass: "card-img-top",
-            attrs: { src: _vm.house.image, alt: "" },
-          }),
-          _vm._v(" "),
-          _c("div", { staticClass: "card-body" }, [
-            _c("h5", { staticClass: "card-title" }, [
-              _vm._v(_vm._s(_vm.house.title)),
-            ]),
-            _vm._v(" "),
-            _c("p", { staticClass: "card-position" }, [
-              _vm._v(_vm._s(_vm.house.position.city)),
-            ]),
-            _vm._v(" "),
-            _c("p", { staticClass: "card-price" }, [
-              _c("strong", [_vm._v("€" + _vm._s(_vm.house.cost_per_night))]),
-              _vm._v("/night\n      "),
-            ]),
-            _vm._v(" "),
-            _c("p", { staticClass: "card-rating" }, [
-              _vm._v("\n        Id: " + _vm._s(_vm.house.id) + "\n        "),
-            ]),
+      _c("div", { staticClass: "card", staticStyle: { width: "18rem" } }, [
+        _c("img", {
+          staticClass: "card-img-top",
+          attrs: { src: _vm.house.image, alt: "" },
+        }),
+        _vm._v(" "),
+        _c("div", { staticClass: "card-body" }, [
+          _c("h5", { staticClass: "card-title" }, [
+            _vm._v(_vm._s(_vm.house.title)),
           ]),
-        ]
-      ),
+          _vm._v(" "),
+          _c("p", { staticClass: "card-position" }, [
+            _vm._v(_vm._s(_vm.house.position.city)),
+          ]),
+          _vm._v(" "),
+          _c("p", { staticClass: "card-price" }, [
+            _c("strong", [_vm._v("€" + _vm._s(_vm.house.cost_per_night))]),
+            _vm._v("/night"),
+          ]),
+          _vm._v(" "),
+          _c("p", { staticClass: "card-rating" }, [
+            _vm._v(_vm._s(_vm.house.id)),
+            _c("i", { staticClass: "fa-solid fa-star" }),
+          ]),
+        ]),
+      ]),
     ]
   )
 }
@@ -41059,6 +41123,48 @@ var render = function () {
         [_c("Logo"), _vm._v(" "), _c("SearchBar"), _vm._v(" "), _c("Dropdown")],
         1
       ),
+    ]
+  )
+}
+var staticRenderFns = []
+render._withStripped = true
+
+
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/PolaroidCard.vue?vue&type=template&id=531a4632&scoped=true&":
+/*!***************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/PolaroidCard.vue?vue&type=template&id=531a4632&scoped=true& ***!
+  \***************************************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function () {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "router-link",
+    {
+      staticClass: "polaroid",
+      attrs: { to: { name: "search", params: { query: _vm.polaroid.query } } },
+    },
+    [
+      _c("figure", [
+        _c("img", {
+          staticClass: "polaroid__image",
+          attrs: { src: _vm.polaroid.img },
+        }),
+      ]),
+      _vm._v(" "),
+      _c("h2", { staticClass: "polaroid__title" }, [
+        _vm._v(_vm._s(_vm.polaroid.title)),
+      ]),
     ]
   )
 }
@@ -41464,7 +41570,7 @@ var render = function () {
     [
       _c("Banner"),
       _vm._v(" "),
-      _c("Polaroid"),
+      _c("PolaroidsWrapper"),
       _vm._v(" "),
       _c("SectionVue"),
       _vm._v(" "),
@@ -54203,7 +54309,7 @@ var map = {
 	"./components/ErrorMessage.vue": "./resources/js/components/ErrorMessage.vue",
 	"./components/FooterComponent.vue": "./resources/js/components/FooterComponent.vue",
 	"./components/Home/MainBanner.vue": "./resources/js/components/Home/MainBanner.vue",
-	"./components/Home/PolaroidVue.vue": "./resources/js/components/Home/PolaroidVue.vue",
+	"./components/Home/PolaroidsWrapper.vue": "./resources/js/components/Home/PolaroidsWrapper.vue",
 	"./components/Home/SectionVue.vue": "./resources/js/components/Home/SectionVue.vue",
 	"./components/HouseCard.vue": "./resources/js/components/HouseCard.vue",
 	"./components/LoggedpillComponent.vue": "./resources/js/components/LoggedpillComponent.vue",
@@ -54211,6 +54317,7 @@ var map = {
 	"./components/Navbar/DropdownPill.vue": "./resources/js/components/Navbar/DropdownPill.vue",
 	"./components/Navbar/LogoComponent.vue": "./resources/js/components/Navbar/LogoComponent.vue",
 	"./components/Navbar/MainNavbar.vue": "./resources/js/components/Navbar/MainNavbar.vue",
+	"./components/PolaroidCard.vue": "./resources/js/components/PolaroidCard.vue",
 	"./components/Search/FilterComponent.vue": "./resources/js/components/Search/FilterComponent.vue",
 	"./components/Search/SearchBar.vue": "./resources/js/components/Search/SearchBar.vue",
 	"./components/SponsorComponent.vue": "./resources/js/components/SponsorComponent.vue",
@@ -54763,18 +54870,18 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./resources/js/components/Home/PolaroidVue.vue":
-/*!******************************************************!*\
-  !*** ./resources/js/components/Home/PolaroidVue.vue ***!
-  \******************************************************/
+/***/ "./resources/js/components/Home/PolaroidsWrapper.vue":
+/*!***********************************************************!*\
+  !*** ./resources/js/components/Home/PolaroidsWrapper.vue ***!
+  \***********************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _PolaroidVue_vue_vue_type_template_id_345c9035_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./PolaroidVue.vue?vue&type=template&id=345c9035&scoped=true& */ "./resources/js/components/Home/PolaroidVue.vue?vue&type=template&id=345c9035&scoped=true&");
-/* harmony import */ var _PolaroidVue_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./PolaroidVue.vue?vue&type=script&lang=js& */ "./resources/js/components/Home/PolaroidVue.vue?vue&type=script&lang=js&");
-/* empty/unused harmony star reexport *//* harmony import */ var _PolaroidVue_vue_vue_type_style_index_0_id_345c9035_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./PolaroidVue.vue?vue&type=style&index=0&id=345c9035&lang=scss&scoped=true& */ "./resources/js/components/Home/PolaroidVue.vue?vue&type=style&index=0&id=345c9035&lang=scss&scoped=true&");
+/* harmony import */ var _PolaroidsWrapper_vue_vue_type_template_id_25b4e261_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./PolaroidsWrapper.vue?vue&type=template&id=25b4e261&scoped=true& */ "./resources/js/components/Home/PolaroidsWrapper.vue?vue&type=template&id=25b4e261&scoped=true&");
+/* harmony import */ var _PolaroidsWrapper_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./PolaroidsWrapper.vue?vue&type=script&lang=js& */ "./resources/js/components/Home/PolaroidsWrapper.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _PolaroidsWrapper_vue_vue_type_style_index_0_id_25b4e261_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./PolaroidsWrapper.vue?vue&type=style&index=0&id=25b4e261&lang=scss&scoped=true& */ "./resources/js/components/Home/PolaroidsWrapper.vue?vue&type=style&index=0&id=25b4e261&lang=scss&scoped=true&");
 /* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
 
 
@@ -54785,66 +54892,66 @@ __webpack_require__.r(__webpack_exports__);
 /* normalize component */
 
 var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_3__["default"])(
-  _PolaroidVue_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
-  _PolaroidVue_vue_vue_type_template_id_345c9035_scoped_true___WEBPACK_IMPORTED_MODULE_0__["render"],
-  _PolaroidVue_vue_vue_type_template_id_345c9035_scoped_true___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  _PolaroidsWrapper_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _PolaroidsWrapper_vue_vue_type_template_id_25b4e261_scoped_true___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _PolaroidsWrapper_vue_vue_type_template_id_25b4e261_scoped_true___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
   false,
   null,
-  "345c9035",
+  "25b4e261",
   null
   
 )
 
 /* hot reload */
 if (false) { var api; }
-component.options.__file = "resources/js/components/Home/PolaroidVue.vue"
+component.options.__file = "resources/js/components/Home/PolaroidsWrapper.vue"
 /* harmony default export */ __webpack_exports__["default"] = (component.exports);
 
 /***/ }),
 
-/***/ "./resources/js/components/Home/PolaroidVue.vue?vue&type=script&lang=js&":
-/*!*******************************************************************************!*\
-  !*** ./resources/js/components/Home/PolaroidVue.vue?vue&type=script&lang=js& ***!
-  \*******************************************************************************/
+/***/ "./resources/js/components/Home/PolaroidsWrapper.vue?vue&type=script&lang=js&":
+/*!************************************************************************************!*\
+  !*** ./resources/js/components/Home/PolaroidsWrapper.vue?vue&type=script&lang=js& ***!
+  \************************************************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_PolaroidVue_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/babel-loader/lib??ref--4-0!../../../../node_modules/vue-loader/lib??vue-loader-options!./PolaroidVue.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/Home/PolaroidVue.vue?vue&type=script&lang=js&");
-/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_PolaroidVue_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_PolaroidsWrapper_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/babel-loader/lib??ref--4-0!../../../../node_modules/vue-loader/lib??vue-loader-options!./PolaroidsWrapper.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/Home/PolaroidsWrapper.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_PolaroidsWrapper_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
 
 /***/ }),
 
-/***/ "./resources/js/components/Home/PolaroidVue.vue?vue&type=style&index=0&id=345c9035&lang=scss&scoped=true&":
-/*!****************************************************************************************************************!*\
-  !*** ./resources/js/components/Home/PolaroidVue.vue?vue&type=style&index=0&id=345c9035&lang=scss&scoped=true& ***!
-  \****************************************************************************************************************/
+/***/ "./resources/js/components/Home/PolaroidsWrapper.vue?vue&type=style&index=0&id=25b4e261&lang=scss&scoped=true&":
+/*!*********************************************************************************************************************!*\
+  !*** ./resources/js/components/Home/PolaroidsWrapper.vue?vue&type=style&index=0&id=25b4e261&lang=scss&scoped=true& ***!
+  \*********************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_style_loader_index_js_node_modules_css_loader_index_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_2_node_modules_sass_loader_dist_cjs_js_ref_7_3_node_modules_vue_loader_lib_index_js_vue_loader_options_PolaroidVue_vue_vue_type_style_index_0_id_345c9035_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/style-loader!../../../../node_modules/css-loader!../../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../../node_modules/postcss-loader/src??ref--7-2!../../../../node_modules/sass-loader/dist/cjs.js??ref--7-3!../../../../node_modules/vue-loader/lib??vue-loader-options!./PolaroidVue.vue?vue&type=style&index=0&id=345c9035&lang=scss&scoped=true& */ "./node_modules/style-loader/index.js!./node_modules/css-loader/index.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/Home/PolaroidVue.vue?vue&type=style&index=0&id=345c9035&lang=scss&scoped=true&");
-/* harmony import */ var _node_modules_style_loader_index_js_node_modules_css_loader_index_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_2_node_modules_sass_loader_dist_cjs_js_ref_7_3_node_modules_vue_loader_lib_index_js_vue_loader_options_PolaroidVue_vue_vue_type_style_index_0_id_345c9035_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_index_js_node_modules_css_loader_index_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_2_node_modules_sass_loader_dist_cjs_js_ref_7_3_node_modules_vue_loader_lib_index_js_vue_loader_options_PolaroidVue_vue_vue_type_style_index_0_id_345c9035_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0__);
-/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _node_modules_style_loader_index_js_node_modules_css_loader_index_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_2_node_modules_sass_loader_dist_cjs_js_ref_7_3_node_modules_vue_loader_lib_index_js_vue_loader_options_PolaroidVue_vue_vue_type_style_index_0_id_345c9035_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0__) if(["default"].indexOf(__WEBPACK_IMPORT_KEY__) < 0) (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _node_modules_style_loader_index_js_node_modules_css_loader_index_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_2_node_modules_sass_loader_dist_cjs_js_ref_7_3_node_modules_vue_loader_lib_index_js_vue_loader_options_PolaroidVue_vue_vue_type_style_index_0_id_345c9035_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0__[key]; }) }(__WEBPACK_IMPORT_KEY__));
+/* harmony import */ var _node_modules_style_loader_index_js_node_modules_css_loader_index_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_2_node_modules_sass_loader_dist_cjs_js_ref_7_3_node_modules_vue_loader_lib_index_js_vue_loader_options_PolaroidsWrapper_vue_vue_type_style_index_0_id_25b4e261_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/style-loader!../../../../node_modules/css-loader!../../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../../node_modules/postcss-loader/src??ref--7-2!../../../../node_modules/sass-loader/dist/cjs.js??ref--7-3!../../../../node_modules/vue-loader/lib??vue-loader-options!./PolaroidsWrapper.vue?vue&type=style&index=0&id=25b4e261&lang=scss&scoped=true& */ "./node_modules/style-loader/index.js!./node_modules/css-loader/index.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/Home/PolaroidsWrapper.vue?vue&type=style&index=0&id=25b4e261&lang=scss&scoped=true&");
+/* harmony import */ var _node_modules_style_loader_index_js_node_modules_css_loader_index_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_2_node_modules_sass_loader_dist_cjs_js_ref_7_3_node_modules_vue_loader_lib_index_js_vue_loader_options_PolaroidsWrapper_vue_vue_type_style_index_0_id_25b4e261_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_index_js_node_modules_css_loader_index_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_2_node_modules_sass_loader_dist_cjs_js_ref_7_3_node_modules_vue_loader_lib_index_js_vue_loader_options_PolaroidsWrapper_vue_vue_type_style_index_0_id_25b4e261_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0__);
+/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _node_modules_style_loader_index_js_node_modules_css_loader_index_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_2_node_modules_sass_loader_dist_cjs_js_ref_7_3_node_modules_vue_loader_lib_index_js_vue_loader_options_PolaroidsWrapper_vue_vue_type_style_index_0_id_25b4e261_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0__) if(["default"].indexOf(__WEBPACK_IMPORT_KEY__) < 0) (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _node_modules_style_loader_index_js_node_modules_css_loader_index_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_2_node_modules_sass_loader_dist_cjs_js_ref_7_3_node_modules_vue_loader_lib_index_js_vue_loader_options_PolaroidsWrapper_vue_vue_type_style_index_0_id_25b4e261_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0__[key]; }) }(__WEBPACK_IMPORT_KEY__));
 
 
 /***/ }),
 
-/***/ "./resources/js/components/Home/PolaroidVue.vue?vue&type=template&id=345c9035&scoped=true&":
-/*!*************************************************************************************************!*\
-  !*** ./resources/js/components/Home/PolaroidVue.vue?vue&type=template&id=345c9035&scoped=true& ***!
-  \*************************************************************************************************/
+/***/ "./resources/js/components/Home/PolaroidsWrapper.vue?vue&type=template&id=25b4e261&scoped=true&":
+/*!******************************************************************************************************!*\
+  !*** ./resources/js/components/Home/PolaroidsWrapper.vue?vue&type=template&id=25b4e261&scoped=true& ***!
+  \******************************************************************************************************/
 /*! exports provided: render, staticRenderFns */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_PolaroidVue_vue_vue_type_template_id_345c9035_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../node_modules/vue-loader/lib??vue-loader-options!./PolaroidVue.vue?vue&type=template&id=345c9035&scoped=true& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/Home/PolaroidVue.vue?vue&type=template&id=345c9035&scoped=true&");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_PolaroidVue_vue_vue_type_template_id_345c9035_scoped_true___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_PolaroidsWrapper_vue_vue_type_template_id_25b4e261_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../node_modules/vue-loader/lib??vue-loader-options!./PolaroidsWrapper.vue?vue&type=template&id=25b4e261&scoped=true& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/Home/PolaroidsWrapper.vue?vue&type=template&id=25b4e261&scoped=true&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_PolaroidsWrapper_vue_vue_type_template_id_25b4e261_scoped_true___WEBPACK_IMPORTED_MODULE_0__["render"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_PolaroidVue_vue_vue_type_template_id_345c9035_scoped_true___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_PolaroidsWrapper_vue_vue_type_template_id_25b4e261_scoped_true___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
 
 
 
@@ -55459,6 +55566,93 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./resources/js/components/PolaroidCard.vue":
+/*!**************************************************!*\
+  !*** ./resources/js/components/PolaroidCard.vue ***!
+  \**************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _PolaroidCard_vue_vue_type_template_id_531a4632_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./PolaroidCard.vue?vue&type=template&id=531a4632&scoped=true& */ "./resources/js/components/PolaroidCard.vue?vue&type=template&id=531a4632&scoped=true&");
+/* harmony import */ var _PolaroidCard_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./PolaroidCard.vue?vue&type=script&lang=js& */ "./resources/js/components/PolaroidCard.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _PolaroidCard_vue_vue_type_style_index_0_id_531a4632_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./PolaroidCard.vue?vue&type=style&index=0&id=531a4632&lang=scss&scoped=true& */ "./resources/js/components/PolaroidCard.vue?vue&type=style&index=0&id=531a4632&lang=scss&scoped=true&");
+/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_3__["default"])(
+  _PolaroidCard_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _PolaroidCard_vue_vue_type_template_id_531a4632_scoped_true___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _PolaroidCard_vue_vue_type_template_id_531a4632_scoped_true___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  "531a4632",
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/components/PolaroidCard.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/components/PolaroidCard.vue?vue&type=script&lang=js&":
+/*!***************************************************************************!*\
+  !*** ./resources/js/components/PolaroidCard.vue?vue&type=script&lang=js& ***!
+  \***************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_PolaroidCard_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib??ref--4-0!../../../node_modules/vue-loader/lib??vue-loader-options!./PolaroidCard.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/PolaroidCard.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_PolaroidCard_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/js/components/PolaroidCard.vue?vue&type=style&index=0&id=531a4632&lang=scss&scoped=true&":
+/*!************************************************************************************************************!*\
+  !*** ./resources/js/components/PolaroidCard.vue?vue&type=style&index=0&id=531a4632&lang=scss&scoped=true& ***!
+  \************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_style_loader_index_js_node_modules_css_loader_index_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_2_node_modules_sass_loader_dist_cjs_js_ref_7_3_node_modules_vue_loader_lib_index_js_vue_loader_options_PolaroidCard_vue_vue_type_style_index_0_id_531a4632_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/style-loader!../../../node_modules/css-loader!../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../node_modules/postcss-loader/src??ref--7-2!../../../node_modules/sass-loader/dist/cjs.js??ref--7-3!../../../node_modules/vue-loader/lib??vue-loader-options!./PolaroidCard.vue?vue&type=style&index=0&id=531a4632&lang=scss&scoped=true& */ "./node_modules/style-loader/index.js!./node_modules/css-loader/index.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/PolaroidCard.vue?vue&type=style&index=0&id=531a4632&lang=scss&scoped=true&");
+/* harmony import */ var _node_modules_style_loader_index_js_node_modules_css_loader_index_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_2_node_modules_sass_loader_dist_cjs_js_ref_7_3_node_modules_vue_loader_lib_index_js_vue_loader_options_PolaroidCard_vue_vue_type_style_index_0_id_531a4632_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_index_js_node_modules_css_loader_index_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_2_node_modules_sass_loader_dist_cjs_js_ref_7_3_node_modules_vue_loader_lib_index_js_vue_loader_options_PolaroidCard_vue_vue_type_style_index_0_id_531a4632_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0__);
+/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _node_modules_style_loader_index_js_node_modules_css_loader_index_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_2_node_modules_sass_loader_dist_cjs_js_ref_7_3_node_modules_vue_loader_lib_index_js_vue_loader_options_PolaroidCard_vue_vue_type_style_index_0_id_531a4632_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0__) if(["default"].indexOf(__WEBPACK_IMPORT_KEY__) < 0) (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _node_modules_style_loader_index_js_node_modules_css_loader_index_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_2_node_modules_sass_loader_dist_cjs_js_ref_7_3_node_modules_vue_loader_lib_index_js_vue_loader_options_PolaroidCard_vue_vue_type_style_index_0_id_531a4632_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0__[key]; }) }(__WEBPACK_IMPORT_KEY__));
+
+
+/***/ }),
+
+/***/ "./resources/js/components/PolaroidCard.vue?vue&type=template&id=531a4632&scoped=true&":
+/*!*********************************************************************************************!*\
+  !*** ./resources/js/components/PolaroidCard.vue?vue&type=template&id=531a4632&scoped=true& ***!
+  \*********************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_PolaroidCard_vue_vue_type_template_id_531a4632_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../node_modules/vue-loader/lib??vue-loader-options!./PolaroidCard.vue?vue&type=template&id=531a4632&scoped=true& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/PolaroidCard.vue?vue&type=template&id=531a4632&scoped=true&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_PolaroidCard_vue_vue_type_template_id_531a4632_scoped_true___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_PolaroidCard_vue_vue_type_template_id_531a4632_scoped_true___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
+
+/***/ }),
+
 /***/ "./resources/js/components/Search/FilterComponent.vue":
 /*!************************************************************!*\
   !*** ./resources/js/components/Search/FilterComponent.vue ***!
@@ -56029,7 +56223,24 @@ __webpack_require__.r(__webpack_exports__);
  // Inserire qui variabili da passare ai componenti
 
 var state = vue__WEBPACK_IMPORTED_MODULE_0___default.a.observable({
-  bannerText: ['Enjoy', 'your', 'trip']
+  bannerText: ['Enjoy', 'your', 'trip'],
+  polaroids: [{
+    title: 'Milano',
+    img: 'https://images.unsplash.com/photo-1610016302534-6f67f1c968d8?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1075&q=80',
+    query: 'Milano'
+  }, {
+    title: 'Napoli',
+    img: 'https://images.unsplash.com/photo-1581242125825-f9faf0f350bd?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80',
+    query: 'Napoli'
+  }, {
+    title: 'Palermo',
+    img: 'https://images.unsplash.com/photo-1561280618-d4a6f7d04e79?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=735&q=80',
+    query: 'Palermo'
+  }, {
+    title: 'Roma',
+    img: 'https://images.unsplash.com/photo-1515542622106-78bda8ba0e5b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80',
+    query: 'Roma'
+  }]
 });
 /* harmony default export */ __webpack_exports__["default"] = (state); // APPUNTI MICA ----
 
