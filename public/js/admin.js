@@ -2291,8 +2291,14 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
-  name: 'HouseCard',
+  name: "HouseCard",
   props: {
     house: {
       type: Object,
@@ -7715,7 +7721,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "a[data-v-9647af16] {\n  text-decoration: none;\n}\n.card[data-v-9647af16] {\n  width: 100% !important;\n  margin: 0;\n  border-radius: 15px;\n  overflow: hidden;\n  border: none;\n  background-color: transparent;\n  transition: all ease-in-out 0.3s;\n}\n.card[data-v-9647af16]:hover {\n  transform: scale(1.03);\n}\n.card img[data-v-9647af16] {\n  width: 100%;\n  aspect-ratio: 1;\n  border-radius: 15px;\n}\n.card .card-body[data-v-9647af16] {\n  padding: 12px 0 0 0;\n  font-size: 15px;\n  position: relative;\n}\n.card .card-body .card-title[data-v-9647af16] {\n  font-size: 16px;\n  font-weight: 600;\n  color: #222222;\n  margin-bottom: 0px;\n  white-space: nowrap;\n  overflow: hidden;\n}\n.card .card-body p[data-v-9647af16] {\n  font-size: 15px;\n  font-weight: 400;\n  color: #717171;\n  margin: 0;\n  white-space: nowrap;\n  overflow: hidden;\n}\n.card .card-body p strong[data-v-9647af16] {\n  font-size: 15px;\n  font-weight: 600;\n  color: #222222;\n}\n.card .card-body .card-position[data-v-9647af16] {\n  margin-bottom: 6px;\n}\n.card .card-body .card-rating[data-v-9647af16] {\n  color: #222222;\n  position: absolute;\n  top: 12px;\n  right: 0;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  gap: 4px;\n}\n.card .card-body .card-rating i[data-v-9647af16] {\n  font-size: 12px;\n}", ""]);
+exports.push([module.i, "a[data-v-9647af16] {\n  text-decoration: none;\n}\n.card[data-v-9647af16] {\n  width: 100% !important;\n  margin: 0;\n  border-radius: 15px;\n  overflow: hidden;\n  border: none;\n  background-color: transparent;\n  transition: all ease-in-out 0.3s;\n}\n.card[data-v-9647af16]:hover {\n  transform: scale(1.03);\n}\n.card img[data-v-9647af16] {\n  width: 100%;\n  aspect-ratio: 1;\n  border-radius: 15px;\n}\n.card .card-body[data-v-9647af16] {\n  padding: 12px 0 0 0;\n  font-size: 15px;\n  position: relative;\n}\n.card .card-body .card-title[data-v-9647af16] {\n  font-size: 16px;\n  font-weight: 600;\n  color: #222222;\n  margin-bottom: 0px;\n  white-space: nowrap;\n  overflow: hidden;\n}\n.card .card-body p[data-v-9647af16] {\n  font-size: 15px;\n  font-weight: 400;\n  color: #717171;\n  margin: 0;\n  white-space: nowrap;\n  overflow: hidden;\n}\n.card .card-body p strong[data-v-9647af16] {\n  font-size: 15px;\n  font-weight: 600;\n  color: #222222;\n}\n.card .card-body .card-position[data-v-9647af16] {\n  margin-bottom: 6px;\n}\n.card .card-body .card-rating[data-v-9647af16] {\n  color: #222222;\n  position: absolute;\n  bottom: 2px;\n  right: 2px;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  gap: 4px;\n}\n.card .card-body .card-rating i[data-v-9647af16] {\n  font-size: 12px;\n}", ""]);
 
 // exports
 
@@ -40717,32 +40723,35 @@ var render = function () {
       },
     },
     [
-      _c("div", { staticClass: "card", staticStyle: { width: "18rem" } }, [
-        _c("img", {
-          staticClass: "card-img-top",
-          attrs: { src: _vm.house.image, alt: "" },
-        }),
-        _vm._v(" "),
-        _c("div", { staticClass: "card-body" }, [
-          _c("h5", { staticClass: "card-title" }, [
-            _vm._v(_vm._s(_vm.house.title)),
-          ]),
+      _c(
+        "div",
+        { staticClass: "card debug", staticStyle: { width: "18rem" } },
+        [
+          _c("img", {
+            staticClass: "card-img-top",
+            attrs: { src: _vm.house.image, alt: "" },
+          }),
           _vm._v(" "),
-          _c("p", { staticClass: "card-position" }, [
-            _vm._v(_vm._s(_vm.house.position.city)),
+          _c("div", { staticClass: "card-body" }, [
+            _c("h5", { staticClass: "card-title" }, [
+              _vm._v(_vm._s(_vm.house.title)),
+            ]),
+            _vm._v(" "),
+            _c("p", { staticClass: "card-position" }, [
+              _vm._v(_vm._s(_vm.house.position.city)),
+            ]),
+            _vm._v(" "),
+            _c("p", { staticClass: "card-price" }, [
+              _c("strong", [_vm._v("€" + _vm._s(_vm.house.cost_per_night))]),
+              _vm._v("/night\n      "),
+            ]),
+            _vm._v(" "),
+            _c("p", { staticClass: "card-rating" }, [
+              _vm._v("\n        Id: " + _vm._s(_vm.house.id) + "\n        "),
+            ]),
           ]),
-          _vm._v(" "),
-          _c("p", { staticClass: "card-price" }, [
-            _c("strong", [_vm._v("€" + _vm._s(_vm.house.cost_per_night))]),
-            _vm._v("/night"),
-          ]),
-          _vm._v(" "),
-          _c("p", { staticClass: "card-rating" }, [
-            _vm._v(_vm._s(_vm.house.id)),
-            _c("i", { staticClass: "fa-solid fa-star" }),
-          ]),
-        ]),
-      ]),
+        ]
+      ),
     ]
   )
 }
