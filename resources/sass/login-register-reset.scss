@@ -1,12 +1,20 @@
 @import './variables';
 
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+
 // LOGIN
+
 
 .login_page{
     overflow: hidden;
     height: 100vh;
-    
-    
 
     .row {
         width: 100%;    
@@ -77,7 +85,7 @@
         display: inline-block;
         padding: .75rem 1.25rem;
         border-radius: 10rem;
-        color: white;
+        color: $body-bg;
         text-transform: uppercase;
         font-size: 1rem;
         letter-spacing: .15rem;
@@ -113,7 +121,7 @@
           z-index: -1;
         }
         &:hover {
-          color: white;
+          color: $body-bg;
           &:before {
             width: 100%;
           }
@@ -194,7 +202,7 @@
         display: inline-block;
         padding: .75rem 1.25rem;
         border-radius: 10rem;
-        color: white;
+        color: $body-bg;
         text-transform: uppercase;
         font-size: 1rem;
         letter-spacing: .15rem;
@@ -230,7 +238,7 @@
           z-index: -1;
         }
         &:hover {
-          color: white;
+          color: $body-bg;
           &:before {
             width: 100%;
           }
@@ -239,3 +247,114 @@
     
 }
 
+// RESET
+
+
+
+.reset_password_page{
+    height: 100vh;
+
+    .icon{
+        font-size: 50px;
+        transform: translateY(50%);
+        background-color: $body-bg;
+        border: 5px solid $body-bg;
+    }
+
+    .reset_wrapper{
+        border: 2px solid $login;
+        border-radius: 10px;
+        padding: 40px;
+        gap: 20px;
+        width: 70%;
+
+        @media screen and (max-width :768px){
+            width: 80%;
+        }
+
+        @media screen and (max-width :619px){
+            width: 95%;
+        }
+
+        form{
+            width: 100%;
+
+            .placeholder_sm{
+                display: none;
+            }
+
+            @media screen and (max-width: 619px){
+                .placeholder_xl{
+                    display: none;
+                }
+
+                .placeholder_sm{
+                    display: block;
+                }
+
+                h1{
+                    font-size: 26px;
+                }
+            }
+
+
+            @media screen and (max-width: 402px ) {
+                h1{
+                    font-size: 100%;
+                }
+            }
+
+           
+        }
+    
+        .button {
+            display: inline-block;
+            padding: .75rem 1.25rem;
+            border-radius: 10rem;
+            color: $body-bg;
+            text-transform: uppercase;
+            font-size: 1rem;
+            letter-spacing: .15rem;
+            transition: all .3s;
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+            width: 150px;
+            border: none;
+    
+            &:after {
+              content: '';
+              position: absolute;
+              bottom: 0;
+              left: 0;
+              width: 100%;
+              height: 100%;
+              background-color: $login;
+              border-radius: 10rem;
+              z-index: -2;
+    
+            }
+            &:before {
+              content: '';
+              position: absolute;
+              bottom: 0;
+              left: 0;
+              width: 0%;
+              height: 100%;
+              background-color: darken($login, 15%);
+              transition: all .3s;
+              border-radius: 10rem;
+              z-index: -1;
+            }
+            &:hover {
+              color: $body-bg;
+              &:before {
+                width: 100%;
+              }
+            }
+        }
+
+    }
+
+    
+}
