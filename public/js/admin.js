@@ -3039,6 +3039,191 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/pages/HouseAdminShow.vue?vue&type=script&lang=js&":
+/*!********************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/pages/HouseAdminShow.vue?vue&type=script&lang=js& ***!
+  \********************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+/* harmony default export */ __webpack_exports__["default"] = ({
+  data: function data() {
+    return {
+      house: [],
+      position: [],
+      services: [],
+      visual_data: {
+        house_id: this.$route.params.id,
+        ip: "",
+        date: ""
+      }
+    };
+  },
+  methods: {
+    fetchHouse: function fetchHouse() {
+      var _this = this;
+
+      axios.get("/api/houses/".concat(this.$route.params.id)).then(function (res) {
+        _this.house = res.data.house;
+        _this.position = res.data.house.position;
+        _this.services = res.data.house.services;
+        console.log(res.data.house);
+      })["catch"](function (err) {
+        console.warn(err);
+      });
+    },
+    visual: function visual() {
+      axios.post("/send/visualization", this.visual_data).then(function (res) {
+        console.log(res.data);
+      })["catch"](function (error) {
+        console.log(error);
+      });
+    }
+  },
+  mounted: function mounted() {
+    this.fetchHouse();
+    this.visual();
+  }
+});
+
+/***/ }),
+
 /***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/pages/Message.vue?vue&type=script&lang=js&":
 /*!*************************************************************************************************************************************************************!*\
   !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/pages/Message.vue?vue&type=script&lang=js& ***!
@@ -7937,6 +8122,25 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 // module
 exports.push([module.i, "img[data-v-40fc0132] {\n  width: 100%;\n  height: 100%;\n  -o-object-fit: cover;\n     object-fit: cover;\n  -o-object-position: center;\n     object-position: center;\n  display: block;\n}\n.collage-wrapper[data-v-40fc0132] {\n  width: 100%;\n  height: 480px;\n  display: flex;\n}\n.collage-wrapper .big-pic[data-v-40fc0132] {\n  width: 85%;\n  height: 100%;\n}\n.collage-wrapper .small-pics[data-v-40fc0132] {\n  width: 15%;\n  height: 100%;\n}\n.collage-wrapper .small-pics figure[data-v-40fc0132] {\n  margin: 0;\n  padding: 0;\n  height: 25%;\n}\n.box-shadow[data-v-40fc0132] {\n  box-shadow: 0 4px 10px -4px #333;\n}\nul[data-v-40fc0132] {\n  display: flex;\n  flex-direction: column;\n  gap: 20px;\n  list-style: none;\n}\nul li[data-v-40fc0132] {\n  max-width: 90px;\n  padding: 5px;\n  border-radius: 20px;\n  text-align: center;\n  text-transform: uppercase;\n  font-family: \"Trebuchet MS\", \"Lucida Sans Unicode\", \"Lucida Grande\", \"Lucida Sans\", Arial, sans-serif;\n  font-size: 12px;\n  font-weight: 900;\n  background: #ff385c;\n}\n.ms__btn[data-v-40fc0132] {\n  font-family: \"Trebuchet MS\", \"Lucida Sans Unicode\", \"Lucida Grande\", \"Lucida Sans\", Arial, sans-serif;\n  font-weight: 900;\n  background: #ff385c;\n}\n.ms__font[data-v-40fc0132] {\n  font-family: \"Trebuchet MS\", \"Lucida Sans Unicode\", \"Lucida Grande\", \"Lucida Sans\", Arial, sans-serif;\n  font-weight: 900;\n  font-size: 18px;\n  color: #ff385c;\n}\n.ms__price[data-v-40fc0132] {\n  font-weight: 900;\n  color: #ff385c;\n}", ""]);
+
+// exports
+
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/index.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/pages/HouseAdminShow.vue?vue&type=style&index=0&id=6b144b75&lang=scss&scoped=true&":
+/*!*******************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--7-2!./node_modules/sass-loader/dist/cjs.js??ref--7-3!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/pages/HouseAdminShow.vue?vue&type=style&index=0&id=6b144b75&lang=scss&scoped=true& ***!
+  \*******************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loader/lib/css-base.js */ "./node_modules/css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, "img[data-v-6b144b75] {\n  width: 100%;\n  height: 100%;\n  -o-object-fit: cover;\n     object-fit: cover;\n  -o-object-position: center;\n     object-position: center;\n  display: block;\n}\n.collage-wrapper[data-v-6b144b75] {\n  width: 100%;\n  height: 480px;\n  display: flex;\n}\n.collage-wrapper .big-pic[data-v-6b144b75] {\n  width: 85%;\n  height: 100%;\n}\n.collage-wrapper .small-pics[data-v-6b144b75] {\n  width: 15%;\n  height: 100%;\n}\n.collage-wrapper .small-pics figure[data-v-6b144b75] {\n  margin: 0;\n  padding: 0;\n  height: 25%;\n}\n.box-shadow[data-v-6b144b75] {\n  box-shadow: 0 4px 10px -4px #333;\n}\nul[data-v-6b144b75] {\n  display: flex;\n  flex-direction: column;\n  gap: 20px;\n  list-style: none;\n}\nul li[data-v-6b144b75] {\n  max-width: 90px;\n  padding: 5px;\n  border-radius: 20px;\n  text-align: center;\n  text-transform: uppercase;\n  font-family: \"Trebuchet MS\", \"Lucida Sans Unicode\", \"Lucida Grande\", \"Lucida Sans\", Arial, sans-serif;\n  font-size: 12px;\n  font-weight: 900;\n  background: #ff385c;\n}\n.ms__btn[data-v-6b144b75] {\n  font-family: \"Trebuchet MS\", \"Lucida Sans Unicode\", \"Lucida Grande\", \"Lucida Sans\", Arial, sans-serif;\n  font-weight: 900;\n  background: #ff385c;\n}\n.ms__font[data-v-6b144b75] {\n  font-family: \"Trebuchet MS\", \"Lucida Sans Unicode\", \"Lucida Grande\", \"Lucida Sans\", Arial, sans-serif;\n  font-weight: 900;\n  font-size: 18px;\n  color: #ff385c;\n}\n.ms__price[data-v-6b144b75] {\n  font-weight: 900;\n  color: #ff385c;\n}", ""]);
 
 // exports
 
@@ -39699,6 +39903,36 @@ if(false) {}
 
 /***/ }),
 
+/***/ "./node_modules/style-loader/index.js!./node_modules/css-loader/index.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/pages/HouseAdminShow.vue?vue&type=style&index=0&id=6b144b75&lang=scss&scoped=true&":
+/*!***********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/style-loader!./node_modules/css-loader!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--7-2!./node_modules/sass-loader/dist/cjs.js??ref--7-3!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/pages/HouseAdminShow.vue?vue&type=style&index=0&id=6b144b75&lang=scss&scoped=true& ***!
+  \***********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+
+var content = __webpack_require__(/*! !../../../node_modules/css-loader!../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../node_modules/postcss-loader/src??ref--7-2!../../../node_modules/sass-loader/dist/cjs.js??ref--7-3!../../../node_modules/vue-loader/lib??vue-loader-options!./HouseAdminShow.vue?vue&type=style&index=0&id=6b144b75&lang=scss&scoped=true& */ "./node_modules/css-loader/index.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/pages/HouseAdminShow.vue?vue&type=style&index=0&id=6b144b75&lang=scss&scoped=true&");
+
+if(typeof content === 'string') content = [[module.i, content, '']];
+
+var transform;
+var insertInto;
+
+
+
+var options = {"hmr":true}
+
+options.transform = transform
+options.insertInto = undefined;
+
+var update = __webpack_require__(/*! ../../../node_modules/style-loader/lib/addStyles.js */ "./node_modules/style-loader/lib/addStyles.js")(content, options);
+
+if(content.locals) module.exports = content.locals;
+
+if(false) {}
+
+/***/ }),
+
 /***/ "./node_modules/style-loader/lib/addStyles.js":
 /*!****************************************************!*\
   !*** ./node_modules/style-loader/lib/addStyles.js ***!
@@ -41819,6 +42053,238 @@ var render = function () {
           ],
           1
         ),
+      ]),
+    ]),
+  ])
+}
+var staticRenderFns = [
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("strong", [_c("h3", [_vm._v("Descrizione")])])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("strong", [_c("h3", [_vm._v("Servizi extra")])])
+  },
+]
+render._withStripped = true
+
+
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/pages/HouseAdminShow.vue?vue&type=template&id=6b144b75&scoped=true&":
+/*!************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/pages/HouseAdminShow.vue?vue&type=template&id=6b144b75&scoped=true& ***!
+  \************************************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function () {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div", [
+    _c("br"),
+    _vm._v(" "),
+    _c("br"),
+    _vm._v(" "),
+    _c("br"),
+    _vm._v(" "),
+    _c("div", { staticClass: "container p-4 bg-light d-none d-md-block" }, [
+      _c("div", { staticClass: "row" }, [
+        _c("div", { staticClass: "col-12 p-0" }, [
+          _c("h2", [_vm._v(_vm._s(_vm.house.title))]),
+          _vm._v(" "),
+          _c("h6", [
+            _vm._v("\n          Annuncio di\n          "),
+            _c("span", { staticClass: "ms__font" }, [
+              _vm._v(
+                _vm._s(_vm.house.user.name) +
+                  " " +
+                  _vm._s(_vm.house.user.surname)
+              ),
+            ]),
+          ]),
+        ]),
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "row rounded-lg overflow-hidden py-2" }, [
+        _c("div", { staticClass: "collage-wrapper" }, [
+          _c("figure", { staticClass: "big-pic" }, [
+            _c("img", { attrs: { src: _vm.house.image, alt: _vm.house.name } }),
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "small-pics" }, [
+            _c("figure", [
+              _c("img", {
+                attrs: { src: _vm.house.image, alt: _vm.house.name },
+              }),
+            ]),
+            _vm._v(" "),
+            _c("figure", [
+              _c("img", {
+                attrs: { src: _vm.house.image, alt: _vm.house.name },
+              }),
+            ]),
+            _vm._v(" "),
+            _c("figure", [
+              _c("img", {
+                attrs: { src: _vm.house.image, alt: _vm.house.name },
+              }),
+            ]),
+            _vm._v(" "),
+            _c("figure", [
+              _c("img", {
+                attrs: { src: _vm.house.image, alt: _vm.house.name },
+              }),
+            ]),
+          ]),
+        ]),
+      ]),
+    ]),
+    _vm._v(" "),
+    _c(
+      "div",
+      { staticClass: "container-fluid d-md-none d-sm-block bg-light" },
+      [
+        _c("div", { staticClass: "row py-2" }, [
+          _c("div", { staticClass: "col-12 text-center" }, [
+            _c("h2", [_vm._v(_vm._s(_vm.house.title))]),
+            _vm._v(" "),
+            _c("h6", [
+              _vm._v("\n          Annuncio di\n          "),
+              _c("span", { staticClass: "ms__font" }, [
+                _vm._v(
+                  _vm._s(_vm.house.user.name) +
+                    " " +
+                    _vm._s(_vm.house.user.surname)
+                ),
+              ]),
+            ]),
+          ]),
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "row" }, [
+          _c("div", { staticClass: "col-12 p-0" }, [
+            _c("img", { attrs: { src: _vm.house.image, alt: _vm.house.name } }),
+          ]),
+        ]),
+      ]
+    ),
+    _vm._v(" "),
+    _c("div", { staticClass: "container p-4 bg-light" }, [
+      _c("div", { staticClass: "row pb-2" }, [
+        _c("div", { staticClass: "col-12 p-0" }, [
+          _c("h2", [
+            _vm._v(
+              _vm._s(_vm.position.address) + ", " + _vm._s(_vm.position.city)
+            ),
+          ]),
+          _vm._v(" "),
+          _c("h5", { staticClass: "ms__price" }, [
+            _vm._v("€" + _vm._s(_vm.house.cost_per_night) + " per notte"),
+          ]),
+        ]),
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "row py-2" }, [
+        _c("div", { staticClass: "col-sm-12 col-lg-8 p-0" }, [
+          _vm._m(0),
+          _vm._v(" "),
+          _c("p", [
+            _vm._v(
+              "Questa struttura è grande " +
+                _vm._s(_vm.house.square_meters) +
+                "m²."
+            ),
+          ]),
+          _vm._v(" "),
+          _c("p", [
+            _vm.house.toilets_num == 1
+              ? _c("span", [_vm._v("È presente")])
+              : _c("span", [_vm._v("Sono presenti")]),
+            _vm._v(
+              "\n          " + _vm._s(_vm.house.toilets_num) + "\n          "
+            ),
+            _vm.house.toilets_num == 1
+              ? _c("span", [_vm._v("bagno")])
+              : _c("span", [_vm._v("bagni")]),
+            _vm._v(" "),
+            _vm.house.toilets_num == 1
+              ? _c("span", [_vm._v("super confortevole.")])
+              : _c("span", [_vm._v("super confortevoli.")]),
+          ]),
+          _vm._v(" "),
+          _c("p", [
+            _vm.house.beds_num == 1
+              ? _c("span", [_vm._v("C'è")])
+              : _c("span", [_vm._v("Ci sono")]),
+            _vm._v(
+              "\n          " + _vm._s(_vm.house.beds_num) + "\n          "
+            ),
+            _vm.house.beds_num == 1
+              ? _c("span", [_vm._v("comodissimo")])
+              : _c("span", [_vm._v("comodissimi")]),
+            _vm._v(" "),
+            _vm.house.beds_num == 1
+              ? _c("span", [_vm._v("posto")])
+              : _c("span", [_vm._v("posti")]),
+            _vm._v("\n          letto! 😌\n        "),
+          ]),
+          _vm._v(" "),
+          _c("p", [
+            _vm.house.room_num == 1
+              ? _c("span", [
+                  _vm._v(
+                    "\n            " +
+                      _vm._s(_vm.house.room_num) +
+                      " stanza comoda e accogliente, con tutto ciò di\n            cui hai bisogno durante la tua permanenza.\n          "
+                  ),
+                ])
+              : _vm.house.room_num >= 5
+              ? _c("span", [
+                  _vm._v(
+                    "\n            " + _vm._s(_vm.house.room_num) + " stanze. "
+                  ),
+                  _c("em", { staticClass: "text-danger" }, [_vm._v("WOW!")]),
+                  _vm._v(
+                    " con\n            tutto questo spazio a disposizione il tuo soggiorno sarà un vero\n            spasso! 🤩\n          "
+                  ),
+                ])
+              : _c("span", [
+                  _vm._v(
+                    "\n            " +
+                      _vm._s(_vm.house.room_num) +
+                      " stanze comode e accoglienti, con tutto ciò di\n            cui avete bisogno durante la vostra permanenza.\n          "
+                  ),
+                ]),
+          ]),
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "col-sm-12 col-lg-4 p-0 pl-lg-4 pl-sm-0" }, [
+          _vm._m(1),
+          _vm._v(" "),
+          _c(
+            "ul",
+            _vm._l(_vm.services, function (service) {
+              return _c("li", { key: service.id, staticClass: "text-light" }, [
+                _vm._v(
+                  "\n            " + _vm._s(service.name) + "\n          "
+                ),
+              ])
+            }),
+            0
+          ),
+        ]),
       ]),
     ]),
   ])
@@ -54325,6 +54791,7 @@ var map = {
 	"./components/SponsorComponent.vue": "./resources/js/components/SponsorComponent.vue",
 	"./pages/Home.vue": "./resources/js/pages/Home.vue",
 	"./pages/House.vue": "./resources/js/pages/House.vue",
+	"./pages/HouseAdminShow.vue": "./resources/js/pages/HouseAdminShow.vue",
 	"./pages/Message.vue": "./resources/js/pages/Message.vue",
 	"./pages/Search.vue": "./resources/js/pages/Search.vue",
 	"./views/App.vue": "./resources/js/views/App.vue"
@@ -54378,7 +54845,7 @@ window.Vue = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.common.
 var files = __webpack_require__("./resources/js sync recursive \\.vue$/");
 
 files.keys().map(function (key) {
-  return Vue.component(key.split('/').pop().split('.')[0], files(key)["default"]);
+  return Vue.component(key.split("/").pop().split(".")[0], files(key)["default"]);
 });
 /**
  * Next, we will create a fresh Vue application instance and attach it to
@@ -54387,7 +54854,10 @@ files.keys().map(function (key) {
  */
 
 var app = new Vue({
-  el: '#app'
+  el: "#app"
+});
+var app_show = new Vue({
+  el: "#app_show"
 });
 
 /***/ }),
@@ -56072,6 +56542,93 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./resources/js/pages/HouseAdminShow.vue":
+/*!***********************************************!*\
+  !*** ./resources/js/pages/HouseAdminShow.vue ***!
+  \***********************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _HouseAdminShow_vue_vue_type_template_id_6b144b75_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./HouseAdminShow.vue?vue&type=template&id=6b144b75&scoped=true& */ "./resources/js/pages/HouseAdminShow.vue?vue&type=template&id=6b144b75&scoped=true&");
+/* harmony import */ var _HouseAdminShow_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./HouseAdminShow.vue?vue&type=script&lang=js& */ "./resources/js/pages/HouseAdminShow.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _HouseAdminShow_vue_vue_type_style_index_0_id_6b144b75_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./HouseAdminShow.vue?vue&type=style&index=0&id=6b144b75&lang=scss&scoped=true& */ "./resources/js/pages/HouseAdminShow.vue?vue&type=style&index=0&id=6b144b75&lang=scss&scoped=true&");
+/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_3__["default"])(
+  _HouseAdminShow_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _HouseAdminShow_vue_vue_type_template_id_6b144b75_scoped_true___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _HouseAdminShow_vue_vue_type_template_id_6b144b75_scoped_true___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  "6b144b75",
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/pages/HouseAdminShow.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/pages/HouseAdminShow.vue?vue&type=script&lang=js&":
+/*!************************************************************************!*\
+  !*** ./resources/js/pages/HouseAdminShow.vue?vue&type=script&lang=js& ***!
+  \************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_HouseAdminShow_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib??ref--4-0!../../../node_modules/vue-loader/lib??vue-loader-options!./HouseAdminShow.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/pages/HouseAdminShow.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_HouseAdminShow_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/js/pages/HouseAdminShow.vue?vue&type=style&index=0&id=6b144b75&lang=scss&scoped=true&":
+/*!*********************************************************************************************************!*\
+  !*** ./resources/js/pages/HouseAdminShow.vue?vue&type=style&index=0&id=6b144b75&lang=scss&scoped=true& ***!
+  \*********************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_style_loader_index_js_node_modules_css_loader_index_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_2_node_modules_sass_loader_dist_cjs_js_ref_7_3_node_modules_vue_loader_lib_index_js_vue_loader_options_HouseAdminShow_vue_vue_type_style_index_0_id_6b144b75_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/style-loader!../../../node_modules/css-loader!../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../node_modules/postcss-loader/src??ref--7-2!../../../node_modules/sass-loader/dist/cjs.js??ref--7-3!../../../node_modules/vue-loader/lib??vue-loader-options!./HouseAdminShow.vue?vue&type=style&index=0&id=6b144b75&lang=scss&scoped=true& */ "./node_modules/style-loader/index.js!./node_modules/css-loader/index.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/pages/HouseAdminShow.vue?vue&type=style&index=0&id=6b144b75&lang=scss&scoped=true&");
+/* harmony import */ var _node_modules_style_loader_index_js_node_modules_css_loader_index_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_2_node_modules_sass_loader_dist_cjs_js_ref_7_3_node_modules_vue_loader_lib_index_js_vue_loader_options_HouseAdminShow_vue_vue_type_style_index_0_id_6b144b75_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_index_js_node_modules_css_loader_index_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_2_node_modules_sass_loader_dist_cjs_js_ref_7_3_node_modules_vue_loader_lib_index_js_vue_loader_options_HouseAdminShow_vue_vue_type_style_index_0_id_6b144b75_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0__);
+/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _node_modules_style_loader_index_js_node_modules_css_loader_index_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_2_node_modules_sass_loader_dist_cjs_js_ref_7_3_node_modules_vue_loader_lib_index_js_vue_loader_options_HouseAdminShow_vue_vue_type_style_index_0_id_6b144b75_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0__) if(["default"].indexOf(__WEBPACK_IMPORT_KEY__) < 0) (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _node_modules_style_loader_index_js_node_modules_css_loader_index_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_2_node_modules_sass_loader_dist_cjs_js_ref_7_3_node_modules_vue_loader_lib_index_js_vue_loader_options_HouseAdminShow_vue_vue_type_style_index_0_id_6b144b75_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0__[key]; }) }(__WEBPACK_IMPORT_KEY__));
+
+
+/***/ }),
+
+/***/ "./resources/js/pages/HouseAdminShow.vue?vue&type=template&id=6b144b75&scoped=true&":
+/*!******************************************************************************************!*\
+  !*** ./resources/js/pages/HouseAdminShow.vue?vue&type=template&id=6b144b75&scoped=true& ***!
+  \******************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_HouseAdminShow_vue_vue_type_template_id_6b144b75_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../node_modules/vue-loader/lib??vue-loader-options!./HouseAdminShow.vue?vue&type=template&id=6b144b75&scoped=true& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/pages/HouseAdminShow.vue?vue&type=template&id=6b144b75&scoped=true&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_HouseAdminShow_vue_vue_type_template_id_6b144b75_scoped_true___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_HouseAdminShow_vue_vue_type_template_id_6b144b75_scoped_true___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
+
+/***/ }),
+
 /***/ "./resources/js/pages/Message.vue":
 /*!****************************************!*\
   !*** ./resources/js/pages/Message.vue ***!
@@ -56369,8 +56926,8 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! D:\Users\Simone\Documents\Progetti\boolbnb-final-project\resources\js\admin.js */"./resources/js/admin.js");
-module.exports = __webpack_require__(/*! D:\Users\Simone\Documents\Progetti\boolbnb-final-project\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! /Users/marcocorallo/Desktop/boolbnb-final-project/resources/js/admin.js */"./resources/js/admin.js");
+module.exports = __webpack_require__(/*! /Users/marcocorallo/Desktop/boolbnb-final-project/resources/sass/app.scss */"./resources/sass/app.scss");
 
 
 /***/ })
