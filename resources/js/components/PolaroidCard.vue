@@ -55,7 +55,7 @@ export default {
 
   figure {
     aspect-ratio: 1;
-    background-color: red;
+    // background-color: red;
 
     .polaroid__image {
       display: block;

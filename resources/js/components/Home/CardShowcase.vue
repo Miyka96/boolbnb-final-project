@@ -1,7 +1,7 @@
 <template>
    <section id="card-showcase">
       <div class="container-fluid">
-         <div class="row">
+         <div class="row flex-nowrap">
             <div class="col" v-for="el in houses" :key="el.id">
                <HouseCard :house="el"/>
             </div>
@@ -11,7 +11,7 @@
 </template>
 
 <script>
-import HouseCard from '../components/HouseCard';
+import HouseCard from '../HouseCard.vue';
 
 export default {
    name: 'CardShowcase',
@@ -55,6 +55,7 @@ export default {
 #card-showcase {
    padding: 80px;
    // border: 1px solid black;
+   overflow: hidden;
 
    .container-fluid {
       max-width: 1600px;

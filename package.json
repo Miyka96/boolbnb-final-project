@@ -25,6 +25,7 @@
         "vue-template-compiler": "^2.6.10"
     },
     "dependencies": {
+        "@glidejs/glide": "^3.5.2",
         "chart.js": "^3.8.0"
     }
 }

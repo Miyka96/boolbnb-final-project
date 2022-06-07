@@ -28,7 +28,7 @@ class HouseController extends Controller
             ['house_sponsorship.sponsor_start', '<=', Carbon::now()],
             ['house_sponsorship.sponsor_end', '>', Carbon::now()],
          ])
-         ->paginate(12);
+         ->paginate(5);
 
 
       if( $houses ) {

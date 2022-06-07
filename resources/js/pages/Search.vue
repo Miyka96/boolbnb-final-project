@@ -1,10 +1,9 @@
 <template>
    <div class="container mt-5 py-5">
-      <!-- <Navbar/> -->
-      <FilterComponent/>
       <h1 class="pt-4">Case disponibili a <span style="color:#FF385C;">{{queryParams}}</span></h1>
       lat: {{lat}}
       lon: {{lon}}
+      <FilterComponent/>
    </div>
 </template>
 
