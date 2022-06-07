@@ -103,7 +103,7 @@ method="post">
               {{-- formattazione data --}}
               <p>@php $ore = explode(':',($sponsor->duration)); echo $giorni = floor($ore[0] / 24); if($giorni == 1) echo ' Giorno'; else echo ' Giorni' @endphp </p>
 
-              <a onclick="paymentDisplay(@php echo ($i); $i++; @endphp)" href="#">Start Sponsorship</a>
+              <a onclick="paymentDisplay(@php echo ($i); $i++; @endphp)" href="#">Avvia Sponsorizzazione</a>
           </div>
           </div>
       </div>
@@ -122,7 +122,7 @@ method="post">
           <input type="text" name="card_cvc" placeholder="inserisci il cvc della carta">
           <input type="text" name="card_date" placeholder="inserisci la data di scadenza della carta">
           <div class="button_wrapper d-flex justify-content-center">
-              <button type="submit" id="button_carta" class="button">Start Sponsorship</button>
+              <button type="submit" id="button_carta" class="button">Avvia Sponsorizzazione</button>
           </div>
       </form>
   </div>

@@ -6,7 +6,7 @@
 <div class="user_houses d-flex flex-column container-fluid py-5 mt-5">
 
   <h1>Le tue case</h1>
-  <a class="button aggiungi align-self-center" href="{{ route('user.houses.create') }}"><span class="icon">Aggiungi casa</span><i class="text fa-solid fa-circle-plus"></i></a>
+  {{-- <a class="button aggiungi align-self-center" href="{{ route('user.houses.create') }}"><span class="icon">Aggiungi casa</span><i class="text fa-solid fa-circle-plus"></i></a> --}}
 
   <div class="card-wrapper container-fluid d-flex align-items-start">
    @foreach ($houses as $house)
