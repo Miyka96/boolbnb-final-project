@@ -2071,7 +2071,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-  name: 'CardShowcase',
+  name: "CardShowcase",
   components: {
     HouseCard: _HouseCard_vue__WEBPACK_IMPORTED_MODULE_0__["default"]
   },
@@ -2087,28 +2087,29 @@ __webpack_require__.r(__webpack_exports__);
       var _this = this;
 
       var page = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 1;
+      var paginate = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 12;
+      var sponsoredOnly = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : 'true';
       //default value
-      axios.get('/api/houses', {
+      axios.get("/api/houses-index/".concat(paginate, "/").concat(sponsoredOnly), {
         params: {
           page: page // equivalente a page: page
 
         }
       }).then(function (res) {
+        console.log('QUI');
         console.log(res.data);
-        var houses = res.data.houses;
-        var data = houses.data,
-            last_page = houses.last_page,
-            current_page = houses.current_page;
-        _this.houses = data;
-        _this.currentPage = current_page;
-        _this.lastPage = last_page;
+        var houses = res.data.houses; // const { data, last_page, current_page } = houses;
+        // this.houses = data;
+
+        _this.houses = houses; // this.currentPage = current_page;
+        // this.lastPage = last_page;
       })["catch"](function (err) {
         console.warn(err);
       });
     }
   },
   mounted: function mounted() {
-    this.fetchHouses();
+    this.fetchHouses(1, 100, 'false');
   }
 });
 
@@ -2298,12 +2299,50 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
-  name: 'HouseCard',
+  name: "HouseCard",
   props: {
     house: {
       type: Object,
       required: true
+    }
+  },
+  data: function data() {
+    return {
+      is_sponsored: false
+    };
+  },
+  // watch: {
+  //   house() {
+  //     const sponsor_start = new Date(this.house.sponsor_start);
+  //     const sponsor_end = new Date(this.house.sponsor_end);
+  //     if (sponsor_start <= now && sponsor_end > now) {
+  //       this.is_sponsored = true;
+  //     } else {
+  //       this.is_sponsored = false;
+  //     }
+  //   },
+  // },
+  mounted: function mounted() {
+    var sponsor_start = new Date(this.house.sponsor_start);
+    var sponsor_end = new Date(this.house.sponsor_end);
+    var now = new Date(); // console.log(this.house.id);
+    // console.log(this.house);
+    // console.log(sponsor_start);
+    // console.log(sponsor_end);
+    // console.log(now);
+    // console.log(sponsor_start <= now && sponsor_end > now)
+
+    if (sponsor_start <= now && sponsor_end > now) {
+      this.is_sponsored = true;
+    } else {
+      this.is_sponsored = false;
     }
   }
 });
@@ -7746,7 +7785,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "a[data-v-9647af16] {\n  text-decoration: none;\n}\n.card[data-v-9647af16] {\n  width: 100% !important;\n  margin: 0;\n  border-radius: 15px;\n  overflow: hidden;\n  border: none;\n  background-color: transparent;\n  transition: all ease-in-out 0.3s;\n}\n.card[data-v-9647af16]:hover {\n  transform: scale(1.03);\n}\n.card img[data-v-9647af16] {\n  width: 100%;\n  aspect-ratio: 1;\n  border-radius: 15px;\n}\n.card .card-body[data-v-9647af16] {\n  padding: 12px 0 0 0;\n  font-size: 15px;\n  position: relative;\n}\n.card .card-body .card-title[data-v-9647af16] {\n  font-size: 16px;\n  font-weight: 600;\n  color: #222222;\n  margin-bottom: 0px;\n  white-space: nowrap;\n  overflow: hidden;\n}\n.card .card-body p[data-v-9647af16] {\n  font-size: 15px;\n  font-weight: 400;\n  color: #717171;\n  margin: 0;\n  white-space: nowrap;\n  overflow: hidden;\n}\n.card .card-body p strong[data-v-9647af16] {\n  font-size: 15px;\n  font-weight: 600;\n  color: #222222;\n}\n.card .card-body .card-position[data-v-9647af16] {\n  margin-bottom: 6px;\n}\n.card .card-body .card-rating[data-v-9647af16] {\n  color: #222222;\n  position: absolute;\n  top: 12px;\n  right: 0;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  gap: 4px;\n}\n.card .card-body .card-rating i[data-v-9647af16] {\n  font-size: 12px;\n}", ""]);
+exports.push([module.i, "a[data-v-9647af16] {\n  text-decoration: none;\n}\n.card[data-v-9647af16] {\n  width: 100% !important;\n  margin: 0;\n  border-radius: 15px;\n  overflow: hidden;\n  border: none;\n  background-color: transparent;\n  transition: all ease-in-out 0.3s;\n  position: relative;\n}\n.card[data-v-9647af16]:hover {\n  transform: scale(1.03);\n}\n.card:hover .sponsored_icon[data-v-9647af16] {\n  transform: scale(1.3);\n}\n.card img[data-v-9647af16] {\n  width: 100%;\n  aspect-ratio: 1;\n  border-radius: 15px;\n}\n.card .card-body[data-v-9647af16] {\n  padding: 12px 0 0 0;\n  font-size: 15px;\n  position: relative;\n}\n.card .card-body .card-title[data-v-9647af16] {\n  font-size: 16px;\n  font-weight: 600;\n  color: #222222;\n  margin-bottom: 0px;\n  white-space: nowrap;\n  overflow: hidden;\n}\n.card .card-body p[data-v-9647af16] {\n  font-size: 15px;\n  font-weight: 400;\n  color: #717171;\n  margin: 0;\n  white-space: nowrap;\n  overflow: hidden;\n}\n.card .card-body p strong[data-v-9647af16] {\n  font-size: 15px;\n  font-weight: 600;\n  color: #222222;\n}\n.card .card-body .card-position[data-v-9647af16] {\n  margin-bottom: 6px;\n}\n.card .card-body .card-rating[data-v-9647af16] {\n  color: #222222;\n  position: absolute;\n  bottom: 2px;\n  right: 2px;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  gap: 4px;\n}\n.card .card-body .card-rating i[data-v-9647af16] {\n  font-size: 12px;\n}\n.card .sponsored_icon[data-v-9647af16] {\n  display: none;\n  position: absolute;\n  top: 10px;\n  right: 10px;\n  color: white;\n  font-size: 26px;\n  text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.8);\n  transition: all ease-in-out 0.3s;\n}\n.card .sponsored_icon.active[data-v-9647af16] {\n  display: block;\n}", ""]);
 
 // exports
 
@@ -40575,7 +40614,7 @@ var render = function () {
     _c("div", { staticClass: "container-fluid" }, [
       _c(
         "div",
-        { staticClass: "row flex-nowrap" },
+        { staticClass: "row" },
         _vm._l(_vm.houses, function (el) {
           return _c(
             "div",
@@ -40808,14 +40847,19 @@ var render = function () {
           _vm._v(" "),
           _c("p", { staticClass: "card-price" }, [
             _c("strong", [_vm._v("€" + _vm._s(_vm.house.cost_per_night))]),
-            _vm._v("/night"),
+            _vm._v("/night\n      "),
           ]),
           _vm._v(" "),
           _c("p", { staticClass: "card-rating" }, [
-            _vm._v(_vm._s(_vm.house.id)),
-            _c("i", { staticClass: "fa-solid fa-star" }),
+            _vm._v("Id: " + _vm._s(_vm.house.id)),
           ]),
         ]),
+        _vm._v(" "),
+        _c(
+          "span",
+          { class: [_vm.is_sponsored ? "active" : "", "sponsored_icon"] },
+          [_c("i", { staticClass: "fa-solid fa-star" })]
+        ),
       ]),
     ]
   )
