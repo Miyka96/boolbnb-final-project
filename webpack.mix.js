@@ -19,3 +19,4 @@ mix.js('resources/js/front.js', 'public/js');
 mix.js('resources/js/store.js', 'public/js');
 
 mix.js('resources/js/clientsideValidation.js', 'public/js');
+mix.js('resources/js/geocode.js', 'public/js');
