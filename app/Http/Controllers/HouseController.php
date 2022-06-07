@@ -81,7 +81,7 @@ class HouseController extends Controller
     */
     public function show(House $house)
     {
-       return view('user.house-show', compact('house'));
+      //  return view('user.house-show', compact('house'));
     }
 
    /**
@@ -92,6 +92,8 @@ class HouseController extends Controller
     */
    public function edit(House $house)
    {
+
+      if ($house->user_id != Auth::id()) return redirect()->route('user.houses.index');
       $services = Service::orderBy('name')->get();
 
       return view('user.house-edit', compact(['services','house'])); // ritorna vista con form modifica house

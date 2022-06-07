@@ -2,7 +2,6 @@
 
 @section('content')
 
-
 <div class="user_houses d-flex flex-column container-fluid py-5 mt-5">
 
   <h1>Le tue case</h1>
@@ -13,7 +12,7 @@
 
    @if($house->user_id == auth::user()->id)
 
-      <a href="{{ route('user.houses.show', $house) }}">
+      <a href="/house/{{$house->id}}">
          <div class="card" style="width: 18rem;">
             <img class="card-img-top" src="{{$house->image}}" alt="Card image cap">
             <div class="card-body">
