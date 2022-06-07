@@ -2285,6 +2285,8 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "FilterComponent",
@@ -2979,7 +2981,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, "*[data-v-1d7a6b09] {\n  margin: 0;\n  padding: 0;\n  box-sizing: border-box;\n}\n.container-fluid[data-v-1d7a6b09] {\n  padding: 80px 0;\n  background-color: white;\n  opacity: 80%;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n}\n.container-fluid .filter_wrapper[data-v-1d7a6b09] {\n  min-width: 60%;\n  border: 3px solid black;\n  border-radius: 10px;\n  padding: 50px;\n}\n.container-fluid .filter_wrapper .alloggi_wrapper .row[data-v-1d7a6b09] {\n  width: 100%;\n  display: flex;\n  padding: 30px 0;\n  margin-bottom: 30px;\n  border-bottom: 1px solid grey;\n  gap: 10px;\n}\n.container-fluid .filter_wrapper .alloggi_wrapper .row .alloggi[data-v-1d7a6b09] {\n  height: 70px;\n  border: 1px solid grey;\n  border-radius: 5px;\n  display: flex;\n  flex-direction: column;\n  justify-content: space-between;\n  padding: 8px 10px;\n}\n.container-fluid .filter_wrapper .alloggi_wrapper .row .alloggi span[data-v-1d7a6b09] {\n  font-size: 20px;\n}\n.container-fluid .filter_wrapper .stanze_wrapper[data-v-1d7a6b09] {\n  border-bottom: 1px solid grey;\n  margin-bottom: 30px;\n}\n.container-fluid .filter_wrapper .stanze_wrapper h4[data-v-1d7a6b09] {\n  margin-top: 20px;\n}\n.container-fluid .filter_wrapper .stanze_wrapper .pill_wrapper[data-v-1d7a6b09] {\n  width: 100%;\n  display: flex;\n  gap: 2%;\n  overflow: scroll;\n  padding: 30px 20px;\n}\n.container-fluid .filter_wrapper .stanze_wrapper .pill_wrapper .pill[data-v-1d7a6b09] {\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  height: 20px;\n  padding: 20px;\n  border: 1px solid grey;\n  border-radius: 20px;\n  flex-shrink: 0;\n}\n.container-fluid .filter_wrapper .checkbox_wrapper[data-v-1d7a6b09] {\n  margin-top: 30px;\n  flex-grow: 1;\n  height: 200px;\n  gap: 3%;\n}\n.container-fluid .filter_wrapper .checkbox_wrapper .checkbox[data-v-1d7a6b09] {\n  padding-left: 35px;\n  display: flex;\n  align-items: center;\n}\n.container-fluid .filter_wrapper .checkbox_wrapper .checkbox input[data-v-1d7a6b09] {\n  height: 30px;\n  width: 30px;\n  margin-right: 10px;\n}\n@media screen and (max-width: 767px) {\n.alloggi[data-v-1d7a6b09] {\n    width: 200px;\n}\n}", ""]);
+exports.push([module.i, "*[data-v-1d7a6b09] {\n  margin: 0;\n  padding: 0;\n  box-sizing: border-box;\n}\nbutton[data-v-1d7a6b09] {\n  color: white;\n  font-size: 14px;\n  font-weight: bold;\n  background-color: #FF385C;\n  border-radius: 25px;\n  text-align: center;\n  height: 30px;\n  width: 150px;\n  margin-right: 5px;\n  border: 0 !important;\n}\n.container-fluid[data-v-1d7a6b09] {\n  padding: 80px 0;\n  background-color: white;\n  opacity: 80%;\n  display: flex;\n  justify-content: center;\n  align-items: flex-start;\n}\n.container-fluid .filter_wrapper[data-v-1d7a6b09] {\n  min-width: 60%;\n  border: 1px solid rgba(113, 113, 113, 0.1921568627);\n  border-radius: 10px !important;\n  padding: 50px;\n  box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.1);\n}\n.container-fluid .filter_wrapper input[data-v-1d7a6b09] {\n  border: 1px solid rgba(113, 113, 113, 0.1921568627);\n}\n.container-fluid .filter_wrapper .alloggi_wrapper .row[data-v-1d7a6b09] {\n  width: 100%;\n  display: flex;\n  padding: 30px 0;\n  margin-bottom: 30px;\n  border-bottom: 1px solid grey;\n  gap: 10px;\n}\n.container-fluid .filter_wrapper .alloggi_wrapper .row .alloggi[data-v-1d7a6b09] {\n  height: 70px;\n  border: 1px solid grey;\n  border-radius: 5px;\n  display: flex;\n  flex-direction: column;\n  justify-content: space-between;\n  padding: 8px 10px;\n}\n.container-fluid .filter_wrapper .alloggi_wrapper .row .alloggi span[data-v-1d7a6b09] {\n  font-size: 20px;\n}\n.container-fluid .filter_wrapper .stanze_wrapper[data-v-1d7a6b09] {\n  border-bottom: 1px solid grey;\n  margin-bottom: 30px;\n}\n.container-fluid .filter_wrapper .stanze_wrapper h4[data-v-1d7a6b09] {\n  margin-top: 20px;\n}\n.container-fluid .filter_wrapper .stanze_wrapper .pill_wrapper[data-v-1d7a6b09] {\n  width: 100%;\n  display: flex;\n  gap: 2%;\n  overflow: scroll;\n  padding: 30px 20px;\n}\n.container-fluid .filter_wrapper .stanze_wrapper .pill_wrapper .pill[data-v-1d7a6b09] {\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  height: 20px;\n  padding: 20px;\n  border: 1px solid grey;\n  border-radius: 20px;\n  flex-shrink: 0;\n}\n.container-fluid .filter_wrapper .checkbox_wrapper[data-v-1d7a6b09] {\n  margin-top: 30px;\n  flex-grow: 1;\n  height: 200px;\n  gap: 3%;\n}\n.container-fluid .filter_wrapper .checkbox_wrapper .checkbox[data-v-1d7a6b09] {\n  padding-left: 35px;\n  display: flex;\n  align-items: center;\n}\n.container-fluid .filter_wrapper .checkbox_wrapper .checkbox input[data-v-1d7a6b09] {\n  height: 30px;\n  width: 30px;\n  margin-right: 10px;\n}\n@media screen and (max-width: 767px) {\n.alloggi[data-v-1d7a6b09] {\n    width: 200px;\n}\n}", ""]);
 
 // exports
 
@@ -4819,131 +4821,152 @@ var render = function () {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "container-fluid d-flex flex-column" }, [
-    _c(
-      "div",
-      { staticClass: "filter_wrapper d-flex flex-column" },
-      [
-        _c("h4", [_vm._v("Numero minimo di stanze")]),
-        _vm._v(" "),
-        _c("input", {
-          directives: [
-            {
-              name: "model",
-              rawName: "v-model",
-              value: _vm.room_num,
-              expression: "room_num",
-            },
-          ],
-          attrs: { type: "number", max: "15" },
-          domProps: { value: _vm.room_num },
-          on: {
-            input: function ($event) {
-              if ($event.target.composing) {
-                return
-              }
-              _vm.room_num = $event.target.value
-            },
-          },
-        }),
-        _vm._v(" "),
-        _c("h4", [_vm._v("Numero minimo di letti")]),
-        _vm._v(" "),
-        _c("input", {
-          directives: [
-            {
-              name: "model",
-              rawName: "v-model",
-              value: _vm.beds_num,
-              expression: "beds_num",
-            },
-          ],
-          attrs: { type: "number", max: "25" },
-          domProps: { value: _vm.beds_num },
-          on: {
-            input: function ($event) {
-              if ($event.target.composing) {
-                return
-              }
-              _vm.beds_num = $event.target.value
-            },
-          },
-        }),
-        _vm._v(" "),
-        _c("h1", [_vm._v("Altri servizi")]),
-        _vm._v(" "),
-        _vm._l(_vm.servicesApi, function (el) {
-          return _c("div", { key: el.id }, [
-            _c("input", {
-              directives: [
-                {
-                  name: "model",
-                  rawName: "v-model",
-                  value: _vm.services,
-                  expression: "services",
-                },
-              ],
-              attrs: { type: "checkbox", id: el.id, name: _vm.services },
-              domProps: {
-                value: el.id,
-                checked: Array.isArray(_vm.services)
-                  ? _vm._i(_vm.services, el.id) > -1
-                  : _vm.services,
+  return _c(
+    "div",
+    { staticClass: "container-fluid d-flex flex-column align-items-center" },
+    [
+      _c(
+        "div",
+        { staticClass: "filter_wrapper d-flex flex-column mb-4 pb-4" },
+        [
+          _c("h4", { staticClass: "mb-1" }, [
+            _vm._v("Numero minimo di stanze"),
+          ]),
+          _vm._v(" "),
+          _c("input", {
+            directives: [
+              {
+                name: "model",
+                rawName: "v-model",
+                value: _vm.room_num,
+                expression: "room_num",
               },
-              on: {
-                change: function ($event) {
-                  var $$a = _vm.services,
-                    $$el = $event.target,
-                    $$c = $$el.checked ? true : false
-                  if (Array.isArray($$a)) {
-                    var $$v = el.id,
-                      $$i = _vm._i($$a, $$v)
-                    if ($$el.checked) {
-                      $$i < 0 && (_vm.services = $$a.concat([$$v]))
-                    } else {
-                      $$i > -1 &&
-                        (_vm.services = $$a
-                          .slice(0, $$i)
-                          .concat($$a.slice($$i + 1)))
-                    }
-                  } else {
-                    _vm.services = $$c
-                  }
-                },
-              },
-            }),
-            _vm._v(" "),
-            _c("label", { attrs: { for: el.id } }, [_vm._v(_vm._s(el.name))]),
-          ])
-        }),
-        _vm._v(" "),
-        _c(
-          "button",
-          {
+            ],
+            staticClass: "mb-1",
+            attrs: { type: "number", max: "15" },
+            domProps: { value: _vm.room_num },
             on: {
-              click: function ($event) {
-                return _vm.filter(_vm.room_num, _vm.beds_num, _vm.services)
+              input: function ($event) {
+                if ($event.target.composing) {
+                  return
+                }
+                _vm.room_num = $event.target.value
               },
             },
-          },
-          [_vm._v("Filtra risultati")]
-        ),
-      ],
-      2
-    ),
-    _vm._v(" "),
-    _c(
-      "div",
-      { staticClass: "d-flex flex-wrap" },
-      _vm._l(_vm.filteredHouses, function (house) {
-        return _c("HouseCard", {
-          key: "HouseCard-" + house.id,
-          attrs: { house: house },
-        })
-      }),
-      1
-    ),
-  ])
+          }),
+          _vm._v(" "),
+          _c("h4", { staticClass: "mb-1" }, [_vm._v("Numero minimo di letti")]),
+          _vm._v(" "),
+          _c("input", {
+            directives: [
+              {
+                name: "model",
+                rawName: "v-model",
+                value: _vm.beds_num,
+                expression: "beds_num",
+              },
+            ],
+            staticClass: "mb-2",
+            attrs: { type: "number", max: "25" },
+            domProps: { value: _vm.beds_num },
+            on: {
+              input: function ($event) {
+                if ($event.target.composing) {
+                  return
+                }
+                _vm.beds_num = $event.target.value
+              },
+            },
+          }),
+          _vm._v(" "),
+          _c("h1", [_vm._v("Altri servizi")]),
+          _vm._v(" "),
+          _vm._l(_vm.servicesApi, function (el) {
+            return _c("div", { key: el.id, staticClass: "ml-2" }, [
+              _c("input", {
+                directives: [
+                  {
+                    name: "model",
+                    rawName: "v-model",
+                    value: _vm.services,
+                    expression: "services",
+                  },
+                ],
+                staticClass: "ms-input",
+                attrs: { type: "checkbox", id: el.id, name: _vm.services },
+                domProps: {
+                  value: el.id,
+                  checked: Array.isArray(_vm.services)
+                    ? _vm._i(_vm.services, el.id) > -1
+                    : _vm.services,
+                },
+                on: {
+                  change: function ($event) {
+                    var $$a = _vm.services,
+                      $$el = $event.target,
+                      $$c = $$el.checked ? true : false
+                    if (Array.isArray($$a)) {
+                      var $$v = el.id,
+                        $$i = _vm._i($$a, $$v)
+                      if ($$el.checked) {
+                        $$i < 0 && (_vm.services = $$a.concat([$$v]))
+                      } else {
+                        $$i > -1 &&
+                          (_vm.services = $$a
+                            .slice(0, $$i)
+                            .concat($$a.slice($$i + 1)))
+                      }
+                    } else {
+                      _vm.services = $$c
+                    }
+                  },
+                },
+              }),
+              _vm._v(" "),
+              _c("label", { attrs: { for: el.id } }, [_vm._v(_vm._s(el.name))]),
+            ])
+          }),
+          _vm._v(" "),
+          _c(
+            "div",
+            { staticClass: "d-flex align-items-center justify-content-center" },
+            [
+              _c(
+                "button",
+                {
+                  staticClass: "mt-4",
+                  on: {
+                    click: function ($event) {
+                      return _vm.filter(
+                        _vm.room_num,
+                        _vm.beds_num,
+                        _vm.services
+                      )
+                    },
+                  },
+                },
+                [_vm._v("Filtra risultati")]
+              ),
+            ]
+          ),
+        ],
+        2
+      ),
+      _vm._v(" "),
+      _c(
+        "div",
+        { staticClass: "d-flex flex-wrap mt-4 pt-4" },
+        _vm._l(_vm.filteredHouses, function (house) {
+          return _c("HouseCard", {
+            key: "HouseCard-" + house.id,
+            staticClass: "col-xs-12 col-sm-6 col-md-4 p-2",
+            attrs: { house: house },
+          })
+        }),
+        1
+      ),
+    ]
+  )
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -22136,7 +22159,7 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /Users/asiademartino/Desktop/progetto_finale/boolbnb-final-project/resources/js/front.js */"./resources/js/front.js");
+module.exports = __webpack_require__(/*! C:\Users\eduar\OneDrive\Desktop\Boolean\Progetto Finale\Repo Ufficiale\boolbnb-final-project\resources\js\front.js */"./resources/js/front.js");
 
 
 /***/ })

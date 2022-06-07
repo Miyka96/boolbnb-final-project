@@ -1,20 +1,22 @@
 <template>
-   <div class="container-fluid d-flex flex-column">
-      <div class="filter_wrapper d-flex flex-column">
-         <h4>Numero minimo di stanze</h4>
-         <input v-model="room_num" type="number" max="15">
-         <h4>Numero minimo di letti</h4>
-         <input v-model="beds_num" type="number" max="25" >
+   <div class="container-fluid d-flex flex-column align-items-center">
+      <div class="filter_wrapper d-flex flex-column mb-4 pb-4">
+         <h4 class="mb-1">Numero minimo di stanze</h4>
+         <input class="mb-1" v-model="room_num" type="number" max="15">
+         <h4 class="mb-1">Numero minimo di letti</h4>
+         <input v-model="beds_num" type="number" max="25" class="mb-2">
          <h1>Altri servizi</h1>
       
-         <div v-for="el in servicesApi" :key="el.id">
-            <input type="checkbox" :id="el.id" :value="el.id" :name="services" v-model="services">
+         <div v-for="el in servicesApi" :key="el.id" class="ml-2">
+            <input class="ms-input" type="checkbox" :id="el.id" :value="el.id" :name="services" v-model="services">
             <label :for="el.id">{{el.name}}</label>
          </div>
-         <button @click="filter(room_num, beds_num, services)">Filtra risultati</button>
+         <div class="d-flex align-items-center justify-content-center">
+            <button @click="filter(room_num, beds_num, services)" class="mt-4">Filtra risultati</button>
+         </div>
       </div>
-      <div class="d-flex flex-wrap">
-         <HouseCard v-for="house in filteredHouses" :key="`HouseCard-${house.id}`" :house="house"/>
+      <div class="d-flex flex-wrap mt-4 pt-4">
+         <HouseCard v-for="house in filteredHouses" :key="`HouseCard-${house.id}`" :house="house" class="col-xs-12 col-sm-6 col-md-4 p-2"/>
       </div>
    </div>
 </template>
@@ -98,19 +100,38 @@ export default{
     padding: 0;
     box-sizing: border-box;
 }
+
+button {
+      color: white;
+      font-size: 14px;
+      font-weight: bold;
+      background-color: #FF385C;
+      border-radius: 25px;
+      text-align: center;
+      height: 30px;
+      width: 150px;
+      margin-right: 5px;
+      border: 0 !important;
+}
+
 .container-fluid{
     padding: 80px 0;
     background-color: white;
     opacity: 80%;
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
 
     .filter_wrapper{ 
         min-width: 60%;
-        border: 3px solid black;
-        border-radius: 10px;
+        border: 1px solid #71717131;
+        border-radius: 10px !important;
         padding: 50px;
+        box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.1);
+
+        input {
+           border: 1px solid #71717131;
+        } 
 
         .alloggi_wrapper{
             .row{
