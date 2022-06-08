@@ -11889,6 +11889,7 @@ body::-webkit-scrollbar-thumb:hover {
 }
 
 .user_profile {
+  height: 100vh;
   padding: 80px 20px;
   padding-top: 100px;
 }
@@ -12027,5 +12028,198 @@ body::-webkit-scrollbar-thumb:hover {
 
 .user_profile .profilo .chart-container {
   margin-top: 20px;
+}
+
+.fixed_footer {
+  width: 100%;
+  height: 130px;
+  background: rgb(219, 59, 91);
+  color: #f8fafc;
+}
+
+.fixed_footer .container-fluid,
+.fixed_footer .container-sm,
+.fixed_footer .container-md,
+.fixed_footer .container-lg,
+.fixed_footer .container-xl {
+  height: 100%;
+}
+
+.fixed_footer .team,
+.fixed_footer .git {
+  display: inline-flex;
+  width: 180px;
+  height: 55px;
+  margin: 0 15px;
+}
+
+.fixed_footer .team a,
+.fixed_footer .git a {
+  font-size: 19px;
+  letter-spacing: 1px;
+  transform-style: preserve-3d;
+  transition: transform 0.25s;
+}
+
+.fixed_footer .team a:before,
+.fixed_footer .team a:after {
+  position: absolute;
+  content: "Il nostro Team";
+  height: 55px;
+  width: 180px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 5px solid #f8fafc;
+  box-sizing: border-box;
+  border-radius: 5px;
+}
+
+.fixed_footer .git a:before,
+.fixed_footer .git a:after {
+  position: absolute;
+  content: "Vai al codice";
+  height: 55px;
+  width: 180px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 5px solid #f8fafc;
+  box-sizing: border-box;
+  border-radius: 5px;
+}
+
+.fixed_footer span a:before {
+  color: #f8fafc;
+  background: transparent;
+  transform: rotateY(0deg) translateZ(25px);
+}
+
+.fixed_footer span a:after {
+  color: black;
+  background-color: #f8fafc;
+  transform: rotateX(90deg) translateZ(25px);
+}
+
+.fixed_footer span a:hover {
+  transform: translateZ(-25px) rotateX(-90deg);
+}
+
+.team_page .row {
+  width: 80%;
+  margin-top: 150px;
+}
+
+.team_page .card-team {
+  padding: 30px 0 40px;
+  margin-bottom: 30px;
+  background-color: #cad0eb;
+  text-align: center;
+  overflow: hidden;
+  position: relative;
+}
+
+.team_page .card-team .picture {
+  display: inline-block;
+  height: 130px;
+  width: 130px;
+  margin-bottom: 50px;
+  z-index: 1;
+  position: relative;
+}
+
+.team_page .card-team .picture::before {
+  content: "";
+  width: 100%;
+  height: 0;
+  border-radius: 50%;
+  background-color: rgb(219, 59, 91);
+  position: absolute;
+  bottom: 135%;
+  right: 0;
+  left: 0;
+  opacity: 0.9;
+  transform: scale(3);
+  transition: all 0.3s linear 0s;
+}
+
+.team_page .card-team:hover .picture::before {
+  height: 100%;
+}
+
+.team_page .card-team .picture::after {
+  content: "";
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background-color: rgb(219, 59, 91);
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+
+.team_page .card-team .picture img {
+  width: 100%;
+  height: auto;
+  border-radius: 50%;
+  transform: scale(1);
+  transition: all 0.9s ease 0s;
+}
+
+.team_page .social-icons {
+  padding: 0;
+  list-style: none;
+  margin: 1em;
+  display: flex;
+  justify-content: center;
+}
+
+.team_page .social-icons li {
+  display: inline-block;
+  margin: 0.15em;
+  position: relative;
+  font-size: 1.2em;
+}
+
+.team_page .social-icons i {
+  color: #f8fafc;
+  position: absolute;
+  top: 21px;
+  left: 21px;
+  transition: all 265ms ease-out;
+}
+
+.team_page .social-icons a {
+  display: inline-block;
+}
+
+.team_page .social-icons a:before {
+  transform: scale(1);
+  -ms-transform: scale(1);
+  -webkit-transform: scale(1);
+  content: " ";
+  width: 60px;
+  height: 60px;
+  border-radius: 100%;
+  display: block;
+  background: linear-gradient(45deg, #00B5F5, #002A8F);
+  transition: all 265ms ease-out;
+}
+
+.team_page .social-icons a:hover:before {
+  transform: scale(0);
+  transition: all 265ms ease-in;
+}
+
+.team_page .social-icons a:hover i {
+  transform: scale(2.2);
+  -ms-transform: scale(2.2);
+  -webkit-transform: scale(2.2);
+  color: #00B5F5;
+  background: -webkit-linear-gradient(45deg, #00B5F5, #002A8F);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  transition: all 265ms ease-in;
 }
 

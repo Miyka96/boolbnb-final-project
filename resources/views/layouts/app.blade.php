@@ -75,7 +75,7 @@
               {{-- Register --}}
               @if (Route::has('register'))
                 <a class="dropdown-item" href="{{ route('register') }}">
-                  {{ __('Register') }}
+                  Registrati
                 </a>
               @endif
             @else
@@ -104,6 +104,8 @@
   <main>
     @yield('content')
   </main>
+
+  @include('partials.footer')
 </body>
 
 </html>

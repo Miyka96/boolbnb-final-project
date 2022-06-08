@@ -2055,12 +2055,25 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-/* harmony default export */ __webpack_exports__["default"] = ({
-  data: function data() {
-    return {
-      img: ['https://picsum.photos/200', 'https://picsum.photos/200', 'https://picsum.photos/200', 'https://picsum.photos/200', 'https://picsum.photos/200', 'https://picsum.photos/200']
-    };
-  }
+//
+//
+//
+//
+//
+//
+//
+/* harmony default export */ __webpack_exports__["default"] = ({//    data(){
+  //        return {
+  //            img: [
+  //                'https://picsum.photos/200',
+  //                'https://picsum.photos/200',
+  //                'https://picsum.photos/200',
+  //                'https://picsum.photos/200',
+  //                'https://picsum.photos/200',
+  //                'https://picsum.photos/200',
+  //            ]
+  //        }
+  //    }
 });
 
 /***/ }),
@@ -2427,7 +2440,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_Home_PolaroidVue_vue__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../components/Home/PolaroidVue.vue */ "./resources/js/components/Home/PolaroidVue.vue");
 /* harmony import */ var _components_FooterComponent_vue__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../components/FooterComponent.vue */ "./resources/js/components/FooterComponent.vue");
 /* harmony import */ var _components_Search_SearchBar_vue__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../components/Search/SearchBar.vue */ "./resources/js/components/Search/SearchBar.vue");
-//
 //
 //
 //
@@ -2884,7 +2896,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "footer[data-v-abfbddf2] {\n  padding: 50px 0;\n  background-color: white;\n  border-top: 1px solid black;\n}\nfooter #section1[data-v-abfbddf2] {\n  padding-bottom: 50px;\n}\nfooter a[data-v-abfbddf2] {\n  color: currentColor;\n  text-decoration: none;\n}\nfooter a[data-v-abfbddf2]:hover {\n  color: #b884e6;\n  text-decoration: none;\n}\nfooter li[data-v-abfbddf2] {\n  list-style: none;\n}\nfooter .titolo[data-v-abfbddf2] {\n  text-transform: uppercase;\n  color: #303030;\n  font-family: \"Oswald\", sans-serif;\n  font-size: 2rem;\n  padding-bottom: 10px;\n  transition: color 0.3s ease-in-out;\n}\nfooter .titolo[data-v-abfbddf2]:hover {\n  color: #b884e6;\n}\nfooter .instagram[data-v-abfbddf2] {\n  background: linear-gradient(to right, #303030, #303030), linear-gradient(to right, rgb(166, 4, 151), rgb(200, 11, 34), rgb(228, 170, 53));\n  background-size: 100% 3px, 0 3px;\n  background-position: 100% 100%, 0 100%;\n  background-repeat: no-repeat;\n  transition: background-size 400ms;\n}\nfooter .instagram[data-v-abfbddf2]:hover {\n  background-size: 0 3px, 100% 3px;\n}\nfooter .facebook[data-v-abfbddf2] {\n  background: linear-gradient(to right, #303030, #303030), linear-gradient(to right, rgb(160, 185, 246), rgb(89, 142, 247), rgb(24, 98, 244));\n  background-size: 100% 3px, 0 3px;\n  background-position: 100% 100%, 0 100%;\n  background-repeat: no-repeat;\n  transition: background-size 400ms;\n}\nfooter .facebook[data-v-abfbddf2]:hover {\n  background-size: 0 3px, 100% 3px;\n}\nfooter .testo[data-v-abfbddf2] {\n  color: #4e4e4e;\n  font-family: \"Libre Baskerville\", serif;\n  font-size: 1rem;\n}\nfooter .paragrafo[data-v-abfbddf2] {\n  color: #4e4e4e;\n  font-family: \"Libre Baskerville\", serif;\n  font-size: 0.7rem;\n  padding-top: 5px;\n}\nfooter .row[data-v-abfbddf2] {\n  height: 100%;\n}\nfooter .bordo[data-v-abfbddf2] {\n  border-bottom: 1px solid black;\n}\nfooter .underline[data-v-abfbddf2] {\n  text-decoration: underline;\n}\nfooter .gap[data-v-abfbddf2] {\n  gap: 15px;\n}\nfooter .wrapper-foto[data-v-abfbddf2] {\n  display: flex;\n  flex-wrap: wrap;\n  gap: 10px;\n  padding-top: 15px;\n}\nfooter .foto[data-v-abfbddf2] {\n  overflow: hidden;\n  width: 30%;\n  aspect-ratio: 1;\n}\nfooter img[data-v-abfbddf2] {\n  height: 100%;\n}\nfooter .input_email[data-v-abfbddf2] {\n  border: none;\n  background-color: transparent;\n}\nfooter .input_button[data-v-abfbddf2] {\n  border: none;\n  background-color: transparent;\n}\nfooter .effect[data-v-abfbddf2] {\n  position: relative;\n  cursor: pointer;\n}\nfooter .effect a[data-v-abfbddf2] {\n  text-decoration: none;\n  color: white;\n  width: 100%;\n  left: 0;\n  text-align: center;\n  font-size: 0.7rem;\n  position: absolute;\n  transition: 0.5s ease all;\n  visibility: hidden;\n  opacity: 0;\n}\nfooter .effect:hover a[data-v-abfbddf2] {\n  background-color: rgba(0, 0, 0, 0.4);\n  visibility: visible;\n  height: 100%;\n  padding: 40% 0;\n  opacity: 1;\n}\n@media screen and (max-width: 970px) {\nfooter .row[data-v-abfbddf2], footer .col-8[data-v-abfbddf2] {\n    flex-direction: column;\n    gap: 20px;\n}\nfooter .wrapper-foto[data-v-abfbddf2] {\n    gap: 2%;\n    row-gap: 10px;\n}\nfooter .foto[data-v-abfbddf2] {\n    width: 45%;\n}\nfooter .effect a[data-v-abfbddf2] {\n    font-size: 2rem;\n}\n}\n@media screen and (max-width: 600px) {\nfooter .wrapper-foto[data-v-abfbddf2] {\n    row-gap: 5px;\n}\nfooter .foto[data-v-abfbddf2] {\n    width: 40%;\n}\nfooter .effect a[data-v-abfbddf2] {\n    font-size: 2.5rem;\n}\n}", ""]);
+exports.push([module.i, ".content[data-v-abfbddf2] {\n  width: 850px;\n  margin: auto;\n  margin-bottom: 350px;\n  /* Same height as footer */\n  padding: 100px 0;\n}\nh1[data-v-abfbddf2] {\n  color: #111;\n  font-size: 3em;\n  font-weight: 900;\n  padding: 0 0 20px 0;\n}\nh2[data-v-abfbddf2] {\n  color: #111;\n  font-size: 2em;\n  font-weight: 900;\n  padding: 0 0 15px 0;\n}\np[data-v-abfbddf2] {\n  font-size: 1.25em;\n  padding: 0 0 40px 0;\n}\n.fixed_footer[data-v-abfbddf2] {\n  width: 100%;\n  height: 350px;\n  background: #111;\n  position: fixed;\n  left: 0;\n  bottom: 0;\n  z-index: -100;\n}\n.fixed_footer p[data-v-abfbddf2] {\n  color: #696969;\n  -moz-column-count: 2;\n       column-count: 2;\n  -moz-column-gap: 50px;\n       column-gap: 50px;\n  font-size: 1em;\n  font-weight: 300;\n}", ""]);
 
 // exports
 
@@ -4413,152 +4425,22 @@ var render = function () {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("footer", [
-    _c("div", { staticClass: "container bordo", attrs: { id: "section1" } }, [
-      _c("div", { staticClass: "row justify-content-between" }, [
-        _vm._m(0),
-        _vm._v(" "),
-        _c(
-          "div",
-          {
-            staticClass:
-              "col-lg-3 col-md-10 col-sm-12 d-flex flex-column align-center",
-          },
-          [
-            _vm._m(1),
-            _vm._v(" "),
-            _c(
-              "div",
-              { staticClass: "wrapper-foto" },
-              _vm._l(_vm.img, function (item, i) {
-                return _c("div", { key: i, staticClass: "foto effect" }, [
-                  _c("img", { attrs: { src: item, alt: "" } }),
-                  _vm._v(" "),
-                  _c("a", { attrs: { href: "#" } }, [_vm._v("Go to post")]),
-                ])
-              }),
-              0
-            ),
-          ]
-        ),
-        _vm._v(" "),
-        _vm._m(2),
-      ]),
-    ]),
-    _vm._v(" "),
-    _vm._m(3),
-  ])
+  return _vm._m(0)
 }
 var staticRenderFns = [
   function () {
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "col-3" }, [
-      _c("h1", { staticClass: "titolo" }, [
-        _vm._v("Sign up to our newsletter"),
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "d-flex justify-content-between bordo" }, [
-        _c("h4", { staticClass: "testo" }, [
-          _c("input", {
-            staticClass: "input_email",
-            attrs: { type: "text", placeholder: "type in your email" },
-          }),
-        ]),
-        _vm._v(" "),
-        _c("button", { staticClass: "input_button" }, [
-          _c("i", { staticClass: "fa-solid fa-arrow-right" }),
-        ]),
-      ]),
-      _vm._v(" "),
-      _c("p", { staticClass: "paragrafo" }, [
-        _vm._v(
-          "Receive invitation to stock sales, contests, news and job postings"
-        ),
-      ]),
-    ])
-  },
-  function () {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "d-flex gap" }, [
-      _c("h1", { staticClass: "titolo instagram" }, [_vm._v("instagram")]),
-      _vm._v(" "),
-      _c("h1", { staticClass: "titolo facebook" }, [_vm._v("facebook")]),
-    ])
-  },
-  function () {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "col-3" }, [
-      _c("h1", { staticClass: "titolo" }, [_vm._v("say hi")]),
-      _vm._v(" "),
-      _c("h4", { staticClass: "testo" }, [
-        _c("ul", [
-          _c("li", [_c("a", { attrs: { href: "#" } }, [_vm._v("contatti")])]),
-          _vm._v(" "),
-          _c("li", [_c("a", { attrs: { href: "#" } }, [_vm._v("contatti")])]),
-          _vm._v(" "),
-          _c("li", [_c("a", { attrs: { href: "#" } }, [_vm._v("contatti")])]),
-          _vm._v(" "),
-          _c("li", [_c("a", { attrs: { href: "#" } }, [_vm._v("contatti")])]),
-          _vm._v(" "),
-          _c("li", [_c("a", { attrs: { href: "#" } }, [_vm._v("contatti")])]),
+    return _c("footer", { staticClass: "fixed_footer" }, [
+      _c("div", { staticClass: "content" }, [
+        _c("p", [
+          _vm._v(
+            "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis ducimus nemo quo totam neque quis soluta nisi obcaecati aliquam saepe dicta adipisci blanditiis quaerat earum laboriosam accusamus nesciunt! Saepe ex maxime enim asperiores nisi. Obcaecati nostrum nobis laudantium aliquam commodi veniam magni similique ullam quis pariatur voluptatem harum id error."
+          ),
         ]),
       ]),
     ])
-  },
-  function () {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c(
-      "div",
-      {
-        staticClass: "container mt-4 justify-content-between",
-        attrs: { id: "section2" },
-      },
-      [
-        _c("div", { staticClass: "row py-3 justify-content-between" }, [
-          _c("div", { staticClass: "col-2 paragrafo" }, [
-            _c("span", [_vm._v("Use of this site:")]),
-            _vm._v(" "),
-            _c("span", [_vm._v("Terms and Conditions")]),
-            _vm._v(" "),
-            _c("span", [_vm._v("Cookie Policy")]),
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "col-8 d-flex justify-content-between" }, [
-            _c("div", { staticClass: "paragrafo d-flex flex-column" }, [
-              _c("span", [_vm._v("Use of this site:")]),
-              _vm._v(" "),
-              _c("span", [_vm._v("Terms and Conditions")]),
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "paragrafo d-flex flex-column" }, [
-              _c("span", [_vm._v("Use of this site:")]),
-              _vm._v(" "),
-              _c("span", [_vm._v("Terms and Conditions")]),
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "paragrafo d-flex flex-column" }, [
-              _c("span", [_vm._v("Use of this site:")]),
-              _vm._v(" "),
-              _c("span", [_vm._v("Terms and Conditions")]),
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "paragrafo d-flex flex-column" }, [
-              _c("span", [_vm._v("Use of this site:")]),
-              _vm._v(" "),
-              _c("span", [_vm._v("Terms and Conditions")]),
-            ]),
-          ]),
-        ]),
-      ]
-    )
   },
 ]
 render._withStripped = true
@@ -5067,8 +4949,6 @@ var render = function () {
       _c("SectionVue"),
       _vm._v(" "),
       _c("CardsShowcase"),
-      _vm._v(" "),
-      _c("Footer"),
     ],
     1
   )
@@ -22136,7 +22016,7 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /Users/marcocorallo/Desktop/boolbnb-final-project/resources/js/front.js */"./resources/js/front.js");
+module.exports = __webpack_require__(/*! /Users/asiademartino/Desktop/progetto_finale/boolbnb-final-project/resources/js/front.js */"./resources/js/front.js");
 
 
 /***/ })

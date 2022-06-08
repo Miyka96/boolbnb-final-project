@@ -49,4 +49,9 @@ Route::fallback(function () {
    return view('home');
 });
 
+
+Route::get('/team', function () {
+   return view('team');
+});
+
 // rotta error 404

@@ -1,0 +1,76 @@
+@import './variables';
+
+
+
+.fixed_footer{
+    width: 100%;
+    height: 130px;
+    background: $bg-footer;
+    color: $body-bg;
+
+    .container-fluid{
+        height: 100%;
+    }
+
+
+    .team, .git{
+        display: inline-flex;
+        width: 180px;
+        height: 55px;
+        margin: 0 15px;
+        
+    }
+
+    .team a, .git a{
+        font-size: 19px;
+        letter-spacing: 1px;
+        transform-style: preserve-3d;
+        transition: transform .25s;   
+    }
+
+    .team a:before, .team a:after{
+        position: absolute;
+        content: "Il nostro Team";
+        height: 55px;
+        width: 180px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: 5px solid $body-bg;
+        box-sizing: border-box;
+        border-radius: 5px;
+    }
+
+
+    .git a:before, .git a:after{
+        position: absolute;
+        content: "Vai al codice";
+        height: 55px;
+        width: 180px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: 5px solid $body-bg;
+        box-sizing: border-box;
+        border-radius: 5px;
+    }
+
+    span a:before{
+        color: $body-bg;
+        background: transparent;
+        transform: rotateY(0deg) translateZ(25px);
+    }
+
+    span a:after{
+        color: black;
+        background-color: $body-bg;
+        transform: rotateX(90deg) translateZ(25px);
+    }
+
+    span a:hover{
+        transform: translateZ(-25px) rotateX(-90deg);
+    }
+  }
+
+
+    

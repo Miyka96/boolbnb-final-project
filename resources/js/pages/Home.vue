@@ -6,7 +6,6 @@
     <Polaroid />
     <SectionVue />
     <CardsShowcase />
-    <Footer />
   </div>
 </template>
 
