@@ -27,7 +27,7 @@ export default {
   background: white;
   color: black;
   box-shadow: 7px 8px 14px 1px rgba(0, 0, 0, 0.59);
-  transition: all 0.5s ease;
+  transition: all ease-in-out 0.5s;
   padding: 25px;
   cursor: pointer;
   text-decoration: none;
