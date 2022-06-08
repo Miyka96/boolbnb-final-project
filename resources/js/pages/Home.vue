@@ -1,7 +1,7 @@
 <template>
   <div id="home">
     <Banner />
-    <Polaroid />
+    <PolaroidsWrapper />
     <SectionVue />
     <CardsShowcase />
     <Footer />
