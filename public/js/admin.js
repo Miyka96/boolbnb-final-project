@@ -2342,9 +2342,19 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-  name: 'MainBanner',
+  name: "MainBanner",
   props: {},
   data: function data() {
     return {
@@ -8073,7 +8083,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 exports.push([module.i, "@import url(https://fonts.googleapis.com/css2?family=Roboto:wght@900&display=swap);", ""]);
 
 // module
-exports.push([module.i, "#main-banner[data-v-0e33f90c] {\n  width: 100%;\n  height: min(760px, 100vh);\n  overflow: hidden;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  position: relative;\n}\n#main-banner video[data-v-0e33f90c] {\n  min-width: 100%;\n  max-width: 100%;\n  min-height: 100%;\n  max-height: 100%;\n  -o-object-fit: cover;\n     object-fit: cover;\n}\n#main-banner figure[data-v-0e33f90c] {\n  min-width: 100%;\n  max-width: 100%;\n  min-height: 100%;\n  max-height: 100%;\n  margin: 0;\n}\n#main-banner figure img[data-v-0e33f90c] {\n  min-width: 100%;\n  -o-object-fit: cover;\n     object-fit: cover;\n  -o-object-position: center;\n     object-position: center;\n}\n#main-banner .banner-text[data-v-0e33f90c] {\n  display: none;\n  position: absolute;\n  top: 0;\n  left: 0;\n  bottom: 0;\n  right: 0;\n  line-height: min(760px, 100vh);\n  background-color: #d5dce4;\n  font-size: 30vw;\n  font-family: \"Roboto\", sans-serif;\n  text-align: center;\n  text-transform: uppercase;\n  color: #000;\n  mix-blend-mode: screen;\n  -webkit-user-select: none;\n     -moz-user-select: none;\n      -ms-user-select: none;\n          user-select: none;\n  margin-bottom: 0;\n}\n#main-banner .banner-text.active[data-v-0e33f90c] {\n  display: inline;\n}\n.debug video[data-v-0e33f90c] {\n  background-color: blue;\n}", ""]);
+exports.push([module.i, "#main-banner[data-v-0e33f90c] {\n  width: 100%;\n  height: min(760px, 100vh);\n  overflow: hidden;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  position: relative;\n  margin-top: 80px;\n}\n#main-banner video[data-v-0e33f90c] {\n  min-width: 100%;\n  max-width: 100%;\n  min-height: 100%;\n  max-height: 100%;\n  -o-object-fit: cover;\n     object-fit: cover;\n}\n#main-banner .figure[data-v-0e33f90c] {\n  min-width: 100%;\n  max-width: 100%;\n  min-height: 100%;\n  max-height: 100%;\n  margin: 0;\n}\n#main-banner .figure img[data-v-0e33f90c] {\n  min-width: 100%;\n  -o-object-fit: cover;\n     object-fit: cover;\n  -o-object-position: center;\n     object-position: center;\n}\n#main-banner .background-gradient[data-v-0e33f90c] {\n  position: absolute;\n  top: 0;\n  left: 0;\n  bottom: 0;\n  right: 0;\n  background: linear-gradient(to bottom, transparent, 60%, #f8fafc);\n}\n#main-banner .banner-text[data-v-0e33f90c] {\n  display: none;\n  position: absolute;\n  top: 50%;\n  left: 50%;\n  transform: translate(-50%, -50%);\n  font-size: 20vw;\n  font-family: \"Roboto\", sans-serif;\n  text-align: center;\n  text-transform: uppercase;\n  color: #f8fafc;\n  text-shadow: 3px 3px 3px rgba(0, 0, 0, 0.6);\n  -webkit-user-select: none;\n     -moz-user-select: none;\n      -ms-user-select: none;\n          user-select: none;\n  margin-bottom: 0;\n}\n#main-banner .banner-text.active[data-v-0e33f90c] {\n  display: inline;\n}\n#main-banner .banner-text.highlight[data-v-0e33f90c] {\n  color: #FF385C;\n}", ""]);
 
 // exports
 
@@ -8092,7 +8102,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, ".polaroids-list[data-v-25b4e261] {\n  justify-content: space-evenly;\n  gap: 2%;\n}", ""]);
+exports.push([module.i, "#polaroid-wrapper[data-v-25b4e261] {\n  background: #f8fafc;\n}\n#polaroid-wrapper .polaroids-list[data-v-25b4e261] {\n  justify-content: space-evenly;\n  gap: 2%;\n}", ""]);
 
 // exports
 
@@ -8244,7 +8254,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 exports.push([module.i, "@import url(https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&display=swap);", ""]);
 
 // module
-exports.push([module.i, ".polaroid[data-v-531a4632] {\n  min-width: 19%;\n  max-width: 19%;\n  background: white;\n  color: black;\n  box-shadow: 7px 8px 14px 1px rgba(0, 0, 0, 0.59);\n  transition: all ease-in-out 0.5s;\n  padding: 25px;\n  cursor: pointer;\n  text-decoration: none;\n}\n.polaroid.polaroid[data-v-531a4632]:nth-child(2n) {\n  transform: rotate(-3deg);\n}\n.polaroid.polaroid[data-v-531a4632]:nth-child(2n+1) {\n  transform: rotate(3deg);\n}\n.polaroid[data-v-531a4632]:hover {\n  transform: translateY(-4px);\n}\n.polaroid:hover .polaroid__image[data-v-531a4632] {\n  transform: scale(1.03);\n  transition: transform 0.2s linear;\n}\n.polaroid:hover.polaroid[data-v-531a4632] {\n  transform: rotate(0) !important;\n}\n.polaroid figure[data-v-531a4632] {\n  aspect-ratio: 1;\n}\n.polaroid figure .polaroid__image[data-v-531a4632] {\n  display: block;\n  max-width: 100%;\n  max-height: 100%;\n  min-width: 100%;\n  min-height: 100%;\n  -o-object-fit: cover;\n     object-fit: cover;\n}\n.polaroid .polaroid__title[data-v-531a4632] {\n  margin: 0;\n  padding: 5px;\n  font-family: \"Dancing Script\", cursive;\n  font-size: 3rem;\n  line-height: 1.1;\n  text-align: center;\n}", ""]);
+exports.push([module.i, ".polaroid[data-v-531a4632] {\n  min-width: 19%;\n  max-width: 19%;\n  background: white;\n  color: black;\n  box-shadow: 7px 8px 14px 1px rgba(0, 0, 0, 0.59);\n  transition: all ease-in-out 0.5s;\n  padding: 25px;\n  cursor: pointer;\n  text-decoration: none;\n}\n.polaroid.polaroid[data-v-531a4632]:nth-child(2n) {\n  transform: rotate(-3deg);\n}\n.polaroid.polaroid[data-v-531a4632]:nth-child(2n+1) {\n  transform: rotate(3deg);\n}\n.polaroid[data-v-531a4632]:hover {\n  transform: translateY(-4px);\n}\n.polaroid:hover .polaroid__image[data-v-531a4632] {\n  transform: scale(1.03);\n}\n.polaroid:hover.polaroid[data-v-531a4632] {\n  transform: rotate(0) !important;\n}\n.polaroid figure[data-v-531a4632] {\n  aspect-ratio: 1;\n}\n.polaroid figure .polaroid__image[data-v-531a4632] {\n  display: block;\n  max-width: 100%;\n  max-height: 100%;\n  min-width: 100%;\n  min-height: 100%;\n  -o-object-fit: cover;\n     object-fit: cover;\n  transition: transform ease-in-out 0.3s;\n}\n.polaroid .polaroid__title[data-v-531a4632] {\n  margin: 0;\n  padding: 5px;\n  font-family: \"Dancing Script\", cursive;\n  font-size: 3rem;\n  line-height: 1.1;\n  text-align: center;\n}", ""]);
 
 // exports
 
@@ -8321,6 +8331,25 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 // module
 exports.push([module.i, "img[data-v-40fc0132] {\n  width: 100%;\n  height: 100%;\n  -o-object-fit: cover;\n     object-fit: cover;\n  -o-object-position: center;\n     object-position: center;\n  display: block;\n}\n.collage-wrapper[data-v-40fc0132] {\n  width: 100%;\n  height: 480px;\n  display: flex;\n}\n.collage-wrapper .big-pic[data-v-40fc0132] {\n  width: 85%;\n  height: 100%;\n}\n.collage-wrapper .small-pics[data-v-40fc0132] {\n  width: 15%;\n  height: 100%;\n}\n.collage-wrapper .small-pics figure[data-v-40fc0132] {\n  margin: 0;\n  padding: 0;\n  height: 25%;\n}\n.box-shadow[data-v-40fc0132] {\n  box-shadow: 0 4px 10px -4px #333;\n}\nul[data-v-40fc0132] {\n  display: flex;\n  flex-direction: column;\n  gap: 20px;\n  list-style: none;\n}\nul li[data-v-40fc0132] {\n  max-width: 90px;\n  padding: 5px;\n  border-radius: 20px;\n  text-align: center;\n  text-transform: uppercase;\n  font-family: \"Trebuchet MS\", \"Lucida Sans Unicode\", \"Lucida Grande\", \"Lucida Sans\", Arial, sans-serif;\n  font-size: 12px;\n  font-weight: 900;\n  background: #ff385c;\n}\n.ms__btn[data-v-40fc0132] {\n  font-family: \"Trebuchet MS\", \"Lucida Sans Unicode\", \"Lucida Grande\", \"Lucida Sans\", Arial, sans-serif;\n  font-weight: 900;\n  background: #ff385c;\n}\n.ms__font[data-v-40fc0132] {\n  font-family: \"Trebuchet MS\", \"Lucida Sans Unicode\", \"Lucida Grande\", \"Lucida Sans\", Arial, sans-serif;\n  font-weight: 900;\n  font-size: 18px;\n  color: #ff385c;\n}\n.ms__price[data-v-40fc0132] {\n  font-weight: 900;\n  color: #ff385c;\n}", ""]);
+
+// exports
+
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/index.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/pages/HouseAdminShow.vue?vue&type=style&index=0&id=6b144b75&lang=scss&scoped=true&":
+/*!*******************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--7-2!./node_modules/sass-loader/dist/cjs.js??ref--7-3!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/pages/HouseAdminShow.vue?vue&type=style&index=0&id=6b144b75&lang=scss&scoped=true& ***!
+  \*******************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loader/lib/css-base.js */ "./node_modules/css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, "img[data-v-6b144b75] {\n  width: 100%;\n  height: 100%;\n  -o-object-fit: cover;\n     object-fit: cover;\n  -o-object-position: center;\n     object-position: center;\n  display: block;\n}\n.collage-wrapper[data-v-6b144b75] {\n  width: 100%;\n  height: 480px;\n  display: flex;\n}\n.collage-wrapper .big-pic[data-v-6b144b75] {\n  width: 85%;\n  height: 100%;\n}\n.collage-wrapper .small-pics[data-v-6b144b75] {\n  width: 15%;\n  height: 100%;\n}\n.collage-wrapper .small-pics figure[data-v-6b144b75] {\n  margin: 0;\n  padding: 0;\n  height: 25%;\n}\n.box-shadow[data-v-6b144b75] {\n  box-shadow: 0 4px 10px -4px #333;\n}\nul[data-v-6b144b75] {\n  display: flex;\n  flex-direction: column;\n  gap: 20px;\n  list-style: none;\n}\nul li[data-v-6b144b75] {\n  max-width: 90px;\n  padding: 5px;\n  border-radius: 20px;\n  text-align: center;\n  text-transform: uppercase;\n  font-family: \"Trebuchet MS\", \"Lucida Sans Unicode\", \"Lucida Grande\", \"Lucida Sans\", Arial, sans-serif;\n  font-size: 12px;\n  font-weight: 900;\n  background: #ff385c;\n}\n.ms__btn[data-v-6b144b75] {\n  font-family: \"Trebuchet MS\", \"Lucida Sans Unicode\", \"Lucida Grande\", \"Lucida Sans\", Arial, sans-serif;\n  font-weight: 900;\n  background: #ff385c;\n}\n.ms__font[data-v-6b144b75] {\n  font-family: \"Trebuchet MS\", \"Lucida Sans Unicode\", \"Lucida Grande\", \"Lucida Sans\", Arial, sans-serif;\n  font-weight: 900;\n  font-size: 18px;\n  color: #ff385c;\n}\n.ms__price[data-v-6b144b75] {\n  font-weight: 900;\n  color: #ff385c;\n}", ""]);
 
 // exports
 
@@ -40102,6 +40131,36 @@ if(false) {}
 
 /***/ }),
 
+/***/ "./node_modules/style-loader/index.js!./node_modules/css-loader/index.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/pages/HouseAdminShow.vue?vue&type=style&index=0&id=6b144b75&lang=scss&scoped=true&":
+/*!***********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/style-loader!./node_modules/css-loader!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--7-2!./node_modules/sass-loader/dist/cjs.js??ref--7-3!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/pages/HouseAdminShow.vue?vue&type=style&index=0&id=6b144b75&lang=scss&scoped=true& ***!
+  \***********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+
+var content = __webpack_require__(/*! !../../../node_modules/css-loader!../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../node_modules/postcss-loader/src??ref--7-2!../../../node_modules/sass-loader/dist/cjs.js??ref--7-3!../../../node_modules/vue-loader/lib??vue-loader-options!./HouseAdminShow.vue?vue&type=style&index=0&id=6b144b75&lang=scss&scoped=true& */ "./node_modules/css-loader/index.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/pages/HouseAdminShow.vue?vue&type=style&index=0&id=6b144b75&lang=scss&scoped=true&");
+
+if(typeof content === 'string') content = [[module.i, content, '']];
+
+var transform;
+var insertInto;
+
+
+
+var options = {"hmr":true}
+
+options.transform = transform
+options.insertInto = undefined;
+
+var update = __webpack_require__(/*! ../../../node_modules/style-loader/lib/addStyles.js */ "./node_modules/style-loader/lib/addStyles.js")(content, options);
+
+if(content.locals) module.exports = content.locals;
+
+if(false) {}
+
+/***/ }),
+
 /***/ "./node_modules/style-loader/index.js!./node_modules/css-loader/index.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/pages/Search.vue?vue&type=style&index=0&id=7262a471&lang=scss&scoped=true&":
 /*!***************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/style-loader!./node_modules/css-loader!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--7-2!./node_modules/sass-loader/dist/cjs.js??ref--7-3!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/pages/Search.vue?vue&type=style&index=0&id=7262a471&lang=scss&scoped=true& ***!
@@ -41151,14 +41210,20 @@ var render = function () {
     [
       _vm._m(0),
       _vm._v(" "),
+      _c("div", { staticClass: "background-gradient" }),
+      _vm._v(" "),
       _vm._l(_vm.slideWords, function (el, i) {
         return _c(
           "h2",
           {
             key: i,
-            class: [_vm.activeSlide === i ? "active" : "", "banner-text"],
+            class: [
+              _vm.activeSlide === i ? "active" : "",
+              "banner-text",
+              i == 2 ? "highlight" : "",
+            ],
           },
-          [_vm._v(_vm._s(_vm.slideWords[i]))]
+          [_vm._v("\n    " + _vm._s(_vm.slideWords[i]) + "\n  ")]
         )
       }),
     ],
@@ -57185,7 +57250,7 @@ __webpack_require__.r(__webpack_exports__);
  // Inserire qui variabili da passare ai componenti
 
 var state = vue__WEBPACK_IMPORTED_MODULE_0___default.a.observable({
-  bannerText: ['Enjoy', 'your', 'trip'],
+  bannerText: ['Enjoy', 'your', 'stay'],
   polaroids: [{
     title: 'Milano',
     img: 'https://images.unsplash.com/photo-1610016302534-6f67f1c968d8?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1075&q=80',
@@ -57334,8 +57399,8 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\Users\Micae\dev\boolbnb-final-project\resources\js\admin.js */"./resources/js/admin.js");
-module.exports = __webpack_require__(/*! C:\Users\Micae\dev\boolbnb-final-project\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! D:\Users\Simone\Documents\Progetti\boolbnb-final-project\resources\js\admin.js */"./resources/js/admin.js");
+module.exports = __webpack_require__(/*! D:\Users\Simone\Documents\Progetti\boolbnb-final-project\resources\sass\app.scss */"./resources/sass/app.scss");
 
 
 /***/ })
