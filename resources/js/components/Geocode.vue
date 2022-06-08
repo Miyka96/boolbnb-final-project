@@ -10,12 +10,16 @@
                 @keyup="searchItems()"
             />
         </div>
-        <div class="d-flex flex-column" v-for="el in places" :key="el.id">
+        <div class="flex-column" :class="visible == true ? 'd-flex' : 'd-none' " v-for="el in places" :key="el.id">
             <ul id="ul" class="d-flex flex-column list-group ul">
-                <li @click="saveAddress(el)" v-if="el.address.freeformAddress" 
-                class="list-group-item list-group-item-action">
-                    {{ el.address.freeformAddress }}
-                </li>
+                    <li
+                        id="li"
+                        @click="saveAddress(el), deleteItems()"
+                        v-if="el.address.freeformAddress"
+                        class="list-group-item list-group-item-action"
+                    >
+                        {{ el.address.freeformAddress }}
+                    </li>
             </ul>
         </div>
     </nav>
@@ -27,60 +31,66 @@ export default {
     name: "GeoSearch",
     data() {
         return {
+            ul: document.getElementById("ul"),
             baseURL: "api.tomtom.com",
             search: "",
             places: [],
             lat: "",
-            lon:"",
-            streetNum:"",
-            address:"",
+            lon: "",
+            streetNum: "",
+            address: "",
             city: "",
             country: "",
-            zipCode:"",
-
+            zipCode: "",
+            visible: false,
         };
     },
     methods: {
         searchItems: function () {
-            if(this.search.length>8){
+            if (this.search.length > 8) {
                 axios
-                .get(
-                    `https://${this.baseURL}/search/2/geocode/${this.search}.json`,
-                    {
-                        params: {
-                            key: "DINngHSiTz58Z5fDF5pThkg1IrJA87je",
-                            limit: 5,
-                            countrySet: "IT/ITA",
-                            radius: 20000,
-                        },
-                    }
-                )
-                .then((res) => {
-                    console.log(res.data.results);
-                    this.places = res.data.results;
-                })
-                .catch((error) => {
-                    console.log(error.response);
-                });
+                    .get(
+                        `https://${this.baseURL}/search/2/geocode/${this.search}.json`,
+                        {
+                            params: {
+                                key: "DINngHSiTz58Z5fDF5pThkg1IrJA87je",
+                                limit: 5,
+                                countrySet: "IT/ITA",
+                                radius: 20000,
+                            },
+                        }
+                    )
+                    .then((res) => {
+                        console.log(res.data.results);
+                        this.places = res.data.results;
+                        this.visible= true
+                    })
+                    .catch((error) => {
+                        console.log(error.response);
+                    });
             }
         },
         saveAddress: function (element) {
-            this.lat= element.position.lat
-            this.lon= element.position.lon
-            this.streetName= element.address.streetName 
-            if(element.address.streetNumber == undefined){
-                this.address= this.streetName
+            this.lat = element.position.lat;
+            this.lon = element.position.lon;
+            this.streetName = element.address.streetName;
+            if (element.address.streetNumber == undefined) {
+                this.address = this.streetName;
+            } else {
+                this.streetNum = element.address.streetNumber;
+                this.address = this.streetName + " " + this.streetNum;
             }
-            else{
-                this.streetNum= element.address.streetNumber
-                this.address= this.streetName + ' ' + this.streetNum
-            }
-            this.city= element.address.countrySecondarySubdivision
-            this.country= element.address.country
-            this.zipCode= element.address.postalCode
-            
-            console.log(this.lat,this.lon,this.address,this.city,this.country,this.zipCode)
-        }, 
+            this.city = element.address.countrySecondarySubdivision;
+            this.country = element.address.country;
+            this.zipCode = element.address.postalCode;
+
+            // console.log(this.lat,this.lon,this.address,this.city,this.country,this.zipCode)
+            this.search= element.address.freeformAddress;
+        },
+
+        deleteItems: function () {
+            this.visible=false;
+        },
     },
 };
 </script>

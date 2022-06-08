@@ -1,6 +1,7 @@
 <template>
   <div id="home">
     <Banner />
+    <GeoSearch />
     <PolaroidsWrapper />
     <SectionVue />
     <CardsShowcase :sponsoredOnly="true"/>

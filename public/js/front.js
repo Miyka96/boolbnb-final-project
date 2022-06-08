@@ -2032,11 +2032,16 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "GeoSearch",
   data: function data() {
     return {
+      ul: document.getElementById("ul"),
       baseURL: "api.tomtom.com",
       search: "",
       places: [],
@@ -2046,7 +2051,8 @@ __webpack_require__.r(__webpack_exports__);
       address: "",
       city: "",
       country: "",
-      zipCode: ""
+      zipCode: "",
+      visible: false
     };
   },
   methods: {
@@ -2064,6 +2070,7 @@ __webpack_require__.r(__webpack_exports__);
         }).then(function (res) {
           console.log(res.data.results);
           _this.places = res.data.results;
+          _this.visible = true;
         })["catch"](function (error) {
           console.log(error.response);
         });
@@ -2078,13 +2085,17 @@ __webpack_require__.r(__webpack_exports__);
         this.address = this.streetName;
       } else {
         this.streetNum = element.address.streetNumber;
-        this.address = this.streetName + ' ' + this.streetNum;
+        this.address = this.streetName + " " + this.streetNum;
       }
 
       this.city = element.address.countrySecondarySubdivision;
       this.country = element.address.country;
-      this.zipCode = element.address.postalCode;
-      console.log(this.lat, this.lon, this.address, this.city, this.country, this.zipCode);
+      this.zipCode = element.address.postalCode; // console.log(this.lat,this.lon,this.address,this.city,this.country,this.zipCode)
+
+      this.search = element.address.freeformAddress;
+    },
+    deleteItems: function deleteItems() {
+      this.visible = false;
     }
   }
 });
@@ -2620,6 +2631,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_Home_PolaroidsWrapper_vue__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../components/Home/PolaroidsWrapper.vue */ "./resources/js/components/Home/PolaroidsWrapper.vue");
 /* harmony import */ var _components_FooterComponent_vue__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../components/FooterComponent.vue */ "./resources/js/components/FooterComponent.vue");
 /* harmony import */ var _components_Geocode_vue__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../components/Geocode.vue */ "./resources/js/components/Geocode.vue");
+//
 //
 //
 //
@@ -4802,37 +4814,46 @@ var render = function () {
       ]),
       _vm._v(" "),
       _vm._l(_vm.places, function (el) {
-        return _c("div", { key: el.id, staticClass: "d-flex flex-column" }, [
-          _c(
-            "ul",
-            {
-              staticClass: "d-flex flex-column list-group ul",
-              attrs: { id: "ul" },
-            },
-            [
-              el.address.freeformAddress
-                ? _c(
-                    "li",
-                    {
-                      staticClass: "list-group-item list-group-item-action",
-                      on: {
-                        click: function ($event) {
-                          return _vm.saveAddress(el)
+        return _c(
+          "div",
+          {
+            key: el.id,
+            staticClass: "flex-column",
+            class: _vm.visible == true ? "d-flex" : "d-none",
+          },
+          [
+            _c(
+              "ul",
+              {
+                staticClass: "d-flex flex-column list-group ul",
+                attrs: { id: "ul" },
+              },
+              [
+                el.address.freeformAddress
+                  ? _c(
+                      "li",
+                      {
+                        staticClass: "list-group-item list-group-item-action",
+                        attrs: { id: "li" },
+                        on: {
+                          click: function ($event) {
+                            _vm.saveAddress(el), _vm.deleteItems()
+                          },
                         },
                       },
-                    },
-                    [
-                      _vm._v(
-                        "\n                " +
-                          _vm._s(el.address.freeformAddress) +
-                          "\n            "
-                      ),
-                    ]
-                  )
-                : _vm._e(),
-            ]
-          ),
-        ])
+                      [
+                        _vm._v(
+                          "\n                    " +
+                            _vm._s(el.address.freeformAddress) +
+                            "\n                "
+                        ),
+                      ]
+                    )
+                  : _vm._e(),
+              ]
+            ),
+          ]
+        )
       }),
     ],
     2
@@ -5372,6 +5393,8 @@ var render = function () {
     { attrs: { id: "home" } },
     [
       _c("Banner"),
+      _vm._v(" "),
+      _c("GeoSearch"),
       _vm._v(" "),
       _c("PolaroidsWrapper"),
       _vm._v(" "),

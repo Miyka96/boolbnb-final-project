@@ -13,7 +13,6 @@
 
       {{-- POSITION FORM --}}
 
-      
 
       {{-- HOUSE FORM --}}
       <form action="{{ route('user.houses.store') }}" method="post" id="create-house-form">

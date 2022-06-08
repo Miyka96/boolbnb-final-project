@@ -2081,11 +2081,16 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "GeoSearch",
   data: function data() {
     return {
+      ul: document.getElementById("ul"),
       baseURL: "api.tomtom.com",
       search: "",
       places: [],
@@ -2095,7 +2100,8 @@ __webpack_require__.r(__webpack_exports__);
       address: "",
       city: "",
       country: "",
-      zipCode: ""
+      zipCode: "",
+      visible: false
     };
   },
   methods: {
@@ -2113,6 +2119,7 @@ __webpack_require__.r(__webpack_exports__);
         }).then(function (res) {
           console.log(res.data.results);
           _this.places = res.data.results;
+          _this.visible = true;
         })["catch"](function (error) {
           console.log(error.response);
         });
@@ -2127,13 +2134,17 @@ __webpack_require__.r(__webpack_exports__);
         this.address = this.streetName;
       } else {
         this.streetNum = element.address.streetNumber;
-        this.address = this.streetName + ' ' + this.streetNum;
+        this.address = this.streetName + " " + this.streetNum;
       }
 
       this.city = element.address.countrySecondarySubdivision;
       this.country = element.address.country;
-      this.zipCode = element.address.postalCode;
-      console.log(this.lat, this.lon, this.address, this.city, this.country, this.zipCode);
+      this.zipCode = element.address.postalCode; // console.log(this.lat,this.lon,this.address,this.city,this.country,this.zipCode)
+
+      this.search = element.address.freeformAddress;
+    },
+    deleteItems: function deleteItems() {
+      this.visible = false;
     }
   }
 });
@@ -3025,6 +3036,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_Home_PolaroidsWrapper_vue__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../components/Home/PolaroidsWrapper.vue */ "./resources/js/components/Home/PolaroidsWrapper.vue");
 /* harmony import */ var _components_FooterComponent_vue__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../components/FooterComponent.vue */ "./resources/js/components/FooterComponent.vue");
 /* harmony import */ var _components_Geocode_vue__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../components/Geocode.vue */ "./resources/js/components/Geocode.vue");
+//
 //
 //
 //
@@ -8321,6 +8333,25 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 // module
 exports.push([module.i, "img[data-v-40fc0132] {\n  width: 100%;\n  height: 100%;\n  -o-object-fit: cover;\n     object-fit: cover;\n  -o-object-position: center;\n     object-position: center;\n  display: block;\n}\n.collage-wrapper[data-v-40fc0132] {\n  width: 100%;\n  height: 480px;\n  display: flex;\n}\n.collage-wrapper .big-pic[data-v-40fc0132] {\n  width: 85%;\n  height: 100%;\n}\n.collage-wrapper .small-pics[data-v-40fc0132] {\n  width: 15%;\n  height: 100%;\n}\n.collage-wrapper .small-pics figure[data-v-40fc0132] {\n  margin: 0;\n  padding: 0;\n  height: 25%;\n}\n.box-shadow[data-v-40fc0132] {\n  box-shadow: 0 4px 10px -4px #333;\n}\nul[data-v-40fc0132] {\n  display: flex;\n  flex-direction: column;\n  gap: 20px;\n  list-style: none;\n}\nul li[data-v-40fc0132] {\n  max-width: 90px;\n  padding: 5px;\n  border-radius: 20px;\n  text-align: center;\n  text-transform: uppercase;\n  font-family: \"Trebuchet MS\", \"Lucida Sans Unicode\", \"Lucida Grande\", \"Lucida Sans\", Arial, sans-serif;\n  font-size: 12px;\n  font-weight: 900;\n  background: #ff385c;\n}\n.ms__btn[data-v-40fc0132] {\n  font-family: \"Trebuchet MS\", \"Lucida Sans Unicode\", \"Lucida Grande\", \"Lucida Sans\", Arial, sans-serif;\n  font-weight: 900;\n  background: #ff385c;\n}\n.ms__font[data-v-40fc0132] {\n  font-family: \"Trebuchet MS\", \"Lucida Sans Unicode\", \"Lucida Grande\", \"Lucida Sans\", Arial, sans-serif;\n  font-weight: 900;\n  font-size: 18px;\n  color: #ff385c;\n}\n.ms__price[data-v-40fc0132] {\n  font-weight: 900;\n  color: #ff385c;\n}", ""]);
+
+// exports
+
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/index.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/pages/HouseAdminShow.vue?vue&type=style&index=0&id=6b144b75&lang=scss&scoped=true&":
+/*!*******************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--7-2!./node_modules/sass-loader/dist/cjs.js??ref--7-3!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/pages/HouseAdminShow.vue?vue&type=style&index=0&id=6b144b75&lang=scss&scoped=true& ***!
+  \*******************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loader/lib/css-base.js */ "./node_modules/css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, "img[data-v-6b144b75] {\n  width: 100%;\n  height: 100%;\n  -o-object-fit: cover;\n     object-fit: cover;\n  -o-object-position: center;\n     object-position: center;\n  display: block;\n}\n.collage-wrapper[data-v-6b144b75] {\n  width: 100%;\n  height: 480px;\n  display: flex;\n}\n.collage-wrapper .big-pic[data-v-6b144b75] {\n  width: 85%;\n  height: 100%;\n}\n.collage-wrapper .small-pics[data-v-6b144b75] {\n  width: 15%;\n  height: 100%;\n}\n.collage-wrapper .small-pics figure[data-v-6b144b75] {\n  margin: 0;\n  padding: 0;\n  height: 25%;\n}\n.box-shadow[data-v-6b144b75] {\n  box-shadow: 0 4px 10px -4px #333;\n}\nul[data-v-6b144b75] {\n  display: flex;\n  flex-direction: column;\n  gap: 20px;\n  list-style: none;\n}\nul li[data-v-6b144b75] {\n  max-width: 90px;\n  padding: 5px;\n  border-radius: 20px;\n  text-align: center;\n  text-transform: uppercase;\n  font-family: \"Trebuchet MS\", \"Lucida Sans Unicode\", \"Lucida Grande\", \"Lucida Sans\", Arial, sans-serif;\n  font-size: 12px;\n  font-weight: 900;\n  background: #ff385c;\n}\n.ms__btn[data-v-6b144b75] {\n  font-family: \"Trebuchet MS\", \"Lucida Sans Unicode\", \"Lucida Grande\", \"Lucida Sans\", Arial, sans-serif;\n  font-weight: 900;\n  background: #ff385c;\n}\n.ms__font[data-v-6b144b75] {\n  font-family: \"Trebuchet MS\", \"Lucida Sans Unicode\", \"Lucida Grande\", \"Lucida Sans\", Arial, sans-serif;\n  font-weight: 900;\n  font-size: 18px;\n  color: #ff385c;\n}\n.ms__price[data-v-6b144b75] {\n  font-weight: 900;\n  color: #ff385c;\n}", ""]);
 
 // exports
 
@@ -40102,6 +40133,36 @@ if(false) {}
 
 /***/ }),
 
+/***/ "./node_modules/style-loader/index.js!./node_modules/css-loader/index.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/pages/HouseAdminShow.vue?vue&type=style&index=0&id=6b144b75&lang=scss&scoped=true&":
+/*!***********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/style-loader!./node_modules/css-loader!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--7-2!./node_modules/sass-loader/dist/cjs.js??ref--7-3!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/pages/HouseAdminShow.vue?vue&type=style&index=0&id=6b144b75&lang=scss&scoped=true& ***!
+  \***********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+
+var content = __webpack_require__(/*! !../../../node_modules/css-loader!../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../node_modules/postcss-loader/src??ref--7-2!../../../node_modules/sass-loader/dist/cjs.js??ref--7-3!../../../node_modules/vue-loader/lib??vue-loader-options!./HouseAdminShow.vue?vue&type=style&index=0&id=6b144b75&lang=scss&scoped=true& */ "./node_modules/css-loader/index.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/pages/HouseAdminShow.vue?vue&type=style&index=0&id=6b144b75&lang=scss&scoped=true&");
+
+if(typeof content === 'string') content = [[module.i, content, '']];
+
+var transform;
+var insertInto;
+
+
+
+var options = {"hmr":true}
+
+options.transform = transform
+options.insertInto = undefined;
+
+var update = __webpack_require__(/*! ../../../node_modules/style-loader/lib/addStyles.js */ "./node_modules/style-loader/lib/addStyles.js")(content, options);
+
+if(content.locals) module.exports = content.locals;
+
+if(false) {}
+
+/***/ }),
+
 /***/ "./node_modules/style-loader/index.js!./node_modules/css-loader/index.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/pages/Search.vue?vue&type=style&index=0&id=7262a471&lang=scss&scoped=true&":
 /*!***************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/style-loader!./node_modules/css-loader!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--7-2!./node_modules/sass-loader/dist/cjs.js??ref--7-3!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/pages/Search.vue?vue&type=style&index=0&id=7262a471&lang=scss&scoped=true& ***!
@@ -41040,37 +41101,46 @@ var render = function () {
       ]),
       _vm._v(" "),
       _vm._l(_vm.places, function (el) {
-        return _c("div", { key: el.id, staticClass: "d-flex flex-column" }, [
-          _c(
-            "ul",
-            {
-              staticClass: "d-flex flex-column list-group ul",
-              attrs: { id: "ul" },
-            },
-            [
-              el.address.freeformAddress
-                ? _c(
-                    "li",
-                    {
-                      staticClass: "list-group-item list-group-item-action",
-                      on: {
-                        click: function ($event) {
-                          return _vm.saveAddress(el)
+        return _c(
+          "div",
+          {
+            key: el.id,
+            staticClass: "flex-column",
+            class: _vm.visible == true ? "d-flex" : "d-none",
+          },
+          [
+            _c(
+              "ul",
+              {
+                staticClass: "d-flex flex-column list-group ul",
+                attrs: { id: "ul" },
+              },
+              [
+                el.address.freeformAddress
+                  ? _c(
+                      "li",
+                      {
+                        staticClass: "list-group-item list-group-item-action",
+                        attrs: { id: "li" },
+                        on: {
+                          click: function ($event) {
+                            _vm.saveAddress(el), _vm.deleteItems()
+                          },
                         },
                       },
-                    },
-                    [
-                      _vm._v(
-                        "\n                " +
-                          _vm._s(el.address.freeformAddress) +
-                          "\n            "
-                      ),
-                    ]
-                  )
-                : _vm._e(),
-            ]
-          ),
-        ])
+                      [
+                        _vm._v(
+                          "\n                    " +
+                            _vm._s(el.address.freeformAddress) +
+                            "\n                "
+                        ),
+                      ]
+                    )
+                  : _vm._e(),
+              ]
+            ),
+          ]
+        )
       }),
     ],
     2
@@ -42120,6 +42190,8 @@ var render = function () {
     { attrs: { id: "home" } },
     [
       _c("Banner"),
+      _vm._v(" "),
+      _c("GeoSearch"),
       _vm._v(" "),
       _c("PolaroidsWrapper"),
       _vm._v(" "),
