@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Service;
 use App\Position;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 
 class HouseController extends Controller
 {
@@ -43,13 +44,15 @@ class HouseController extends Controller
     */
    public function store(Request $request)
    {
+       $positionId= DB::table('positions')->latest('id')->first();
+
       $request->validate([
          'title' => 'required|string|min:5|max:255',
          'room_num' => 'required|numeric|min:1', // serve il max?
          'beds_num' => 'required|numeric|min:1',  // serve il max?
          'toilets_num' => 'required|numeric|min:1',  // serve il max?
          'square_meters' => 'required|numeric|min:20',  // serve il max?
-         'position_id' => 'required|exists:positions,id',
+         'position_id' => 'required',
          'image' => 'required|url', // possibile array di immagini
          'is_visible' => 'boolean',
          'user_id' => 'required',
@@ -57,10 +60,8 @@ class HouseController extends Controller
       ]);
 
       $data = $request->all();
-
-      // metodo per cattura utente
       $house = new House();
-
+      $house->position_id= $positionId;
       $house->fill( $data );
       $house->save();
 
