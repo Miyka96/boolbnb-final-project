@@ -11,8 +11,7 @@
             />
         </div>
         <div class="d-flex flex-column" v-for="el in places" :key="el.id">
-            <ul class="d-flex flex-column list-group">
-
+            <ul id="ul" class="d-flex flex-column list-group ul">
                 <li @click="saveAddress(el)" v-if="el.address.freeformAddress" 
                 class="list-group-item list-group-item-action">
                     {{ el.address.freeformAddress }}
@@ -33,6 +32,12 @@ export default {
             places: [],
             lat: "",
             lon:"",
+            streetNum:"",
+            address:"",
+            city: "",
+            country: "",
+            zipCode:"",
+
         };
     },
     methods: {
@@ -62,9 +67,20 @@ export default {
         saveAddress: function (element) {
             this.lat= element.position.lat
             this.lon= element.position.lon
-            console.log(this.lat,this.lon)
-        }
+            this.streetName= element.address.streetName 
+            if(element.address.streetNumber == undefined){
+                this.address= this.streetName
+            }
+            else{
+                this.streetNum= element.address.streetNumber
+                this.address= this.streetName + ' ' + this.streetNum
+            }
+            this.city= element.address.countrySecondarySubdivision
+            this.country= element.address.country
+            this.zipCode= element.address.postalCode
             
+            // console.log(this.lat,this.lon,this.address,this.city,this.country,this.zipCode)
+            }       
     },
 };
 </script>

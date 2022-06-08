@@ -2148,7 +2148,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "GeoSearch",
@@ -2158,7 +2157,12 @@ __webpack_require__.r(__webpack_exports__);
       search: "",
       places: [],
       lat: "",
-      lon: ""
+      lon: "",
+      streetNum: "",
+      address: "",
+      city: "",
+      country: "",
+      zipCode: ""
     };
   },
   methods: {
@@ -2184,7 +2188,18 @@ __webpack_require__.r(__webpack_exports__);
     saveAddress: function saveAddress(element) {
       this.lat = element.position.lat;
       this.lon = element.position.lon;
-      console.log(this.lat, this.lon);
+      this.streetName = element.address.streetName;
+
+      if (element.address.streetNumber == undefined) {
+        this.address = this.streetName;
+      } else {
+        this.streetNum = element.address.streetNumber;
+        this.address = this.streetName + ' ' + this.streetNum;
+      }
+
+      this.city = element.address.countrySecondarySubdivision;
+      this.country = element.address.country;
+      this.zipCode = element.address.postalCode; // console.log(this.lat,this.lon,this.address,this.city,this.country,this.zipCode)
     }
   }
 });
@@ -40657,28 +40672,35 @@ var render = function () {
       _vm._v(" "),
       _vm._l(_vm.places, function (el) {
         return _c("div", { key: el.id, staticClass: "d-flex flex-column" }, [
-          _c("ul", { staticClass: "d-flex flex-column list-group" }, [
-            el.address.freeformAddress
-              ? _c(
-                  "li",
-                  {
-                    staticClass: "list-group-item list-group-item-action",
-                    on: {
-                      click: function ($event) {
-                        return _vm.saveAddress(el)
+          _c(
+            "ul",
+            {
+              staticClass: "d-flex flex-column list-group ul",
+              attrs: { id: "ul" },
+            },
+            [
+              el.address.freeformAddress
+                ? _c(
+                    "li",
+                    {
+                      staticClass: "list-group-item list-group-item-action",
+                      on: {
+                        click: function ($event) {
+                          return _vm.saveAddress(el)
+                        },
                       },
                     },
-                  },
-                  [
-                    _vm._v(
-                      "\n                " +
-                        _vm._s(el.address.freeformAddress) +
-                        "\n            "
-                    ),
-                  ]
-                )
-              : _vm._e(),
-          ]),
+                    [
+                      _vm._v(
+                        "\n                " +
+                          _vm._s(el.address.freeformAddress) +
+                          "\n            "
+                      ),
+                    ]
+                  )
+                : _vm._e(),
+            ]
+          ),
         ])
       }),
     ],
