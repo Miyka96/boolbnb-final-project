@@ -34,7 +34,7 @@
         {{-- LOGO --}}
         <a class="navbar-brand " href="{{ url('/') }}">
           <figure>
-            <img src="{{ URL::to('/') }}/images/Airbnb-logo.png" alt="">
+            <img src="{{ URL::to('/') }}/images/logo-montserrat.png" alt="">
           </figure>
         </a>
   

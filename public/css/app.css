@@ -10974,6 +10974,7 @@ a.text-dark:focus {
 
 body {
   overflow: overlay;
+  background-color: #f8fafc;
 }
 
 body::-webkit-scrollbar {
@@ -11005,16 +11006,17 @@ body::-webkit-scrollbar-thumb:hover {
 
 #main-nav .navbar-brand {
   padding: 0;
+  margin: 0;
 }
 
 #main-nav .navbar-brand figure {
   margin: 0;
-  max-height: 32px;
+  max-height: 40px;
 }
 
 #main-nav .navbar-brand figure img {
   display: block;
-  height: 32px;
+  height: 40px;
 }
 
 #main-nav .navbar-nav .dropdown-menu {

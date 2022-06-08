@@ -3,7 +3,7 @@ import Vue from 'vue';
 // Inserire qui variabili da passare ai componenti
 const state = Vue.observable(
    {
-      bannerText: ['Enjoy', 'your', 'trip'],
+      bannerText: ['Enjoy', 'your', 'stay'],
       polaroids: [
         {
           title: 'Milano',

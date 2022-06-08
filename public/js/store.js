@@ -12635,7 +12635,7 @@ __webpack_require__.r(__webpack_exports__);
  // Inserire qui variabili da passare ai componenti
 
 var state = vue__WEBPACK_IMPORTED_MODULE_0___default.a.observable({
-  bannerText: ['Enjoy', 'your', 'trip'],
+  bannerText: ['Enjoy', 'your', 'stay'],
   polaroids: [{
     title: 'Milano',
     img: 'https://images.unsplash.com/photo-1610016302534-6f67f1c968d8?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1075&q=80',
@@ -12704,11 +12704,7 @@ function thumbAnimation() {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-<<<<<<< HEAD
-module.exports = __webpack_require__(/*! /Users/marcocorallo/Desktop/boolbnb-final-project/resources/js/store.js */"./resources/js/store.js");
-=======
-module.exports = __webpack_require__(/*! C:\Users\Micae\dev\boolbnb-final-project\resources\js\store.js */"./resources/js/store.js");
->>>>>>> feat/tomtom_autocomplete
+module.exports = __webpack_require__(/*! D:\Users\Simone\Documents\Progetti\boolbnb-final-project\resources\js\store.js */"./resources/js/store.js");
 
 
 /***/ })
