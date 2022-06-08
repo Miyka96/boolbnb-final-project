@@ -1,11 +1,8 @@
 <template>
   <div id="search-bar" class="d-flex justify-content-center mx-3">
-    <input
-      type="text"
-      v-model="queryString"
-      class="px-3"
-      placeholder="Cerca l'appartamento dei tuoi sogni"
-    />
+    <input type="text" v-model="queryString" class="px-3 d-none d-md-block" placeholder="Cerca la casa dei tuoi sogni"/>
+    <input type="text" v-model="queryString" class="px-3 d-md-none" placeholder="Cerca una casa"/>
+
     <a :href="`/search/${ queryString }`">
     <!-- <router-link :to="{ name: 'search', params: { query: queryString } }"> -->
       <span
@@ -51,8 +48,6 @@ export default {
   // top: 40px;
   // left: 50%;
   // transform: translate(-50%, -50%);
-  // z-index: 10;
-  width: 100%;
 
   a {
     text-decoration: none;
@@ -67,6 +62,7 @@ export default {
   }
 
   input {
+    // min-width: 50vw;
     min-width: 350px;
     flex-grow: 1;
     border-right: 0;
@@ -110,6 +106,38 @@ export default {
           border: 2px solid #ff385c;
           height: 32px;
         }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 992px) {
+  #search-bar {
+    position: fixed;
+    top: 40px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
+
+@media screen and (max-width: 992px) {
+  #search-bar {
+    
+    input {
+      min-width: 40vw;
+    }
+  }
+}
+
+@media screen and (max-width: 576px) {
+  #search-bar {
+    
+    input {
+      max-width: 35vw;
+      min-width: auto;
+
+      &::placeholder {
+        font-size: 15px;
       }
     }
   }

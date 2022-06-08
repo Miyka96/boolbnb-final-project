@@ -29,12 +29,17 @@
 
 <body>
   <div>
-    <nav id="main-nav" class="navbar navbar-expand-md navbar-light bg-light shadow-sm fixed-top">
-      <div class="container d-flex justify-content-between align-items-center">
+    <nav id="main-nav" class="navbar navbar-expand navbar-light bg-light shadow-sm fixed-top">
+      <div class="container-xl d-flex justify-content-between align-items-center">
         {{-- LOGO --}}
-        <a class="navbar-brand " href="{{ url('/') }}">
+        <a class="navbar-brand d-none d-lg-inline" href="{{ url('/') }}">
           <figure>
             <img src="{{ URL::to('/') }}/images/logo-montserrat.png" alt="">
+          </figure>
+        </a>
+        <a class="navbar-brand d-lg-none" href="{{ url('/') }}">
+          <figure>
+            <img src="{{ URL::to('/') }}/images/logoNero.png" alt="">
           </figure>
         </a>
   
@@ -42,12 +47,6 @@
         <div id="app">
           <search-bar></search-bar>
         </div>
-        {{-- <ul class="navbar-nav">
-          <li class="nav-item">
-            <a class="nav-link" href="/search">Searchbar placeholder</a>
-          </li>
-          hello, qui dentro possiamo inserire i link di navigazione
-        </ul> --}}
   
         <!-- Right Side Of Navbar -->
         <ul class="navbar-nav">
@@ -66,7 +65,7 @@
                     align-items-center
                   ">
                 <i class="fa-solid fa-bars"></i>
-                <i class="fa-solid fa-circle-user @guest @else logged @endguest"></i>
+                <i class="fa-solid fa-circle-user @guest @else logged @endguest d-none d-md-inline"></i>
               </span>
             </a>
   
@@ -74,12 +73,12 @@
               @guest
                 {{-- Login --}}
                 <a class="dropdown-item" href="{{ route('login') }}">
-                  {{ __('Login') }}
+                  Accedi
                 </a>
                 {{-- Register --}}
                 @if (Route::has('register'))
                   <a class="dropdown-item" href="{{ route('register') }}">
-                    {{ __('Register') }}
+                    Registrati
                   </a>
                 @endif
               @else

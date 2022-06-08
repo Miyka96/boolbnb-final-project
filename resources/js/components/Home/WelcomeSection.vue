@@ -1,6 +1,6 @@
 <template>
   <section id="welcome-section">
-    <div class="container-fluid my-5">
+    <div class="container-fluid pb-5 pt-lg-5 mt-lg-5 mb-4">
       <div class="container">
         <div class="row align-items-center d-flex flex-wrap">
           <!-- first col -->
@@ -14,9 +14,9 @@
               text-center
             "
           >
-            <h3 class="mb-4">
+            <h2 class="mb-4">
               Benvenuto in <span class="highlight">Wowlidays</span>
-            </h3>
+            </h2>
             <h1>
               Ti aiuteremo a trovare
               <span class="highlight">case fantastiche </span> per i tuoi
@@ -24,14 +24,7 @@
             </h1>
           </div>
           <!-- second col -->
-          <div
-            class="
-              col-12 col-lg-6
-              py-lg-5
-              d-flex
-              justify-content-center
-            "
-          >
+          <div class="col-12 col-lg-6 py-lg-5 d-flex justify-content-center">
             <div class="card img-card">
               <div class="img-wrapper mt-4">
                 <img
@@ -64,6 +57,11 @@ export default {
 
 #welcome-section {
 
+  h1 {
+    font-size: 50px;
+    font-weight: 700;
+  }
+
   .highlight {
     color: $highlight;
     font-weight: 700;
@@ -73,11 +71,6 @@ export default {
     border: 4px solid $highlight !important;
     transform: skewX(-7deg);
     border-radius: 20px;
-
-    h1 {
-      font-size: 60px;
-      font-weight: 700;
-    }
 
     .img-wrapper {
       position: relative;
@@ -98,10 +91,13 @@ export default {
 
 @media screen and (max-width: 700px) {
   #welcome-section {
+    
+    h1 {
+      font-size: 40px;
+    }
+
     .card {
-      h1 {
-        font-size: 50px;
-      }
+
       .img-wrapper {
         transform: translate(20px, -20px);
       }

@@ -28,6 +28,13 @@ export default {
 #polaroid-wrapper {
   background: #f8fafc;
 
+  &::after { // per evitare margin collapse
+    content: "";
+    display: block;
+    width: 100%;
+    height: 1px;
+  }
+
   .polaroids-list {
     justify-content: space-evenly;
     gap: 2%;
@@ -36,13 +43,12 @@ export default {
 
 @media screen and (max-width: 700px) {
   #polaroid-wrapper {
-
     .polaroids-list {
       gap: 30px 15px;
 
       .polaroid {
-        max-width: calc( 40% );
-        min-width: calc( 40% );
+        max-width: calc(40%);
+        min-width: calc(40%);
       }
     }
   }
