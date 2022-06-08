@@ -8327,6 +8327,25 @@ exports.push([module.i, "img[data-v-40fc0132] {\n  width: 100%;\n  height: 100%;
 
 /***/ }),
 
+/***/ "./node_modules/css-loader/index.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/pages/HouseAdminShow.vue?vue&type=style&index=0&id=6b144b75&lang=scss&scoped=true&":
+/*!*******************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--7-2!./node_modules/sass-loader/dist/cjs.js??ref--7-3!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/pages/HouseAdminShow.vue?vue&type=style&index=0&id=6b144b75&lang=scss&scoped=true& ***!
+  \*******************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loader/lib/css-base.js */ "./node_modules/css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, "img[data-v-6b144b75] {\n  width: 100%;\n  height: 100%;\n  -o-object-fit: cover;\n     object-fit: cover;\n  -o-object-position: center;\n     object-position: center;\n  display: block;\n}\n.collage-wrapper[data-v-6b144b75] {\n  width: 100%;\n  height: 480px;\n  display: flex;\n}\n.collage-wrapper .big-pic[data-v-6b144b75] {\n  width: 85%;\n  height: 100%;\n}\n.collage-wrapper .small-pics[data-v-6b144b75] {\n  width: 15%;\n  height: 100%;\n}\n.collage-wrapper .small-pics figure[data-v-6b144b75] {\n  margin: 0;\n  padding: 0;\n  height: 25%;\n}\n.box-shadow[data-v-6b144b75] {\n  box-shadow: 0 4px 10px -4px #333;\n}\nul[data-v-6b144b75] {\n  display: flex;\n  flex-direction: column;\n  gap: 20px;\n  list-style: none;\n}\nul li[data-v-6b144b75] {\n  max-width: 90px;\n  padding: 5px;\n  border-radius: 20px;\n  text-align: center;\n  text-transform: uppercase;\n  font-family: \"Trebuchet MS\", \"Lucida Sans Unicode\", \"Lucida Grande\", \"Lucida Sans\", Arial, sans-serif;\n  font-size: 12px;\n  font-weight: 900;\n  background: #ff385c;\n}\n.ms__btn[data-v-6b144b75] {\n  font-family: \"Trebuchet MS\", \"Lucida Sans Unicode\", \"Lucida Grande\", \"Lucida Sans\", Arial, sans-serif;\n  font-weight: 900;\n  background: #ff385c;\n}\n.ms__font[data-v-6b144b75] {\n  font-family: \"Trebuchet MS\", \"Lucida Sans Unicode\", \"Lucida Grande\", \"Lucida Sans\", Arial, sans-serif;\n  font-weight: 900;\n  font-size: 18px;\n  color: #ff385c;\n}\n.ms__price[data-v-6b144b75] {\n  font-weight: 900;\n  color: #ff385c;\n}", ""]);
+
+// exports
+
+
+/***/ }),
+
 /***/ "./node_modules/css-loader/index.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/pages/Search.vue?vue&type=style&index=0&id=7262a471&lang=scss&scoped=true&":
 /*!***********************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/css-loader!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--7-2!./node_modules/sass-loader/dist/cjs.js??ref--7-3!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/pages/Search.vue?vue&type=style&index=0&id=7262a471&lang=scss&scoped=true& ***!
@@ -40102,6 +40121,36 @@ if(false) {}
 
 /***/ }),
 
+/***/ "./node_modules/style-loader/index.js!./node_modules/css-loader/index.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/pages/HouseAdminShow.vue?vue&type=style&index=0&id=6b144b75&lang=scss&scoped=true&":
+/*!***********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/style-loader!./node_modules/css-loader!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--7-2!./node_modules/sass-loader/dist/cjs.js??ref--7-3!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/pages/HouseAdminShow.vue?vue&type=style&index=0&id=6b144b75&lang=scss&scoped=true& ***!
+  \***********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+
+var content = __webpack_require__(/*! !../../../node_modules/css-loader!../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../node_modules/postcss-loader/src??ref--7-2!../../../node_modules/sass-loader/dist/cjs.js??ref--7-3!../../../node_modules/vue-loader/lib??vue-loader-options!./HouseAdminShow.vue?vue&type=style&index=0&id=6b144b75&lang=scss&scoped=true& */ "./node_modules/css-loader/index.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/pages/HouseAdminShow.vue?vue&type=style&index=0&id=6b144b75&lang=scss&scoped=true&");
+
+if(typeof content === 'string') content = [[module.i, content, '']];
+
+var transform;
+var insertInto;
+
+
+
+var options = {"hmr":true}
+
+options.transform = transform
+options.insertInto = undefined;
+
+var update = __webpack_require__(/*! ../../../node_modules/style-loader/lib/addStyles.js */ "./node_modules/style-loader/lib/addStyles.js")(content, options);
+
+if(content.locals) module.exports = content.locals;
+
+if(false) {}
+
+/***/ }),
+
 /***/ "./node_modules/style-loader/index.js!./node_modules/css-loader/index.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/pages/Search.vue?vue&type=style&index=0&id=7262a471&lang=scss&scoped=true&":
 /*!***************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/style-loader!./node_modules/css-loader!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--7-2!./node_modules/sass-loader/dist/cjs.js??ref--7-3!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/pages/Search.vue?vue&type=style&index=0&id=7262a471&lang=scss&scoped=true& ***!
@@ -57334,8 +57383,8 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\Users\Micae\dev\boolbnb-final-project\resources\js\admin.js */"./resources/js/admin.js");
-module.exports = __webpack_require__(/*! C:\Users\Micae\dev\boolbnb-final-project\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! /Users/marcocorallo/Desktop/boolbnb-final-project/resources/js/admin.js */"./resources/js/admin.js");
+module.exports = __webpack_require__(/*! /Users/marcocorallo/Desktop/boolbnb-final-project/resources/sass/app.scss */"./resources/sass/app.scss");
 
 
 /***/ })
