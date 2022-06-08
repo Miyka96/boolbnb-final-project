@@ -3,6 +3,7 @@
     <br />
     <br />
     <br />
+    <br />
     <div class="container p-4 bg-light d-none d-md-block">
       <div class="row">
         <div class="col-12 p-0">
@@ -17,24 +18,10 @@
       </div>
 
       <div class="row rounded-lg overflow-hidden py-2">
-        <div class="collage-wrapper">
+        <div class="thumb-wrapper">
           <figure class="big-pic">
             <img :src="house.image" :alt="house.name" />
           </figure>
-          <div class="small-pics">
-            <figure>
-              <img :src="house.image" :alt="house.name" />
-            </figure>
-            <figure>
-              <img :src="house.image" :alt="house.name" />
-            </figure>
-            <figure>
-              <img :src="house.image" :alt="house.name" />
-            </figure>
-            <figure>
-              <img :src="house.image" :alt="house.name" />
-            </figure>
-          </div>
         </div>
       </div>
     </div>
@@ -200,25 +187,19 @@ img {
   display: block;
 }
 
-.collage-wrapper {
+.thumb-wrapper {
   width: 100%;
   height: 480px;
-  display: flex;
 
   .big-pic {
-    width: 85%;
+    width: 100%;
     height: 100%;
   }
 
-  .small-pics {
-    width: 15%;
-    height: 100%;
-
-    figure {
-      margin: 0;
-      padding: 0;
-      height: calc(100% / 4);
-    }
+  figure {
+    margin: 0;
+    padding: 0;
+    height: calc(100% / 4);
   }
 }
 

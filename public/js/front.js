@@ -2814,19 +2814,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -3214,7 +3201,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "img[data-v-40fc0132] {\n  width: 100%;\n  height: 100%;\n  -o-object-fit: cover;\n     object-fit: cover;\n  -o-object-position: center;\n     object-position: center;\n  display: block;\n}\n.collage-wrapper[data-v-40fc0132] {\n  width: 100%;\n  height: 480px;\n  display: flex;\n}\n.collage-wrapper .big-pic[data-v-40fc0132] {\n  width: 85%;\n  height: 100%;\n}\n.collage-wrapper .small-pics[data-v-40fc0132] {\n  width: 15%;\n  height: 100%;\n}\n.collage-wrapper .small-pics figure[data-v-40fc0132] {\n  margin: 0;\n  padding: 0;\n  height: 25%;\n}\n.box-shadow[data-v-40fc0132] {\n  box-shadow: 0 4px 10px -4px #333;\n}\nul[data-v-40fc0132] {\n  display: flex;\n  flex-direction: column;\n  gap: 20px;\n  list-style: none;\n}\nul li[data-v-40fc0132] {\n  max-width: 90px;\n  padding: 5px;\n  border-radius: 20px;\n  text-align: center;\n  text-transform: uppercase;\n  font-family: \"Trebuchet MS\", \"Lucida Sans Unicode\", \"Lucida Grande\", \"Lucida Sans\", Arial, sans-serif;\n  font-size: 12px;\n  font-weight: 900;\n  background: #ff385c;\n}\n.ms__btn[data-v-40fc0132] {\n  font-family: \"Trebuchet MS\", \"Lucida Sans Unicode\", \"Lucida Grande\", \"Lucida Sans\", Arial, sans-serif;\n  font-weight: 900;\n  background: #ff385c;\n}\n.ms__font[data-v-40fc0132] {\n  font-family: \"Trebuchet MS\", \"Lucida Sans Unicode\", \"Lucida Grande\", \"Lucida Sans\", Arial, sans-serif;\n  font-weight: 900;\n  font-size: 18px;\n  color: #ff385c;\n}\n.ms__price[data-v-40fc0132] {\n  font-weight: 900;\n  color: #ff385c;\n}", ""]);
+exports.push([module.i, "img[data-v-40fc0132] {\n  width: 100%;\n  height: 100%;\n  -o-object-fit: cover;\n     object-fit: cover;\n  -o-object-position: center;\n     object-position: center;\n  display: block;\n}\n.thumb-wrapper[data-v-40fc0132] {\n  width: 100%;\n  height: 480px;\n}\n.thumb-wrapper .big-pic[data-v-40fc0132] {\n  width: 100%;\n  height: 100%;\n}\n.thumb-wrapper figure[data-v-40fc0132] {\n  margin: 0;\n  padding: 0;\n  height: 25%;\n}\n.box-shadow[data-v-40fc0132] {\n  box-shadow: 0 4px 10px -4px #333;\n}\nul[data-v-40fc0132] {\n  display: flex;\n  flex-direction: column;\n  gap: 20px;\n  list-style: none;\n}\nul li[data-v-40fc0132] {\n  max-width: 90px;\n  padding: 5px;\n  border-radius: 20px;\n  text-align: center;\n  text-transform: uppercase;\n  font-family: \"Trebuchet MS\", \"Lucida Sans Unicode\", \"Lucida Grande\", \"Lucida Sans\", Arial, sans-serif;\n  font-size: 12px;\n  font-weight: 900;\n  background: #ff385c;\n}\n.ms__btn[data-v-40fc0132] {\n  font-family: \"Trebuchet MS\", \"Lucida Sans Unicode\", \"Lucida Grande\", \"Lucida Sans\", Arial, sans-serif;\n  font-weight: 900;\n  background: #ff385c;\n}\n.ms__font[data-v-40fc0132] {\n  font-family: \"Trebuchet MS\", \"Lucida Sans Unicode\", \"Lucida Grande\", \"Lucida Sans\", Arial, sans-serif;\n  font-weight: 900;\n  font-size: 18px;\n  color: #ff385c;\n}\n.ms__price[data-v-40fc0132] {\n  font-weight: 900;\n  color: #ff385c;\n}", ""]);
 
 // exports
 
@@ -5453,6 +5440,8 @@ var render = function () {
     _vm._v(" "),
     _c("br"),
     _vm._v(" "),
+    _c("br"),
+    _vm._v(" "),
     _c("div", { staticClass: "container p-4 bg-light d-none d-md-block" }, [
       _c("div", { staticClass: "row" }, [
         _c("div", { staticClass: "col-12 p-0" }, [
@@ -5472,35 +5461,9 @@ var render = function () {
       ]),
       _vm._v(" "),
       _c("div", { staticClass: "row rounded-lg overflow-hidden py-2" }, [
-        _c("div", { staticClass: "collage-wrapper" }, [
+        _c("div", { staticClass: "thumb-wrapper" }, [
           _c("figure", { staticClass: "big-pic" }, [
             _c("img", { attrs: { src: _vm.house.image, alt: _vm.house.name } }),
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "small-pics" }, [
-            _c("figure", [
-              _c("img", {
-                attrs: { src: _vm.house.image, alt: _vm.house.name },
-              }),
-            ]),
-            _vm._v(" "),
-            _c("figure", [
-              _c("img", {
-                attrs: { src: _vm.house.image, alt: _vm.house.name },
-              }),
-            ]),
-            _vm._v(" "),
-            _c("figure", [
-              _c("img", {
-                attrs: { src: _vm.house.image, alt: _vm.house.name },
-              }),
-            ]),
-            _vm._v(" "),
-            _c("figure", [
-              _c("img", {
-                attrs: { src: _vm.house.image, alt: _vm.house.name },
-              }),
-            ]),
           ]),
         ]),
       ]),
