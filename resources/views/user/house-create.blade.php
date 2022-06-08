@@ -7,55 +7,13 @@
    @php
       $id = Auth::id();
    @endphp
-
-
+   
    <div class="container py-5 my-5">
       <h1 class="titolo-house-create">Aggiungi una nuova casa</h1>
 
       {{-- POSITION FORM --}}
-      <form class="mb-5" action="{{ route('user.position.store') }}" method="post">
-         @csrf
-         {{-- Indirizzo --}}
-         <div class="form-group">
-            <label for="address">Indirizzo e numero civico</label>
-            <input type="text" class="form-control" name="address" id="address" placeholder="Inserisci l'indirizzo ed il numero civico"
-               value="{{ old('address') }}">
-         </div>
-         {{-- Città --}}
-         <div class="form-group">
-            <label for="city">Città</label>
-            <input type="text" class="form-control" name="city" id="city" placeholder="Inserisci la città"
-               value="{{ old('city') }}">
-         </div>
-         {{-- Paese --}}
-         <div class="form-group">
-            <label for="country">Paese</label>
-            <input type="text" class="form-control" name="country" id="country" placeholder="Inserisci il paese"
-               value="{{ old('country') }}">
-         </div>
-         {{-- Codice postale --}}
-         <div class="form-group">
-            <label for="zip_code">Codice Postale</label>
-            <input type="number" class="form-control" placeholder="Inserisci il codice postale" name="zip_code" id="zip_code" value="{{ old('zip_code') }}">
-         </div>
 
-
-         {{-- Submit btn --}}
-         <button class="btn btn-primary" type="submit">
-            Conferma posizione casa
-         </button>
-
-         {{-- Feedback: creazione andata a buon fine --}}
-         @if (Session::has('message'))
-            <div class="alert alert-info">{{ Session::get('message') }}</div>
-         @endif
-
-         {{-- Feedback: creazione NON andata a buon fine --}}
-         @if (Session::has('error'))
-            <div class="alert alert-danger">{{ Session::get('error') }}</div>
-         @endif
-      </form>
-
+      
 
       {{-- HOUSE FORM --}}
       <form action="{{ route('user.houses.store') }}" method="post" id="create-house-form">
@@ -245,4 +203,6 @@
          </button>
       </form>
    </div>
+
+   <script src="https://cdn.jsdelivr.net/npm/@tarekraafat/autocomplete.js@10.2.7/dist/autoComplete.min.js"></script>
 @endsection

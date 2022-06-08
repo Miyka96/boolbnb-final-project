@@ -2047,6 +2047,99 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/Geocode.vue?vue&type=script&lang=js&":
+/*!******************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/Geocode.vue?vue&type=script&lang=js& ***!
+  \******************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_0__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  name: "GeoSearch",
+  data: function data() {
+    return {
+      baseURL: "api.tomtom.com",
+      search: "",
+      places: [],
+      lat: "",
+      lon: "",
+      streetNum: "",
+      address: "",
+      city: "",
+      country: "",
+      zipCode: ""
+    };
+  },
+  methods: {
+    searchItems: function searchItems() {
+      var _this = this;
+
+      if (this.search.length > 8) {
+        axios__WEBPACK_IMPORTED_MODULE_0___default.a.get("https://".concat(this.baseURL, "/search/2/geocode/").concat(this.search, ".json"), {
+          params: {
+            key: "DINngHSiTz58Z5fDF5pThkg1IrJA87je",
+            limit: 5,
+            countrySet: "IT/ITA",
+            radius: 20000
+          }
+        }).then(function (res) {
+          console.log(res.data.results);
+          _this.places = res.data.results;
+        })["catch"](function (error) {
+          console.log(error.response);
+        });
+      }
+    },
+    saveAddress: function saveAddress(element) {
+      this.lat = element.position.lat;
+      this.lon = element.position.lon;
+      this.streetName = element.address.streetName;
+
+      if (element.address.streetNumber == undefined) {
+        this.address = this.streetName;
+      } else {
+        this.streetNum = element.address.streetNumber;
+        this.address = this.streetName + ' ' + this.streetNum;
+      }
+
+      this.city = element.address.countrySecondarySubdivision;
+      this.country = element.address.country;
+      this.zipCode = element.address.postalCode;
+      console.log(this.lat, this.lon, this.address, this.city, this.country, this.zipCode);
+    }
+  }
+});
+
+/***/ }),
+
 /***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/Home/CardShowcase.vue?vue&type=script&lang=js&":
 /*!****************************************************************************************************************************************************************************!*\
   !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/Home/CardShowcase.vue?vue&type=script&lang=js& ***!
@@ -2807,39 +2900,9 @@ __webpack_require__.r(__webpack_exports__);
   !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/pages/Home.vue?vue&type=script&lang=js& ***!
   \**********************************************************************************************************************************************************/
 /*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports) {
 
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _components_Home_MainBanner_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../components/Home/MainBanner.vue */ "./resources/js/components/Home/MainBanner.vue");
-/* harmony import */ var _components_Home_CardShowcase_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../components/Home/CardShowcase.vue */ "./resources/js/components/Home/CardShowcase.vue");
-/* harmony import */ var _components_Home_SectionVue_vue__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../components/Home/SectionVue.vue */ "./resources/js/components/Home/SectionVue.vue");
-/* harmony import */ var _components_Home_PolaroidsWrapper_vue__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../components/Home/PolaroidsWrapper.vue */ "./resources/js/components/Home/PolaroidsWrapper.vue");
-/* harmony import */ var _components_FooterComponent_vue__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../components/FooterComponent.vue */ "./resources/js/components/FooterComponent.vue");
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-
-
-
-
-
-/* harmony default export */ __webpack_exports__["default"] = ({
-  components: {
-    Banner: _components_Home_MainBanner_vue__WEBPACK_IMPORTED_MODULE_0__["default"],
-    CardsShowcase: _components_Home_CardShowcase_vue__WEBPACK_IMPORTED_MODULE_1__["default"],
-    SectionVue: _components_Home_SectionVue_vue__WEBPACK_IMPORTED_MODULE_2__["default"],
-    PolaroidsWrapper: _components_Home_PolaroidsWrapper_vue__WEBPACK_IMPORTED_MODULE_3__["default"],
-    Footer: _components_FooterComponent_vue__WEBPACK_IMPORTED_MODULE_4__["default"]
-  }
-});
+throw new Error("Module build failed (from ./node_modules/babel-loader/lib/index.js):\nSyntaxError: C:\\Users\\Micae\\dev\\boolbnb-final-project\\resources\\js\\pages\\Home.vue: Unexpected token (23:0)\n\n\u001b[0m \u001b[90m 21 |\u001b[39m \u001b[36mimport\u001b[39m \u001b[33mPolaroidsWrapper\u001b[39m \u001b[36mfrom\u001b[39m \u001b[32m\"../components/Home/PolaroidsWrapper.vue\"\u001b[39m\u001b[33m;\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 22 |\u001b[39m \u001b[36mimport\u001b[39m \u001b[33mFooter\u001b[39m \u001b[36mfrom\u001b[39m \u001b[32m\"../components/FooterComponent.vue\"\u001b[39m\u001b[33m;\u001b[39m\u001b[0m\n\u001b[0m\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 23 |\u001b[39m \u001b[33m<<\u001b[39m\u001b[33m<<\u001b[39m\u001b[33m<<\u001b[39m\u001b[33m<\u001b[39m \u001b[33mHEAD\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m    |\u001b[39m \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 24 |\u001b[39m \u001b[33m===\u001b[39m\u001b[33m===\u001b[39m\u001b[33m=\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 25 |\u001b[39m \u001b[36mimport\u001b[39m \u001b[33mGeoSearch\u001b[39m \u001b[36mfrom\u001b[39m \u001b[32m\"../components/Geocode.vue\"\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 26 |\u001b[39m \u001b[90m// import SearchBar from '../components/Search/SearchBar.vue'\u001b[39m\u001b[0m\n    at instantiate (C:\\Users\\Micae\\dev\\boolbnb-final-project\\node_modules\\@babel\\parser\\lib\\index.js:72:32)\n    at constructor (C:\\Users\\Micae\\dev\\boolbnb-final-project\\node_modules\\@babel\\parser\\lib\\index.js:358:12)\n    at Parser.raise (C:\\Users\\Micae\\dev\\boolbnb-final-project\\node_modules\\@babel\\parser\\lib\\index.js:3336:19)\n    at Parser.unexpected (C:\\Users\\Micae\\dev\\boolbnb-final-project\\node_modules\\@babel\\parser\\lib\\index.js:3374:16)\n    at Parser.parseExprAtom (C:\\Users\\Micae\\dev\\boolbnb-final-project\\node_modules\\@babel\\parser\\lib\\index.js:13120:22)\n    at Parser.parseExprSubscripts (C:\\Users\\Micae\\dev\\boolbnb-final-project\\node_modules\\@babel\\parser\\lib\\index.js:12645:23)\n    at Parser.parseUpdate (C:\\Users\\Micae\\dev\\boolbnb-final-project\\node_modules\\@babel\\parser\\lib\\index.js:12624:21)\n    at Parser.parseMaybeUnary (C:\\Users\\Micae\\dev\\boolbnb-final-project\\node_modules\\@babel\\parser\\lib\\index.js:12595:23)\n    at Parser.parseMaybeUnaryOrPrivate (C:\\Users\\Micae\\dev\\boolbnb-final-project\\node_modules\\@babel\\parser\\lib\\index.js:12389:61)\n    at Parser.parseExprOps (C:\\Users\\Micae\\dev\\boolbnb-final-project\\node_modules\\@babel\\parser\\lib\\index.js:12396:23)\n    at Parser.parseMaybeConditional (C:\\Users\\Micae\\dev\\boolbnb-final-project\\node_modules\\@babel\\parser\\lib\\index.js:12366:23)\n    at Parser.parseMaybeAssign (C:\\Users\\Micae\\dev\\boolbnb-final-project\\node_modules\\@babel\\parser\\lib\\index.js:12318:21)\n    at Parser.parseExpressionBase (C:\\Users\\Micae\\dev\\boolbnb-final-project\\node_modules\\@babel\\parser\\lib\\index.js:12254:23)\n    at C:\\Users\\Micae\\dev\\boolbnb-final-project\\node_modules\\@babel\\parser\\lib\\index.js:12248:39\n    at Parser.allowInAnd (C:\\Users\\Micae\\dev\\boolbnb-final-project\\node_modules\\@babel\\parser\\lib\\index.js:14343:16)\n    at Parser.parseExpression (C:\\Users\\Micae\\dev\\boolbnb-final-project\\node_modules\\@babel\\parser\\lib\\index.js:12248:17)\n    at Parser.parseStatementContent (C:\\Users\\Micae\\dev\\boolbnb-final-project\\node_modules\\@babel\\parser\\lib\\index.js:14783:23)\n    at Parser.parseStatement (C:\\Users\\Micae\\dev\\boolbnb-final-project\\node_modules\\@babel\\parser\\lib\\index.js:14640:17)\n    at Parser.parseBlockOrModuleBlockBody (C:\\Users\\Micae\\dev\\boolbnb-final-project\\node_modules\\@babel\\parser\\lib\\index.js:15283:25)\n    at Parser.parseBlockBody (C:\\Users\\Micae\\dev\\boolbnb-final-project\\node_modules\\@babel\\parser\\lib\\index.js:15274:10)\n    at Parser.parseProgram (C:\\Users\\Micae\\dev\\boolbnb-final-project\\node_modules\\@babel\\parser\\lib\\index.js:14558:10)\n    at Parser.parseTopLevel (C:\\Users\\Micae\\dev\\boolbnb-final-project\\node_modules\\@babel\\parser\\lib\\index.js:14545:25)\n    at Parser.parse (C:\\Users\\Micae\\dev\\boolbnb-final-project\\node_modules\\@babel\\parser\\lib\\index.js:16508:10)\n    at parse (C:\\Users\\Micae\\dev\\boolbnb-final-project\\node_modules\\@babel\\parser\\lib\\index.js:16560:38)\n    at parser (C:\\Users\\Micae\\dev\\boolbnb-final-project\\node_modules\\@babel\\core\\lib\\parser\\index.js:52:34)\n    at parser.next (<anonymous>)\n    at normalizeFile (C:\\Users\\Micae\\dev\\boolbnb-final-project\\node_modules\\@babel\\core\\lib\\transformation\\normalize-file.js:87:38)\n    at normalizeFile.next (<anonymous>)\n    at run (C:\\Users\\Micae\\dev\\boolbnb-final-project\\node_modules\\@babel\\core\\lib\\transformation\\index.js:31:50)\n    at run.next (<anonymous>)\n    at Function.transform (C:\\Users\\Micae\\dev\\boolbnb-final-project\\node_modules\\@babel\\core\\lib\\transform.js:25:41)\n    at transform.next (<anonymous>)\n    at step (C:\\Users\\Micae\\dev\\boolbnb-final-project\\node_modules\\gensync\\index.js:261:32)\n    at C:\\Users\\Micae\\dev\\boolbnb-final-project\\node_modules\\gensync\\index.js:273:13\n    at async.call.result.err.err (C:\\Users\\Micae\\dev\\boolbnb-final-project\\node_modules\\gensync\\index.js:223:11)");
 
 /***/ }),
 
@@ -40790,6 +40853,100 @@ render._withStripped = true
 
 /***/ }),
 
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/Geocode.vue?vue&type=template&id=366ac723&scoped=true&":
+/*!**********************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/Geocode.vue?vue&type=template&id=366ac723&scoped=true& ***!
+  \**********************************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function () {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "nav",
+    { staticClass: "d-flex flex-column container" },
+    [
+      _c("div", { attrs: { id: "search" } }, [
+        _c("input", {
+          directives: [
+            {
+              name: "model",
+              rawName: "v-model",
+              value: _vm.search,
+              expression: "search",
+            },
+          ],
+          staticClass: "form-control mr-sm-2",
+          attrs: {
+            placeholder: "Inserisci indirizzo",
+            type: "search",
+            id: "search-bar",
+          },
+          domProps: { value: _vm.search },
+          on: {
+            keyup: function ($event) {
+              return _vm.searchItems()
+            },
+            input: function ($event) {
+              if ($event.target.composing) {
+                return
+              }
+              _vm.search = $event.target.value
+            },
+          },
+        }),
+      ]),
+      _vm._v(" "),
+      _vm._l(_vm.places, function (el) {
+        return _c("div", { key: el.id, staticClass: "d-flex flex-column" }, [
+          _c(
+            "ul",
+            {
+              staticClass: "d-flex flex-column list-group ul",
+              attrs: { id: "ul" },
+            },
+            [
+              el.address.freeformAddress
+                ? _c(
+                    "li",
+                    {
+                      staticClass: "list-group-item list-group-item-action",
+                      on: {
+                        click: function ($event) {
+                          return _vm.saveAddress(el)
+                        },
+                      },
+                    },
+                    [
+                      _vm._v(
+                        "\n                " +
+                          _vm._s(el.address.freeformAddress) +
+                          "\n            "
+                      ),
+                    ]
+                  )
+                : _vm._e(),
+            ]
+          ),
+        ])
+      }),
+    ],
+    2
+  )
+}
+var staticRenderFns = []
+render._withStripped = true
+
+
+
+/***/ }),
+
 /***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/Home/CardShowcase.vue?vue&type=template&id=08cf00d2&scoped=true&":
 /*!********************************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/Home/CardShowcase.vue?vue&type=template&id=08cf00d2&scoped=true& ***!
@@ -41802,9 +41959,14 @@ var render = function () {
     { attrs: { id: "home" } },
     [
       _c("Banner"),
-      _vm._v(" "),
+      _vm._v("\n<<<<<<< HEAD\n    "),
       _c("PolaroidsWrapper"),
+      _vm._v("\n=======\n    "),
       _vm._v(" "),
+      _c("Polaroid"),
+      _vm._v(" "),
+      _c("GeoSearch"),
+      _vm._v("\n>>>>>>> feat/tomtom_autocomplete\n    "),
       _c("SectionVue"),
       _vm._v(" "),
       _c("CardsShowcase"),
@@ -54775,6 +54937,7 @@ var map = {
 	"./components/AddbuttonComponent.vue": "./resources/js/components/AddbuttonComponent.vue",
 	"./components/ErrorMessage.vue": "./resources/js/components/ErrorMessage.vue",
 	"./components/FooterComponent.vue": "./resources/js/components/FooterComponent.vue",
+	"./components/Geocode.vue": "./resources/js/components/Geocode.vue",
 	"./components/Home/CardShowcase.vue": "./resources/js/components/Home/CardShowcase.vue",
 	"./components/Home/MainBanner.vue": "./resources/js/components/Home/MainBanner.vue",
 	"./components/Home/PolaroidsWrapper.vue": "./resources/js/components/Home/PolaroidsWrapper.vue",
@@ -55163,6 +55326,75 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_FooterComponent_vue_vue_type_template_id_abfbddf2_scoped_true___WEBPACK_IMPORTED_MODULE_0__["render"]; });
 
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_FooterComponent_vue_vue_type_template_id_abfbddf2_scoped_true___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
+
+/***/ }),
+
+/***/ "./resources/js/components/Geocode.vue":
+/*!*********************************************!*\
+  !*** ./resources/js/components/Geocode.vue ***!
+  \*********************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _Geocode_vue_vue_type_template_id_366ac723_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Geocode.vue?vue&type=template&id=366ac723&scoped=true& */ "./resources/js/components/Geocode.vue?vue&type=template&id=366ac723&scoped=true&");
+/* harmony import */ var _Geocode_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Geocode.vue?vue&type=script&lang=js& */ "./resources/js/components/Geocode.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _Geocode_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _Geocode_vue_vue_type_template_id_366ac723_scoped_true___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _Geocode_vue_vue_type_template_id_366ac723_scoped_true___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  "366ac723",
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/components/Geocode.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/components/Geocode.vue?vue&type=script&lang=js&":
+/*!**********************************************************************!*\
+  !*** ./resources/js/components/Geocode.vue?vue&type=script&lang=js& ***!
+  \**********************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_Geocode_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib??ref--4-0!../../../node_modules/vue-loader/lib??vue-loader-options!./Geocode.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/Geocode.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_Geocode_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/js/components/Geocode.vue?vue&type=template&id=366ac723&scoped=true&":
+/*!****************************************************************************************!*\
+  !*** ./resources/js/components/Geocode.vue?vue&type=template&id=366ac723&scoped=true& ***!
+  \****************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Geocode_vue_vue_type_template_id_366ac723_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../node_modules/vue-loader/lib??vue-loader-options!./Geocode.vue?vue&type=template&id=366ac723&scoped=true& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/Geocode.vue?vue&type=template&id=366ac723&scoped=true&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Geocode_vue_vue_type_template_id_366ac723_scoped_true___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Geocode_vue_vue_type_template_id_366ac723_scoped_true___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
 
 
 
@@ -56926,8 +57158,8 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /Users/marcocorallo/Desktop/boolbnb-final-project/resources/js/admin.js */"./resources/js/admin.js");
-module.exports = __webpack_require__(/*! /Users/marcocorallo/Desktop/boolbnb-final-project/resources/sass/app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! C:\Users\Micae\dev\boolbnb-final-project\resources\js\admin.js */"./resources/js/admin.js");
+module.exports = __webpack_require__(/*! C:\Users\Micae\dev\boolbnb-final-project\resources\sass\app.scss */"./resources/sass/app.scss");
 
 
 /***/ })
