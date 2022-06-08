@@ -2,9 +2,13 @@
   <section id="card-showcase">
     <div class="container-fluid">
       <div class="row">
-        <div class="col" v-for="el in houses" :key="el.id">
-          <HouseCard :house="el" />
-        </div>
+        <template v-for="el in filteredHouses">
+          <HouseCard
+            v-if="!positionFilter || calcDistanceLatLong(targetLat, targetLong, el.position.latitude, el.position.longitude) <= parseInt(radius)"
+            :house="el"
+            :key="el.id"
+          />
+        </template>
       </div>
     </div>
   </section>
@@ -12,45 +16,158 @@
 
 <script>
 import HouseCard from "../HouseCard.vue";
+import state from '../../store';
 
 export default {
   name: "CardShowcase",
+  props: {
+    sponsoredOnly: {
+      Type: Boolean,
+      default: false,
+    },
+    roomNum: {
+      type: Number,
+      default: 1,
+    },
+    bedsNum: {
+      type: Number,
+      default: 1,
+    },
+    services: {
+      type: Array,
+      // default: []
+    },
+    radius: {
+      type: Number,
+      default: 20,
+    },
+    positionFilter: {
+      type: Boolean,
+      default: false
+    }
+  },
   components: {
     HouseCard,
   },
   data() {
     return {
       houses: [],
+      filteredHouses: [],
       lastPage: 0,
       currentPage: 1,
+      // targetLat: state.targetPosition.lat,
+      // targetLong: state.targetPosition.long
     };
   },
+  computed: {
+    targetLat() {
+      console.log(state.targetPosition.lat)
+      return state.targetPosition.lat
+    },
+    targetLong() {
+      console.log(state.targetPosition.long)
+      return state.targetPosition.long
+    }
+  },
+  watch: {
+    roomNum() {
+      this.fetchHouses(1, 100, this.sponsoredOnly, this.roomNum, this.bedsNum);
+    },
+    bedsNum() {
+      this.fetchHouses(1, 100, this.sponsoredOnly, this.roomNum, this.bedsNum);
+    },
+    services() {
+      this.filterHouses();
+    },
+    houses() {
+      this.filterHouses();
+    },
+    radius() {
+      this.fetchHouses(1, 100, this.sponsoredOnly, this.roomNum, this.bedsNum);
+    },
+  },
   methods: {
-    fetchHouses(page = 1, paginate = 12, sponsoredOnly = 'true') {
+    fetchHouses(
+      page = 1,
+      paginate = 12,
+      sponsoredOnly = false,
+      roomNum = 1,
+      bedsNum = 1,
+    ) {
       //default value
       axios
-        .get(`/api/houses-index/${paginate}/${sponsoredOnly}`, {
-          params: {
-            page, // equivalente a page: page
-          },
-        })
+        .get(
+          `/api/houses-index/${paginate}/${sponsoredOnly}/${roomNum}/${bedsNum}`,
+          {
+            params: {
+              page,
+            },
+          }
+        )
         .then((res) => {
-          console.log('QUI');
-          console.log(res.data);
+          // console.log("QUI");
+          // console.log(res.data);
           const { houses } = res.data;
-          // const { data, last_page, current_page } = houses;
-          // this.houses = data;
-          this.houses = houses;
-          // this.currentPage = current_page;
-          // this.lastPage = last_page;
+
+          if (this.sponsoredOnly) {
+            const { data, last_page, current_page } = houses;
+            this.houses = data;
+            this.currentPage = current_page;
+            this.lastPage = last_page;
+          } else {
+            this.houses = houses;
+          }
+          console.log(this.houses);
         })
         .catch((err) => {
           console.warn(err);
         });
     },
+    filterHouses() { // filtra le case per i servizi selezionati
+      if (!this.sponsoredOnly && this.services && this.services.length > 0) {
+        this.filteredHouses = [];
+
+        this.houses.forEach((house) => {
+          const activeServices = [];
+
+          house.services.forEach((service) => {
+            activeServices.push(service.id);
+          });
+
+          // se i servizi della casa contengono tutti i servizi indicati nelle checkboxes
+          if (
+            activeServices &&
+            this.services.every((element) => {
+              return activeServices.includes(element);
+            })
+          ) {
+            this.filteredHouses.push(house);
+          }
+        });
+      } else {
+        this.filteredHouses = this.houses;
+      }
+    },
+    calcDistanceLatLong: function(lat1, long1, lat2, long2) { // calcola la distanza tra due punti che utilizzano le coordinate lat e long
+      const R = 6371e3; // raggio terrestre in metri
+      const φ1 = lat1 * Math.PI/180; // φ, λ in radianti
+      const φ2 = lat2 * Math.PI/180;
+      const Δφ = (lat2-lat1) * Math.PI/180;
+      const Δλ = (long2-long1) * Math.PI/180;
+
+      // Formula di Haversine
+      const a = Math.sin(Δφ/2) * Math.sin(Δφ/2) +
+                Math.cos(φ1) * Math.cos(φ2) *
+                Math.sin(Δλ/2) * Math.sin(Δλ/2);
+      const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a));
+
+      return R * c / 1000; // in km
+    }
   },
   mounted() {
-    this.fetchHouses(1, 100, 'false');
+    console.log('state')
+    console.log(state.targetPosition)
+    this.fetchHouses(1, 100, this.sponsoredOnly, this.roomNum, this.bedsNum);
   },
 };
 </script>
@@ -58,7 +175,6 @@ export default {
 <style lang="scss" scoped>
 #card-showcase {
   padding: 80px;
-  // border: 1px solid black;
   overflow: hidden;
 
   .container-fluid {

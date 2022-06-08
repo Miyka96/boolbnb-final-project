@@ -12652,7 +12652,12 @@ var state = vue__WEBPACK_IMPORTED_MODULE_0___default.a.observable({
     title: 'Roma',
     img: 'https://images.unsplash.com/photo-1515542622106-78bda8ba0e5b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80',
     query: 'Roma'
-  }]
+  }],
+  targetPosition: {
+    query: '',
+    lat: 0,
+    "long": 0
+  }
 });
 /* harmony default export */ __webpack_exports__["default"] = (state); // APPUNTI MICA ----
 

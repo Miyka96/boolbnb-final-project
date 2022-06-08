@@ -1,21 +1,23 @@
 <template>
-  <router-link tag="a" :to="{ name: 'house.show', params: { id: house.id } }">
-    <div class="card" style="width: 18rem">
-      <img :src="house.image" class="card-img-top" alt="" />
-      <div class="card-body">
-        <h5 class="card-title">{{ house.title }}</h5>
-        <p class="card-position">{{ house.position.city }}</p>
-        <p class="card-price">
-          <strong>&euro;{{ house.cost_per_night }}</strong
-          >/night
-        </p>
-        <p class="card-rating">Id: {{ house.id }}</p>
+  <div class="col">
+    <router-link tag="a" :to="{ name: 'house.show', params: { id: house.id } }">
+      <div class="card" style="width: 18rem">
+        <img :src="house.image" class="card-img-top" alt="" />
+        <div class="card-body">
+          <h5 class="card-title">{{ house.title }}</h5>
+          <p class="card-position">{{ house.position.city }}</p>
+          <p class="card-price">
+            <strong>&euro;{{ house.cost_per_night }}</strong
+            >/night
+          </p>
+          <p class="card-rating">Id: {{ house.id }}</p>
+        </div>
+        <span :class="[is_sponsored ? 'active' : '', 'sponsored_icon']">
+          <i class="fa-solid fa-star"></i>
+        </span>
       </div>
-      <span :class="[is_sponsored ? 'active' : '', 'sponsored_icon']">
-        <i class="fa-solid fa-star"></i>
-      </span>
-    </div>
-  </router-link>
+    </router-link>
+  </div>
 </template>
 
 <script>
@@ -32,28 +34,11 @@ export default {
       is_sponsored: false,
     };
   },
-  // watch: {
-  //   house() {
-  //     const sponsor_start = new Date(this.house.sponsor_start);
-  //     const sponsor_end = new Date(this.house.sponsor_end);
-
-  //     if (sponsor_start <= now && sponsor_end > now) {
-  //       this.is_sponsored = true;
-  //     } else {
-  //       this.is_sponsored = false;
-  //     }
-  //   },
-  // },
   mounted() {
     const sponsor_start = new Date(this.house.sponsor_start);
     const sponsor_end = new Date(this.house.sponsor_end);
     const now = new Date();
-    // console.log(this.house.id);
-    // console.log(this.house);
-    // console.log(sponsor_start);
-    // console.log(sponsor_end);
-    // console.log(now);
-    // console.log(sponsor_start <= now && sponsor_end > now)
+
     if (sponsor_start <= now && sponsor_end > now) {
       this.is_sponsored = true;
     } else {
@@ -150,7 +135,7 @@ a {
     color: white;
     font-size: 26px;
     text-shadow: 2px 2px 2px rgba($color: black, $alpha: 0.8);
-    transition: all ease-in-out .3s;
+    transition: all ease-in-out 0.3s;
 
     &.active {
       display: block;
