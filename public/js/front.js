@@ -2150,7 +2150,8 @@ __webpack_require__.r(__webpack_exports__);
 
       this.city = element.address.countrySecondarySubdivision;
       this.country = element.address.country;
-      this.zipCode = element.address.postalCode; // console.log(this.lat,this.lon,this.address,this.city,this.country,this.zipCode)
+      this.zipCode = element.address.postalCode;
+      console.log(this.lat, this.lon, this.address, this.city, this.country, this.zipCode);
     }
   }
 });
