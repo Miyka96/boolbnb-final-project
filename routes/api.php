@@ -28,16 +28,19 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 
 Route::namespace('Api')->group(function () {
 
-   Route::resource('houses', 'HouseController')
-      ->parameters(['houses' => 'house:id'])
-      ->only(['index', 'show']);
+  Route::resource('houses', 'HouseController')
+    ->parameters(['houses' => 'house:id'])
+    ->only('show');
 
-   Route::get('services', 'ServiceController@index')->name('services');
+  Route::get('houses-index/{paginate?}/{sponsored_only?}/{room_num?}/{beds_num?}', 'HouseController@index');
+  Route::get('filter/{room_num?}/{beds_num?}/{services?}', 'FilterController@index');
 
-   Route::post('messages_create', function (Request $request) {
-      return Message::create($request->all);
-   });
-   Route::post('messages_store', 'MessageController@store');
+  Route::get('services', 'ServiceController@index')->name('services');
 
-   Route::get('filter/{room_num?}/{beds_num?}/{services?}', 'FilterController@index');
+  Route::post('messages_create', function (Request $request) {
+    return Message::create($request->all);
+  });
+  Route::post('messages_store', 'MessageController@store');
+
+  // Route::get('filter/{room_num?}/{beds_num?}/{services?}', 'FilterController@index');
 });

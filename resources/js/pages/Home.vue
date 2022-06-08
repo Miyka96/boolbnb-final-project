@@ -3,7 +3,7 @@
     <Banner />
     <PolaroidsWrapper />
     <SectionVue />
-    <CardsShowcase />
+    <CardsShowcase :sponsoredOnly="true"/>
     <Footer />
   </div>
 </template>
