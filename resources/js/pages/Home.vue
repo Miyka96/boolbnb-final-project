@@ -4,7 +4,6 @@
     <PolaroidsWrapper />
     <SectionVue />
     <CardsShowcase :sponsoredOnly="true" />
-    <Footer />
   </div>
 </template>
 
