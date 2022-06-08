@@ -45,6 +45,9 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::any('/send/message', 'SendMessageController@send');
 Route::any('/send/visualization', 'VisualizationController@send');
 
+Route::get('/payment/make', 'PaymentController@make')->name('payment.make');
+Route::post('sponsor/send/{sponsor_id}', 'SponsorshipController@store');
+
 Route::fallback(function() {
    return view('home');
 });
