@@ -2,7 +2,7 @@
   <div class="mt-5 py-5">
     <div class="container">
       <h1 class="pt-4">
-        Case disponibili a <span style="color: #ff385c">{{ queryParams }}</span>
+        Stai cercando le case disponibili a <em>{{ queryParams }}</em>
       </h1>
       lat: {{ lat }} lon: {{ lon }}
     </div>
@@ -53,4 +53,10 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import '../../sass/_variables.scss';
+
+em {
+  color: $highlight;
+  font-style: normal;
+}
 </style>
