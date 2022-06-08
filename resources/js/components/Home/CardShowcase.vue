@@ -1,10 +1,24 @@
 <template>
   <section id="card-showcase">
     <div class="container-fluid">
+      <div class="title pb-4" v-if="this.sponsoredOnly">
+        <h2>Non riesci a deciderti?</h2>
+        <h1>
+          Ecco alcune delle nostre proposte, <span class="highlight">wow!</span>
+        </h1>
+      </div>
       <div class="row">
         <template v-for="el in filteredHouses">
           <HouseCard
-            v-if="!positionFilter || calcDistanceLatLong(targetLat, targetLong, el.position.latitude, el.position.longitude) <= parseInt(radius)"
+            v-if="
+              !positionFilter ||
+              calcDistanceLatLong(
+                targetLat,
+                targetLong,
+                el.position.latitude,
+                el.position.longitude
+              ) <= parseInt(radius)
+            "
             :house="el"
             :key="el.id"
           />
@@ -16,7 +30,7 @@
 
 <script>
 import HouseCard from "../HouseCard.vue";
-import state from '../../store';
+import state from "../../store";
 
 export default {
   name: "CardShowcase",
@@ -43,8 +57,8 @@ export default {
     },
     positionFilter: {
       type: Boolean,
-      default: false
-    }
+      default: false,
+    },
   },
   components: {
     HouseCard,
@@ -61,13 +75,13 @@ export default {
   },
   computed: {
     targetLat() {
-      console.log(state.targetPosition.lat)
-      return state.targetPosition.lat
+      console.log(state.targetPosition.lat);
+      return state.targetPosition.lat;
     },
     targetLong() {
-      console.log(state.targetPosition.long)
-      return state.targetPosition.long
-    }
+      console.log(state.targetPosition.long);
+      return state.targetPosition.long;
+    },
   },
   watch: {
     roomNum() {
@@ -92,7 +106,7 @@ export default {
       paginate = 12,
       sponsoredOnly = false,
       roomNum = 1,
-      bedsNum = 1,
+      bedsNum = 1
     ) {
       //default value
       axios
@@ -123,7 +137,8 @@ export default {
           console.warn(err);
         });
     },
-    filterHouses() { // filtra le case per i servizi selezionati
+    filterHouses() {
+      // filtra le case per i servizi selezionati
       if (!this.sponsoredOnly && this.services && this.services.length > 0) {
         this.filteredHouses = [];
 
@@ -148,31 +163,34 @@ export default {
         this.filteredHouses = this.houses;
       }
     },
-    calcDistanceLatLong: function(lat1, long1, lat2, long2) { // calcola la distanza tra due punti che utilizzano le coordinate lat e long
+    calcDistanceLatLong: function (lat1, long1, lat2, long2) {
+      // calcola la distanza tra due punti che utilizzano le coordinate lat e long
       const R = 6371e3; // raggio terrestre in metri
-      const φ1 = lat1 * Math.PI/180; // φ, λ in radianti
-      const φ2 = lat2 * Math.PI/180;
-      const Δφ = (lat2-lat1) * Math.PI/180;
-      const Δλ = (long2-long1) * Math.PI/180;
+      const φ1 = (lat1 * Math.PI) / 180; // φ, λ in radianti
+      const φ2 = (lat2 * Math.PI) / 180;
+      const Δφ = ((lat2 - lat1) * Math.PI) / 180;
+      const Δλ = ((long2 - long1) * Math.PI) / 180;
 
       // Formula di Haversine
-      const a = Math.sin(Δφ/2) * Math.sin(Δφ/2) +
-                Math.cos(φ1) * Math.cos(φ2) *
-                Math.sin(Δλ/2) * Math.sin(Δλ/2);
-      const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a));
+      const a =
+        Math.sin(Δφ / 2) * Math.sin(Δφ / 2) +
+        Math.cos(φ1) * Math.cos(φ2) * Math.sin(Δλ / 2) * Math.sin(Δλ / 2);
+      const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
 
-      return R * c / 1000; // in km
-    }
+      return (R * c) / 1000; // in km
+    },
   },
   mounted() {
-    console.log('state')
-    console.log(state.targetPosition)
+    console.log("state");
+    console.log(state.targetPosition);
     this.fetchHouses(1, 100, this.sponsoredOnly, this.roomNum, this.bedsNum);
   },
 };
 </script>
 
 <style lang="scss" scoped>
+@import "../../../sass/_variables.scss";
+
 #card-showcase {
   padding: 80px;
   overflow: hidden;
@@ -181,6 +199,17 @@ export default {
   .container-fluid {
     width: 100%;
     max-width: 1600px;
+
+    .title {
+      h1 {
+        font-size: 50px;
+        font-weight: 700;
+
+        .highlight {
+          color: $highlight;
+        }
+      }
+    }
 
     .row {
       flex-wrap: wrap;
@@ -241,6 +270,18 @@ export default {
 @media screen and (max-width: 950px) {
   #card-showcase {
     padding: 24px;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  #card-showcase {
+    .container-fluid {
+      .title {
+        h1 {
+          font-size: 40px;
+        }
+      }
+    }
   }
 }
 

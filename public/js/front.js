@@ -2118,6 +2118,20 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -2261,7 +2275,7 @@ __webpack_require__.r(__webpack_exports__);
     }
   },
   mounted: function mounted() {
-    console.log('state');
+    console.log("state");
     console.log(_store__WEBPACK_IMPORTED_MODULE_1__["default"].targetPosition);
     this.fetchHouses(1, 100, this.sponsoredOnly, this.roomNum, this.bedsNum);
   }
@@ -2392,13 +2406,6 @@ __webpack_require__.r(__webpack_exports__);
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _store__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../store */ "./resources/js/store.js");
-//
-//
-//
-//
-//
-//
-//
 //
 //
 //
@@ -3068,7 +3075,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, "#card-showcase[data-v-08cf00d2] {\n  padding: 80px;\n  overflow: hidden;\n  width: 100%;\n}\n#card-showcase .container-fluid[data-v-08cf00d2] {\n  width: 100%;\n  max-width: 1600px;\n}\n#card-showcase .container-fluid .row[data-v-08cf00d2] {\n  flex-wrap: wrap;\n  gap: 36px 24px;\n  widows: 100%;\n}\n#card-showcase .container-fluid .row .col[data-v-08cf00d2] {\n  padding: 0;\n  margin: 0;\n  min-width: calc((100% - 96px) / 5);\n  max-width: calc((100% - 96px) / 5);\n}\n@media screen and (max-width: 1600px) {\n#card-showcase .container-fluid .row .col[data-v-08cf00d2] {\n    min-width: calc((100% - 72px) / 4);\n    max-width: calc((100% - 72px) / 4);\n}\n}\n@media screen and (max-width: 1128px) {\n#card-showcase[data-v-08cf00d2] {\n    padding: 40px;\n}\n#card-showcase .container-fluid .row .col[data-v-08cf00d2] {\n    min-width: calc((100% - 48px) / 3);\n    max-width: calc((100% - 48px) / 2);\n}\n}\n@media screen and (max-width: 950px) {\n#card-showcase .container-fluid .row .col[data-v-08cf00d2] {\n    min-width: calc((100% - 24px) / 2);\n    max-width: calc((100% - 24px) / 2);\n}\n}\n@media screen and (max-width: 950px) {\n#card-showcase[data-v-08cf00d2] {\n    padding: 24px;\n}\n}\n@media screen and (max-width: 550px) {\n#card-showcase .container-fluid .row .col[data-v-08cf00d2] {\n    min-width: 100%;\n}\n}", ""]);
+exports.push([module.i, "#card-showcase[data-v-08cf00d2] {\n  padding: 80px;\n  overflow: hidden;\n  width: 100%;\n}\n#card-showcase .container-fluid[data-v-08cf00d2] {\n  width: 100%;\n  max-width: 1600px;\n}\n#card-showcase .container-fluid .title h1[data-v-08cf00d2] {\n  font-size: 50px;\n  font-weight: 700;\n}\n#card-showcase .container-fluid .title h1 .highlight[data-v-08cf00d2] {\n  color: #FF385C;\n}\n#card-showcase .container-fluid .row[data-v-08cf00d2] {\n  flex-wrap: wrap;\n  gap: 36px 24px;\n  widows: 100%;\n}\n#card-showcase .container-fluid .row .col[data-v-08cf00d2] {\n  padding: 0;\n  margin: 0;\n  min-width: calc((100% - 96px) / 5);\n  max-width: calc((100% - 96px) / 5);\n}\n@media screen and (max-width: 1600px) {\n#card-showcase .container-fluid .row .col[data-v-08cf00d2] {\n    min-width: calc((100% - 72px) / 4);\n    max-width: calc((100% - 72px) / 4);\n}\n}\n@media screen and (max-width: 1128px) {\n#card-showcase[data-v-08cf00d2] {\n    padding: 40px;\n}\n#card-showcase .container-fluid .row .col[data-v-08cf00d2] {\n    min-width: calc((100% - 48px) / 3);\n    max-width: calc((100% - 48px) / 2);\n}\n}\n@media screen and (max-width: 950px) {\n#card-showcase .container-fluid .row .col[data-v-08cf00d2] {\n    min-width: calc((100% - 24px) / 2);\n    max-width: calc((100% - 24px) / 2);\n}\n}\n@media screen and (max-width: 950px) {\n#card-showcase[data-v-08cf00d2] {\n    padding: 24px;\n}\n}\n@media screen and (max-width: 700px) {\n#card-showcase .container-fluid .title h1[data-v-08cf00d2] {\n    font-size: 40px;\n}\n}\n@media screen and (max-width: 550px) {\n#card-showcase .container-fluid .row .col[data-v-08cf00d2] {\n    min-width: 100%;\n}\n}", ""]);
 
 // exports
 
@@ -3106,7 +3113,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, "#polaroid-wrapper[data-v-25b4e261] {\n  background: #f8fafc;\n}\n#polaroid-wrapper .polaroids-list[data-v-25b4e261] {\n  justify-content: space-evenly;\n  gap: 2%;\n}\n@media screen and (max-width: 700px) {\n#polaroid-wrapper .polaroids-list[data-v-25b4e261] {\n    gap: 30px 15px;\n}\n#polaroid-wrapper .polaroids-list .polaroid[data-v-25b4e261] {\n    max-width: 40%;\n    min-width: 40%;\n}\n}", ""]);
+exports.push([module.i, "#polaroid-wrapper[data-v-25b4e261] {\n  background: #f8fafc;\n}\n#polaroid-wrapper[data-v-25b4e261]::after {\n  content: \"\";\n  display: block;\n  width: 100%;\n  height: 1px;\n}\n#polaroid-wrapper .polaroids-list[data-v-25b4e261] {\n  justify-content: space-evenly;\n  gap: 2%;\n}\n@media screen and (max-width: 700px) {\n#polaroid-wrapper .polaroids-list[data-v-25b4e261] {\n    gap: 30px 15px;\n}\n#polaroid-wrapper .polaroids-list .polaroid[data-v-25b4e261] {\n    max-width: 40%;\n    min-width: 40%;\n}\n}", ""]);
 
 // exports
 
@@ -3125,7 +3132,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, "#welcome-section .highlight[data-v-32ff5650] {\n  color: #FF385C;\n  font-weight: 700;\n}\n#welcome-section .card[data-v-32ff5650] {\n  border: 4px solid #FF385C !important;\n  transform: skewX(-7deg);\n  border-radius: 20px;\n}\n#welcome-section .card h1[data-v-32ff5650] {\n  font-size: 60px;\n  font-weight: 700;\n}\n#welcome-section .card .img-wrapper[data-v-32ff5650] {\n  position: relative;\n  transform: translate(50px, -50px) scale(1.05);\n  border-radius: 20px;\n  overflow: hidden;\n  background-color: #FF385C !important;\n}\n#welcome-section .card .img-wrapper .img[data-v-32ff5650] {\n  height: inherit;\n  width: 100%;\n  -o-object-fit: cover;\n     object-fit: cover;\n  opacity: 0;\n}\n@media screen and (max-width: 700px) {\n#welcome-section .card h1[data-v-32ff5650] {\n    font-size: 50px;\n}\n#welcome-section .card .img-wrapper[data-v-32ff5650] {\n    transform: translate(20px, -20px);\n}\n#welcome-section .card.img-card[data-v-32ff5650] {\n    width: 90%;\n}\n}", ""]);
+exports.push([module.i, "#welcome-section h1[data-v-32ff5650] {\n  font-size: 50px;\n  font-weight: 700;\n}\n#welcome-section .highlight[data-v-32ff5650] {\n  color: #FF385C;\n  font-weight: 700;\n}\n#welcome-section .card[data-v-32ff5650] {\n  border: 4px solid #FF385C !important;\n  transform: skewX(-7deg);\n  border-radius: 20px;\n}\n#welcome-section .card .img-wrapper[data-v-32ff5650] {\n  position: relative;\n  transform: translate(50px, -50px) scale(1.05);\n  border-radius: 20px;\n  overflow: hidden;\n  background-color: #FF385C !important;\n}\n#welcome-section .card .img-wrapper .img[data-v-32ff5650] {\n  height: inherit;\n  width: 100%;\n  -o-object-fit: cover;\n     object-fit: cover;\n  opacity: 0;\n}\n@media screen and (max-width: 700px) {\n#welcome-section h1[data-v-32ff5650] {\n    font-size: 40px;\n}\n#welcome-section .card .img-wrapper[data-v-32ff5650] {\n    transform: translate(20px, -20px);\n}\n#welcome-section .card.img-card[data-v-32ff5650] {\n    width: 90%;\n}\n}", ""]);
 
 // exports
 
@@ -4871,6 +4878,14 @@ var render = function () {
   var _c = _vm._self._c || _h
   return _c("section", { attrs: { id: "card-showcase" } }, [
     _c("div", { staticClass: "container-fluid" }, [
+      this.sponsoredOnly
+        ? _c("div", { staticClass: "title pb-4" }, [
+            _c("h2", [_vm._v("Non riesci a deciderti?")]),
+            _vm._v(" "),
+            _vm._m(0),
+          ])
+        : _vm._e(),
+      _vm._v(" "),
       _c(
         "div",
         { staticClass: "row" },
@@ -4894,7 +4909,17 @@ var render = function () {
     ]),
   ])
 }
-var staticRenderFns = []
+var staticRenderFns = [
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("h1", [
+      _vm._v("\n        Ecco alcune delle nostre proposte, "),
+      _c("span", { staticClass: "highlight" }, [_vm._v("wow!")]),
+    ])
+  },
+]
 render._withStripped = true
 
 
@@ -5024,7 +5049,7 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("section", { attrs: { id: "welcome-section" } }, [
-      _c("div", { staticClass: "container-fluid my-5" }, [
+      _c("div", { staticClass: "container-fluid pb-5 pt-lg-5 mt-lg-5 mb-4" }, [
         _c("div", { staticClass: "container" }, [
           _c(
             "div",
@@ -5037,7 +5062,7 @@ var staticRenderFns = [
                     "\n            col-12 col-lg-6\n            py-5\n            d-flex\n            flex-column\n            justify-content-center\n            text-center\n          ",
                 },
                 [
-                  _c("h3", { staticClass: "mb-4" }, [
+                  _c("h2", { staticClass: "mb-4" }, [
                     _vm._v("\n            Benvenuto in "),
                     _c("span", { staticClass: "highlight" }, [
                       _vm._v("Wowlidays"),
@@ -5060,7 +5085,7 @@ var staticRenderFns = [
                 "div",
                 {
                   staticClass:
-                    "\n            col-12 col-lg-6\n            py-lg-5\n            d-flex\n            justify-content-center\n          ",
+                    "col-12 col-lg-6 py-lg-5 d-flex justify-content-center",
                 },
                 [
                   _c("div", { staticClass: "card img-card" }, [
@@ -5130,16 +5155,16 @@ var render = function () {
               ]),
               _vm._v(" "),
               _c("p", { staticClass: "card-position" }, [
-                _vm._v(_vm._s(_vm.house.position.city)),
+                _vm._v(
+                  _vm._s(_vm.house.position.city) +
+                    ", " +
+                    _vm._s(_vm.house.position.country)
+                ),
               ]),
               _vm._v(" "),
               _c("p", { staticClass: "card-price" }, [
                 _c("strong", [_vm._v("€" + _vm._s(_vm.house.cost_per_night))]),
                 _vm._v("/night\n        "),
-              ]),
-              _vm._v(" "),
-              _c("p", { staticClass: "card-rating" }, [
-                _vm._v("Id: " + _vm._s(_vm.house.id)),
               ]),
             ]),
             _vm._v(" "),

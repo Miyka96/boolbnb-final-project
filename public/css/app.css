@@ -11035,8 +11035,8 @@ body::-webkit-scrollbar-thumb:hover {
   background-color: #f8f9fa;
   border: 1px solid #C9C4BE;
   color: #717171;
-  gap: 10px;
-  padding: 4px 6px 4px 11px;
+  gap: 8px;
+  padding: 4px 10px;
   cursor: pointer;
 }
 
@@ -11053,7 +11053,7 @@ body::-webkit-scrollbar-thumb:hover {
 }
 
 #main-nav #navbarDropdown span .fa-circle-user.logged {
-  color: #4B8673;
+  color: #10A97A;
 }
 
 #main-nav #navbarDropdown a {

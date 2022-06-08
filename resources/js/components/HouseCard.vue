@@ -5,12 +5,12 @@
         <img :src="house.image" class="card-img-top" alt="" />
         <div class="card-body">
           <h5 class="card-title">{{ house.title }}</h5>
-          <p class="card-position">{{ house.position.city }}</p>
+          <p class="card-position">{{ house.position.city }}, {{ house.position.country }}</p>
           <p class="card-price">
             <strong>&euro;{{ house.cost_per_night }}</strong
             >/night
           </p>
-          <p class="card-rating">Id: {{ house.id }}</p>
+          <!-- <p class="card-rating">Id: {{ house.id }}</p> -->
         </div>
         <span :class="[is_sponsored ? 'active' : '', 'sponsored_icon']">
           <i class="fa-solid fa-star"></i>
@@ -121,7 +121,6 @@ a {
       gap: 4px;
 
       i {
-        // margin-left: 4px;
         font-size: 12px;
       }
     }
