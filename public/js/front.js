@@ -2367,14 +2367,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -3107,7 +3099,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, "#polaroid-wrapper[data-v-25b4e261] {\n  background: #f8fafc;\n}\n#polaroid-wrapper .polaroids-list[data-v-25b4e261] {\n  justify-content: space-evenly;\n  gap: 2%;\n}", ""]);
+exports.push([module.i, "#polaroid-wrapper[data-v-25b4e261] {\n  background: #f8fafc;\n}\n#polaroid-wrapper .polaroids-list[data-v-25b4e261] {\n  justify-content: space-evenly;\n  gap: 2%;\n}\n@media screen and (max-width: 700px) {\n#polaroid-wrapper .polaroids-list[data-v-25b4e261] {\n    gap: 30px 15px;\n}\n#polaroid-wrapper .polaroids-list .polaroid[data-v-25b4e261] {\n    max-width: 40%;\n    min-width: 40%;\n}\n}", ""]);
 
 // exports
 
@@ -3164,7 +3156,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 exports.push([module.i, "@import url(https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&display=swap);", ""]);
 
 // module
-exports.push([module.i, ".polaroid[data-v-531a4632] {\n  min-width: 19%;\n  max-width: 19%;\n  background: white;\n  color: black;\n  box-shadow: 7px 8px 14px 1px rgba(0, 0, 0, 0.59);\n  transition: all ease-in-out 0.5s;\n  padding: 25px;\n  cursor: pointer;\n  text-decoration: none;\n}\n.polaroid.polaroid[data-v-531a4632]:nth-child(2n) {\n  transform: rotate(-3deg);\n}\n.polaroid.polaroid[data-v-531a4632]:nth-child(2n+1) {\n  transform: rotate(3deg);\n}\n.polaroid[data-v-531a4632]:hover {\n  transform: translateY(-4px);\n}\n.polaroid:hover .polaroid__image[data-v-531a4632] {\n  transform: scale(1.03);\n}\n.polaroid:hover.polaroid[data-v-531a4632] {\n  transform: rotate(0) !important;\n}\n.polaroid figure[data-v-531a4632] {\n  aspect-ratio: 1;\n}\n.polaroid figure .polaroid__image[data-v-531a4632] {\n  display: block;\n  max-width: 100%;\n  max-height: 100%;\n  min-width: 100%;\n  min-height: 100%;\n  -o-object-fit: cover;\n     object-fit: cover;\n  transition: transform ease-in-out 0.3s;\n}\n.polaroid .polaroid__title[data-v-531a4632] {\n  margin: 0;\n  padding: 5px;\n  font-family: \"Dancing Script\", cursive;\n  font-size: 3rem;\n  line-height: 1.1;\n  text-align: center;\n}", ""]);
+exports.push([module.i, ".polaroid[data-v-531a4632] {\n  min-width: 19%;\n  max-width: 19%;\n  background: white;\n  color: black;\n  box-shadow: 7px 8px 14px 1px rgba(0, 0, 0, 0.59);\n  transition: all ease-in-out 0.5s;\n  padding: 1.2vw;\n  cursor: pointer;\n  text-decoration: none;\n}\n.polaroid.polaroid[data-v-531a4632]:nth-child(2n) {\n  transform: rotate(-3deg);\n}\n.polaroid.polaroid[data-v-531a4632]:nth-child(2n+1) {\n  transform: rotate(3deg);\n}\n.polaroid[data-v-531a4632]:hover {\n  transform: translateY(-4px);\n}\n.polaroid:hover .polaroid__image[data-v-531a4632] {\n  transform: scale(1.03);\n}\n.polaroid:hover.polaroid[data-v-531a4632] {\n  transform: rotate(0) !important;\n}\n.polaroid figure[data-v-531a4632] {\n  aspect-ratio: 1;\n  margin-bottom: 1vw;\n}\n.polaroid figure .polaroid__image[data-v-531a4632] {\n  display: block;\n  max-width: 100%;\n  max-height: 100%;\n  min-width: 100%;\n  min-height: 100%;\n  -o-object-fit: cover;\n     object-fit: cover;\n  transition: transform ease-in-out 0.3s;\n}\n.polaroid .polaroid__title[data-v-531a4632] {\n  margin: 0;\n  font-family: \"Dancing Script\", cursive;\n  font-size: calc(2vw + 20px);\n  line-height: 1.1;\n  text-align: center;\n}", ""]);
 
 // exports
 
@@ -4980,10 +4972,13 @@ var render = function () {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("section", { attrs: { id: "polaroid-wrapper" } }, [
-    _c("div", { staticClass: "container-fluid py-5 my-5" }, [
+    _c("div", { staticClass: "container-fluid py-5 mb-5" }, [
       _c(
         "div",
-        { staticClass: "polaroids-list row d-flex flex-wrap" },
+        {
+          staticClass:
+            "polaroids-list row d-flex flex-wrap justify-content-around",
+        },
         _vm._l(_vm.polaroids, function (el, i) {
           return _c("Polaroid", { key: i, attrs: { polaroid: el } })
         }),

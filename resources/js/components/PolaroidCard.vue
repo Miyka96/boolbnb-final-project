@@ -28,7 +28,7 @@ export default {
   color: black;
   box-shadow: 7px 8px 14px 1px rgba(0, 0, 0, 0.59);
   transition: all ease-in-out 0.5s;
-  padding: 25px;
+  padding: 1.2vw;
   cursor: pointer;
   text-decoration: none;
 
@@ -45,7 +45,6 @@ export default {
 
     .polaroid__image {
       transform: scale(1.03);
-      transition: transform 0.2s linear;
     }
 
     &.polaroid {
@@ -55,7 +54,7 @@ export default {
 
   figure {
     aspect-ratio: 1;
-    // background-color: red;
+    margin-bottom: 1vw;
 
     .polaroid__image {
       display: block;
@@ -64,14 +63,14 @@ export default {
       min-width: 100%;
       min-height: 100%;
       object-fit: cover;
+      transition: transform ease-in-out .3s;
     }
   }
   .polaroid__title {
     margin: 0;
-    padding: 5px;
-    // font-family: "Amatic SC", sans-serif;
+    // padding: 5px;
     font-family: "Dancing Script", cursive;
-    font-size: 3rem;
+    font-size: calc( 2vw + 20px );
     line-height: 1.1;
     text-align: center;
   }
