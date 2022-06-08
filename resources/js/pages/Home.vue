@@ -4,6 +4,7 @@
     <Banner />
     <!-- <Navbar /> -->
     <Polaroid />
+    <GeoSearch/>
     <SectionVue />
     <CardsShowcase />
     <Footer />
@@ -17,6 +18,7 @@ import SectionVue from "../components/Home/SectionVue.vue";
 // import Navbar from "../components/Navbar/MainNavbar.vue";
 import Polaroid from "../components/Home/PolaroidVue.vue";
 import Footer from "../components/FooterComponent.vue";
+import GeoSearch from "../components/Geocode.vue"
 // import SearchBar from '../components/Search/SearchBar.vue'
 
 export default {
@@ -27,6 +29,7 @@ export default {
     // Navbar,
     Polaroid,
     Footer,
+    GeoSearch,
     // SearchBar
   },
 };

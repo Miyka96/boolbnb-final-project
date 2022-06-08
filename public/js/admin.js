@@ -2114,6 +2114,83 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/Geocode.vue?vue&type=script&lang=js&":
+/*!******************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/Geocode.vue?vue&type=script&lang=js& ***!
+  \******************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_0__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  name: "GeoSearch",
+  data: function data() {
+    return {
+      baseURL: "api.tomtom.com",
+      search: "",
+      places: [],
+      lat: "",
+      lon: ""
+    };
+  },
+  methods: {
+    searchItems: function searchItems() {
+      var _this = this;
+
+      if (this.search.length > 8) {
+        axios__WEBPACK_IMPORTED_MODULE_0___default.a.get("https://".concat(this.baseURL, "/search/2/geocode/").concat(this.search, ".json"), {
+          params: {
+            key: "DINngHSiTz58Z5fDF5pThkg1IrJA87je",
+            limit: 5,
+            countrySet: "IT/ITA",
+            radius: 20000
+          }
+        }).then(function (res) {
+          console.log(res.data.results);
+          _this.places = res.data.results;
+        })["catch"](function (error) {
+          console.log(error.response);
+        });
+      }
+    },
+    saveAddress: function saveAddress(element) {
+      this.lat = element.position.lat;
+      this.lon = element.position.lon;
+      console.log(this.lat, this.lon);
+    }
+  }
+});
+
+/***/ }),
+
 /***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/Home/MainBanner.vue?vue&type=script&lang=js&":
 /*!**************************************************************************************************************************************************************************!*\
   !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/Home/MainBanner.vue?vue&type=script&lang=js& ***!
@@ -2786,6 +2863,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_Home_SectionVue_vue__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../components/Home/SectionVue.vue */ "./resources/js/components/Home/SectionVue.vue");
 /* harmony import */ var _components_Home_PolaroidVue_vue__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../components/Home/PolaroidVue.vue */ "./resources/js/components/Home/PolaroidVue.vue");
 /* harmony import */ var _components_FooterComponent_vue__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../components/FooterComponent.vue */ "./resources/js/components/FooterComponent.vue");
+/* harmony import */ var _components_Geocode_vue__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../components/Geocode.vue */ "./resources/js/components/Geocode.vue");
+//
 //
 //
 //
@@ -2803,6 +2882,7 @@ __webpack_require__.r(__webpack_exports__);
  // import Navbar from "../components/Navbar/MainNavbar.vue";
 
 
+
  // import SearchBar from '../components/Search/SearchBar.vue'
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -2812,7 +2892,8 @@ __webpack_require__.r(__webpack_exports__);
     SectionVue: _components_Home_SectionVue_vue__WEBPACK_IMPORTED_MODULE_2__["default"],
     // Navbar,
     Polaroid: _components_Home_PolaroidVue_vue__WEBPACK_IMPORTED_MODULE_3__["default"],
-    Footer: _components_FooterComponent_vue__WEBPACK_IMPORTED_MODULE_4__["default"] // SearchBar
+    Footer: _components_FooterComponent_vue__WEBPACK_IMPORTED_MODULE_4__["default"],
+    GeoSearch: _components_Geocode_vue__WEBPACK_IMPORTED_MODULE_5__["default"] // SearchBar
 
   }
 });
@@ -40524,6 +40605,93 @@ render._withStripped = true
 
 /***/ }),
 
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/Geocode.vue?vue&type=template&id=366ac723&scoped=true&":
+/*!**********************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/Geocode.vue?vue&type=template&id=366ac723&scoped=true& ***!
+  \**********************************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function () {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "nav",
+    { staticClass: "d-flex flex-column container" },
+    [
+      _c("div", { attrs: { id: "search" } }, [
+        _c("input", {
+          directives: [
+            {
+              name: "model",
+              rawName: "v-model",
+              value: _vm.search,
+              expression: "search",
+            },
+          ],
+          staticClass: "form-control mr-sm-2",
+          attrs: {
+            placeholder: "Inserisci indirizzo",
+            type: "search",
+            id: "search-bar",
+          },
+          domProps: { value: _vm.search },
+          on: {
+            keyup: function ($event) {
+              return _vm.searchItems()
+            },
+            input: function ($event) {
+              if ($event.target.composing) {
+                return
+              }
+              _vm.search = $event.target.value
+            },
+          },
+        }),
+      ]),
+      _vm._v(" "),
+      _vm._l(_vm.places, function (el) {
+        return _c("div", { key: el.id, staticClass: "d-flex flex-column" }, [
+          _c("ul", { staticClass: "d-flex flex-column list-group" }, [
+            el.address.freeformAddress
+              ? _c(
+                  "li",
+                  {
+                    staticClass: "list-group-item list-group-item-action",
+                    on: {
+                      click: function ($event) {
+                        return _vm.saveAddress(el)
+                      },
+                    },
+                  },
+                  [
+                    _vm._v(
+                      "\n                " +
+                        _vm._s(el.address.freeformAddress) +
+                        "\n            "
+                    ),
+                  ]
+                )
+              : _vm._e(),
+          ]),
+        ])
+      }),
+    ],
+    2
+  )
+}
+var staticRenderFns = []
+render._withStripped = true
+
+
+
+/***/ }),
+
 /***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/Home/MainBanner.vue?vue&type=template&id=0e33f90c&scoped=true&":
 /*!******************************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/Home/MainBanner.vue?vue&type=template&id=0e33f90c&scoped=true& ***!
@@ -41465,6 +41633,8 @@ var render = function () {
       _c("Banner"),
       _vm._v(" "),
       _c("Polaroid"),
+      _vm._v(" "),
+      _c("GeoSearch"),
       _vm._v(" "),
       _c("SectionVue"),
       _vm._v(" "),
@@ -54202,6 +54372,7 @@ var map = {
 	"./components/CardShowcase.vue": "./resources/js/components/CardShowcase.vue",
 	"./components/ErrorMessage.vue": "./resources/js/components/ErrorMessage.vue",
 	"./components/FooterComponent.vue": "./resources/js/components/FooterComponent.vue",
+	"./components/Geocode.vue": "./resources/js/components/Geocode.vue",
 	"./components/Home/MainBanner.vue": "./resources/js/components/Home/MainBanner.vue",
 	"./components/Home/PolaroidVue.vue": "./resources/js/components/Home/PolaroidVue.vue",
 	"./components/Home/SectionVue.vue": "./resources/js/components/Home/SectionVue.vue",
@@ -54671,6 +54842,75 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_FooterComponent_vue_vue_type_template_id_abfbddf2_scoped_true___WEBPACK_IMPORTED_MODULE_0__["render"]; });
 
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_FooterComponent_vue_vue_type_template_id_abfbddf2_scoped_true___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
+
+/***/ }),
+
+/***/ "./resources/js/components/Geocode.vue":
+/*!*********************************************!*\
+  !*** ./resources/js/components/Geocode.vue ***!
+  \*********************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _Geocode_vue_vue_type_template_id_366ac723_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Geocode.vue?vue&type=template&id=366ac723&scoped=true& */ "./resources/js/components/Geocode.vue?vue&type=template&id=366ac723&scoped=true&");
+/* harmony import */ var _Geocode_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Geocode.vue?vue&type=script&lang=js& */ "./resources/js/components/Geocode.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _Geocode_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _Geocode_vue_vue_type_template_id_366ac723_scoped_true___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _Geocode_vue_vue_type_template_id_366ac723_scoped_true___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  "366ac723",
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/components/Geocode.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/components/Geocode.vue?vue&type=script&lang=js&":
+/*!**********************************************************************!*\
+  !*** ./resources/js/components/Geocode.vue?vue&type=script&lang=js& ***!
+  \**********************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_Geocode_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib??ref--4-0!../../../node_modules/vue-loader/lib??vue-loader-options!./Geocode.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/Geocode.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_Geocode_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/js/components/Geocode.vue?vue&type=template&id=366ac723&scoped=true&":
+/*!****************************************************************************************!*\
+  !*** ./resources/js/components/Geocode.vue?vue&type=template&id=366ac723&scoped=true& ***!
+  \****************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Geocode_vue_vue_type_template_id_366ac723_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../node_modules/vue-loader/lib??vue-loader-options!./Geocode.vue?vue&type=template&id=366ac723&scoped=true& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/Geocode.vue?vue&type=template&id=366ac723&scoped=true&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Geocode_vue_vue_type_template_id_366ac723_scoped_true___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Geocode_vue_vue_type_template_id_366ac723_scoped_true___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
 
 
 

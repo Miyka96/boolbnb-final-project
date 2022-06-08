@@ -3,6 +3,5 @@
     "/css/app.css": "/css/app.css",
     "/js/clientsideValidation.js": "/js/clientsideValidation.js",
     "/js/front.js": "/js/front.js",
-    "/js/geocode.js": "/js/geocode.js",
     "/js/store.js": "/js/store.js"
 }

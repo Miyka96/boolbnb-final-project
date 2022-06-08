@@ -13,21 +13,7 @@
 
       {{-- POSITION FORM --}}
 
-         {{-- Indirizzo --}}
-         {{-- <div class="form-group">
-            <label for="address">Indirizzo e numero civico</label>
-            <input type="text" class="form-control" name="address" id="addressInput" placeholder="Inserisci l'indirizzo ed il numero civico"
-               value="{{ old('address') }}">
-               <ul id="address_list">
-               </ul>
-         </div> --}}
-
-         <form>
-            <input type="text" size="30" onkeyup="showResult(this.value)">
-            <div id="livesearch"></div>
-          </form>
-        
-
+      
 
       {{-- HOUSE FORM --}}
       <form action="{{ route('user.houses.store') }}" method="post" id="create-house-form">
@@ -217,4 +203,6 @@
          </button>
       </form>
    </div>
+
+   <script src="https://cdn.jsdelivr.net/npm/@tarekraafat/autocomplete.js@10.2.7/dist/autoComplete.min.js"></script>
 @endsection
