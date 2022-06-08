@@ -15,11 +15,11 @@ class HouseController extends Controller
   *
   * @return \Illuminate\Http\Response
   */
-  public function index($paginate, $sponsored_only) // default 12 & false
+  public function index($paginate, $sponsored_only, $room_num, $beds_num)
   {  
     $now = Carbon::now()->addHours(2); // GMT +2
 
-    // Mostra solo sponsorizzate
+    // Mostra SOLO le sponsorizzate
     if($sponsored_only == 'true') { 
       $houses = House::with(['position', 'user', 'messages', 'services', 'visualizations'])
       ->join('house_sponsorship', 'house_sponsorship.house_id', '=', 'houses.id')
@@ -37,13 +37,15 @@ class HouseController extends Controller
         ]);
       }
 
-      // Mostra tutte le case in ordine (prima sponsorizzate)
-    } else {
+      // Mostra TUTTE le case in ordine (prima sponsorizzate)
+    } else { // filtro senza posizione
 
       $sponsored_houses = House::with(['position', 'user', 'messages', 'services', 'visualizations'])
       ->join('house_sponsorship', 'house_sponsorship.house_id', '=', 'houses.id')
       ->where([
           ['is_visible','=', 1],
+          ['room_num', '>=', $room_num],
+          ['beds_num','>=', $beds_num],
           ['house_sponsorship.sponsor_start', '<=', $now],
           ['house_sponsorship.sponsor_end', '>', $now],
       ])
@@ -53,6 +55,8 @@ class HouseController extends Controller
       ->join('house_sponsorship', 'house_sponsorship.house_id', '=', 'houses.id')
       ->where([
           ['is_visible','=', 1],
+          ['room_num', '>=', $room_num],
+          ['beds_num','>=', $beds_num],
           ['house_sponsorship.sponsor_start', '<=', $now],
           ['house_sponsorship.sponsor_end', '>', $now],
       ])
@@ -64,25 +68,31 @@ class HouseController extends Controller
       ->with(['position', 'user', 'messages', 'services', 'visualizations'])
       ->join('house_sponsorship', 'house_sponsorship.house_id', '=', 'houses.id')
       ->groupBy('houses.id')
-      ->where('is_visible','=', 1)
+      ->where([
+        ['is_visible','=', 1],
+        ['room_num', '>=', $room_num],
+        ['beds_num','>=', $beds_num],
+      ])
       ->whereNotIn('id', $array[0])
       ->get();
       
       $houses = $sponsored_houses->merge($not_sponsored_houses);
 
-      if( $houses ) {
+      if(  $houses ) {
         return response()->json([
-            'houses' => $houses,
+            'houses' =>  $houses,
             'success' => true
         ]);
       }
     }
 
+    // ERRORE
     return response()->json([
         'message' => 'Houses not found',
         'success' => false
     ], 404);
   }
+
 
   public function show(House $house)
   {

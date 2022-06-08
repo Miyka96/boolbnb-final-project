@@ -32,7 +32,8 @@ Route::namespace('Api')->group(function () {
     ->parameters(['houses' => 'house:id'])
     ->only('show');
 
-  Route::get('houses-index/{paginate?}/{sponsored_only?}', 'HouseController@index');
+  Route::get('houses-index/{paginate?}/{sponsored_only?}/{room_num?}/{beds_num?}', 'HouseController@index');
+  Route::get('filter/{room_num?}/{beds_num?}/{services?}', 'FilterController@index');
 
   Route::get('services', 'ServiceController@index')->name('services');
 
@@ -41,5 +42,5 @@ Route::namespace('Api')->group(function () {
   });
   Route::post('messages_store', 'MessageController@store');
 
-  Route::get('filter/{room_num?}/{beds_num?}/{services?}', 'FilterController@index');
+  // Route::get('filter/{room_num?}/{beds_num?}/{services?}', 'FilterController@index');
 });
