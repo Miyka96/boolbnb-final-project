@@ -203,5 +203,10 @@
       </form>
    </div>
 
-   <script src="https://cdn.jsdelivr.net/npm/@tarekraafat/autocomplete.js@10.2.7/dist/autoComplete.min.js"></script>
+   <script>
+      document.getElementById("house-submit").addEventListener("click", function(event){
+      event.preventDefault()
+      
+      });
+   </script>
 @endsection

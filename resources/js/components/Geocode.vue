@@ -31,7 +31,7 @@ export default {
     name: "GeoSearch",
     data() {
         return {
-            ul: document.getElementById("ul"),
+            li: document.getElementById("li"),
             baseURL: "api.tomtom.com",
             search: "",
             places: [],
@@ -84,7 +84,7 @@ export default {
             this.country = element.address.country;
             this.zipCode = element.address.postalCode;
 
-            // console.log(this.lat,this.lon,this.address,this.city,this.country,this.zipCode)
+            console.log(this.lat,this.lon,this.address,this.city,this.country,this.zipCode)
             this.search= element.address.freeformAddress;
         },
 

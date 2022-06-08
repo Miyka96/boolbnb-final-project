@@ -2090,7 +2090,7 @@ __webpack_require__.r(__webpack_exports__);
   name: "GeoSearch",
   data: function data() {
     return {
-      ul: document.getElementById("ul"),
+      li: document.getElementById("li"),
       baseURL: "api.tomtom.com",
       search: "",
       places: [],
@@ -2139,8 +2139,8 @@ __webpack_require__.r(__webpack_exports__);
 
       this.city = element.address.countrySecondarySubdivision;
       this.country = element.address.country;
-      this.zipCode = element.address.postalCode; // console.log(this.lat,this.lon,this.address,this.city,this.country,this.zipCode)
-
+      this.zipCode = element.address.postalCode;
+      console.log(this.lat, this.lon, this.address, this.city, this.country, this.zipCode);
       this.search = element.address.freeformAddress;
     },
     deleteItems: function deleteItems() {
