@@ -176,13 +176,16 @@ export default {
 #card-showcase {
   padding: 80px;
   overflow: hidden;
+  width: 100%;
 
   .container-fluid {
+    width: 100%;
     max-width: 1600px;
 
     .row {
       flex-wrap: wrap;
       gap: 36px 24px;
+      widows: 100%;
 
       .col {
         padding: 0;
