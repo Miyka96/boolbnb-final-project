@@ -3163,7 +3163,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "a[data-v-9647af16] {\n  text-decoration: none;\n}\n.card[data-v-9647af16] {\n  width: 100% !important;\n  margin: 0;\n  border-radius: 15px;\n  overflow: hidden;\n  border: none;\n  background-color: transparent;\n  transition: all ease-in-out 0.3s;\n  position: relative;\n}\n.card[data-v-9647af16]:hover {\n  transform: scale(1.03);\n}\n.card:hover .sponsored_icon[data-v-9647af16] {\n  transform: scale(1.3);\n}\n.card img[data-v-9647af16] {\n  width: 100%;\n  aspect-ratio: 1;\n  border-radius: 15px;\n}\n.card .card-body[data-v-9647af16] {\n  padding: 12px 0 0 0;\n  font-size: 15px;\n  position: relative;\n}\n.card .card-body .card-title[data-v-9647af16] {\n  font-size: 16px;\n  font-weight: 600;\n  color: #222222;\n  margin-bottom: 0px;\n  white-space: nowrap;\n  overflow: hidden;\n}\n.card .card-body p[data-v-9647af16] {\n  font-size: 15px;\n  font-weight: 400;\n  color: #717171;\n  margin: 0;\n  white-space: nowrap;\n  overflow: hidden;\n}\n.card .card-body p strong[data-v-9647af16] {\n  font-size: 15px;\n  font-weight: 600;\n  color: #222222;\n}\n.card .card-body .card-position[data-v-9647af16] {\n  margin-bottom: 6px;\n}\n.card .card-body .card-rating[data-v-9647af16] {\n  color: #222222;\n  position: absolute;\n  bottom: 2px;\n  right: 2px;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  gap: 4px;\n}\n.card .card-body .card-rating i[data-v-9647af16] {\n  font-size: 12px;\n}\n.card .sponsored_icon[data-v-9647af16] {\n  display: none;\n  position: absolute;\n  top: 10px;\n  right: 10px;\n  color: white;\n  font-size: 26px;\n  text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.8);\n  transition: all ease-in-out 0.3s;\n}\n.card .sponsored_icon.active[data-v-9647af16] {\n  display: block;\n}", ""]);
+exports.push([module.i, "a[data-v-9647af16] {\n  text-decoration: none;\n}\n.card[data-v-9647af16] {\n  width: 100% !important;\n  margin: 0;\n  border-radius: 15px;\n  overflow: hidden;\n  border: none;\n  background-color: transparent;\n  transition: all ease-in-out 0.3s;\n  position: relative;\n}\n.card[data-v-9647af16]:hover {\n  transform: scale(1.03);\n}\n.card:hover .sponsored_icon[data-v-9647af16] {\n  transform: scale(1.3);\n}\n.card img[data-v-9647af16] {\n  width: 100%;\n  aspect-ratio: 1;\n  border-radius: 15px;\n  -o-object-fit: cover;\n     object-fit: cover;\n}\n.card .card-body[data-v-9647af16] {\n  padding: 12px 0 0 0;\n  font-size: 15px;\n  position: relative;\n}\n.card .card-body .card-title[data-v-9647af16] {\n  font-size: 16px;\n  font-weight: 600;\n  color: #222222;\n  margin-bottom: 0px;\n  white-space: nowrap;\n  overflow: hidden;\n}\n.card .card-body p[data-v-9647af16] {\n  font-size: 15px;\n  font-weight: 400;\n  color: #717171;\n  margin: 0;\n  white-space: nowrap;\n  overflow: hidden;\n}\n.card .card-body p strong[data-v-9647af16] {\n  font-size: 15px;\n  font-weight: 600;\n  color: #222222;\n}\n.card .card-body .card-position[data-v-9647af16] {\n  margin-bottom: 6px;\n}\n.card .card-body .card-rating[data-v-9647af16] {\n  color: #222222;\n  position: absolute;\n  bottom: 2px;\n  right: 2px;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  gap: 4px;\n}\n.card .card-body .card-rating i[data-v-9647af16] {\n  font-size: 12px;\n}\n.card .sponsored_icon[data-v-9647af16] {\n  display: none;\n  position: absolute;\n  top: 10px;\n  right: 10px;\n  color: white;\n  font-size: 26px;\n  text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.8);\n  transition: all ease-in-out 0.3s;\n}\n.card .sponsored_icon.active[data-v-9647af16] {\n  display: block;\n}", ""]);
 
 // exports
 
@@ -5047,6 +5047,10 @@ var render = function () {
               _c("p", { staticClass: "card-price" }, [
                 _c("strong", [_vm._v("€" + _vm._s(_vm.house.cost_per_night))]),
                 _vm._v("/night\n        "),
+              ]),
+              _vm._v(" "),
+              _c("p", { staticClass: "card-rating" }, [
+                _vm._v("Id: " + _vm._s(_vm.house.id)),
               ]),
             ]),
             _vm._v(" "),
@@ -22462,7 +22466,7 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /Users/asiademartino/Desktop/progetto_finale/boolbnb-final-project/resources/js/front.js */"./resources/js/front.js");
+module.exports = __webpack_require__(/*! D:\Users\Simone\Documents\Progetti\boolbnb-final-project\resources\js\front.js */"./resources/js/front.js");
 
 
 /***/ })

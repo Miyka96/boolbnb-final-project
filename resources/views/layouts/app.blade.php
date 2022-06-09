@@ -39,7 +39,7 @@
         </a>
         <a class="navbar-brand d-lg-none" href="{{ url('/') }}">
           <figure>
-            <img src="{{ URL::to('/') }}/images/logoNero.png" alt="">
+            <img src="{{ URL::to('/') }}/images/logoColoratoMinimal.png" alt="">
           </figure>
         </a>
   

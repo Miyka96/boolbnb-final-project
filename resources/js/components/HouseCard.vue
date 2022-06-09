@@ -10,7 +10,7 @@
             <strong>&euro;{{ house.cost_per_night }}</strong
             >/night
           </p>
-          <!-- <p class="card-rating">Id: {{ house.id }}</p> -->
+          <p class="card-rating">Id: {{ house.id }}</p>
         </div>
         <span :class="[is_sponsored ? 'active' : '', 'sponsored_icon']">
           <i class="fa-solid fa-star"></i>
@@ -74,6 +74,7 @@ a {
     width: 100%;
     aspect-ratio: 1;
     border-radius: 15px;
+    object-fit: cover;
   }
 
   .card-body {
