@@ -2041,6 +2041,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
@@ -2058,7 +2059,8 @@ __webpack_require__.r(__webpack_exports__);
         country: "",
         zipCode: ""
       },
-      visible: false
+      visible: false,
+      positionId: null
     };
   },
   methods: {
@@ -2083,6 +2085,8 @@ __webpack_require__.r(__webpack_exports__);
       }
     },
     saveAddress: function saveAddress(element) {
+      var _this2 = this;
+
       this.positionData.lat = element.position.lat;
       this.positionData.lon = element.position.lon;
       this.positionData.streetName = element.address.streetName;
@@ -2100,6 +2104,7 @@ __webpack_require__.r(__webpack_exports__);
       console.log(this.positionData.lat, this.positionData.lon, this.positionData.address, this.positionData.city, this.positionData.country, this.positionData.zipCode);
       this.search = element.address.freeformAddress;
       axios__WEBPACK_IMPORTED_MODULE_0___default.a.post("/position", this.positionData).then(function (res) {
+        _this2.positionId = res.position.id;
         console.log(res.data);
       })["catch"](function (error) {
         console.log(error);
@@ -4821,6 +4826,11 @@ var render = function () {
               _vm.search = $event.target.value
             },
           },
+        }),
+        _vm._v(" "),
+        _c("input", {
+          attrs: { type: "text", name: "position_id", id: "position_id" },
+          domProps: { value: _vm.positionId },
         }),
       ]),
       _vm._v(" "),

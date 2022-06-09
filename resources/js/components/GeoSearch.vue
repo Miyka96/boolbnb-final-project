@@ -9,6 +9,7 @@
                 v-model="search"
                 @keyup="searchItems()"
             />
+            <input type="text" name="position_id" id="position_id" :value="(positionId)">
         </div>
         <div
             class="flex-column"
@@ -49,6 +50,7 @@ export default {
                 zipCode: "",
             },
             visible: false,
+            positionId: null
         };
     },
     methods: {
@@ -107,6 +109,7 @@ export default {
             axios
                 .post("/position", this.positionData)
                 .then((res) => {
+                    this.positionId = res.position.id;
                     console.log(res.data);
                 })
                 .catch((error) => {

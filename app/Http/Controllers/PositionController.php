@@ -35,6 +35,10 @@ class PositionController extends Controller
             'zip_code' => $zipCode,
             'created_at' => $created_at,
         ]);
+
+        $position = DB::table('positions')->orderBy('created_at', 'DESC')->first();
+
+        return $position;
     }
 
 }

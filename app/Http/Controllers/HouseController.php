@@ -44,7 +44,7 @@ class HouseController extends Controller
     */
    public function store(Request $request)
    {
-       $positionId= DB::table('positions')->latest('id')->first();
+      $positionId= DB::table('positions')->latest('id')->first();
 
       $request->validate([
          'title' => 'required|string|min:5|max:255',

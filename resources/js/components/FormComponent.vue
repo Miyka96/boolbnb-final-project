@@ -1,31 +1,26 @@
-@extends('layouts.app')
-
-@section('content')
-    {{-- Rileva utente --}}
-    @php
-    $id = Auth::id();
-    @endphp
-
+<template>
     <div class="container py-5 my-5">
+
         <h1 class="titolo-house-create">Aggiungi una nuova casa</h1>
 
-        {{-- POSITION FORM --}}
+        <!-- {{-- POSITION FORM --}} -->
 
         <form action="{{ route('user.houses.store') }}" method="post" id="create-house-form">
+            
             <div id="search">
                 <geo-search></geo-search>
             </div>
 
-            {{-- HOUSE FORM --}}
-                @csrf
+            <!-- {{-- HOUSE FORM --}} -->
+                <!-- @csrf -->
 
-                {{-- User id --}}
+                <!-- {{-- User id --}} -->
                 <div class="form-group">
                     <input type="number" class="form-control" name="user_id" id="user_id" hidden required min="1"
                         value="{{ $id ? $id : null }}">
                 </div>
 
-                {{-- Titolo --}}
+                <!-- {{-- Titolo --}} -->
                 <div class="form-group">
                     <label for="title">Titolo</label>
                     <input type="text" class="form-control" name="title" id="title" required minlength="5" maxlength="255"
@@ -33,7 +28,7 @@
                     <div id="title-error"></div>
                 </div>
 
-                {{-- Num camere --}}
+                <!-- {{-- Num camere --}} -->
                 <div class="form-group">
                     <label for="room_num">Camere</label>
                     <input type="number" class="form-control" name="room_num" id="room_num" required min="1" max="15"
@@ -41,7 +36,7 @@
                     <div id="room_num-error"></div>
                 </div>
 
-                {{-- Num letti --}}
+                <!-- {{-- Num letti --}} -->
                 <div class="form-group">
                     <label for="beds_num">Posti letto</label>
                     <input type="number" class="form-control" name="beds_num" id="beds_num" required min="1" max="30"
@@ -49,7 +44,7 @@
                     <div id="beds_num-error"></div>
                 </div>
 
-                {{-- Num bagni --}}
+                <!-- {{-- Num bagni --}} -->
                 <div class="form-group">
                     <label for="toilets_num">Bagni</label>
                     <input type="number" class="form-control" name="toilets_num" id="toilets_num" required min="1"
@@ -57,7 +52,7 @@
                     <div id="toilets_num-error"></div>
                 </div>
 
-                {{-- Metri quadrati --}}
+                <!-- {{-- Metri quadrati --}} -->
                 <div class="form-group">
                     <label for="square_meters">Metri quadrati</label>
                     <input type="number" class="form-control" name="square_meters" id="square_meters" required min="20"
@@ -65,7 +60,7 @@
                     <div id="square_meters-error"></div>
                 </div>
 
-                {{-- Url immagine --}}
+                <!-- {{-- Url immagine --}} -->
                 <div class="form-group">
                     <label for="image">Immagine</label>
                     <input type="url" class="form-control" name="image" id="image" required {{-- pattern="[/^(http|https):\/\/]" --}}
@@ -73,7 +68,7 @@
                     <div id="image-error"></div>
                 </div>
 
-                {{-- Costo per notte --}}
+                <!-- {{-- Costo per notte --}} -->
                 <div class="form-group">
                     <label for="cost_per_night">Costo per notte (&euro;)</label>
                     <input type="number" class="form-control" name="cost_per_night" id="cost_per_night" required min="10"
@@ -82,7 +77,7 @@
                     <div id="cost_per_night-error"></div>
                 </div>
 
-                {{-- Servizi --}}
+                <!-- {{-- Servizi --}} -->
                 <label>Servizi aggiuntivi</label>
                 <div class="d-flex" style="gap: 1rem;">
                     @foreach ($services as $service)
@@ -96,7 +91,7 @@
                     @endforeach
                 </div>
 
-                {{-- Visibilità --}}
+                <!-- {{-- Visibilità --}} -->
                 <div class="form-group">
                     <label for="is_visible">Visibilità</label>
                     <div class="form-check form-check-inline d-flex">
@@ -107,14 +102,23 @@
                         <input class="form-check-input" type="radio" name="is_visible" id="is_visible2" value="0">
                         <label class="form-check-label" for="is_visible2">Non visibile</label>
                     </div>
-                    {{-- <div id="cost_per_night-error"></div> --}}
                 </div>
 
-                {{-- Submit btn --}}
+                <!-- {{-- Submit btn --}} -->
                 <button id="house-submit" class="btn btn-primary" type="submit">
                     Aggiungi casa
                 </button>
 
             </form>
     </div>
-@endsection
+</template>
+
+<script>
+    export default {
+        
+    }
+</script>
+
+<style lang="scss" scoped>
+
+</style>
