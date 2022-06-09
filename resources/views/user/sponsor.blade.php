@@ -92,14 +92,22 @@ $j = 0;
             <div class="close">
                 <i onclick="paymentHide()" class="fa-regular fa-circle-xmark"></i>
             </div>
+
+            {{-- NON SI TOCCA DA QUI --}}
             <script src="https://js.braintreegateway.com/web/dropin/1.33.2/js/dropin.js"></script>
 
             <div id="dropin-container"></div>
             <button id="submit-button" class="button button--small button--green">Purchase</button>
+            {{-- A QUI --}}
         </div>
 
     </div>
+
+    {{-- DA QUI --}}
     <script>
+
+        
+
         var button = document.querySelector('#submit-button');
         braintree.dropin.create({
             authorization: "{{ \Braintree\ClientToken::generate() }}",
@@ -112,14 +120,14 @@ $j = 0;
                     }, function(response) {
                         if (response.success) {
                             alert('Payment successfull!');
-                            // axios
-                            //     .post("'/sponsor/send/SPONSOR-ID'", this.visual_data)
-                            //     .then((res) => {
-                            //         console.log(res.data);
-                            //     })
-                            //     .catch((error) => {
-                            //         console.log(error);
-                            //     });
+                            axios
+                                .post('/sponsor/send/',)
+                                .then((res) => {
+                                    console.log(res.data);
+                                })
+                                .catch((error) => {
+                                    console.log(error);
+                                });
                         } else {
                             alert('Payment failed');
                         }
@@ -128,6 +136,8 @@ $j = 0;
             });
         });
     </script>
+
+    {{-- A QUI --}}
 @endsection
 
 
