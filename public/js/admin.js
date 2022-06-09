@@ -3100,7 +3100,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_Home_WelcomeSection_vue__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../components/Home/WelcomeSection.vue */ "./resources/js/components/Home/WelcomeSection.vue");
 /* harmony import */ var _components_Home_PolaroidsWrapper_vue__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../components/Home/PolaroidsWrapper.vue */ "./resources/js/components/Home/PolaroidsWrapper.vue");
 /* harmony import */ var _components_FooterComponent_vue__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../components/FooterComponent.vue */ "./resources/js/components/FooterComponent.vue");
-/* harmony import */ var _components_GeoSearch_vue__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../components/GeoSearch.vue */ "./resources/js/components/GeoSearch.vue");
 //
 //
 //
@@ -3110,8 +3109,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-
 
 
 
@@ -3124,8 +3121,7 @@ __webpack_require__.r(__webpack_exports__);
     CardsShowcase: _components_Home_CardShowcase_vue__WEBPACK_IMPORTED_MODULE_1__["default"],
     SectionVue: _components_Home_WelcomeSection_vue__WEBPACK_IMPORTED_MODULE_2__["default"],
     PolaroidsWrapper: _components_Home_PolaroidsWrapper_vue__WEBPACK_IMPORTED_MODULE_3__["default"],
-    Footer: _components_FooterComponent_vue__WEBPACK_IMPORTED_MODULE_4__["default"],
-    GeoSearch: _components_GeoSearch_vue__WEBPACK_IMPORTED_MODULE_5__["default"] // SearchBar
+    Footer: _components_FooterComponent_vue__WEBPACK_IMPORTED_MODULE_4__["default"] // SearchBar
 
   }
 });
@@ -8384,25 +8380,6 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 // module
 exports.push([module.i, "img[data-v-40fc0132] {\n  width: 100%;\n  height: 100%;\n  -o-object-fit: cover;\n     object-fit: cover;\n  -o-object-position: center;\n     object-position: center;\n  display: block;\n}\n.thumb-wrapper[data-v-40fc0132] {\n  width: 100%;\n  height: 480px;\n}\n.thumb-wrapper .big-pic[data-v-40fc0132] {\n  width: 100%;\n  height: 100%;\n}\n.thumb-wrapper figure[data-v-40fc0132] {\n  margin: 0;\n  padding: 0;\n  height: 25%;\n}\n.box-shadow[data-v-40fc0132] {\n  box-shadow: 0 4px 10px -4px #333;\n}\nul[data-v-40fc0132] {\n  display: flex;\n  flex-direction: column;\n  gap: 20px;\n  list-style: none;\n}\nul li[data-v-40fc0132] {\n  max-width: 90px;\n  padding: 5px;\n  border-radius: 20px;\n  text-align: center;\n  text-transform: uppercase;\n  font-family: \"Trebuchet MS\", \"Lucida Sans Unicode\", \"Lucida Grande\", \"Lucida Sans\", Arial, sans-serif;\n  font-size: 12px;\n  font-weight: 900;\n  background: #ff385c;\n}\n.ms__btn[data-v-40fc0132] {\n  font-family: \"Trebuchet MS\", \"Lucida Sans Unicode\", \"Lucida Grande\", \"Lucida Sans\", Arial, sans-serif;\n  font-weight: 900;\n  background: #ff385c;\n}\n.ms__font[data-v-40fc0132] {\n  font-family: \"Trebuchet MS\", \"Lucida Sans Unicode\", \"Lucida Grande\", \"Lucida Sans\", Arial, sans-serif;\n  font-weight: 900;\n  font-size: 18px;\n  color: #ff385c;\n}\n.ms__price[data-v-40fc0132] {\n  font-weight: 900;\n  color: #ff385c;\n}", ""]);
-
-// exports
-
-
-/***/ }),
-
-/***/ "./node_modules/css-loader/index.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/pages/HouseAdminShow.vue?vue&type=style&index=0&id=6b144b75&lang=scss&scoped=true&":
-/*!*******************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/css-loader!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--7-2!./node_modules/sass-loader/dist/cjs.js??ref--7-3!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/pages/HouseAdminShow.vue?vue&type=style&index=0&id=6b144b75&lang=scss&scoped=true& ***!
-  \*******************************************************************************************************************************************************************************************************************************************************************************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loader/lib/css-base.js */ "./node_modules/css-loader/lib/css-base.js")(false);
-// imports
-
-
-// module
-exports.push([module.i, "img[data-v-6b144b75] {\n  width: 100%;\n  height: 100%;\n  -o-object-fit: cover;\n     object-fit: cover;\n  -o-object-position: center;\n     object-position: center;\n  display: block;\n}\n.collage-wrapper[data-v-6b144b75] {\n  width: 100%;\n  height: 480px;\n  display: flex;\n}\n.collage-wrapper .big-pic[data-v-6b144b75] {\n  width: 85%;\n  height: 100%;\n}\n.collage-wrapper .small-pics[data-v-6b144b75] {\n  width: 15%;\n  height: 100%;\n}\n.collage-wrapper .small-pics figure[data-v-6b144b75] {\n  margin: 0;\n  padding: 0;\n  height: 25%;\n}\n.box-shadow[data-v-6b144b75] {\n  box-shadow: 0 4px 10px -4px #333;\n}\nul[data-v-6b144b75] {\n  display: flex;\n  flex-direction: column;\n  gap: 20px;\n  list-style: none;\n}\nul li[data-v-6b144b75] {\n  max-width: 90px;\n  padding: 5px;\n  border-radius: 20px;\n  text-align: center;\n  text-transform: uppercase;\n  font-family: \"Trebuchet MS\", \"Lucida Sans Unicode\", \"Lucida Grande\", \"Lucida Sans\", Arial, sans-serif;\n  font-size: 12px;\n  font-weight: 900;\n  background: #ff385c;\n}\n.ms__btn[data-v-6b144b75] {\n  font-family: \"Trebuchet MS\", \"Lucida Sans Unicode\", \"Lucida Grande\", \"Lucida Sans\", Arial, sans-serif;\n  font-weight: 900;\n  background: #ff385c;\n}\n.ms__font[data-v-6b144b75] {\n  font-family: \"Trebuchet MS\", \"Lucida Sans Unicode\", \"Lucida Grande\", \"Lucida Sans\", Arial, sans-serif;\n  font-weight: 900;\n  font-size: 18px;\n  color: #ff385c;\n}\n.ms__price[data-v-6b144b75] {\n  font-weight: 900;\n  color: #ff385c;\n}", ""]);
 
 // exports
 
@@ -42234,8 +42211,6 @@ var render = function () {
     [
       _c("Banner"),
       _vm._v(" "),
-      _c("GeoSearch"),
-      _vm._v(" "),
       _c("PolaroidsWrapper"),
       _vm._v(" "),
       _c("SectionVue"),
@@ -57426,8 +57401,8 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! D:\Users\Simone\Documents\Progetti\boolbnb-final-project\resources\js\admin.js */"./resources/js/admin.js");
-module.exports = __webpack_require__(/*! D:\Users\Simone\Documents\Progetti\boolbnb-final-project\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! C:\Users\Micae\dev\boolbnb-final-project\resources\js\admin.js */"./resources/js/admin.js");
+module.exports = __webpack_require__(/*! C:\Users\Micae\dev\boolbnb-final-project\resources\sass\app.scss */"./resources/sass/app.scss");
 
 
 /***/ })
