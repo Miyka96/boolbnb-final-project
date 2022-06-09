@@ -8,9 +8,10 @@
 
    <div class="container mt-4 py-5">
 
-      Edit appartamento n {{ $house->id }}
+      <h1 class="mt-5">Modifica casa</h1>
 
-      <form action="{{ route('user.houses.update', $house) }}" method="POST">
+
+      <form class="pt-1" action="{{ route('user.houses.update', $house) }}" method="POST">
          @csrf
          @method('PUT')
 

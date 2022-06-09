@@ -32,10 +32,9 @@ Route::middleware('auth')
       Route::get('/messages/{house_id}', 'MessageController@index')->name('messages.index');
 
    Route::resource('sponsorships', 'SponsorshipController'); //metodo custom per attivazione sponsorship
-
-      // rotta statische a partire dalla show
-      Route::post('position', 'PositionController@store')->name('position.store');
    });
+
+Route::post('/position', 'PositionController@store')->name('position.store');
 
 Route::resource('visualizations', 'VisualizationController')->only('store'); // associata alla funzione che apre la card prima di accedere alla show
 
