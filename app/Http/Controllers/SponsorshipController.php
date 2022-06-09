@@ -11,8 +11,4 @@ class SponsorshipController extends Controller
 
         return view('user.sponsor', compact('sponsorship'));
     }
-
-    public function buySponsor(Request $request){
-        // funzione custom per acquistare sponsor?
-    }
 }
