@@ -18,27 +18,27 @@ class PositionController extends Controller
      */
     public function store(Request $request)
     {
-        $lat= $request->lat;
-        $lon= $request->lon;
-        $address= $request->address;
-        $city= $request->city;
-        $country= $request->country;
-        $zipCode= $request->zipCode;
-        $created_at= now();
+        // $lat= $request->lat;
+        // $lon= $request->lon;
+        // $address= $request->address;
+        // $city= $request->city;
+        // $country= $request->country;
+        // $zipCode= $request->zipCode;
+        // $created_at= now();
 
-        $add= DB::table('positions')->insert([
-            'latitude' => $lat,
-            'longitude' => $lon,
-            'address' => $address,
-            'city' => $city,
-            'country' => $country,
-            'zip_code' => $zipCode,
-            'created_at' => $created_at,
-        ]);
+        // $add= DB::table('positions')->insert([
+        //     'latitude' => $lat,
+        //     'longitude' => $lon,
+        //     'address' => $address,
+        //     'city' => $city,
+        //     'country' => $country,
+        //     'zip_code' => $zipCode,
+        //     'created_at' => $created_at,
+        // ]);
 
-        $position = DB::table('positions')->orderBy('created_at', 'DESC')->first();
+        // $position = DB::table('positions')->orderBy('created_at', 'DESC')->first();
 
-        return $position;
+        // return $position;
     }
 
 }

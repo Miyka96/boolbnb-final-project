@@ -2042,6 +2042,13 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
@@ -2085,8 +2092,6 @@ __webpack_require__.r(__webpack_exports__);
       }
     },
     saveAddress: function saveAddress(element) {
-      var _this2 = this;
-
       this.positionData.lat = element.position.lat;
       this.positionData.lon = element.position.lon;
       this.positionData.streetName = element.address.streetName;
@@ -2103,12 +2108,17 @@ __webpack_require__.r(__webpack_exports__);
       this.positionData.zipCode = element.address.postalCode;
       console.log(this.positionData.lat, this.positionData.lon, this.positionData.address, this.positionData.city, this.positionData.country, this.positionData.zipCode);
       this.search = element.address.freeformAddress;
-      axios__WEBPACK_IMPORTED_MODULE_0___default.a.post("/position", this.positionData).then(function (res) {
-        _this2.positionId = res.position.id;
-        console.log(res.data);
-      })["catch"](function (error) {
-        console.log(error);
-      });
+      /*
+          axios
+              .post("/position", this.positionData)
+              .then((res) => {
+                  this.positionId = res.position.id;
+                  console.log(res.data);
+              })
+              .catch((error) => {
+                  console.log(error);
+              });
+      */
     },
     deleteItems: function deleteItems() {
       this.visible = false;
@@ -4796,9 +4806,11 @@ var render = function () {
   var _c = _vm._self._c || _h
   return _c(
     "nav",
-    { staticClass: "d-flex flex-column container" },
+    { staticClass: "d-flex flex-column container px-0" },
     [
       _c("div", { attrs: { id: "search" } }, [
+        _c("label", { attrs: { for: "search-bar" } }, [_vm._v("Indirizzo")]),
+        _vm._v(" "),
         _c("input", {
           directives: [
             {
@@ -4829,8 +4841,45 @@ var render = function () {
         }),
         _vm._v(" "),
         _c("input", {
-          attrs: { type: "text", name: "position_id", id: "position_id" },
-          domProps: { value: _vm.positionId },
+          attrs: { type: "hidden", name: "position_lat", id: "position_lat" },
+          domProps: { value: _vm.positionData.lat },
+        }),
+        _vm._v(" "),
+        _c("input", {
+          attrs: { type: "hidden", name: "position_lon", id: "position_lon" },
+          domProps: { value: _vm.positionData.lon },
+        }),
+        _vm._v(" "),
+        _c("input", {
+          attrs: {
+            type: "hidden",
+            name: "position_address",
+            id: "position_address",
+          },
+          domProps: { value: _vm.positionData.address },
+        }),
+        _vm._v(" "),
+        _c("input", {
+          attrs: { type: "hidden", name: "position_city", id: "position_city" },
+          domProps: { value: _vm.positionData.city },
+        }),
+        _vm._v(" "),
+        _c("input", {
+          attrs: {
+            type: "hidden",
+            name: "position_country",
+            id: "position_country",
+          },
+          domProps: { value: _vm.positionData.country },
+        }),
+        _vm._v(" "),
+        _c("input", {
+          attrs: {
+            type: "hidden",
+            name: "position_zip_code",
+            id: "position_zip_code",
+          },
+          domProps: { value: _vm.positionData.zipCode },
         }),
       ]),
       _vm._v(" "),

@@ -11,13 +11,13 @@
 
         {{-- POSITION FORM --}}
 
+        {{-- HOUSE FORM --}}
         <form action="{{ route('user.houses.store') }}" method="post" id="create-house-form">
+            @csrf
+
             <div id="search">
                 <geo-search></geo-search>
             </div>
-
-            {{-- HOUSE FORM --}}
-                @csrf
 
                 {{-- User id --}}
                 <div class="form-group">

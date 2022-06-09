@@ -1,6 +1,8 @@
 <template>
-    <nav class="d-flex flex-column container">
+    <nav class="d-flex flex-column container px-0">
         <div id="search">
+
+        <label for="search-bar">Indirizzo</label>
             <input
                 class="form-control mr-sm-2"
                 placeholder="Inserisci indirizzo"
@@ -9,7 +11,12 @@
                 v-model="search"
                 @keyup="searchItems()"
             />
-            <input type="text" name="position_id" id="position_id" :value="(positionId)">
+            <input type="hidden" name="position_lat" id="position_lat" :value="(positionData.lat)">
+            <input type="hidden" name="position_lon" id="position_lon" :value="(positionData.lon)">
+            <input type="hidden" name="position_address" id="position_address" :value="(positionData.address)">
+            <input type="hidden" name="position_city" id="position_city" :value="(positionData.city)">
+            <input type="hidden" name="position_country" id="position_country" :value="(positionData.country)">
+            <input type="hidden" name="position_zip_code" id="position_zip_code" :value="(positionData.zipCode)">
         </div>
         <div
             class="flex-column"
@@ -106,15 +113,17 @@ export default {
             );
             this.search = element.address.freeformAddress;
 
-            axios
-                .post("/position", this.positionData)
-                .then((res) => {
-                    this.positionId = res.position.id;
-                    console.log(res.data);
-                })
-                .catch((error) => {
-                    console.log(error);
-                });
+            /*
+                axios
+                    .post("/position", this.positionData)
+                    .then((res) => {
+                        this.positionId = res.position.id;
+                        console.log(res.data);
+                    })
+                    .catch((error) => {
+                        console.log(error);
+                    });
+            */
         },
 
         deleteItems: function () {
@@ -124,4 +133,6 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+
+</style>

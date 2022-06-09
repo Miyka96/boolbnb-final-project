@@ -44,24 +44,39 @@ class HouseController extends Controller
     */
    public function store(Request $request)
    {
-      $positionId= DB::table('positions')->latest('id')->first();
-
       $request->validate([
          'title' => 'required|string|min:5|max:255',
          'room_num' => 'required|numeric|min:1', // serve il max?
          'beds_num' => 'required|numeric|min:1',  // serve il max?
          'toilets_num' => 'required|numeric|min:1',  // serve il max?
-         'square_meters' => 'required|numeric|min:20',  // serve il max?
-         'position_id' => 'required',
-         'image' => 'required|url', // possibile array di immagini
+         'square_meters' => 'required|numeric|min:20',  
+         'image' => 'required|url',
          'is_visible' => 'boolean',
          'user_id' => 'required',
-         'cost_per_night' => 'required|numeric|min:10|max:1000' //da gestire il float?
+         'cost_per_night' => 'required|numeric|min:10|max:1000' 
+      ]);
+
+      $lat= $request->position_lat;
+      $lon= $request->position_lon;
+      $address= $request->position_address;
+      $city= $request->position_city;
+      $country= $request->position_country;
+      $zipCode= $request->position_zip_code;
+      $created_at= now();
+
+      $position = Position::create([
+          'latitude' => $lat,
+          'longitude' => $lon,
+          'address' => $address,
+          'city' => $city,
+          'country' => $country,
+          'zip_code' => $zipCode,
+          'created_at' => $created_at,
       ]);
 
       $data = $request->all();
       $house = new House();
-      $house->position_id= $positionId;
+      $house->position_id= $position->id;
       $house->fill( $data );
       $house->save();
 
@@ -112,15 +127,15 @@ class HouseController extends Controller
 
       $request->validate([
          'title' => 'required|string|min:5|max:255',
-         'room_num' => 'required|numeric|min:1', // serve il max?
-         'beds_num' => 'required|numeric|min:1',  // serve il max?
-         'toilets_num' => 'required|numeric|min:1',  // serve il max?
-         'square_meters' => 'required|numeric|min:20',  // serve il max?
+         'room_num' => 'required|numeric|min:1', 
+         'beds_num' => 'required|numeric|min:1',  
+         'toilets_num' => 'required|numeric|min:1',  
+         'square_meters' => 'required|numeric|min:20',  
          'position_id' => 'required|exists:positions,id',
          'image' => 'required|url',
-         'is_visible' => 'required|boolean', // possibile array di immagini
+         'is_visible' => 'required|boolean', 
          'user_id' => 'required|exists:users,id',
-         'cost_per_night' => 'required|numeric|min:10|max:1000' //da gestire il float?
+         'cost_per_night' => 'required|numeric|min:10|max:1000'
       ]);
 
       $data = $request->all();
