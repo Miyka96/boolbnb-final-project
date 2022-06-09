@@ -10,7 +10,7 @@
             <strong>&euro;{{ house.cost_per_night }}</strong
             >/night
           </p>
-          <p class="card-rating">Id: {{ house.id }}</p>
+          <p class="card-rating">Id: {{ house.id }}, distanza: {{ house.distance.toFixed(0) }}</p>
         </div>
         <span :class="[is_sponsored ? 'active' : '', 'sponsored_icon']">
           <i class="fa-solid fa-star"></i>

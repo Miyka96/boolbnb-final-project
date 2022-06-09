@@ -2115,6 +2115,18 @@ __webpack_require__.r(__webpack_exports__);
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _HouseCard_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../HouseCard.vue */ "./resources/js/components/HouseCard.vue");
 /* harmony import */ var _store__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../store */ "./resources/js/store.js");
+function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableSpread(); }
+
+function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _iterableToArray(iter) { if (typeof Symbol !== "undefined" && iter[Symbol.iterator] != null || iter["@@iterator"] != null) return Array.from(iter); }
+
+function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) return _arrayLikeToArray(arr); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
 //
 //
 //
@@ -2183,9 +2195,7 @@ __webpack_require__.r(__webpack_exports__);
       houses: [],
       filteredHouses: [],
       lastPage: 0,
-      currentPage: 1 // targetLat: state.targetPosition.lat,
-      // targetLong: state.targetPosition.long
-
+      currentPage: 1
     };
   },
   computed: {
@@ -2253,10 +2263,11 @@ __webpack_require__.r(__webpack_exports__);
     filterHouses: function filterHouses() {
       var _this2 = this;
 
-      // filtra le case per i servizi selezionati
+      var orderedHouses = this.orderHouses(this.houses); // filtra le case per i servizi selezionati
+
       if (!this.sponsoredOnly && this.services && this.services.length > 0) {
         this.filteredHouses = [];
-        this.houses.forEach(function (house) {
+        orderedHouses.forEach(function (house) {
           var activeServices = [];
           house.services.forEach(function (service) {
             activeServices.push(service.id);
@@ -2269,8 +2280,38 @@ __webpack_require__.r(__webpack_exports__);
           }
         });
       } else {
-        this.filteredHouses = this.houses;
+        this.filteredHouses = orderedHouses;
       }
+    },
+    orderHouses: function orderHouses(houses) {
+      var _this3 = this;
+
+      houses.forEach(function (house, i) {
+        var distance = _this3.calcDistanceLatLong(_this3.targetLat, _this3.targetLong, house.position.latitude, house.position.longitude);
+
+        house.distance = distance; // console.log(i + ': ' + house.id + ' - ' + house.distance)
+      });
+
+      var orderedHouses = _toConsumableArray(houses); // 1, prima B
+      // -1, prima A
+
+
+      orderedHouses.sort(function (a, b) {
+        if (a.sponsor_start != undefined && b.sponsor_start != undefined || a.sponsor_start == undefined && b.sponsor_start == undefined) {
+          if (a.distance <= b.distance) {
+            return -1;
+          } else {
+            return 1;
+          }
+        } else if (a.sponsor_start != undefined && b.sponsor_start == undefined) {
+          return -1;
+        } else if (a.sponsor_start == undefined && b.sponsor_start != undefined) {
+          return 1;
+        } else {
+          return 0;
+        }
+      });
+      return orderedHouses;
     },
     calcDistanceLatLong: function calcDistanceLatLong(lat1, long1, lat2, long2) {
       // calcola la distanza tra due punti che utilizzano le coordinate lat e long
@@ -5050,7 +5091,12 @@ var render = function () {
               ]),
               _vm._v(" "),
               _c("p", { staticClass: "card-rating" }, [
-                _vm._v("Id: " + _vm._s(_vm.house.id)),
+                _vm._v(
+                  "Id: " +
+                    _vm._s(_vm.house.id) +
+                    ", distanza: " +
+                    _vm._s(_vm.house.distance.toFixed(0))
+                ),
               ]),
             ]),
             _vm._v(" "),

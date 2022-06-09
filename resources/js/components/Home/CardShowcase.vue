@@ -68,9 +68,7 @@ export default {
       houses: [],
       filteredHouses: [],
       lastPage: 0,
-      currentPage: 1,
-      // targetLat: state.targetPosition.lat,
-      // targetLong: state.targetPosition.long
+      currentPage: 1
     };
   },
   computed: {
@@ -138,11 +136,12 @@ export default {
         });
     },
     filterHouses() {
+      const orderedHouses = this.orderHouses(this.houses)
       // filtra le case per i servizi selezionati
       if (!this.sponsoredOnly && this.services && this.services.length > 0) {
         this.filteredHouses = [];
 
-        this.houses.forEach((house) => {
+        orderedHouses.forEach((house) => {
           const activeServices = [];
 
           house.services.forEach((service) => {
@@ -160,8 +159,45 @@ export default {
           }
         });
       } else {
-        this.filteredHouses = this.houses;
+        this.filteredHouses = orderedHouses;
       }
+    },
+    orderHouses(houses) {
+
+      houses.forEach((house,i) => {
+
+        const distance = this.calcDistanceLatLong(
+          this.targetLat,
+          this.targetLong,
+          house.position.latitude,
+          house.position.longitude
+        )
+
+        house.distance = distance
+
+        // console.log(i + ': ' + house.id + ' - ' + house.distance)
+      });
+
+      const orderedHouses = [ ...houses ]
+      // 1, prima B
+      // -1, prima A
+      orderedHouses.sort( function(a,b) {
+        if( ( a.sponsor_start != undefined && b.sponsor_start != undefined ) || ( a.sponsor_start == undefined && b.sponsor_start == undefined ) ) {
+          if( a.distance <= b.distance ) {
+            return -1
+          } else {
+            return 1
+          }
+        } else if ( a.sponsor_start != undefined && b.sponsor_start == undefined ) {
+          return -1
+        } else if ( a.sponsor_start == undefined && b.sponsor_start != undefined ) {
+          return 1
+        } else {
+          return 0
+        }
+      })
+
+      return orderedHouses
     },
     calcDistanceLatLong: function (lat1, long1, lat2, long2) {
       // calcola la distanza tra due punti che utilizzano le coordinate lat e long
