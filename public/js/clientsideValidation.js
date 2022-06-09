@@ -361,14 +361,10 @@ function setSuccessFor(input) {
 /***/ (function(module, exports, __webpack_require__) {
 
 <<<<<<< HEAD
-<<<<<<< HEAD
 module.exports = __webpack_require__(/*! D:\Users\Simone\Documents\Progetti\boolbnb-final-project\resources\js\clientsideValidation.js */"./resources/js/clientsideValidation.js");
 =======
 module.exports = __webpack_require__(/*! C:\Users\Micae\dev\boolbnb-final-project\resources\js\clientsideValidation.js */"./resources/js/clientsideValidation.js");
 >>>>>>> feat/continue_geosearch
-=======
-module.exports = __webpack_require__(/*! C:\Users\Micae\dev\boolbnb-final-project\resources\js\clientsideValidation.js */"./resources/js/clientsideValidation.js");
->>>>>>> feat/braintree_test
 
 
 /***/ })
