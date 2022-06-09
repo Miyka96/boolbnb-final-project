@@ -44,6 +44,8 @@
                   <i class="icon fa-solid fa-comments"></i>
                </a>
 
+               <a href="{{ route('user.sponsorship.index', $house) }}">Sponsorizza</a>
+
             </div>
 
             

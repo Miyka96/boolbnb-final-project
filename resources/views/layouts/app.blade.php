@@ -81,7 +81,6 @@
                                     <a class="dropdown-item" href="{{ route('user.') }}">Profilo</a>
                                     <a class="dropdown-item" href="{{ route('user.houses.index', Auth::user()->id) }}">Le mie case</a>
                                     <a class="dropdown-item" href="{{ route('user.houses.create') }}">Aggiungi casa</a>
-                                    <a class="dropdown-item" href="{{ route('user.sponporships.index') }}">Sponsorizzazioni</a>
 
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST"
                                         class="d-none">

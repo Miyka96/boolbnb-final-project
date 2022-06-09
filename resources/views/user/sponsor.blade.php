@@ -112,14 +112,14 @@ $j = 0;
                     }, function(response) {
                         if (response.success) {
                             alert('Payment successfull!');
-                            axios
-                                .post("'/sponsor/send/SPONSOR-ID", this.visual_data)
-                                .then((res) => {
-                                    console.log(res.data);
-                                })
-                                .catch((error) => {
-                                    console.log(error);
-                                });
+                            // axios
+                            //     .post("'/sponsor/send/SPONSOR-ID'", this.visual_data)
+                            //     .then((res) => {
+                            //         console.log(res.data);
+                            //     })
+                            //     .catch((error) => {
+                            //         console.log(error);
+                            //     });
                         } else {
                             alert('Payment failed');
                         }
