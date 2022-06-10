@@ -3,7 +3,7 @@
         class="container-fluid d-flex flex-column align-items-center justify-content-center"
     >
         <div
-            class="filter_wrapper container d-flex mb-4 pb-4 justify-content-center"
+            class="filter_wrapper container d-flex mb-4 pb-4 justify-content-center animate__animated animate__flipInX"
         >
             <div class="wrapper">
                 <h4 class="mb-1 title">Raggio di ricerca (km)</h4>
@@ -28,7 +28,7 @@
                 <input v-model="beds_num" type="number" max="25" class="mb-2" />
             </div>
 
-            <div class="service_wrapper col-8">
+            <div class="service_wrapper col-8 animate__animated animate__flipInX">
                 <h4 class="mb-1 text-center mb-3 title">Altri servizi</h4>
                 <div class="d-flex flex-wrap justify-content-center">
                     <div
@@ -65,6 +65,7 @@
 <script>
 import HouseCard from "../HouseCard.vue";
 import CardsShowcase from "../Home/CardShowcase.vue";
+import 'animate.css';
 
 // [TODO] aggiungere controllo: se la query è vuota o se non ci sono risultati con lat/long
 // visualizzare un componente con messaggio d'errore
