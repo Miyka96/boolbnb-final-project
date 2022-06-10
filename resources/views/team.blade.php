@@ -29,7 +29,7 @@ $team = [
       'github' => 'https://github.com/Miyka96'
 ],
 [
-      'img' => './images/Eduardo.jpg',
+      'img' => './images/Eduardo.png',
       'name' => 'Eduardo Vaccarella',
       'linkedin' => 'https://www.linkedin.com/in/eduardo-vaccarella-152a661b9/',
       'github' => 'https://github.com/eduardoego'
