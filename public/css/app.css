@@ -12400,3 +12400,8 @@ body::-webkit-scrollbar-thumb:hover {
   border-color: rgb(219, 59, 91);
 }
 
+
+h2 {
+  margin: 50px 0;
+}
+

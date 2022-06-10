@@ -8,6 +8,7 @@ use App\Service;
 use App\Position;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Storage;
 
 class HouseController extends Controller
 {
@@ -44,13 +45,14 @@ class HouseController extends Controller
     */
    public function store(Request $request)
    {
+
       $request->validate([
          'title' => 'required|string|min:5|max:255',
          'room_num' => 'required|numeric|min:1', // serve il max?
          'beds_num' => 'required|numeric|min:1',  // serve il max?
          'toilets_num' => 'required|numeric|min:1',  // serve il max?
          'square_meters' => 'required|numeric|min:20',  
-         'image' => 'required|url',
+         'image' => 'required|file|image|mimetypes:image/jpeg,image/png,image/svg|max:2048',
          'is_visible' => 'boolean',
          'user_id' => 'required',
          'cost_per_night' => 'required|numeric|min:10|max:1000' 
@@ -77,6 +79,12 @@ class HouseController extends Controller
       $data = $request->all();
       $house = new House();
       $house->position_id= $position->id;
+
+      $image= Storage::put('uploads', $data['image']);
+      $data['image']= $image;
+
+      $house->update($data);
+
       $house->fill( $data );
       $house->save();
 
