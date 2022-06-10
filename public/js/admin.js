@@ -2965,6 +2965,30 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
  // [TODO] aggiungere controllo: se la query è vuota o se non ci sono risultati con lat/long
 // visualizzare un componente con messaggio d'errore
@@ -8417,7 +8441,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, "*[data-v-1d7a6b09] {\n  margin: 0;\n  padding: 0;\n  box-sizing: border-box;\n}\nbutton[data-v-1d7a6b09] {\n  color: white;\n  font-size: 14px;\n  font-weight: bold;\n  background-color: #ff385c;\n  border-radius: 25px;\n  text-align: center;\n  height: 30px;\n  width: 150px;\n  margin-right: 5px;\n  border: 0 !important;\n}\n.container-fluid[data-v-1d7a6b09] {\n  padding: 80px 0;\n  background-color: white;\n  opacity: 80%;\n  display: flex;\n  justify-content: center;\n  align-items: flex-start;\n}\n.container-fluid .filter_wrapper[data-v-1d7a6b09] {\n  min-width: 60%;\n  border: 1px solid rgba(113, 113, 113, 0.1921568627);\n  border-radius: 10px !important;\n  padding: 50px;\n  box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.1);\n}\n.container-fluid .filter_wrapper input[data-v-1d7a6b09] {\n  border: 1px solid rgba(113, 113, 113, 0.1921568627);\n}\n.container-fluid .filter_wrapper .alloggi_wrapper .row[data-v-1d7a6b09] {\n  width: 100%;\n  display: flex;\n  padding: 30px 0;\n  margin-bottom: 30px;\n  border-bottom: 1px solid grey;\n  gap: 10px;\n}\n.container-fluid .filter_wrapper .alloggi_wrapper .row .alloggi[data-v-1d7a6b09] {\n  height: 70px;\n  border: 1px solid grey;\n  border-radius: 5px;\n  display: flex;\n  flex-direction: column;\n  justify-content: space-between;\n  padding: 8px 10px;\n}\n.container-fluid .filter_wrapper .alloggi_wrapper .row .alloggi span[data-v-1d7a6b09] {\n  font-size: 20px;\n}\n.container-fluid .filter_wrapper .stanze_wrapper[data-v-1d7a6b09] {\n  border-bottom: 1px solid grey;\n  margin-bottom: 30px;\n}\n.container-fluid .filter_wrapper .stanze_wrapper h4[data-v-1d7a6b09] {\n  margin-top: 20px;\n}\n.container-fluid .filter_wrapper .stanze_wrapper .pill_wrapper[data-v-1d7a6b09] {\n  width: 100%;\n  display: flex;\n  gap: 2%;\n  overflow: scroll;\n  padding: 30px 20px;\n}\n.container-fluid .filter_wrapper .stanze_wrapper .pill_wrapper .pill[data-v-1d7a6b09] {\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  height: 20px;\n  padding: 20px;\n  border: 1px solid grey;\n  border-radius: 20px;\n  flex-shrink: 0;\n}\n.container-fluid .filter_wrapper .checkbox_wrapper[data-v-1d7a6b09] {\n  margin-top: 30px;\n  flex-grow: 1;\n  height: 200px;\n  gap: 3%;\n}\n.container-fluid .filter_wrapper .checkbox_wrapper .checkbox[data-v-1d7a6b09] {\n  padding-left: 35px;\n  display: flex;\n  align-items: center;\n}\n.container-fluid .filter_wrapper .checkbox_wrapper .checkbox input[data-v-1d7a6b09] {\n  height: 30px;\n  width: 30px;\n  margin-right: 10px;\n}\n@media screen and (max-width: 767px) {\n.alloggi[data-v-1d7a6b09] {\n    width: 200px;\n}\n}", ""]);
+exports.push([module.i, "*[data-v-1d7a6b09] {\n  margin: 0;\n  padding: 0;\n  box-sizing: border-box;\n}\n.title[data-v-1d7a6b09] {\n  color: #ff385c;\n  margin-top: 5px;\n}\n.service_wrapper[data-v-1d7a6b09] {\n  padding-left: 20px;\n}\n.service_wrapper input[data-v-1d7a6b09] {\n  display: none;\n  cursor: pointer;\n}\n.service_wrapper input:checked ~ label[data-v-1d7a6b09] {\n  color: #ff385c;\n  font-weight: 700;\n}\n.service_wrapper label[data-v-1d7a6b09] {\n  border: 1px solid #ffe8f8;\n  padding: 8px 30px;\n  margin: 2px;\n  border-radius: 6px;\n  color: rgb(25, 25, 25);\n  background-color: rgba(255, 232, 247, 0.4078431373);\n  cursor: pointer;\n}\n.filter_wrapper input[data-v-1d7a6b09] {\n  border: 1px solid #ffe8f8;\n  background-color: rgba(255, 232, 247, 0.4078431373);\n  color: rgb(25, 25, 25);\n  padding: 4px 4px;\n  width: 80px;\n}\nbutton[data-v-1d7a6b09] {\n  color: white;\n  font-size: 14px;\n  font-weight: bold;\n  background-color: #ff385c;\n  border-radius: 25px;\n  text-align: center;\n  height: 30px;\n  width: 150px;\n  margin-right: 5px;\n  border: 0 !important;\n}\n.container-fluid[data-v-1d7a6b09] {\n  padding: 80px 0;\n  background-color: white;\n  opacity: 80%;\n  display: flex;\n  justify-content: center;\n  align-items: flex-start;\n}\n.container-fluid .filter_wrapper[data-v-1d7a6b09] {\n  min-width: 60%;\n  border: 1px solid rgba(113, 113, 113, 0.1921568627);\n  border-radius: 10px !important;\n  padding: 50px;\n  box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.1);\n}\n.container-fluid .filter_wrapper input[data-v-1d7a6b09] {\n  border: 1px solid rgba(113, 113, 113, 0.1921568627);\n}\n.container-fluid .filter_wrapper .alloggi_wrapper .row[data-v-1d7a6b09] {\n  width: 100%;\n  display: flex;\n  padding: 30px 0;\n  margin-bottom: 30px;\n  border-bottom: 1px solid grey;\n  gap: 10px;\n}\n.container-fluid .filter_wrapper .alloggi_wrapper .row .alloggi[data-v-1d7a6b09] {\n  height: 70px;\n  border: 1px solid grey;\n  border-radius: 5px;\n  display: flex;\n  flex-direction: column;\n  justify-content: space-between;\n  padding: 8px 10px;\n}\n.container-fluid .filter_wrapper .alloggi_wrapper .row .alloggi span[data-v-1d7a6b09] {\n  font-size: 20px;\n}\n.container-fluid .filter_wrapper .stanze_wrapper[data-v-1d7a6b09] {\n  border-bottom: 1px solid grey;\n  margin-bottom: 30px;\n}\n.container-fluid .filter_wrapper .stanze_wrapper h4[data-v-1d7a6b09] {\n  margin-top: 20px;\n}\n.container-fluid .filter_wrapper .stanze_wrapper .pill_wrapper[data-v-1d7a6b09] {\n  width: 100%;\n  display: flex;\n  gap: 2%;\n  overflow: scroll;\n  padding: 30px 20px;\n}\n.container-fluid .filter_wrapper .stanze_wrapper .pill_wrapper .pill[data-v-1d7a6b09] {\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  height: 20px;\n  padding: 20px;\n  border: 1px solid grey;\n  border-radius: 20px;\n  flex-shrink: 0;\n}\n.container-fluid .filter_wrapper .checkbox_wrapper[data-v-1d7a6b09] {\n  margin-top: 30px;\n  flex-grow: 1;\n  height: 200px;\n  gap: 3%;\n}\n.container-fluid .filter_wrapper .checkbox_wrapper .checkbox[data-v-1d7a6b09] {\n  padding-left: 35px;\n  display: flex;\n  align-items: center;\n}\n.container-fluid .filter_wrapper .checkbox_wrapper .checkbox input[data-v-1d7a6b09] {\n  height: 30px;\n  width: 30px;\n  margin-right: 10px;\n}\n@media screen and (max-width: 767px) {\n.alloggi[data-v-1d7a6b09] {\n    width: 200px;\n}\n}", ""]);
 
 // exports
 
@@ -41908,140 +41932,164 @@ var render = function () {
   var _c = _vm._self._c || _h
   return _c(
     "div",
-    { staticClass: "container-fluid d-flex flex-column align-items-center" },
+    {
+      staticClass:
+        "container-fluid d-flex flex-column align-items-center justify-content-center",
+    },
     [
       _c(
         "div",
-        { staticClass: "filter_wrapper d-flex flex-column mb-4 pb-4" },
+        {
+          staticClass:
+            "filter_wrapper container d-flex mb-4 pb-4 justify-content-center",
+        },
         [
-          _c("h4", { staticClass: "mb-1" }, [_vm._v("Raggio di ricerca (km)")]),
-          _vm._v(" "),
-          _c("input", {
-            directives: [
-              {
-                name: "model",
-                rawName: "v-model",
-                value: _vm.radius,
-                expression: "radius",
+          _c("div", { staticClass: "wrapper" }, [
+            _c("h4", { staticClass: "mb-1 title" }, [
+              _vm._v("Raggio di ricerca (km)"),
+            ]),
+            _vm._v(" "),
+            _c("input", {
+              directives: [
+                {
+                  name: "model",
+                  rawName: "v-model",
+                  value: _vm.radius,
+                  expression: "radius",
+                },
+              ],
+              staticClass: "mb-1",
+              attrs: { type: "number", min: "1", max: "100" },
+              domProps: { value: _vm.radius },
+              on: {
+                input: function ($event) {
+                  if ($event.target.composing) {
+                    return
+                  }
+                  _vm.radius = $event.target.value
+                },
               },
-            ],
-            staticClass: "mb-1",
-            attrs: { type: "number", min: "1", max: "100" },
-            domProps: { value: _vm.radius },
-            on: {
-              input: function ($event) {
-                if ($event.target.composing) {
-                  return
-                }
-                _vm.radius = $event.target.value
+            }),
+            _vm._v(" "),
+            _c("h4", { staticClass: "mb-1 title" }, [
+              _vm._v("Numero minimo di stanze"),
+            ]),
+            _vm._v(" "),
+            _c("input", {
+              directives: [
+                {
+                  name: "model",
+                  rawName: "v-model",
+                  value: _vm.room_num,
+                  expression: "room_num",
+                },
+              ],
+              staticClass: "mb-1",
+              attrs: { type: "number", min: "", max: "15" },
+              domProps: { value: _vm.room_num },
+              on: {
+                input: function ($event) {
+                  if ($event.target.composing) {
+                    return
+                  }
+                  _vm.room_num = $event.target.value
+                },
               },
-            },
-          }),
-          _vm._v(" "),
-          _c("h4", { staticClass: "mb-1" }, [
-            _vm._v("Numero minimo di stanze"),
+            }),
+            _vm._v(" "),
+            _c("h4", { staticClass: "mb-1 title" }, [
+              _vm._v("Numero minimo di letti"),
+            ]),
+            _vm._v(" "),
+            _c("input", {
+              directives: [
+                {
+                  name: "model",
+                  rawName: "v-model",
+                  value: _vm.beds_num,
+                  expression: "beds_num",
+                },
+              ],
+              staticClass: "mb-2",
+              attrs: { type: "number", max: "25" },
+              domProps: { value: _vm.beds_num },
+              on: {
+                input: function ($event) {
+                  if ($event.target.composing) {
+                    return
+                  }
+                  _vm.beds_num = $event.target.value
+                },
+              },
+            }),
           ]),
           _vm._v(" "),
-          _c("input", {
-            directives: [
-              {
-                name: "model",
-                rawName: "v-model",
-                value: _vm.room_num,
-                expression: "room_num",
-              },
-            ],
-            staticClass: "mb-1",
-            attrs: { type: "number", min: "", max: "15" },
-            domProps: { value: _vm.room_num },
-            on: {
-              input: function ($event) {
-                if ($event.target.composing) {
-                  return
-                }
-                _vm.room_num = $event.target.value
-              },
-            },
-          }),
-          _vm._v(" "),
-          _c("h4", { staticClass: "mb-1" }, [_vm._v("Numero minimo di letti")]),
-          _vm._v(" "),
-          _c("input", {
-            directives: [
-              {
-                name: "model",
-                rawName: "v-model",
-                value: _vm.beds_num,
-                expression: "beds_num",
-              },
-            ],
-            staticClass: "mb-2",
-            attrs: { type: "number", max: "25" },
-            domProps: { value: _vm.beds_num },
-            on: {
-              input: function ($event) {
-                if ($event.target.composing) {
-                  return
-                }
-                _vm.beds_num = $event.target.value
-              },
-            },
-          }),
-          _vm._v(" "),
-          _c("h4", { staticClass: "mb-1" }, [_vm._v("Altri servizi")]),
-          _vm._v(" "),
-          _c(
-            "div",
-            { staticClass: "d-flex" },
-            _vm._l(_vm.servicesApi, function (el) {
-              return _c("div", { key: el.id, staticClass: "ml-2" }, [
-                _c("input", {
-                  directives: [
-                    {
-                      name: "model",
-                      rawName: "v-model",
-                      value: _vm.services,
-                      expression: "services",
-                    },
-                  ],
-                  staticClass: "ms-input",
-                  attrs: { type: "checkbox", id: el.id, name: _vm.services },
-                  domProps: {
-                    value: el.id,
-                    checked: Array.isArray(_vm.services)
-                      ? _vm._i(_vm.services, el.id) > -1
-                      : _vm.services,
-                  },
-                  on: {
-                    change: function ($event) {
-                      var $$a = _vm.services,
-                        $$el = $event.target,
-                        $$c = $$el.checked ? true : false
-                      if (Array.isArray($$a)) {
-                        var $$v = el.id,
-                          $$i = _vm._i($$a, $$v)
-                        if ($$el.checked) {
-                          $$i < 0 && (_vm.services = $$a.concat([$$v]))
-                        } else {
-                          $$i > -1 &&
-                            (_vm.services = $$a
-                              .slice(0, $$i)
-                              .concat($$a.slice($$i + 1)))
-                        }
-                      } else {
-                        _vm.services = $$c
-                      }
-                    },
-                  },
-                }),
-                _vm._v(" "),
-                _c("label", { attrs: { for: el.id } }, [
-                  _vm._v(_vm._s(el.name)),
-                ]),
-              ])
-            }),
-            0
-          ),
+          _c("div", { staticClass: "service_wrapper col-8" }, [
+            _c("h4", { staticClass: "mb-1 text-center mb-3 title" }, [
+              _vm._v("Altri servizi"),
+            ]),
+            _vm._v(" "),
+            _c(
+              "div",
+              { staticClass: "d-flex flex-wrap justify-content-center" },
+              _vm._l(_vm.servicesApi, function (el) {
+                return _c(
+                  "div",
+                  { key: el.id, staticClass: "ml-2 d-flex flex-wrap" },
+                  [
+                    _c("input", {
+                      directives: [
+                        {
+                          name: "model",
+                          rawName: "v-model",
+                          value: _vm.services,
+                          expression: "services",
+                        },
+                      ],
+                      staticClass: "ms-input",
+                      attrs: {
+                        type: "checkbox",
+                        id: el.id,
+                        name: _vm.services,
+                      },
+                      domProps: {
+                        value: el.id,
+                        checked: Array.isArray(_vm.services)
+                          ? _vm._i(_vm.services, el.id) > -1
+                          : _vm.services,
+                      },
+                      on: {
+                        change: function ($event) {
+                          var $$a = _vm.services,
+                            $$el = $event.target,
+                            $$c = $$el.checked ? true : false
+                          if (Array.isArray($$a)) {
+                            var $$v = el.id,
+                              $$i = _vm._i($$a, $$v)
+                            if ($$el.checked) {
+                              $$i < 0 && (_vm.services = $$a.concat([$$v]))
+                            } else {
+                              $$i > -1 &&
+                                (_vm.services = $$a
+                                  .slice(0, $$i)
+                                  .concat($$a.slice($$i + 1)))
+                            }
+                          } else {
+                            _vm.services = $$c
+                          }
+                        },
+                      },
+                    }),
+                    _vm._v(" "),
+                    _c("label", { attrs: { for: el.id } }, [
+                      _vm._v(_vm._s(el.name)),
+                    ]),
+                  ]
+                )
+              }),
+              0
+            ),
+          ]),
         ]
       ),
       _vm._v(" "),
@@ -42101,7 +42149,7 @@ var render = function () {
           staticClass: "px-3 d-none d-md-block",
           attrs: {
             type: "search",
-            placeholder: "Cerca la casa dei tuoi sogni",
+            placeholder: "cerca la casa dei tuoi sogni",
           },
           domProps: { value: _vm.queryString },
           on: {
@@ -43014,12 +43062,14 @@ var render = function () {
   var _c = _vm._self._c || _h
   return _c(
     "div",
-    { staticClass: "mt-5 py-5" },
+    { staticClass: "mt-5 pt-5" },
     [
       _c("div", { staticClass: "container" }, [
-        _c("h1", { staticClass: "pt-4" }, [
+        _c("h1", { staticClass: "pt-4 text-center" }, [
           _vm._v("\n      Stai cercando le case disponibili vicino a "),
-          _c("em", [_vm._v(_vm._s(_vm.queryParams))]),
+          _c("em", { staticClass: "text-capitalize" }, [
+            _vm._v(_vm._s(_vm.queryParams)),
+          ]),
         ]),
       ]),
       _vm._v(" "),
