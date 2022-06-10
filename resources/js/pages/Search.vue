@@ -1,8 +1,8 @@
 <template>
-  <div class="mt-5 py-5">
+  <div class="mt-5 pt-5">
     <div class="container">
-      <h1 class="pt-4">
-        Stai cercando le case disponibili vicino a <em>{{ queryParams }}</em>
+      <h1 class="pt-4 text-center">
+        Stai cercando le case disponibili vicino a <em class="text-capitalize">{{ queryParams }}</em>
       </h1>
       <!-- lat: {{ lat }} lon: {{ lon }} -->
     </div>
