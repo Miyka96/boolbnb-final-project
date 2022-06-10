@@ -1,23 +1,21 @@
 @extends('layouts.app')
 
 @section('content')
-
-
+        {{-- POSITION FORM --}}
    {{-- Rileva utente --}}
    @php
       $id = Auth::id();
    @endphp
    
-   <div class="container py-5 my-5">
+   <div class="container-fluid pt-5 mt-5 house-create">
       <h1 class="titolo-house-create">Aggiungi una nuova casa</h1>
 
-      {{-- POSITION FORM --}}
+        {{-- HOUSE FORM --}}
+        <form action="{{ route('user.houses.store') }}" method="post" id="create-house-form">
+            @csrf
 
-      
-
-      {{-- HOUSE FORM --}}
-      <form action="{{ route('user.houses.store') }}" method="post" id="create-house-form">
-         @csrf
+            <div id="search">
+                <geo-search></geo-search>
 
          {{-- User id --}}
          <div class="form-group">
@@ -32,7 +30,7 @@
                value="{{ $id ? $id : null }}"
             >
          </div>
-         
+
          {{-- Titolo --}}
          <div class="form-group">
             <label for="title">Titolo</label>
@@ -50,6 +48,10 @@
             <div id="title-error"></div>
          </div>
 
+
+
+      <div class="flex-piccolo flex-wrap d-flex align-items-center justify-content-between">
+
          {{-- Num camere --}}
          <div class="form-group">
             <label for="room_num">Camere</label>
@@ -61,7 +63,7 @@
                required
                min="1"
                max="15"
-               placeholder="Inserisci il numero di camere"
+               placeholder="Inserisci numero camere"
                value="{{ old('room_num') }}"
             >
             <div id="room_num-error"></div>
@@ -78,7 +80,7 @@
                required
                min="1"
                max="30"
-               placeholder="Inserisci il numero di posti letto"
+               placeholder="Inserisci numero posti letto"
                value="{{ old('beds_num') }}"
             >
             <div id="beds_num-error"></div>
@@ -95,7 +97,7 @@
                required
                min="1"
                max="15"
-               placeholder="Inserisci il numero di bagni"
+               placeholder="Inserisci numero bagni"
                value="{{ old('toilets_num') }}"
             >
             <div id="toilets_num-error"></div>
@@ -112,25 +114,13 @@
                required
                min="20"
                max="300"
-               placeholder="Inserisci il numero di metri quadri"
+               placeholder="Inserisci numero metri quadri"
                value="{{ old('square_meters') }}"
             >
             <div id="square_meters-error"></div>
          </div>
+      </div>
 
-         {{-- Position id --}}
-         <div class="form-group">
-            <input
-               type="number"
-               class="form-control"
-               name="position_id"
-               id="position_id"
-               hidden
-               required
-               min="1"
-               value="{{ Session::has('positionId') ? Session::get('positionId') : null }}"
-            >
-         </div>
 
          {{-- Url immagine --}}
          <div class="form-group">
@@ -146,6 +136,7 @@
                value="{{ old('image') }}"
             >
             <div id="image-error"></div>
+            
          </div>
 
          {{-- Costo per notte --}}
@@ -168,41 +159,40 @@
 
          {{-- Servizi --}}
          <label>Servizi aggiuntivi</label>
-         <div class="d-flex" style="gap: 1rem;">
+         <div class="d-flex flex-wrap justify-content-between flex-medio" style="gap: 1rem;">
             @foreach ($services as $service)
-                  <div class="form-group form-check">
+                  <div class="servizi form-group form-check custom-control custom-switch">
                      <input
                         type="checkbox" {{ $house->services->contains($service) ? 'checked' : '' }}
-                        class="form-check-input"
+                        class="custom-control-input form-check-input"
                         value="{{ $service->id }}"
                         name="services[]"
-                        id="services-{{ $service->id }}"
+                        id="customSwitch1 services-{{ $service->id }}"
                      >
-                     <label class="form-check-label" for="services-{{ $service->id }}">{{ $service->name }}</label>
+                     <label class="custom-control-label form-check-label" for="customSwitch1 services-{{ $service->id }}">{{ $service->name }}</label>
                   </div>
-            @endforeach
+            @endforeach            
          </div>
 
-         {{-- Visibilità --}}
-         <div class="form-group">
-            <label for="is_visible">Visibilità</label>
-            <div class="form-check form-check-inline d-flex">
-               <input class="form-check-input" type="radio" name="is_visible" id="is_visible1" value="1" checked>
-               <label class="form-check-label" for="is_visible1">Visibile</label>
-            </div>
-            <div class="form-check form-check-inline d-flex">
-               <input class="form-check-input" type="radio" name="is_visible" id="is_visible2" value="0">
-               <label class="form-check-label" for="is_visible2">Non visibile</label>
-            </div>
-            {{-- <div id="cost_per_night-error"></div> --}}
-         </div>
+                {{-- Visibilità --}}
+                <div class="form-group">
+                    <label for="is_visible">Visibilità</label>
+                    <div class="form-check form-check-inline d-flex">
+                        <input class="form-check-input" type="radio" name="is_visible" id="is_visible1" value="1" checked>
+                        <label class="form-check-label" for="is_visible1">Visibile</label>
+                    </div>
+                    <div class="form-check form-check-inline d-flex">
+                        <input class="form-check-input" type="radio" name="is_visible" id="is_visible2" value="0">
+                        <label class="form-check-label" for="is_visible2">Non visibile</label>
+                    </div>
+                    {{-- <div id="cost_per_night-error"></div> --}}
+                </div>
 
-         {{-- Submit btn --}}
-         <button id="house-submit" class="btn btn-primary" type="submit">
-            Aggiungi casa
-         </button>
-      </form>
-   </div>
+                {{-- Submit btn --}}
+                <button id="house-submit" class="btn btn-primary" type="submit">
+                    Aggiungi casa
+                </button>
 
-   <script src="https://cdn.jsdelivr.net/npm/@tarekraafat/autocomplete.js@10.2.7/dist/autoComplete.min.js"></script>
+            </form>
+    </div>
 @endsection

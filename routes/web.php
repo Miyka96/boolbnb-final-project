@@ -31,11 +31,10 @@ Route::middleware('auth')
       Route::resource('messages', 'MessageController')->only(['create', 'store']);
       Route::get('/messages/{house_id}', 'MessageController@index')->name('messages.index');
 
-   Route::resource('sponsorships', 'SponsorshipController'); //metodo custom per attivazione sponsorship
-
-      // rotta statische a partire dalla show
-      Route::post('position', 'PositionController@store')->name('position.store');
+      Route::get('sponsorships/{house_id}', 'SponsorshipController@index')->name('sponsorship.index'); //metodo custom per attivazione sponsorship
    });
+
+Route::post('/position', 'PositionController@store')->name('position.store');
 
 Route::resource('visualizations', 'VisualizationController')->only('store'); // associata alla funzione che apre la card prima di accedere alla show
 
@@ -44,6 +43,8 @@ Route::get('/home', 'HomeController@index')->name('profile');
 Route::any('/send/message', 'SendMessageController@send');
 
 Route::any('/send/visualization', 'VisualizationController@send');
+
+Route::get('/payment/make', 'PaymentsController@make')->name('payment.make');
 
 Route::fallback(function () {
    return view('home');

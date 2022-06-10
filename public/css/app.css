@@ -11666,6 +11666,7 @@ body::-webkit-scrollbar-thumb:hover {
 }
 
 .user_houses {
+  height: 100vh;
   padding: 0 50px;
 }
 
@@ -12032,9 +12033,9 @@ body::-webkit-scrollbar-thumb:hover {
 
 .fixed_footer {
   width: 100%;
-  height: 130px;
   background: rgb(219, 59, 91);
   color: #f8fafc;
+  padding: 30px;
 }
 
 .fixed_footer .container-fluid,
@@ -12042,15 +12043,25 @@ body::-webkit-scrollbar-thumb:hover {
 .fixed_footer .container-md,
 .fixed_footer .container-lg,
 .fixed_footer .container-xl {
+  row-gap: 15px;
   height: 100%;
+}
+
+@media screen and (max-width: 600px) {
+  .fixed_footer .container-fluid,
+  .fixed_footer .container-sm,
+  .fixed_footer .container-md,
+  .fixed_footer .container-lg,
+  .fixed_footer .container-xl {
+    flex-direction: column;
+  }
 }
 
 .fixed_footer .team,
 .fixed_footer .git {
-  display: inline-flex;
+  display: flex;
   width: 180px;
-  height: 55px;
-  margin: 0 15px;
+  height: 50px;
 }
 
 .fixed_footer .team a,
@@ -12061,30 +12072,58 @@ body::-webkit-scrollbar-thumb:hover {
   transition: transform 0.25s;
 }
 
-.fixed_footer .team a:before,
-.fixed_footer .team a:after {
+.fixed_footer .team a:before {
   position: absolute;
   content: "Il nostro Team";
-  height: 55px;
+  height: 50px;
   width: 180px;
   display: flex;
   align-items: center;
   justify-content: center;
-  border: 5px solid #f8fafc;
+  border: 3px solid #f8fafc;
   box-sizing: border-box;
   border-radius: 5px;
 }
 
-.fixed_footer .git a:before,
-.fixed_footer .git a:after {
+.fixed_footer .team a:after {
   position: absolute;
-  content: "Vai al codice";
-  height: 55px;
+  font: var(--fa-font-brands);
+  content: "\F08C";
+  font-size: 30px;
+  height: 50px;
   width: 180px;
   display: flex;
   align-items: center;
   justify-content: center;
-  border: 5px solid #f8fafc;
+  border: 3px solid #f8fafc;
+  box-sizing: border-box;
+  border-radius: 5px;
+}
+
+.fixed_footer .git a:before {
+  position: absolute;
+  content: "Vai al codice";
+  height: 50px;
+  width: 180px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 3px solid #f8fafc;
+  box-sizing: border-box;
+  border-radius: 5px;
+}
+
+.fixed_footer .git a:after {
+  position: absolute;
+  font: var(--fa-font-brands);
+  content: "\F09B";
+  font-size: 30px;
+  height: 50px;
+  width: 180px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 3px solid #f8fafc;
   box-sizing: border-box;
   border-radius: 5px;
 }
@@ -12096,13 +12135,17 @@ body::-webkit-scrollbar-thumb:hover {
 }
 
 .fixed_footer span a:after {
-  color: black;
+  color: rgb(219, 59, 91);
   background-color: #f8fafc;
   transform: rotateX(90deg) translateZ(25px);
 }
 
 .fixed_footer span a:hover {
   transform: translateZ(-25px) rotateX(-90deg);
+}
+
+.team_page {
+  color: white;
 }
 
 .team_page .row {
@@ -12113,10 +12156,17 @@ body::-webkit-scrollbar-thumb:hover {
 .team_page .card-team {
   padding: 30px 0 40px;
   margin-bottom: 30px;
-  background-color: #cad0eb;
+  background-color: rgba(141, 212, 198, 0.8);
+  border-radius: 10px;
   text-align: center;
   overflow: hidden;
   position: relative;
+  box-shadow: 10px 10px rgba(219, 59, 91, 0.8);
+  transition: box-shadow 0.5s ease-in-out;
+}
+
+.team_page .card-team:hover {
+  box-shadow: none;
 }
 
 .team_page .card-team .picture {
@@ -12183,15 +12233,18 @@ body::-webkit-scrollbar-thumb:hover {
 }
 
 .team_page .social-icons i {
-  color: #f8fafc;
-  position: absolute;
-  top: 21px;
-  left: 21px;
+  color: rgba(141, 212, 198, 0.8);
   transition: all 265ms ease-out;
+  font-size: 30px;
+  position: absolute;
+  top: 5px;
+  left: 6px;
 }
 
 .team_page .social-icons a {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .team_page .social-icons a:before {
@@ -12199,11 +12252,11 @@ body::-webkit-scrollbar-thumb:hover {
   -ms-transform: scale(1);
   -webkit-transform: scale(1);
   content: " ";
-  width: 60px;
-  height: 60px;
+  width: 40px;
+  height: 40px;
   border-radius: 100%;
   display: block;
-  background: linear-gradient(45deg, #00B5F5, #002A8F);
+  background: linear-gradient(45deg, #ffffff, rgb(255, 255, 255));
   transition: all 265ms ease-out;
 }
 
@@ -12213,13 +12266,137 @@ body::-webkit-scrollbar-thumb:hover {
 }
 
 .team_page .social-icons a:hover i {
-  transform: scale(2.2);
-  -ms-transform: scale(2.2);
-  -webkit-transform: scale(2.2);
-  color: #00B5F5;
-  background: -webkit-linear-gradient(45deg, #00B5F5, #002A8F);
+  transform: scale(1.4);
+  -ms-transform: scale(1.4);
+  -webkit-transform: scale(1.4);
+  color: #ffffff;
+  background: -webkit-linear-gradient(45deg, #ffffff, rgb(255, 255, 255));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   transition: all 265ms ease-in;
+}
+
+.house-create,
+.house-edit {
+  background-image: url("/images/mare_bg.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 0 60px;
+}
+
+.house-create #create-house-form,
+.house-edit #create-house-form {
+  height: 100%;
+  width: 60%;
+  border-radius: 10px;
+  background: linear-gradient(82deg, #f8fafc 0%, #f8fafc 10%, rgba(248, 250, 252, 0) 100%);
+  padding-bottom: 100px;
+}
+
+@media screen and (max-width: 530px) {
+  .house-create,
+  .house-edit {
+    padding: 40px 50px;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .house-create,
+  .house-edit {
+    padding: 40px 20px;
+  }
+}
+
+.house-create input:focus,
+.house-edit input:focus {
+  outline: none !important;
+  border-color: rgb(219, 59, 91) !important;
+  box-shadow: 0 0 10px rgb(219, 59, 91) !important;
+}
+
+.house-create .form-group,
+.house-edit .form-group {
+  width: 100%;
+}
+
+@media screen and (max-width: 970px) {
+  .house-create .form-group,
+  .house-edit .form-group {
+    width: 100%;
+  }
+}
+
+.house-create .flex-piccolo,
+.house-edit .flex-piccolo {
+  width: 100%;
+}
+
+@media screen and (max-width: 970px) {
+  .house-create .flex-piccolo,
+  .house-edit .flex-piccolo {
+    width: 100%;
+  }
+}
+
+.house-create .flex-piccolo .form-group,
+.house-edit .flex-piccolo .form-group {
+  width: 22%;
+}
+
+@media screen and (max-width: 650px) {
+  .house-create .flex-piccolo .form-group,
+  .house-edit .flex-piccolo .form-group {
+    width: 48%;
+  }
+}
+
+@media screen and (max-width: 390px) {
+  .house-create .flex-piccolo .form-group,
+  .house-edit .flex-piccolo .form-group {
+    width: 100%;
+  }
+}
+
+.house-create .servizi,
+.house-edit .servizi {
+  display: flex;
+  flex-direction: column;
+}
+
+.house-create .flex-medio,
+.house-edit .flex-medio {
+  width: 100%;
+}
+
+@media screen and (max-width: 970px) {
+  .house-create .flex-medio,
+  .house-edit .flex-medio {
+    width: 100%;
+  }
+}
+
+.house-create .flex-medio .form-group,
+.house-edit .flex-medio .form-group {
+  width: 26%;
+}
+
+@media screen and (max-width: 660px) {
+  .house-create .flex-medio .form-group,
+  .house-edit .flex-medio .form-group {
+    width: 48%;
+  }
+}
+
+.house-create .flex-medio .custom-control-input:checked ~ .custom-control-label::before,
+.house-edit .flex-medio .custom-control-input:checked ~ .custom-control-label::before {
+  color: #f8fafc;
+  border-color: rgb(219, 59, 91);
+  background-color: rgb(219, 59, 91);
+}
+
+.house-create button,
+.house-edit button {
+  background-color: rgb(219, 59, 91);
+  border-color: rgb(219, 59, 91);
 }
 

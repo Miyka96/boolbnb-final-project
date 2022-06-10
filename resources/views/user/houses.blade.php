@@ -9,7 +9,7 @@
         <div class="card-wrapper container-fluid d-flex align-items-start">
             @foreach ($houses as $house)
                 @if ($house->user_id == auth::user()->id)
-                    <a href="{{ route('user.houses.show', $house) }}">
+                    <a href="/house/{{$house->id}}">
                         <div class="card" style="width: 18rem;">
                             <img class="card-img-top" src="{{ $house->image }}" alt="Card image cap">
                             <div class="card-body">
@@ -39,6 +39,11 @@
                                 <a href="{{ route('user.messages.index', $house) }}" class="messaggi button">
                                     <span class="text">Visualizza messaggi</span>
                                     <i class="icon fa-solid fa-comments"></i>
+                                </a>
+
+                                <a href="{{ route('user.sponsorship.index', $house) }}" class="messaggi button">
+                                    <span class="text">Sponsorizza appartamento</span>
+                                    <i class="icon fa-solid fa-pen-to-square"></i>
                                 </a>
 
                             </div>

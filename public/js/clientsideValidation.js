@@ -360,7 +360,7 @@ function setSuccessFor(input) {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! D:\Users\Simone\Documents\Progetti\boolbnb-final-project\resources\js\clientsideValidation.js */"./resources/js/clientsideValidation.js");
+module.exports = __webpack_require__(/*! /Users/asiademartino/Desktop/progetto_finale/boolbnb-final-project/resources/js/clientsideValidation.js */"./resources/js/clientsideValidation.js");
 
 
 /***/ })

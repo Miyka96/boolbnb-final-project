@@ -36,3 +36,7 @@ const app = new Vue({
 const app_show = new Vue({
     el: "#app_show",
 });
+
+const search= new Vue({
+    el: "#search",
+})
