@@ -19,22 +19,8 @@
       <div class="row rounded-lg overflow-hidden py-2">
         <div class="collage-wrapper">
           <figure class="big-pic">
-            <img :src="house.image" :alt="house.name" />
+            <img class="img-fluid img-thumbnail " :src="house.image" :alt="house.name" />
           </figure>
-          <div class="small-pics">
-            <figure>
-              <img :src="house.image" :alt="house.name" />
-            </figure>
-            <figure>
-              <img :src="house.image" :alt="house.name" />
-            </figure>
-            <figure>
-              <img :src="house.image" :alt="house.name" />
-            </figure>
-            <figure>
-              <img :src="house.image" :alt="house.name" />
-            </figure>
-          </div>
         </div>
       </div>
     </div>
@@ -197,6 +183,7 @@ img {
   .big-pic {
     width: 85%;
     height: 100%;
+    object-fit: cover;
   }
 
   .small-pics {
@@ -207,6 +194,7 @@ img {
       margin: 0;
       padding: 0;
       height: calc(100% / 4);
+      object-fit: cover;
     }
   }
 }

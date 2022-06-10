@@ -3,7 +3,7 @@
         <div class="filter d-flex flex-column align-items-center justify-content-center">
             <h1>404</h1>
             <div class="testo">Ops! Qualcosa è andato storto.</div>
-            <span><a href="#"></a></span>
+            <span><a href="/"></a></span>
         </div>
     </div>
 </template>

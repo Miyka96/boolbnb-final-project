@@ -7,6 +7,7 @@ import Home from '../pages/Home.vue';
 import Search from '../pages/Search.vue';
 import House from '../pages/House.vue';
 import Message from '../pages/Message.vue';
+import Error from '../components/ErrorMessage.vue'
 
 const routes = [
    {
@@ -41,6 +42,10 @@ const routes = [
          title: 'Wowlidays - Richiedi Informazioni'
       }
    },
+   {
+      path: '/*',
+      component: Error,
+   }
 ];
 
 const router = new VueRouter({
