@@ -6,7 +6,7 @@
    $id = Auth::id();
    @endphp
 
-   <div class="container-fluid mt-5 py-5 house-edit">
+   <div class="container-fluid my-5 pt-5 house-edit">
 
       <h1>Modifica l'appartamento n {{ $house->id }}</h1>
 

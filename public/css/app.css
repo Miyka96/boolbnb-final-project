@@ -12278,16 +12278,16 @@ body::-webkit-scrollbar-thumb:hover {
 
 .house-create,
 .house-edit {
-  background-image: url(/images/mare_bg.png?9e83a599d9b34ff6af0237b3698e930f);
+  background-image: url("/images/mare_bg.png");
   background-repeat: no-repeat;
   background-size: cover;
-  padding: 40px 100px;
+  padding: 0 60px;
 }
 
 .house-create #create-house-form,
 .house-edit #create-house-form {
   height: 100%;
-  width: 100%;
+  width: 60%;
   border-radius: 10px;
   background: linear-gradient(82deg, #f8fafc 0%, #f8fafc 10%, rgba(248, 250, 252, 0) 100%);
   padding-bottom: 100px;

@@ -3,20 +3,20 @@
 
 
 .house-create, .house-edit{
-    background-image: url("../images/mare_bg.png");
+    background-image: url("/images/mare_bg.png");
     background-repeat: no-repeat;
     background-size: cover;
 
     #create-house-form{
         height: 100%;
-        width: 100%;
+        width: 60%;
         border-radius: 10px;
         background: linear-gradient(82deg, $body_bg 0%, rgba($body_bg,1) 10%, rgba($body_bg,0) 100%);
         padding-bottom: 100px;
     }
     
     
-    padding: 40px 100px;
+    padding: 0 60px;
 
     @media screen and (max-width: 530px) {
         padding: 40px 50px;

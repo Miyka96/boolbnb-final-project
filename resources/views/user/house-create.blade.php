@@ -8,7 +8,7 @@
       $id = Auth::id();
    @endphp
    
-   <div class="container-fluid py-5 mt-5 house-create">
+   <div class="container-fluid pt-5 mt-5 house-create">
       <h1 class="titolo-house-create">Aggiungi una nuova casa</h1>
 
       {{-- POSITION FORM --}}
