@@ -6,9 +6,9 @@
    $id = Auth::id();
    @endphp
 
-   <div class="container mt-4 py-5">
+   <div class="container-fluid my-5 pt-5 house-edit">
 
-      <h1 class="mt-5">Modifica casa</h1>
+      <h1>Modifica l'appartamento n {{ $house->id }}</h1>
 
 
       <form class="pt-1" action="{{ route('user.houses.update', $house) }}" method="POST">
@@ -46,6 +46,7 @@
             <div id="title-error"></div>
          </div>
 
+      <div class="flex-piccolo flex-wrap d-flex align-items-center justify-content-between">
          {{-- Num camere --}}
          <div class="form-group">
             <label for="room_num">Camere</label>
@@ -114,6 +115,8 @@
             <div id="square_meters-error"></div>
          </div>
 
+      </div>
+
          {{-- Position id --}}
          <div class="form-group">
             <input
@@ -167,18 +170,18 @@
 
          {{-- Servizi --}}
          <label>Servizi aggiuntivi</label>
-         <div class="d-flex" style="gap: 1rem;">
+         <div class="d-flex flex-wrap justify-content-between flex-medio" style="gap: 1rem;">
             @foreach ($services as $service)
-               <div class="form-group form-check">
+               <div class="servizi form-group form-check custom-control custom-switch">
                   <input
                      type="checkbox"
                      {{ $house->services->contains($service) ? 'checked' : '' }}
-                     class="form-check-input"
+                     class=" custom-control-input form-check-input"
                      value="{{ $service->id }}"
                      name="services[]"
-                     id="services-{{ $service->id }}"
+                     id="customSwitch1 services-{{ $service->id }}"
                   >
-                  <label class="form-check-label" for="services-{{ $service->id }}">{{ $service->name }}</label>
+                  <label class="custom-control-label form-check-label" for="customSwitch1 services-{{ $service->id }}">{{ $service->name }}</label>
                </div>
             @endforeach
          </div>

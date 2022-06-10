@@ -1,16 +1,17 @@
 <template>
   <section id="main-banner" class="debug">
     <!-- [TODO] AGGIUNGERE SRC VIDEO -->
-    <!-- <video autoplay muted loop playsinline>
-         <source src="" type="video/mp4">
-      </video> -->
+    <video autoplay muted loop :src="video"></video>
     <!-- [TODO] IMMAGINE PLACEHOLDER -->
+    <!-- 
     <figure>
       <img
         src="https://images.unsplash.com/photo-1517497052582-25e6fe8ec001?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80"
         alt=""
-      />
+      /> 
+      <img src="https://64.media.tumblr.com/8827ab5de856098620d141b79accc7cd/6410d63c6b114945-cf/s1280x1920/4ddbaeeb6126059210c80c6cfd00d1d5963fdcbe.gifv" alt="">       
     </figure>
+     -->
     <div class="background-gradient"></div>
     <h2
       :class="[activeSlide === i ? 'active' : '', 'banner-text', i == 2 ? 'highlight' : '']"
@@ -33,6 +34,7 @@ export default {
       slideWords: this.uppercaseArray(state.bannerText),
       activeSlide: 0,
       interval: null,
+      video: "../../../images/sea2.mp4"
     };
   },
   methods: {
@@ -146,9 +148,9 @@ export default {
 }
 
 // [TODO] rimuovere debug quando il componente è pronto
-.debug {
-  video {
-    // background-color: blue;
-  }
-}
+// .debug {
+//   // video {
+//   //   // background-color: blue;
+//   // }
+// }
 </style>

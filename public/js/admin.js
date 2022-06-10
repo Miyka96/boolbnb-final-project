@@ -2457,6 +2457,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "MainBanner",
@@ -2465,7 +2466,8 @@ __webpack_require__.r(__webpack_exports__);
     return {
       slideWords: this.uppercaseArray(_store__WEBPACK_IMPORTED_MODULE_0__["default"].bannerText),
       activeSlide: 0,
-      interval: null
+      interval: null,
+      video: "../../../images/sea2.mp4"
     };
   },
   methods: {
@@ -41317,7 +41319,10 @@ var render = function () {
     "section",
     { staticClass: "debug", attrs: { id: "main-banner" } },
     [
-      _vm._m(0),
+      _c("video", {
+        attrs: { autoplay: "", muted: "", loop: "", src: _vm.video },
+        domProps: { muted: true },
+      }),
       _vm._v(" "),
       _c("div", { staticClass: "background-gradient" }),
       _vm._v(" "),
@@ -41339,21 +41344,7 @@ var render = function () {
     2
   )
 }
-var staticRenderFns = [
-  function () {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("figure", [
-      _c("img", {
-        attrs: {
-          src: "https://images.unsplash.com/photo-1517497052582-25e6fe8ec001?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80",
-          alt: "",
-        },
-      }),
-    ])
-  },
-]
+var staticRenderFns = []
 render._withStripped = true
 
 
