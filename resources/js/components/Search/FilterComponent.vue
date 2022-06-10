@@ -30,21 +30,21 @@
 
             <div class="service_wrapper col-8 animate__animated animate__flipInX">
                 <h4 class="mb-1 text-center mb-3 title">Altri servizi</h4>
-                <div class="d-flex flex-wrap justify-content-center">
+                <div class="d-flex flex-wrap justify-content-center btn-group" role="group">
                     <div
                         v-for="el in servicesApi"
                         :key="el.id"
-                        class="ml-2 d-flex flex-wrap"
+                        class="ml-2 d-flex flex-wrap btn-group flex-grow-1"
                     >
                         <input
-                            class="ms-input"
+                            class="ms-input flex-grow-1"
                             type="checkbox"
                             :id="el.id"
                             :value="el.id"
                             :name="services"
                             v-model="services"
                         />
-                        <label :for="el.id">{{ el.name }}</label>
+                        <label class="flex-grow-1 text-center" :for="el.id">{{ el.name }}</label>
                     </div>
                 </div>
             </div>
@@ -117,7 +117,7 @@ export default {
 
     input {
         display: none;
-        cursor:pointer
+        cursor:pointer;
     }
 
     input:checked ~ label {
