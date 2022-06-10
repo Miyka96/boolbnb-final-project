@@ -2,9 +2,9 @@
   <div class="mt-5 py-5">
     <div class="container">
       <h1 class="pt-4">
-        Stai cercando le case disponibili a <em>{{ queryParams }}</em>
+        Stai cercando le case disponibili vicino a <em>{{ queryParams }}</em>
       </h1>
-      lat: {{ lat }} lon: {{ lon }}
+      <!-- lat: {{ lat }} lon: {{ lon }} -->
     </div>
     <FilterComponent />
   </div>

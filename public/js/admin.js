@@ -3030,10 +3030,38 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
-      queryString: ""
+      queryString: "",
+      places: [],
+      visible: false
     };
   },
   methods: {
@@ -3047,6 +3075,32 @@ __webpack_require__.r(__webpack_exports__);
 
         _this.$router.go(0);
       });
+    },
+    searchItems: function searchItems() {
+      var _this2 = this;
+
+      if (this.queryString.length > 8) {
+        axios.get("https://api.tomtom.com/search/2/geocode/".concat(this.queryString, ".json"), {
+          params: {
+            key: "DINngHSiTz58Z5fDF5pThkg1IrJA87je",
+            limit: 1,
+            countrySet: "IT/ITA",
+            radius: 20000
+          }
+        }).then(function (res) {
+          console.log(res.data.results);
+          _this2.places = res.data.results;
+          _this2.visible = true;
+        })["catch"](function (error) {
+          console.log(error.response);
+        });
+      }
+    },
+    deleteItems: function deleteItems() {
+      this.visible = false;
+    },
+    saveAddress: function saveAddress(element) {
+      this.queryString = element.address.freeformAddress;
     }
   }
 });
@@ -8382,7 +8436,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, "#search-bar a[data-v-785e65ef] {\n  text-decoration: none;\n}\n#search-bar input[data-v-785e65ef],\n#search-bar span[data-v-785e65ef] {\n  box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.1);\n  height: 44px;\n  border: 1px solid #c9c4be;\n  cursor: pointer;\n}\n#search-bar input[data-v-785e65ef] {\n  min-width: 350px;\n  flex-grow: 1;\n  border-right: 0;\n  color: #717171;\n  outline: none;\n  font-size: small;\n  gap: 15px;\n  border-radius: 25px 0px 0px 25px;\n  font-size: 18px;\n}\n#search-bar a span[data-v-785e65ef] {\n  width: 40px;\n  border-radius: 0px 25px 25px 0px;\n  background-color: white;\n  border-left: 0;\n  color: white;\n  transition: all ease-in-out 0.2s;\n}\n#search-bar a span div[data-v-785e65ef] {\n  background-color: #ff385c;\n  border-radius: 25px;\n  text-align: center;\n  height: 34px;\n  aspect-ratio: 1;\n  font-size: 18px;\n  margin-right: 5px;\n  transition: all ease-in-out 0.2s;\n}\n#search-bar a:hover span[data-v-785e65ef] {\n  color: #ff385c;\n}\n#search-bar a:hover span div[data-v-785e65ef] {\n  background-color: white;\n  border: 2px solid #ff385c;\n  height: 32px;\n}\n@media screen and (min-width: 992px) {\n#search-bar[data-v-785e65ef] {\n    position: fixed;\n    top: 40px;\n    left: 50%;\n    transform: translate(-50%, -50%);\n}\n}\n@media screen and (max-width: 992px) {\n#search-bar input[data-v-785e65ef] {\n    min-width: 40vw;\n}\n}\n@media screen and (max-width: 576px) {\n#search-bar input[data-v-785e65ef] {\n    max-width: 35vw;\n    min-width: auto;\n}\n#search-bar input[data-v-785e65ef]::-moz-placeholder {\n    font-size: 15px;\n}\n#search-bar input[data-v-785e65ef]:-ms-input-placeholder {\n    font-size: 15px;\n}\n#search-bar input[data-v-785e65ef]::placeholder {\n    font-size: 15px;\n}\n}", ""]);
+exports.push([module.i, "#search-bar[data-v-785e65ef] {\n  position: relative;\n}\n#search-bar a[data-v-785e65ef] {\n  text-decoration: none;\n}\n#search-bar input[data-v-785e65ef],\n#search-bar span[data-v-785e65ef] {\n  box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.1);\n  height: 44px;\n  border: 1px solid #c9c4be;\n  cursor: pointer;\n}\n#search-bar input[data-v-785e65ef] {\n  min-width: 350px;\n  flex-grow: 1;\n  border-right: 0;\n  color: #717171;\n  outline: none;\n  font-size: small;\n  gap: 15px;\n  border-radius: 25px 0px 0px 25px;\n  font-size: 18px;\n}\n#search-bar a span[data-v-785e65ef] {\n  width: 40px;\n  border-radius: 0px 25px 25px 0px;\n  background-color: white;\n  border-left: 0;\n  color: white;\n  transition: all ease-in-out 0.2s;\n}\n#search-bar a span div[data-v-785e65ef] {\n  background-color: #ff385c;\n  border-radius: 25px;\n  text-align: center;\n  height: 34px;\n  aspect-ratio: 1;\n  font-size: 18px;\n  margin-right: 5px;\n  transition: all ease-in-out 0.2s;\n}\n#search-bar a:hover span[data-v-785e65ef] {\n  color: #ff385c;\n}\n#search-bar a:hover span div[data-v-785e65ef] {\n  background-color: white;\n  border: 2px solid #ff385c;\n  height: 32px;\n}\n#search-bar .dynamic_container[data-v-785e65ef] {\n  position: absolute;\n  top: 100%;\n  padding: 5px;\n}\n@media screen and (min-width: 992px) {\n#search-bar[data-v-785e65ef] {\n    position: fixed;\n    top: 40px;\n    left: 50%;\n    transform: translate(-50%, -50%);\n}\n}\n@media screen and (max-width: 992px) {\n#search-bar input[data-v-785e65ef] {\n    min-width: 40vw;\n}\n}\n@media screen and (max-width: 576px) {\n#search-bar input[data-v-785e65ef] {\n    max-width: 35vw;\n    min-width: auto;\n}\n#search-bar input[data-v-785e65ef]::-moz-placeholder {\n    font-size: 15px;\n}\n#search-bar input[data-v-785e65ef]:-ms-input-placeholder {\n    font-size: 15px;\n}\n#search-bar input[data-v-785e65ef]::placeholder {\n    font-size: 15px;\n}\n}", ""]);
 
 // exports
 
@@ -41774,7 +41828,7 @@ var render = function () {
   var _c = _vm._self._c || _h
   return _c(
     "div",
-    { staticClass: "container-fluid border-top border-bottom ms_navbar" },
+    { staticClass: "container-fluid border-top border-bottom ms_navbar py-4" },
     [
       _c(
         "div",
@@ -42030,69 +42084,99 @@ var render = function () {
   return _c(
     "div",
     {
-      staticClass: "d-flex justify-content-center mx-3",
+      staticClass: "d-flex flex-column justify-content-center mx-3",
       attrs: { id: "search-bar" },
     },
     [
-      _c("input", {
-        directives: [
-          {
-            name: "model",
-            rawName: "v-model",
-            value: _vm.queryString,
-            expression: "queryString",
+      _c("div", { staticClass: "d-flex justify-content-center" }, [
+        _c("input", {
+          directives: [
+            {
+              name: "model",
+              rawName: "v-model",
+              value: _vm.queryString,
+              expression: "queryString",
+            },
+          ],
+          staticClass: "px-3 d-none d-md-block",
+          attrs: {
+            type: "search",
+            placeholder: "Cerca la casa dei tuoi sogni",
           },
-        ],
-        staticClass: "px-3 d-none d-md-block",
-        attrs: { type: "text", placeholder: "Cerca la casa dei tuoi sogni" },
-        domProps: { value: _vm.queryString },
-        on: {
-          input: function ($event) {
-            if ($event.target.composing) {
-              return
-            }
-            _vm.queryString = $event.target.value
-          },
-        },
-      }),
-      _vm._v(" "),
-      _c("input", {
-        directives: [
-          {
-            name: "model",
-            rawName: "v-model",
-            value: _vm.queryString,
-            expression: "queryString",
-          },
-        ],
-        staticClass: "px-3 d-md-none",
-        attrs: { type: "text", placeholder: "Cerca una casa" },
-        domProps: { value: _vm.queryString },
-        on: {
-          input: function ($event) {
-            if ($event.target.composing) {
-              return
-            }
-            _vm.queryString = $event.target.value
-          },
-        },
-      }),
-      _vm._v(" "),
-      _c("a", { attrs: { href: "/search/" + _vm.queryString } }, [
-        _c(
-          "span",
-          {
-            staticClass: "d-flex justify-content-center align-items-center",
-            on: {
-              click: function ($event) {
-                return _vm.ttSearch()
-              },
+          domProps: { value: _vm.queryString },
+          on: {
+            keyup: function ($event) {
+              return _vm.searchItems()
+            },
+            input: function ($event) {
+              if ($event.target.composing) {
+                return
+              }
+              _vm.queryString = $event.target.value
             },
           },
-          [_vm._m(0)]
-        ),
+        }),
+        _vm._v(" "),
+        _c("a", { attrs: { href: "/search/" + _vm.queryString } }, [
+          _c(
+            "span",
+            {
+              staticClass: "d-flex justify-content-center align-items-center",
+              on: {
+                click: function ($event) {
+                  return _vm.ttSearch()
+                },
+              },
+            },
+            [_vm._m(0)]
+          ),
+        ]),
       ]),
-    ]
+      _vm._v(" "),
+      _vm._l(_vm.places, function (el) {
+        return _c(
+          "div",
+          {
+            key: el.id,
+            staticClass: "dynamic_container",
+            class: _vm.visible == true ? "d-flex" : "d-none",
+          },
+          [
+            _c(
+              "ul",
+              {
+                staticClass: "d-flex flex-column list-group ul",
+                attrs: { id: "ul" },
+              },
+              [
+                el.address.freeformAddress
+                  ? _c(
+                      "li",
+                      {
+                        staticClass: "list-group-item list-group-item-action",
+                        attrs: { id: "li" },
+                        on: {
+                          click: function ($event) {
+                            _vm.saveAddress(el), _vm.deleteItems()
+                          },
+                        },
+                      },
+                      [
+                        _vm._v(
+                          "\n                " +
+                            _vm._s(el.address.freeformAddress) +
+                            "\n            "
+                        ),
+                      ]
+                    )
+                  : _vm._e(),
+              ]
+            ),
+          ]
+        )
+      }),
+    ],
+    2
   )
 }
 var staticRenderFns = [
@@ -42934,12 +43018,9 @@ var render = function () {
     [
       _c("div", { staticClass: "container" }, [
         _c("h1", { staticClass: "pt-4" }, [
-          _vm._v("\n      Stai cercando le case disponibili a "),
+          _vm._v("\n      Stai cercando le case disponibili vicino a "),
           _c("em", [_vm._v(_vm._s(_vm.queryParams))]),
         ]),
-        _vm._v(
-          "\n    lat: " + _vm._s(_vm.lat) + " lon: " + _vm._s(_vm.lon) + "\n  "
-        ),
       ]),
       _vm._v(" "),
       _c("FilterComponent"),

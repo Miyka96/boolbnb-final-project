@@ -2011,136 +2011,6 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/GeoSearch.vue?vue&type=script&lang=js&":
-/*!********************************************************************************************************************************************************************!*\
-  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/GeoSearch.vue?vue&type=script&lang=js& ***!
-  \********************************************************************************************************************************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_0__);
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-
-/* harmony default export */ __webpack_exports__["default"] = ({
-  data: function data() {
-    return {
-      li: document.getElementById("li"),
-      baseURL: "api.tomtom.com",
-      search: "",
-      places: [],
-      positionData: {
-        lat: "",
-        lon: "",
-        streetNum: "",
-        address: "",
-        city: "",
-        country: "",
-        zipCode: ""
-      },
-      visible: false,
-      positionId: null
-    };
-  },
-  methods: {
-    searchItems: function searchItems() {
-      var _this = this;
-
-      if (this.search.length > 8) {
-        axios__WEBPACK_IMPORTED_MODULE_0___default.a.get("https://".concat(this.baseURL, "/search/2/geocode/").concat(this.search, ".json"), {
-          params: {
-            key: "DINngHSiTz58Z5fDF5pThkg1IrJA87je",
-            limit: 5,
-            countrySet: "IT/ITA",
-            radius: 20000
-          }
-        }).then(function (res) {
-          console.log(res.data.results);
-          _this.places = res.data.results;
-          _this.visible = true;
-        })["catch"](function (error) {
-          console.log(error.response);
-        });
-      }
-    },
-    saveAddress: function saveAddress(element) {
-      this.positionData.lat = element.position.lat;
-      this.positionData.lon = element.position.lon;
-      this.positionData.streetName = element.address.streetName;
-
-      if (element.address.streetNumber == undefined) {
-        this.positionData.address = this.positionData.streetName;
-      } else {
-        this.positionData.streetNum = element.address.streetNumber;
-        this.positionData.address = this.positionData.streetName + " " + this.positionData.streetNum;
-      }
-
-      this.positionData.city = element.address.countrySecondarySubdivision;
-      this.positionData.country = element.address.country;
-      this.positionData.zipCode = element.address.postalCode;
-      console.log(this.positionData.lat, this.positionData.lon, this.positionData.address, this.positionData.city, this.positionData.country, this.positionData.zipCode);
-      this.search = element.address.freeformAddress;
-      /*
-          axios
-              .post("/position", this.positionData)
-              .then((res) => {
-                  this.positionId = res.position.id;
-                  console.log(res.data);
-              })
-              .catch((error) => {
-                  console.log(error);
-              });
-      */
-    },
-    deleteItems: function deleteItems() {
-      this.visible = false;
-    }
-  }
-});
-
-/***/ }),
-
 /***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/Home/CardShowcase.vue?vue&type=script&lang=js&":
 /*!****************************************************************************************************************************************************************************!*\
   !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/Home/CardShowcase.vue?vue&type=script&lang=js& ***!
@@ -2739,7 +2609,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_Home_WelcomeSection_vue__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../components/Home/WelcomeSection.vue */ "./resources/js/components/Home/WelcomeSection.vue");
 /* harmony import */ var _components_Home_PolaroidsWrapper_vue__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../components/Home/PolaroidsWrapper.vue */ "./resources/js/components/Home/PolaroidsWrapper.vue");
 /* harmony import */ var _components_FooterComponent_vue__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../components/FooterComponent.vue */ "./resources/js/components/FooterComponent.vue");
-/* harmony import */ var _components_GeoSearch_vue__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../components/GeoSearch.vue */ "./resources/js/components/GeoSearch.vue");
 //
 //
 //
@@ -2749,8 +2618,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-
 
 
 
@@ -2763,8 +2630,7 @@ __webpack_require__.r(__webpack_exports__);
     CardsShowcase: _components_Home_CardShowcase_vue__WEBPACK_IMPORTED_MODULE_1__["default"],
     SectionVue: _components_Home_WelcomeSection_vue__WEBPACK_IMPORTED_MODULE_2__["default"],
     PolaroidsWrapper: _components_Home_PolaroidsWrapper_vue__WEBPACK_IMPORTED_MODULE_3__["default"],
-    Footer: _components_FooterComponent_vue__WEBPACK_IMPORTED_MODULE_4__["default"],
-    GeoSearch: _components_GeoSearch_vue__WEBPACK_IMPORTED_MODULE_5__["default"] // SearchBar
+    Footer: _components_FooterComponent_vue__WEBPACK_IMPORTED_MODULE_4__["default"] // SearchBar
 
   }
 });
@@ -4728,153 +4594,6 @@ render._withStripped = true
 
 /***/ }),
 
-/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/GeoSearch.vue?vue&type=template&id=092b35fe&scoped=true&":
-/*!************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/GeoSearch.vue?vue&type=template&id=092b35fe&scoped=true& ***!
-  \************************************************************************************************************************************************************************************************************************/
-/*! exports provided: render, staticRenderFns */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
-var render = function () {
-  var _vm = this
-  var _h = _vm.$createElement
-  var _c = _vm._self._c || _h
-  return _c(
-    "nav",
-    { staticClass: "d-flex flex-column container px-0" },
-    [
-      _c("div", { attrs: { id: "search" } }, [
-        _c("label", { attrs: { for: "search-bar" } }, [_vm._v("Indirizzo")]),
-        _vm._v(" "),
-        _c("input", {
-          directives: [
-            {
-              name: "model",
-              rawName: "v-model",
-              value: _vm.search,
-              expression: "search",
-            },
-          ],
-          staticClass: "form-control mr-sm-2",
-          attrs: {
-            placeholder: "Inserisci indirizzo",
-            type: "search",
-            id: "search-bar",
-          },
-          domProps: { value: _vm.search },
-          on: {
-            keyup: function ($event) {
-              return _vm.searchItems()
-            },
-            input: function ($event) {
-              if ($event.target.composing) {
-                return
-              }
-              _vm.search = $event.target.value
-            },
-          },
-        }),
-        _vm._v(" "),
-        _c("input", {
-          attrs: { type: "hidden", name: "position_lat", id: "position_lat" },
-          domProps: { value: _vm.positionData.lat },
-        }),
-        _vm._v(" "),
-        _c("input", {
-          attrs: { type: "hidden", name: "position_lon", id: "position_lon" },
-          domProps: { value: _vm.positionData.lon },
-        }),
-        _vm._v(" "),
-        _c("input", {
-          attrs: {
-            type: "hidden",
-            name: "position_address",
-            id: "position_address",
-          },
-          domProps: { value: _vm.positionData.address },
-        }),
-        _vm._v(" "),
-        _c("input", {
-          attrs: { type: "hidden", name: "position_city", id: "position_city" },
-          domProps: { value: _vm.positionData.city },
-        }),
-        _vm._v(" "),
-        _c("input", {
-          attrs: {
-            type: "hidden",
-            name: "position_country",
-            id: "position_country",
-          },
-          domProps: { value: _vm.positionData.country },
-        }),
-        _vm._v(" "),
-        _c("input", {
-          attrs: {
-            type: "hidden",
-            name: "position_zip_code",
-            id: "position_zip_code",
-          },
-          domProps: { value: _vm.positionData.zipCode },
-        }),
-      ]),
-      _vm._v(" "),
-      _vm._l(_vm.places, function (el) {
-        return _c(
-          "div",
-          {
-            key: el.id,
-            staticClass: "flex-column",
-            class: _vm.visible == true ? "d-flex" : "d-none",
-          },
-          [
-            _c(
-              "ul",
-              {
-                staticClass: "d-flex flex-column list-group ul",
-                attrs: { id: "ul" },
-              },
-              [
-                el.address.freeformAddress
-                  ? _c(
-                      "li",
-                      {
-                        staticClass: "list-group-item list-group-item-action",
-                        attrs: { id: "li" },
-                        on: {
-                          click: function ($event) {
-                            _vm.saveAddress(el), _vm.deleteItems()
-                          },
-                        },
-                      },
-                      [
-                        _vm._v(
-                          "\n                " +
-                            _vm._s(el.address.freeformAddress) +
-                            "\n            "
-                        ),
-                      ]
-                    )
-                  : _vm._e(),
-              ]
-            ),
-          ]
-        )
-      }),
-    ],
-    2
-  )
-}
-var staticRenderFns = []
-render._withStripped = true
-
-
-
-/***/ }),
-
 /***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/Home/CardShowcase.vue?vue&type=template&id=08cf00d2&scoped=true&":
 /*!********************************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/Home/CardShowcase.vue?vue&type=template&id=08cf00d2&scoped=true& ***!
@@ -5448,8 +5167,6 @@ var render = function () {
     [
       _c("Banner"),
       _vm._v(" "),
-      _c("GeoSearch"),
-      _vm._v(" "),
       _c("PolaroidsWrapper"),
       _vm._v(" "),
       _c("SectionVue"),
@@ -5895,12 +5612,9 @@ var render = function () {
     [
       _c("div", { staticClass: "container" }, [
         _c("h1", { staticClass: "pt-4" }, [
-          _vm._v("\n      Stai cercando le case disponibili a "),
+          _vm._v("\n      Stai cercando le case disponibili vicino a "),
           _c("em", [_vm._v(_vm._s(_vm.queryParams))]),
         ]),
-        _vm._v(
-          "\n    lat: " + _vm._s(_vm.lat) + " lon: " + _vm._s(_vm.lon) + "\n  "
-        ),
       ]),
       _vm._v(" "),
       _c("FilterComponent"),
@@ -21369,75 +21083,6 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./resources/js/components/GeoSearch.vue":
-/*!***********************************************!*\
-  !*** ./resources/js/components/GeoSearch.vue ***!
-  \***********************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _GeoSearch_vue_vue_type_template_id_092b35fe_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./GeoSearch.vue?vue&type=template&id=092b35fe&scoped=true& */ "./resources/js/components/GeoSearch.vue?vue&type=template&id=092b35fe&scoped=true&");
-/* harmony import */ var _GeoSearch_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./GeoSearch.vue?vue&type=script&lang=js& */ "./resources/js/components/GeoSearch.vue?vue&type=script&lang=js&");
-/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
-
-
-
-
-
-/* normalize component */
-
-var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
-  _GeoSearch_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
-  _GeoSearch_vue_vue_type_template_id_092b35fe_scoped_true___WEBPACK_IMPORTED_MODULE_0__["render"],
-  _GeoSearch_vue_vue_type_template_id_092b35fe_scoped_true___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
-  false,
-  null,
-  "092b35fe",
-  null
-  
-)
-
-/* hot reload */
-if (false) { var api; }
-component.options.__file = "resources/js/components/GeoSearch.vue"
-/* harmony default export */ __webpack_exports__["default"] = (component.exports);
-
-/***/ }),
-
-/***/ "./resources/js/components/GeoSearch.vue?vue&type=script&lang=js&":
-/*!************************************************************************!*\
-  !*** ./resources/js/components/GeoSearch.vue?vue&type=script&lang=js& ***!
-  \************************************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_GeoSearch_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib??ref--4-0!../../../node_modules/vue-loader/lib??vue-loader-options!./GeoSearch.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/GeoSearch.vue?vue&type=script&lang=js&");
-/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_GeoSearch_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
-
-/***/ }),
-
-/***/ "./resources/js/components/GeoSearch.vue?vue&type=template&id=092b35fe&scoped=true&":
-/*!******************************************************************************************!*\
-  !*** ./resources/js/components/GeoSearch.vue?vue&type=template&id=092b35fe&scoped=true& ***!
-  \******************************************************************************************/
-/*! exports provided: render, staticRenderFns */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_GeoSearch_vue_vue_type_template_id_092b35fe_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../node_modules/vue-loader/lib??vue-loader-options!./GeoSearch.vue?vue&type=template&id=092b35fe&scoped=true& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/GeoSearch.vue?vue&type=template&id=092b35fe&scoped=true&");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_GeoSearch_vue_vue_type_template_id_092b35fe_scoped_true___WEBPACK_IMPORTED_MODULE_0__["render"]; });
-
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_GeoSearch_vue_vue_type_template_id_092b35fe_scoped_true___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
-
-
-
-/***/ }),
-
 /***/ "./resources/js/components/Home/CardShowcase.vue":
 /*!*******************************************************!*\
   !*** ./resources/js/components/Home/CardShowcase.vue ***!
@@ -22605,7 +22250,7 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! D:\Users\Simone\Documents\Progetti\boolbnb-final-project\resources\js\front.js */"./resources/js/front.js");
+module.exports = __webpack_require__(/*! C:\Users\Micae\dev\boolbnb-final-project\resources\js\front.js */"./resources/js/front.js");
 
 
 /***/ })
