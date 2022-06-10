@@ -1,9 +1,10 @@
 <template>
   <div>
-    <br />
-    <br />
-    <br />
-    <br />
+
+    <div class="py-5">
+        <Map :lat="house.position.latitude" :lon="house.position.longitude"/>
+    </div>
+
     <div class="container p-4 bg-light d-none d-md-block">
       <div class="row">
         <div class="col-12 p-0">
@@ -131,7 +132,12 @@
 </template>
 
 <script>
+import Map from '../components/Map.vue'
 export default {
+  components: {
+    Map
+  },
+
   data() {
     return {
       house: [],
