@@ -4,21 +4,25 @@
 
 .fixed_footer{
     width: 100%;
-    height: 130px;
     background: $bg-footer;
     color: $body-bg;
+    padding: 30px;
 
     .container-fluid{
+        row-gap: 15px;
         height: 100%;
+
+        @media screen and (max-width: 600px){
+            flex-direction: column;
+        }
     }
 
 
     .team, .git{
-        display: inline-flex;
+        display: flex;
         width: 180px;
-        height: 55px;
-        margin: 0 15px;
-        
+        height: 50px;
+
     }
 
     .team a, .git a{
@@ -28,29 +32,60 @@
         transition: transform .25s;   
     }
 
-    .team a:before, .team a:after{
+    .team a:before {
         position: absolute;
         content: "Il nostro Team";
-        height: 55px;
+        height: 50px;
         width: 180px;
         display: flex;
         align-items: center;
         justify-content: center;
-        border: 5px solid $body-bg;
+        border: 3px solid $body-bg;
+        box-sizing: border-box;
+        border-radius: 5px;
+    }
+
+    .team a:after{
+        position: absolute;
+        font: var(--fa-font-brands);
+        content: "\f08c";
+        font-size: 30px;
+        height: 50px;
+        width: 180px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: 3px solid $body-bg;
         box-sizing: border-box;
         border-radius: 5px;
     }
 
 
-    .git a:before, .git a:after{
+
+    .git a:before {
         position: absolute;
         content: "Vai al codice";
-        height: 55px;
+        height: 50px;
         width: 180px;
         display: flex;
         align-items: center;
         justify-content: center;
-        border: 5px solid $body-bg;
+        border: 3px solid $body-bg;
+        box-sizing: border-box;
+        border-radius: 5px;
+    }
+
+    .git a:after{
+        position: absolute;
+        font: var(--fa-font-brands);
+        content: "\f09b";
+        font-size: 30px;
+        height: 50px;
+        width: 180px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: 3px solid $body-bg;
         box-sizing: border-box;
         border-radius: 5px;
     }
@@ -62,7 +97,7 @@
     }
 
     span a:after{
-        color: black;
+        color: $login;
         background-color: $body-bg;
         transform: rotateX(90deg) translateZ(25px);
     }

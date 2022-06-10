@@ -12704,11 +12704,7 @@ function thumbAnimation() {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-<<<<<<< HEAD
-module.exports = __webpack_require__(/*! D:\Users\Simone\Documents\Progetti\boolbnb-final-project\resources\js\store.js */"./resources/js/store.js");
-=======
-module.exports = __webpack_require__(/*! /Users/marcocorallo/Desktop/boolbnb-final-project/resources/js/store.js */"./resources/js/store.js");
->>>>>>> d2fe95d622da60bbd8139159c67f54b098c54240
+module.exports = __webpack_require__(/*! /Users/asiademartino/Desktop/progetto_finale/boolbnb-final-project/resources/js/store.js */"./resources/js/store.js");
 
 
 /***/ })

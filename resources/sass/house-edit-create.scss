@@ -1,0 +1,94 @@
+@import './variables';
+
+
+
+.house-create, .house-edit{
+    background-image: url("../images/mare_bg.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    #create-house-form{
+        height: 100%;
+        width: 100%;
+        border-radius: 10px;
+        background: linear-gradient(82deg, $body_bg 0%, rgba($body_bg,1) 10%, rgba($body_bg,0) 100%);
+        padding-bottom: 100px;
+    }
+    
+    
+    padding: 40px 100px;
+
+    @media screen and (max-width: 530px) {
+        padding: 40px 50px;
+    }
+    @media screen and (max-width: 450px) {
+        padding: 40px 20px;
+    }
+
+    input:focus{
+        outline: none !important; 
+        border-color: $login !important; 
+        box-shadow: 0 0 10px $login !important;
+    }
+
+    .form-group{
+        width: 100%;
+
+        @media screen and (max-width: 970px) {
+            width: 100%;
+        }
+    }
+
+    .flex-piccolo{
+        width: 100%;
+
+        @media screen and (max-width: 970px) {
+            width: 100%;
+        }
+        .form-group{
+            width: 22%;
+
+            @media screen and (max-width: 650px) {
+                width: 48%;
+            }
+
+            @media screen and (max-width: 390px) {
+                width: 100%;
+            }
+        }
+    }
+
+    .servizi{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .flex-medio{
+        width: 100%;
+
+        @media screen and (max-width: 970px) {
+            width: 100%;
+        }
+
+        .form-group{
+            width: 26%;
+
+            @media screen and (max-width: 660px) {
+                width: 48%;
+            }
+        }
+
+        .custom-control-input:checked ~ .custom-control-label::before {
+            color: $body_bg;
+            border-color: $login;
+            background-color: $login;
+        }
+        
+    }
+
+    button{
+        background-color: $login;
+        border-color: $login;
+    }
+
+}
