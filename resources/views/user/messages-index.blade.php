@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="messages_page d-flex justify-content-center ms__container-fluid">
+    <div class="messages_page d-flex justify-content-center ms___container-fluid">
         <div class="ms-messages col-8 p-4 m-4">
 
             <h3 class="mb-3 d-block">
@@ -46,7 +46,7 @@
     </script>
 
     <style lang="scss" scoped>
-        
+
         .ms-active-height {
             height: auto !important;
         }
@@ -64,7 +64,7 @@
         }
 
         .messages_page{
-            height: 100vh;
+            height: 90vh;
         }
 
         .ms-messages {
