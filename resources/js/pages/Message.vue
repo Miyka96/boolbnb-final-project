@@ -1,6 +1,6 @@
 <template>
-  <div>
-    <div class="messages_page container-fuid mt-5 py-5">
+  <div class="ms__container-fluid d-flex justify-content-center">
+    <div class="messages_page container mt-2 py-3 col-12 col-sm-12 col-md-10 col-lg-8">
       <form class="form-wrapper" v-on:submit.prevent="submitForm">
         <div class="form-group">
           <label for="name">Nome completo</label>
@@ -45,7 +45,7 @@
           ></textarea>
         </div>
 
-        <div class="form-group">
+        <div class="form-group d-flex justify-content-end">
           <button class="btn btn-primary">Invia</button>
         </div>
       </form>
@@ -90,10 +90,15 @@ export default {
 <style lang="scss" scoped>
 @import '../../sass/_variables.scss';
 
+.ms__container-fluid {
+  width: 100vw;
+  height: 90vh;
+  background-image: url('../../../public/images/Wave-10s-1920px.svg');
+}
 .messages_page{
   height: 100vh;
   display: flex;
-  padding: 100px 200px;
+  padding: 100px 50px;
   flex-direction: column;
   align-items: center;
   justify-content: center;
