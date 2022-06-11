@@ -11674,6 +11674,12 @@ body::-webkit-scrollbar-thumb:hover {
   padding: 0 50px;
 }
 
+@media screen and (max-width: 700px) {
+  .user_houses {
+    height: 100%;
+  }
+}
+
 .user_houses a {
   text-decoration: none;
 }
@@ -11684,6 +11690,7 @@ body::-webkit-scrollbar-thumb:hover {
   row-gap: 30px;
   padding: 30px 0;
   flex-wrap: wrap;
+  height: 100%;
 }
 
 @media screen and (max-width: 1024px) {
@@ -11841,6 +11848,26 @@ body::-webkit-scrollbar-thumb:hover {
   }
 }
 
+.user_houses .card .sponsor {
+  width: 100%;
+  background-color: rgb(219, 59, 91);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@media screen and (max-width: 480px) {
+  .user_houses .card .sponsor {
+    font-size: 90%;
+  }
+}
+
+@media screen and (max-width: 440px) {
+  .user_houses .card .sponsor {
+    font-size: 55%;
+  }
+}
+
 .user_houses .aggiungi-card {
   aspect-ratio: 1;
   border: 3px solid grey;
@@ -11920,7 +11947,13 @@ body::-webkit-scrollbar-thumb:hover {
   opacity: 0.4;
 }
 
-@media (max-width: 576px) {
+@media screen and (max-width: 460px) {
+  .user_profile #Livello_1 {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 576px) {
   .user_profile .col-2 {
     display: none;
   }
@@ -11970,7 +12003,7 @@ body::-webkit-scrollbar-thumb:hover {
   gap: 50px;
 }
 
-@media (max-width: 768px) {
+@media screen and (max-width: 768px) {
   .user_profile .profilo .bottone {
     flex-direction: column;
   }
@@ -11980,13 +12013,13 @@ body::-webkit-scrollbar-thumb:hover {
   color: rgb(219, 59, 91);
 }
 
-@media (max-width: 768px) {
+@media screen and (max-width: 768px) {
   .user_profile .profilo .bottone h1 {
     font-size: 26px;
   }
 }
 
-@media (max-width: 425px) {
+@media screen and (max-width: 425px) {
   .user_profile .profilo .bottone h1 {
     font-size: 20px;
   }
@@ -12033,6 +12066,10 @@ body::-webkit-scrollbar-thumb:hover {
 
 .user_profile .profilo .chart-container {
   margin-top: 20px;
+}
+
+body {
+  height: 100vh;
 }
 
 .fixed_footer {
@@ -12285,6 +12322,14 @@ body::-webkit-scrollbar-thumb:hover {
   background-image: url("/images/mare-bg.png");
   background-repeat: no-repeat;
   background-size: cover;
+  height: 100vh;
+}
+
+@media screen and (max-width: 600px) {
+  .house-create,
+  .house-edit {
+    height: 100%;
+  }
 }
 
 .house-create #create-house-form,

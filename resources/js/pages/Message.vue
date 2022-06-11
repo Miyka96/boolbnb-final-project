@@ -29,7 +29,7 @@
             type="email"
             class="form-control"
             id="email"
-            placeholder="Inserisci e-mail... (es.mario@rossi.it)"
+            placeholder="Inserisci e-mail... (es. mariorossi@email.it)"
             v-model="form.email"
           />
         </div>
@@ -93,7 +93,7 @@ export default {
 .messages_page{
   height: 100vh;
   display: flex;
-  padding: 100px 200px;
+  padding: 100px 30%;
   flex-direction: column;
   align-items: center;
   justify-content: center;

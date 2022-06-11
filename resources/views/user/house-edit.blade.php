@@ -6,12 +6,12 @@
    $id = Auth::id();
    @endphp
 
-   <div class="container-fluid my-5 pt-5 house-edit">
+   <div class="container-fluid mt-5 pt-5 house-edit">
 
       <h1>Modifica l'appartamento n {{ $house->id }}</h1>
 
 
-      <form class="pt-1" action="{{ route('user.houses.update', $house) }}" method="POST">
+      <form class="pt-1" action="{{ route('user.houses.update', $house) }}" method="POST" id="create-house-form">
          @csrf
          @method('PUT')
 
