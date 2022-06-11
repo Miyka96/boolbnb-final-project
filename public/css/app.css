@@ -11053,7 +11053,7 @@ body::-webkit-scrollbar-thumb:hover {
 }
 
 #main-nav #navbarDropdown span .fa-circle-user.logged {
-  color: #FF385C;
+  color: #10A97A;
 }
 
 #main-nav #navbarDropdown a {
@@ -11669,6 +11669,14 @@ body::-webkit-scrollbar-thumb:hover {
   width: 100%;
 }
 
+.ms__container-fluid {
+  background-image: url(/images/Wave-10s-1920px.svg?09f314c4027bbbd596380b2db462c135);
+}
+
+h1 {
+  color: white;
+}
+
 .user_houses {
   height: 100vh;
   padding: 0 50px;
@@ -11698,7 +11706,7 @@ body::-webkit-scrollbar-thumb:hover {
   margin: 0;
   border-radius: 15px;
   border: none;
-  background-color: transparent;
+  background-color: white;
   transition: all ease-in-out 0.3s;
 }
 
