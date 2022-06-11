@@ -1,6 +1,13 @@
 @extends('layouts.app')
 
-@php $i = 0 @endphp
+@php 
+$i = 0;
+
+
+
+
+
+@endphp
 
 @section('content')
 <div class="login_page container-fluid d-flex justify-content-between">
@@ -18,9 +25,9 @@
         --}}        
 
         @for($j = 0; $j < 12; $j++)
-            @if($i == 6)</div>@endif
-            @if($i == 0 or $i == 6) <div class="column column_@php echo $i @endphp col-lg-6 col-md-12 flex-column d-flex"> @endif
-                <img src="https://picsum.photos/1080/1920" alt="">            
+            @if($i == 6) @php $i = 0 @endphp </div>@endif
+            @if($i == 0) <div class="column column_@php echo $j @endphp col-lg-6 col-md-12 d-flex"> @endif
+                <img src="{{ asset('./images/login-'.$i.'.png') }}" alt="">            
             @php $i++ @endphp
         @endfor
         </div>  

@@ -68,6 +68,7 @@
     
     .column_0{
         transform: translateY(-13%);
+        flex-direction: column;
 
         @media screen and (max-width :768px){
             display: none !important;
@@ -75,6 +76,7 @@
     }
     .column_6 {
         transform: translateY(-24%);
+        flex-direction: column-reverse;
 
         @media screen and (max-width :768px){
             display: none !important;
@@ -152,6 +154,8 @@
         }
     }
 
+    
+
     .register-wrapper{
         flex-grow: 1;  
         padding: 0 20%;
@@ -185,6 +189,7 @@
     
     .column_0{
         transform: translateY(-13%);
+        flex-direction: column;
 
         @media screen and (max-width :768px){
             display: none !important;
@@ -192,7 +197,7 @@
     }
     .column_6 {
         transform: translateY(-24%);
-
+        flex-direction: column-reverse;
         @media screen and (max-width :768px){
             display: none !important;
         }

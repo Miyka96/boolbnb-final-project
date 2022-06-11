@@ -1,33 +1,35 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="ms-messages p-4 m-4">
+    <div class="messages_page">
+        <div class="ms-messages p-4 m-4">
 
 
-        <h3 class="mb-3 d-block">
-            Messaggi
-        </h3>
-        @foreach ($messages as $message)
-        @if($message->house_id == Route::current()->parameter('house_id'))
-            <h5>
-                {{ $message->name }}
-            </h5>
-            <span class="d-none d-sm-inline ml-1">
-                sent at
-            </span>
-            <span>
-                {{ $message->sent_at }}
-            </span>
-            <p>
-                {{ $message->content }}
-
-            </p>
-            @endif
-        @endforeach
-        <div class=" container-fluid d-block">
-            <p >Al momento non ci sono messaggi</p>
+            <h3 class="mb-3 d-block">
+                Messaggi
+            </h3>
+            @foreach ($messages as $message)
+            @if($message->house_id == Route::current()->parameter('house_id'))
+                <h5>
+                    {{ $message->name }}
+                </h5>
+                <span class="d-none d-sm-inline ml-1">
+                    sent at
+                </span>
+                <span>
+                    {{ $message->sent_at }}
+                </span>
+                <p>
+                    {{ $message->content }}
+    
+                </p>
+                @endif
+            @endforeach
+            <div class=" container-fluid d-block">
+                <p >Al momento non ci sono messaggi</p>
+            </div>
+    
         </div>
-
     </div>
 
     <script>
@@ -59,6 +61,10 @@
 
         ::-webkit-scrollbar-thumb {
             background: #C9C4BE;
+        }
+
+        .messages_page{
+            height: 100vh;
         }
 
         .ms-messages {
