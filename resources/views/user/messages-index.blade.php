@@ -1,9 +1,8 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="messages_page">
-        <div class="ms-messages p-4 m-4">
-
+    <div class="messages_page d-flex justify-content-center ms__container-fluid">
+        <div class="ms-messages col-8 p-4 m-4">
 
             <h3 class="mb-3 d-block">
                 Messaggi
@@ -47,6 +46,7 @@
     </script>
 
     <style lang="scss" scoped>
+        
         .ms-active-height {
             height: auto !important;
         }
@@ -71,7 +71,7 @@
             box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.1);
             border-radius: 10px;
             position: fixed;
-            top: 75px;
+            top: 100px;
             background-color: white;
             height: 500px;
             overflow-y: scroll;
