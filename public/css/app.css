@@ -11170,13 +11170,13 @@ body::-webkit-scrollbar-thumb:hover {
 }
 
 .sponsorship_page .container {
-  height: 300px;
   width: 1100px;
   border-radius: 10px;
   display: flex;
   align-items: center;
   flex-direction: column;
   padding: 0;
+  padding-bottom: 20px;
 }
 
 .sponsorship_page .container .close {
@@ -11669,10 +11669,6 @@ body::-webkit-scrollbar-thumb:hover {
   width: 100%;
 }
 
-.ms__container-fluid {
-  background-image: url(/images/Wave-10s-1920px2.svg?b86736de31d860bdc6dcc7be22756015);
-}
-
 .user_houses {
   height: 100vh;
   padding: 0 50px;
@@ -11878,7 +11874,7 @@ body::-webkit-scrollbar-thumb:hover {
   color: rgb(219, 59, 91);
   font-size: 30px;
   margin-left: 15px;
-  background-color: white;
+  background-color: #f8fafc;
 }
 
 @media screen and (max-width: 700px) {
@@ -11891,7 +11887,7 @@ body::-webkit-scrollbar-thumb:hover {
   height: 40px;
   border: none;
   border-radius: 5px;
-  color: white;
+  color: #f8fafc;
 }
 
 .user_houses .button .icon {
@@ -12090,7 +12086,6 @@ body {
 .fixed_footer .container-lg,
 .fixed_footer .container-xl {
   row-gap: 15px;
-  height: 100%;
 }
 
 @media screen and (max-width: 600px) {
@@ -12465,9 +12460,5 @@ body {
 .house-edit button {
   background-color: rgb(219, 59, 91);
   border-color: rgb(219, 59, 91);
-}
-
-.ms___container-fluid {
-  background-image: url(/images/Wave-10s-1920px2.svg?b86736de31d860bdc6dcc7be22756015);
 }
 

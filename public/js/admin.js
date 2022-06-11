@@ -3157,6 +3157,19 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -8529,7 +8542,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, "#search-bar[data-v-785e65ef] {\n  position: relative;\n}\n#search-bar a[data-v-785e65ef] {\n  text-decoration: none;\n}\n#search-bar input[data-v-785e65ef],\n#search-bar span[data-v-785e65ef] {\n  box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.1);\n  height: 44px;\n  border: 1px solid #c9c4be;\n  cursor: pointer;\n}\n#search-bar input[data-v-785e65ef] {\n  min-width: 350px;\n  flex-grow: 1;\n  border-right: 0;\n  color: #717171;\n  outline: none;\n  font-size: small;\n  gap: 15px;\n  border-radius: 25px 0px 0px 25px;\n  font-size: 18px;\n}\n#search-bar a span[data-v-785e65ef] {\n  width: 40px;\n  border-radius: 0px 25px 25px 0px;\n  background-color: white;\n  border-left: 0;\n  color: white;\n  transition: all ease-in-out 0.2s;\n}\n#search-bar a span div[data-v-785e65ef] {\n  background-color: #ff385c;\n  border-radius: 25px;\n  text-align: center;\n  height: 34px;\n  aspect-ratio: 1;\n  font-size: 18px;\n  margin-right: 5px;\n  transition: all ease-in-out 0.2s;\n}\n#search-bar a:hover span[data-v-785e65ef] {\n  color: #ff385c;\n}\n#search-bar a:hover span div[data-v-785e65ef] {\n  background-color: white;\n  border: 2px solid #ff385c;\n  height: 32px;\n}\n#search-bar .dynamic_container[data-v-785e65ef] {\n  position: absolute;\n  top: 100%;\n  padding: 5px;\n}\n@media screen and (min-width: 992px) {\n#search-bar[data-v-785e65ef] {\n    position: fixed;\n    top: 40px;\n    left: 50%;\n    transform: translate(-50%, -50%);\n}\n}\n@media screen and (max-width: 992px) {\n#search-bar input[data-v-785e65ef] {\n    min-width: 40vw;\n}\n}\n@media screen and (max-width: 576px) {\n#search-bar input[data-v-785e65ef] {\n    max-width: 35vw;\n    min-width: auto;\n}\n#search-bar input[data-v-785e65ef]::-moz-placeholder {\n    font-size: 15px;\n}\n#search-bar input[data-v-785e65ef]:-ms-input-placeholder {\n    font-size: 15px;\n}\n#search-bar input[data-v-785e65ef]::placeholder {\n    font-size: 15px;\n}\n}", ""]);
+exports.push([module.i, "#search-bar[data-v-785e65ef] {\n  position: relative;\n}\n#search-bar a[data-v-785e65ef] {\n  text-decoration: none;\n}\n#search-bar input[data-v-785e65ef],\n#search-bar span[data-v-785e65ef] {\n  box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.1);\n  height: 44px;\n  border: 1px solid #c9c4be;\n  cursor: pointer;\n}\n#search-bar input[data-v-785e65ef] {\n  min-width: 350px;\n  flex-grow: 1;\n  border-right: 0;\n  color: #717171;\n  outline: none;\n  font-size: small;\n  gap: 15px;\n  border-radius: 25px 0px 0px 25px;\n  font-size: 18px;\n}\n#search-bar .ms-link-search span[data-v-785e65ef] {\n  width: 60px;\n  padding: 15px;\n  margin: 0 !important;\n  border-radius: 25px 25px 25px 25px;\n}\n#search-bar a span[data-v-785e65ef] {\n  width: 40px;\n  border-radius: 0px 25px 25px 0px;\n  background-color: white;\n  border-left: 0;\n  color: white;\n  transition: all ease-in-out 0.2s;\n}\n#search-bar a span div[data-v-785e65ef] {\n  background-color: #ff385c;\n  border-radius: 25px;\n  text-align: center;\n  height: 34px;\n  aspect-ratio: 1;\n  font-size: 18px;\n  margin-right: 5px;\n  transition: all ease-in-out 0.2s;\n}\n#search-bar a:hover span[data-v-785e65ef] {\n  color: #ff385c;\n}\n#search-bar a:hover span div[data-v-785e65ef] {\n  background-color: white;\n  border: 2px solid #ff385c;\n  height: 32px;\n}\n#search-bar .dynamic_container[data-v-785e65ef] {\n  position: absolute;\n  top: 100%;\n  padding: 5px;\n}\n@media screen and (min-width: 992px) {\n#search-bar[data-v-785e65ef] {\n    position: fixed;\n    top: 40px;\n    left: 50%;\n    transform: translate(-50%, -50%);\n}\n}\n@media screen and (max-width: 992px) {\n#search-bar input[data-v-785e65ef] {\n    min-width: 40vw;\n}\n}\n@media screen and (max-width: 435px) {\n#search-bar input[data-v-785e65ef] {\n    width: 100px;\n}\n}", ""]);
 
 // exports
 
@@ -8605,7 +8618,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".messages_page[data-v-6ea885e4] {\n  height: 100vh;\n  display: flex;\n  padding: 100px 30%;\n  flex-direction: column;\n  align-items: center;\n  justify-content: center;\n}\ninput[data-v-6ea885e4]:focus, textarea[data-v-6ea885e4]:focus {\n  outline: none !important;\n  border-color: rgb(219, 59, 91) !important;\n  box-shadow: 0 0 10px rgb(219, 59, 91) !important;\n}\n.form-wrapper[data-v-6ea885e4] {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  justify-content: center;\n  width: 100%;\n}\n.form-group[data-v-6ea885e4] {\n  width: 80%;\n}\n.btn[data-v-6ea885e4] {\n  background-color: rgb(219, 59, 91);\n  border-color: rgb(219, 59, 91);\n}", ""]);
+exports.push([module.i, ".ms__container-fluid[data-v-6ea885e4] {\n  width: 100vw;\n  height: 90vh;\n  background-image: url(\"/images/Wave-10s-1920px.svg\");\n}\n.messages_page[data-v-6ea885e4] {\n  height: 100vh;\n  display: flex;\n  padding: 100px 30%;\n  flex-direction: column;\n  align-items: center;\n  justify-content: center;\n}\ninput[data-v-6ea885e4]:focus, textarea[data-v-6ea885e4]:focus {\n  outline: none !important;\n  border-color: rgb(219, 59, 91) !important;\n  box-shadow: 0 0 10px rgb(219, 59, 91) !important;\n}\n.form-wrapper[data-v-6ea885e4] {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  justify-content: center;\n  width: 100%;\n}\n.form-group[data-v-6ea885e4] {\n  width: 80%;\n}\n.btn[data-v-6ea885e4] {\n  background-color: rgb(219, 59, 91);\n  border-color: rgb(219, 59, 91);\n}", ""]);
 
 // exports
 
@@ -42365,7 +42378,7 @@ var render = function () {
               expression: "queryString",
             },
           ],
-          staticClass: "px-3 d-none d-md-block",
+          staticClass: "px-3",
           attrs: {
             type: "search",
             placeholder: "cerca la casa dei tuoi sogni",
@@ -42430,9 +42443,9 @@ var render = function () {
                       },
                       [
                         _vm._v(
-                          "\n                " +
+                          "\n                    " +
                             _vm._s(el.address.freeformAddress) +
-                            "\n            "
+                            "\n                "
                         ),
                       ]
                     )
@@ -43086,158 +43099,173 @@ var render = function () {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", [
-    _c("div", { staticClass: "messages_page container-fuid mt-5 py-5" }, [
+  return _c(
+    "div",
+    { staticClass: "ms__container-fluid d-flex justify-content-center" },
+    [
       _c(
-        "form",
+        "div",
         {
-          staticClass: "form-wrapper",
-          on: {
-            submit: function ($event) {
-              $event.preventDefault()
-              return _vm.submitForm.apply(null, arguments)
-            },
-          },
+          staticClass:
+            "messages_page container mt-2 py-3 col-12 col-sm-12 col-md-10 col-lg-8",
         },
         [
-          _c("div", { staticClass: "form-group" }, [
-            _c("label", { attrs: { for: "name" } }, [_vm._v("Nome completo")]),
-            _vm._v(" "),
-            _c("input", {
-              directives: [
-                {
-                  name: "model",
-                  rawName: "v-model",
-                  value: _vm.form.name,
-                  expression: "form.name",
-                },
-              ],
-              staticClass: "form-control",
-              attrs: {
-                type: "text",
-                id: "name",
-                placeholder: "Inserisci il tuo nome completo...",
-              },
-              domProps: { value: _vm.form.name },
+          _c(
+            "form",
+            {
+              staticClass: "form-wrapper",
               on: {
-                input: function ($event) {
-                  if ($event.target.composing) {
-                    return
-                  }
-                  _vm.$set(_vm.form, "name", $event.target.value)
+                submit: function ($event) {
+                  $event.preventDefault()
+                  return _vm.submitForm.apply(null, arguments)
                 },
               },
-            }),
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "form-group" }, [
-            _c("label", { attrs: { for: "telephone" } }, [
-              _vm._v("Numero di telefono"),
-            ]),
-            _vm._v(" "),
-            _c("input", {
-              directives: [
-                {
-                  name: "model",
-                  rawName: "v-model",
-                  value: _vm.form.telephone,
-                  expression: "form.telephone",
-                },
-              ],
-              staticClass: "form-control",
-              attrs: {
-                type: "text",
-                name: "telephone",
-                id: "telephone",
-                placeholder: "Inserisci il tuo numero di telefono...",
-              },
-              domProps: { value: _vm.form.telephone },
-              on: {
-                input: function ($event) {
-                  if ($event.target.composing) {
-                    return
-                  }
-                  _vm.$set(_vm.form, "telephone", $event.target.value)
-                },
-              },
-            }),
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "form-group" }, [
-            _c("label", { attrs: { for: "email" } }, [
-              _vm._v("Indirizzo email"),
-            ]),
-            _vm._v(" "),
-            _c("input", {
-              directives: [
-                {
-                  name: "model",
-                  rawName: "v-model",
-                  value: _vm.form.email,
-                  expression: "form.email",
-                },
-              ],
-              staticClass: "form-control",
-              attrs: {
-                type: "email",
-                id: "email",
-                placeholder: "Inserisci e-mail... (es. mariorossi@email.it)",
-              },
-              domProps: { value: _vm.form.email },
-              on: {
-                input: function ($event) {
-                  if ($event.target.composing) {
-                    return
-                  }
-                  _vm.$set(_vm.form, "email", $event.target.value)
-                },
-              },
-            }),
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "form-group" }, [
-            _c("label", { attrs: { for: "content" } }, [_vm._v("Messaggio")]),
-            _vm._v(" "),
-            _c("textarea", {
-              directives: [
-                {
-                  name: "model",
-                  rawName: "v-model",
-                  value: _vm.form.content,
-                  expression: "form.content",
-                },
-              ],
-              staticClass: "form-control",
-              attrs: {
-                name: "content",
-                id: "content",
-                rows: "3",
-                placeholder: "Inserisci testo del messaggio...",
-              },
-              domProps: { value: _vm.form.content },
-              on: {
-                input: function ($event) {
-                  if ($event.target.composing) {
-                    return
-                  }
-                  _vm.$set(_vm.form, "content", $event.target.value)
-                },
-              },
-            }),
-          ]),
-          _vm._v(" "),
-          _vm._m(0),
+            },
+            [
+              _c("div", { staticClass: "form-group" }, [
+                _c("label", { attrs: { for: "name" } }, [
+                  _vm._v("Nome completo"),
+                ]),
+                _vm._v(" "),
+                _c("input", {
+                  directives: [
+                    {
+                      name: "model",
+                      rawName: "v-model",
+                      value: _vm.form.name,
+                      expression: "form.name",
+                    },
+                  ],
+                  staticClass: "form-control",
+                  attrs: {
+                    type: "text",
+                    id: "name",
+                    placeholder: "Inserisci il tuo nome completo...",
+                  },
+                  domProps: { value: _vm.form.name },
+                  on: {
+                    input: function ($event) {
+                      if ($event.target.composing) {
+                        return
+                      }
+                      _vm.$set(_vm.form, "name", $event.target.value)
+                    },
+                  },
+                }),
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "form-group" }, [
+                _c("label", { attrs: { for: "telephone" } }, [
+                  _vm._v("Numero di telefono"),
+                ]),
+                _vm._v(" "),
+                _c("input", {
+                  directives: [
+                    {
+                      name: "model",
+                      rawName: "v-model",
+                      value: _vm.form.telephone,
+                      expression: "form.telephone",
+                    },
+                  ],
+                  staticClass: "form-control",
+                  attrs: {
+                    type: "text",
+                    name: "telephone",
+                    id: "telephone",
+                    placeholder: "Inserisci il tuo numero di telefono...",
+                  },
+                  domProps: { value: _vm.form.telephone },
+                  on: {
+                    input: function ($event) {
+                      if ($event.target.composing) {
+                        return
+                      }
+                      _vm.$set(_vm.form, "telephone", $event.target.value)
+                    },
+                  },
+                }),
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "form-group" }, [
+                _c("label", { attrs: { for: "email" } }, [
+                  _vm._v("Indirizzo email"),
+                ]),
+                _vm._v(" "),
+                _c("input", {
+                  directives: [
+                    {
+                      name: "model",
+                      rawName: "v-model",
+                      value: _vm.form.email,
+                      expression: "form.email",
+                    },
+                  ],
+                  staticClass: "form-control",
+                  attrs: {
+                    type: "email",
+                    id: "email",
+                    placeholder: "Inserisci e-mail...",
+                  },
+                  domProps: { value: _vm.form.email },
+                  on: {
+                    input: function ($event) {
+                      if ($event.target.composing) {
+                        return
+                      }
+                      _vm.$set(_vm.form, "email", $event.target.value)
+                    },
+                  },
+                }),
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "form-group" }, [
+                _c("label", { attrs: { for: "content" } }, [
+                  _vm._v("Messaggio"),
+                ]),
+                _vm._v(" "),
+                _c("textarea", {
+                  directives: [
+                    {
+                      name: "model",
+                      rawName: "v-model",
+                      value: _vm.form.content,
+                      expression: "form.content",
+                    },
+                  ],
+                  staticClass: "form-control",
+                  attrs: {
+                    name: "content",
+                    id: "content",
+                    rows: "3",
+                    placeholder: "Inserisci testo del messaggio...",
+                  },
+                  domProps: { value: _vm.form.content },
+                  on: {
+                    input: function ($event) {
+                      if ($event.target.composing) {
+                        return
+                      }
+                      _vm.$set(_vm.form, "content", $event.target.value)
+                    },
+                  },
+                }),
+              ]),
+              _vm._v(" "),
+              _vm._m(0),
+            ]
+          ),
         ]
       ),
-    ]),
-  ])
+    ]
+  )
 }
 var staticRenderFns = [
   function () {
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "form-group" }, [
+    return _c("div", { staticClass: "form-group d-flex justify-content-end" }, [
       _c("button", { staticClass: "btn btn-primary" }, [_vm._v("Invia")]),
     ])
   },
@@ -57887,8 +57915,8 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /Users/marcocorallo/Desktop/boolbnb-final-project/resources/js/admin.js */"./resources/js/admin.js");
-module.exports = __webpack_require__(/*! /Users/marcocorallo/Desktop/boolbnb-final-project/resources/sass/app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! /Users/asiademartino/Desktop/progetto_finale/boolbnb-final-project/resources/js/admin.js */"./resources/js/admin.js");
+module.exports = __webpack_require__(/*! /Users/asiademartino/Desktop/progetto_finale/boolbnb-final-project/resources/sass/app.scss */"./resources/sass/app.scss");
 
 
 /***/ })
