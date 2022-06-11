@@ -3,7 +3,7 @@
 
 
 .house-create, .house-edit{
-    background-image: url("/images/mare_bg.png");
+    background-image: url("/images/mare-bg.png");
     background-repeat: no-repeat;
     background-size: cover;
 
@@ -12,12 +12,16 @@
         width: 60%;
         border-radius: 10px;
         background: linear-gradient(82deg, $body_bg 0%, rgba($body_bg,1) 10%, rgba($body_bg,0) 100%);
-        padding-bottom: 100px;
+        padding: 0px 50px 50px 50px;
+
+        @media screen and (max-width: 900px) {
+           width: 100%;
+        }
     }
     
-    
-    padding: 0 60px;
-
+    @media screen and (max-width: 768px) {
+        background-image: none;
+    }
     @media screen and (max-width: 530px) {
         padding: 40px 50px;
     }
@@ -38,6 +42,8 @@
             width: 100%;
         }
     }
+
+   
 
     .flex-piccolo{
         width: 100%;

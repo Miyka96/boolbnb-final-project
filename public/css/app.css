@@ -11364,6 +11364,7 @@ body::-webkit-scrollbar-thumb:hover {
 
 .login_page .column_0 {
   transform: translateY(-13%);
+  flex-direction: column;
 }
 
 @media screen and (max-width: 768px) {
@@ -11374,6 +11375,7 @@ body::-webkit-scrollbar-thumb:hover {
 
 .login_page .column_6 {
   transform: translateY(-24%);
+  flex-direction: column-reverse;
 }
 
 @media screen and (max-width: 768px) {
@@ -11490,6 +11492,7 @@ body::-webkit-scrollbar-thumb:hover {
 
 .register_page .column_0 {
   transform: translateY(-13%);
+  flex-direction: column;
 }
 
 @media screen and (max-width: 768px) {
@@ -11500,6 +11503,7 @@ body::-webkit-scrollbar-thumb:hover {
 
 .register_page .column_6 {
   transform: translateY(-24%);
+  flex-direction: column-reverse;
 }
 
 @media screen and (max-width: 768px) {
@@ -12278,10 +12282,9 @@ body::-webkit-scrollbar-thumb:hover {
 
 .house-create,
 .house-edit {
-  background-image: url("/images/mare_bg.png");
+  background-image: url("/images/mare-bg.png");
   background-repeat: no-repeat;
   background-size: cover;
-  padding: 0 60px;
 }
 
 .house-create #create-house-form,
@@ -12290,7 +12293,21 @@ body::-webkit-scrollbar-thumb:hover {
   width: 60%;
   border-radius: 10px;
   background: linear-gradient(82deg, #f8fafc 0%, #f8fafc 10%, rgba(248, 250, 252, 0) 100%);
-  padding-bottom: 100px;
+  padding: 0px 50px 50px 50px;
+}
+
+@media screen and (max-width: 900px) {
+  .house-create #create-house-form,
+  .house-edit #create-house-form {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .house-create,
+  .house-edit {
+    background-image: none;
+  }
 }
 
 @media screen and (max-width: 530px) {

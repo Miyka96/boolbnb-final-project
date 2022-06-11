@@ -1,7 +1,7 @@
 <template>
   <div>
-    <div class="container mt-5 py-5">
-      <form v-on:submit.prevent="submitForm">
+    <div class="messages_page container-fuid mt-5 py-5">
+      <form class="form-wrapper" v-on:submit.prevent="submitForm">
         <div class="form-group">
           <label for="name">Nome completo</label>
           <input
@@ -29,7 +29,7 @@
             type="email"
             class="form-control"
             id="email"
-            placeholder="mario@rossi.it"
+            placeholder="Inserisci e-mail... (es.mario@rossi.it)"
             v-model="form.email"
           />
         </div>
@@ -87,4 +87,39 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+@import '../../sass/_variables.scss';
+
+.messages_page{
+  height: 100vh;
+  display: flex;
+  padding: 100px 200px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+input:focus, textarea:focus{
+  outline: none !important; 
+  border-color: $login !important; 
+  box-shadow: 0 0 10px $login !important;
+}
+
+.form-wrapper{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.form-group{
+  width: 80%;
+}
+
+.btn{
+  background-color: $login;
+  border-color: $login;
+}
+
+</style>
