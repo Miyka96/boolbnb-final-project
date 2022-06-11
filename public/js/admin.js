@@ -8605,7 +8605,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".messages_page[data-v-6ea885e4] {\n  height: 100vh;\n  display: flex;\n  padding: 100px 200px;\n  flex-direction: column;\n  align-items: center;\n  justify-content: center;\n}\ninput[data-v-6ea885e4]:focus, textarea[data-v-6ea885e4]:focus {\n  outline: none !important;\n  border-color: rgb(219, 59, 91) !important;\n  box-shadow: 0 0 10px rgb(219, 59, 91) !important;\n}\n.form-wrapper[data-v-6ea885e4] {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  justify-content: center;\n  width: 100%;\n}\n.form-group[data-v-6ea885e4] {\n  width: 80%;\n}\n.btn[data-v-6ea885e4] {\n  background-color: rgb(219, 59, 91);\n  border-color: rgb(219, 59, 91);\n}", ""]);
+exports.push([module.i, ".messages_page[data-v-6ea885e4] {\n  height: 100vh;\n  display: flex;\n  padding: 100px 30%;\n  flex-direction: column;\n  align-items: center;\n  justify-content: center;\n}\ninput[data-v-6ea885e4]:focus, textarea[data-v-6ea885e4]:focus {\n  outline: none !important;\n  border-color: rgb(219, 59, 91) !important;\n  box-shadow: 0 0 10px rgb(219, 59, 91) !important;\n}\n.form-wrapper[data-v-6ea885e4] {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  justify-content: center;\n  width: 100%;\n}\n.form-group[data-v-6ea885e4] {\n  width: 80%;\n}\n.btn[data-v-6ea885e4] {\n  background-color: rgb(219, 59, 91);\n  border-color: rgb(219, 59, 91);\n}", ""]);
 
 // exports
 
@@ -8624,7 +8624,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "em[data-v-7262a471] {\n  color: #FF385C;\n  font-style: normal;\n}", ""]);
+exports.push([module.i, ".search_page[data-v-7262a471] {\n  height: 100vh;\n}\nem[data-v-7262a471] {\n  color: #FF385C;\n  font-style: normal;\n}", ""]);
 
 // exports
 
@@ -43181,7 +43181,7 @@ var render = function () {
               attrs: {
                 type: "email",
                 id: "email",
-                placeholder: "Inserisci e-mail... (es.mario@rossi.it)",
+                placeholder: "Inserisci e-mail... (es. mariorossi@email.it)",
               },
               domProps: { value: _vm.form.email },
               on: {
@@ -43265,7 +43265,7 @@ var render = function () {
   var _c = _vm._self._c || _h
   return _c(
     "div",
-    { staticClass: "mt-5 pt-5" },
+    { staticClass: "search_page mt-5 pt-5" },
     [
       _c("div", { staticClass: "container" }, [
         _c("h1", { staticClass: "pt-4 text-center" }, [

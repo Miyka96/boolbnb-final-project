@@ -25,10 +25,14 @@
         filter: invert(38%) sepia(75%) saturate(3208%) hue-rotate(325deg)
             brightness(88%) contrast(94%);
         opacity: 0.4;
+
+        @media screen and (max-width: 460px) {
+            display: none;
+        }
     }
 
     .col-2 {
-        @media (max-width: 576px) {
+        @media screen and (max-width: 576px) {
             display: none;
         }
     }
@@ -72,7 +76,7 @@
             margin-top: 100px;
             gap: 50px;
 
-            @media (max-width: 768px) {
+            @media screen and (max-width: 768px) {
                 flex-direction: column;
             }
 
@@ -81,10 +85,10 @@
             }
 
             h1 {
-                @media (max-width: 768px) {
+                @media screen and (max-width: 768px) {
                     font-size: 26px;
                 }
-                @media (max-width: 425px) {
+                @media screen and (max-width: 425px) {
                     font-size: 20px;
                 }
             }

@@ -1,5 +1,5 @@
 <template>
-  <div class="mt-5 pt-5">
+  <div class="search_page mt-5 pt-5">
     <div class="container">
       <h1 class="pt-4 text-center">
         Stai cercando le case disponibili vicino a <em class="text-capitalize">{{ queryParams }}</em>
@@ -54,6 +54,10 @@ export default {
 
 <style lang="scss" scoped>
 @import '../../sass/_variables.scss';
+
+.search_page{
+  height: 100vh;
+}
 
 em {
   color: $highlight;
