@@ -29,7 +29,7 @@
             type="email"
             class="form-control"
             id="email"
-            placeholder="Inserisci e-mail... (es. mariorossi@email.it)"
+            placeholder="Inserisci e-mail..."
             v-model="form.email"
           />
         </div>
@@ -93,7 +93,7 @@ export default {
 .ms__container-fluid {
   width: 100vw;
   height: 90vh;
-  background-image: url('../../../public/images/Wave-10s-1920px.svg');
+  background-image: url('/images/Wave-10s-1920px.svg');
 }
 .messages_page{
   height: 100vh;

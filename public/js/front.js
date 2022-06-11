@@ -3333,7 +3333,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".messages_page[data-v-6ea885e4] {\n  height: 100vh;\n  display: flex;\n  padding: 100px 30%;\n  flex-direction: column;\n  align-items: center;\n  justify-content: center;\n}\ninput[data-v-6ea885e4]:focus, textarea[data-v-6ea885e4]:focus {\n  outline: none !important;\n  border-color: rgb(219, 59, 91) !important;\n  box-shadow: 0 0 10px rgb(219, 59, 91) !important;\n}\n.form-wrapper[data-v-6ea885e4] {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  justify-content: center;\n  width: 100%;\n}\n.form-group[data-v-6ea885e4] {\n  width: 80%;\n}\n.btn[data-v-6ea885e4] {\n  background-color: rgb(219, 59, 91);\n  border-color: rgb(219, 59, 91);\n}", ""]);
+exports.push([module.i, ".ms__container-fluid[data-v-6ea885e4] {\n  width: 100vw;\n  height: 90vh;\n  background-image: url(\"/images/Wave-10s-1920px.svg\");\n}\n.messages_page[data-v-6ea885e4] {\n  height: 100vh;\n  display: flex;\n  padding: 100px 30%;\n  flex-direction: column;\n  align-items: center;\n  justify-content: center;\n}\ninput[data-v-6ea885e4]:focus, textarea[data-v-6ea885e4]:focus {\n  outline: none !important;\n  border-color: rgb(219, 59, 91) !important;\n  box-shadow: 0 0 10px rgb(219, 59, 91) !important;\n}\n.form-wrapper[data-v-6ea885e4] {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  justify-content: center;\n  width: 100%;\n}\n.form-group[data-v-6ea885e4] {\n  width: 80%;\n}\n.btn[data-v-6ea885e4] {\n  background-color: rgb(219, 59, 91);\n  border-color: rgb(219, 59, 91);\n}", ""]);
 
 // exports
 
@@ -5841,158 +5841,173 @@ var render = function () {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", [
-    _c("div", { staticClass: "messages_page container-fuid mt-5 py-5" }, [
+  return _c(
+    "div",
+    { staticClass: "ms__container-fluid d-flex justify-content-center" },
+    [
       _c(
-        "form",
+        "div",
         {
-          staticClass: "form-wrapper",
-          on: {
-            submit: function ($event) {
-              $event.preventDefault()
-              return _vm.submitForm.apply(null, arguments)
-            },
-          },
+          staticClass:
+            "messages_page container mt-2 py-3 col-12 col-sm-12 col-md-10 col-lg-8",
         },
         [
-          _c("div", { staticClass: "form-group" }, [
-            _c("label", { attrs: { for: "name" } }, [_vm._v("Nome completo")]),
-            _vm._v(" "),
-            _c("input", {
-              directives: [
-                {
-                  name: "model",
-                  rawName: "v-model",
-                  value: _vm.form.name,
-                  expression: "form.name",
-                },
-              ],
-              staticClass: "form-control",
-              attrs: {
-                type: "text",
-                id: "name",
-                placeholder: "Inserisci il tuo nome completo...",
-              },
-              domProps: { value: _vm.form.name },
+          _c(
+            "form",
+            {
+              staticClass: "form-wrapper",
               on: {
-                input: function ($event) {
-                  if ($event.target.composing) {
-                    return
-                  }
-                  _vm.$set(_vm.form, "name", $event.target.value)
+                submit: function ($event) {
+                  $event.preventDefault()
+                  return _vm.submitForm.apply(null, arguments)
                 },
               },
-            }),
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "form-group" }, [
-            _c("label", { attrs: { for: "telephone" } }, [
-              _vm._v("Numero di telefono"),
-            ]),
-            _vm._v(" "),
-            _c("input", {
-              directives: [
-                {
-                  name: "model",
-                  rawName: "v-model",
-                  value: _vm.form.telephone,
-                  expression: "form.telephone",
-                },
-              ],
-              staticClass: "form-control",
-              attrs: {
-                type: "text",
-                name: "telephone",
-                id: "telephone",
-                placeholder: "Inserisci il tuo numero di telefono...",
-              },
-              domProps: { value: _vm.form.telephone },
-              on: {
-                input: function ($event) {
-                  if ($event.target.composing) {
-                    return
-                  }
-                  _vm.$set(_vm.form, "telephone", $event.target.value)
-                },
-              },
-            }),
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "form-group" }, [
-            _c("label", { attrs: { for: "email" } }, [
-              _vm._v("Indirizzo email"),
-            ]),
-            _vm._v(" "),
-            _c("input", {
-              directives: [
-                {
-                  name: "model",
-                  rawName: "v-model",
-                  value: _vm.form.email,
-                  expression: "form.email",
-                },
-              ],
-              staticClass: "form-control",
-              attrs: {
-                type: "email",
-                id: "email",
-                placeholder: "Inserisci e-mail... (es. mariorossi@email.it)",
-              },
-              domProps: { value: _vm.form.email },
-              on: {
-                input: function ($event) {
-                  if ($event.target.composing) {
-                    return
-                  }
-                  _vm.$set(_vm.form, "email", $event.target.value)
-                },
-              },
-            }),
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "form-group" }, [
-            _c("label", { attrs: { for: "content" } }, [_vm._v("Messaggio")]),
-            _vm._v(" "),
-            _c("textarea", {
-              directives: [
-                {
-                  name: "model",
-                  rawName: "v-model",
-                  value: _vm.form.content,
-                  expression: "form.content",
-                },
-              ],
-              staticClass: "form-control",
-              attrs: {
-                name: "content",
-                id: "content",
-                rows: "3",
-                placeholder: "Inserisci testo del messaggio...",
-              },
-              domProps: { value: _vm.form.content },
-              on: {
-                input: function ($event) {
-                  if ($event.target.composing) {
-                    return
-                  }
-                  _vm.$set(_vm.form, "content", $event.target.value)
-                },
-              },
-            }),
-          ]),
-          _vm._v(" "),
-          _vm._m(0),
+            },
+            [
+              _c("div", { staticClass: "form-group" }, [
+                _c("label", { attrs: { for: "name" } }, [
+                  _vm._v("Nome completo"),
+                ]),
+                _vm._v(" "),
+                _c("input", {
+                  directives: [
+                    {
+                      name: "model",
+                      rawName: "v-model",
+                      value: _vm.form.name,
+                      expression: "form.name",
+                    },
+                  ],
+                  staticClass: "form-control",
+                  attrs: {
+                    type: "text",
+                    id: "name",
+                    placeholder: "Inserisci il tuo nome completo...",
+                  },
+                  domProps: { value: _vm.form.name },
+                  on: {
+                    input: function ($event) {
+                      if ($event.target.composing) {
+                        return
+                      }
+                      _vm.$set(_vm.form, "name", $event.target.value)
+                    },
+                  },
+                }),
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "form-group" }, [
+                _c("label", { attrs: { for: "telephone" } }, [
+                  _vm._v("Numero di telefono"),
+                ]),
+                _vm._v(" "),
+                _c("input", {
+                  directives: [
+                    {
+                      name: "model",
+                      rawName: "v-model",
+                      value: _vm.form.telephone,
+                      expression: "form.telephone",
+                    },
+                  ],
+                  staticClass: "form-control",
+                  attrs: {
+                    type: "text",
+                    name: "telephone",
+                    id: "telephone",
+                    placeholder: "Inserisci il tuo numero di telefono...",
+                  },
+                  domProps: { value: _vm.form.telephone },
+                  on: {
+                    input: function ($event) {
+                      if ($event.target.composing) {
+                        return
+                      }
+                      _vm.$set(_vm.form, "telephone", $event.target.value)
+                    },
+                  },
+                }),
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "form-group" }, [
+                _c("label", { attrs: { for: "email" } }, [
+                  _vm._v("Indirizzo email"),
+                ]),
+                _vm._v(" "),
+                _c("input", {
+                  directives: [
+                    {
+                      name: "model",
+                      rawName: "v-model",
+                      value: _vm.form.email,
+                      expression: "form.email",
+                    },
+                  ],
+                  staticClass: "form-control",
+                  attrs: {
+                    type: "email",
+                    id: "email",
+                    placeholder: "Inserisci e-mail...",
+                  },
+                  domProps: { value: _vm.form.email },
+                  on: {
+                    input: function ($event) {
+                      if ($event.target.composing) {
+                        return
+                      }
+                      _vm.$set(_vm.form, "email", $event.target.value)
+                    },
+                  },
+                }),
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "form-group" }, [
+                _c("label", { attrs: { for: "content" } }, [
+                  _vm._v("Messaggio"),
+                ]),
+                _vm._v(" "),
+                _c("textarea", {
+                  directives: [
+                    {
+                      name: "model",
+                      rawName: "v-model",
+                      value: _vm.form.content,
+                      expression: "form.content",
+                    },
+                  ],
+                  staticClass: "form-control",
+                  attrs: {
+                    name: "content",
+                    id: "content",
+                    rows: "3",
+                    placeholder: "Inserisci testo del messaggio...",
+                  },
+                  domProps: { value: _vm.form.content },
+                  on: {
+                    input: function ($event) {
+                      if ($event.target.composing) {
+                        return
+                      }
+                      _vm.$set(_vm.form, "content", $event.target.value)
+                    },
+                  },
+                }),
+              ]),
+              _vm._v(" "),
+              _vm._m(0),
+            ]
+          ),
         ]
       ),
-    ]),
-  ])
+    ]
+  )
 }
 var staticRenderFns = [
   function () {
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "form-group" }, [
+    return _c("div", { staticClass: "form-group d-flex justify-content-end" }, [
       _c("button", { staticClass: "btn btn-primary" }, [_vm._v("Invia")]),
     ])
   },
@@ -22861,7 +22876,7 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /Users/marcocorallo/Desktop/boolbnb-final-project/resources/js/front.js */"./resources/js/front.js");
+module.exports = __webpack_require__(/*! /Users/asiademartino/Desktop/progetto_finale/boolbnb-final-project/resources/js/front.js */"./resources/js/front.js");
 
 
 /***/ })

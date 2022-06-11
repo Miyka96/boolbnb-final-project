@@ -5,11 +5,11 @@
             type="search"
             v-model="queryString"
             @keyup="searchItems()"
-            class="px-3 d-none d-md-block"
+            class="px-3"
             placeholder="cerca la casa dei tuoi sogni"
         />
 
-        <a :href="`/search/${queryString}`" class="d-none d-md-block">
+        <a :href="`/search/${queryString}`">
             <!-- <router-link :to="{ name: 'search', params: { query: queryString } }"> -->
             <span
                 @click="ttSearch()"
@@ -21,9 +21,9 @@
             </span>
             <!-- </router-link> -->
         </a>
-
+<!-- 
         <a :href="`/search/${queryString}`" class="d-block d-md-none ms-link-search">
-            <!-- <router-link :to="{ name: 'search', params: { query: queryString } }"> -->
+            <router-link :to="{ name: 'search', params: { query: queryString } }">
             <span
                 @click="ttSearch()"
                 class="d-flex justify-content-center align-items-center"
@@ -32,8 +32,8 @@
                     <i class="fa-solid fa-magnifying-glass"></i>
                 </div>
             </span>
-            <!-- </router-link> -->
-        </a>
+            </router-link>
+        </a> -->
 
       </div>  
 
@@ -217,16 +217,13 @@ export default {
     }
 }
 
-@media screen and (max-width: 576px) {
+@media screen and (max-width: 435px) {
     #search-bar {
         input {
-            max-width: 35vw;
-            min-width: auto;
-
-            &::placeholder {
-                font-size: 15px;
-            }
+            width: 100px;
         }
     }
 }
+
+
 </style>

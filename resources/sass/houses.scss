@@ -1,8 +1,5 @@
 @import './variables';
 
-.ms__container-fluid {
-    background-image: url('../../public/images/Wave-10s-1920px2.svg');
-}
 
 .user_houses{
     height: 100vh;
@@ -188,7 +185,7 @@
         color: $login;
         font-size: 30px;
         margin-left: 15px;
-        background-color: white;
+        background-color: $body-bg;
 
         @media screen and (max-width: 700px){
             display: none;
@@ -199,7 +196,7 @@
         height: 40px;
         border: none;
         border-radius: 5px;
-        color: white;
+        color: $body-bg;
     }
     
     .button .icon {
