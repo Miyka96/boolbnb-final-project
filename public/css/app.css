@@ -11670,11 +11670,7 @@ body::-webkit-scrollbar-thumb:hover {
 }
 
 .ms__container-fluid {
-  background-image: url(/images/Wave-10s-1920px.svg?09f314c4027bbbd596380b2db462c135);
-}
-
-h1 {
-  color: white;
+  background-image: url(/images/Wave-10s-1920px2.svg?b86736de31d860bdc6dcc7be22756015);
 }
 
 .user_houses {
@@ -11713,7 +11709,7 @@ h1 {
   margin: 0;
   border-radius: 15px;
   border: none;
-  background-color: white;
+  background-color: transparent;
   transition: all ease-in-out 0.3s;
 }
 
@@ -11882,6 +11878,7 @@ h1 {
   color: rgb(219, 59, 91);
   font-size: 30px;
   margin-left: 15px;
+  background-color: white;
 }
 
 @media screen and (max-width: 700px) {
@@ -12468,5 +12465,9 @@ body {
 .house-edit button {
   background-color: rgb(219, 59, 91);
   border-color: rgb(219, 59, 91);
+}
+
+.ms___container-fluid {
+  background-image: url(/images/Wave-10s-1920px2.svg?b86736de31d860bdc6dcc7be22756015);
 }
 
