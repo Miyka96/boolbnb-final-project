@@ -94,11 +94,12 @@ export default {
   width: 100vw;
   height: 90vh;
   background-image: url('/images/Wave-10s-1920px.svg');
+  color: white;
 }
 .messages_page{
   height: 100vh;
   display: flex;
-  padding: 100px 30%;
+  padding: 100px 0;
   flex-direction: column;
   align-items: center;
   justify-content: center;
