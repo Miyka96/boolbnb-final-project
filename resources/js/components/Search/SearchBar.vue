@@ -9,7 +9,20 @@
             placeholder="cerca la casa dei tuoi sogni"
         />
 
-        <a :href="`/search/${queryString}`">
+        <a :href="`/search/${queryString}`" class="d-none d-md-block">
+            <!-- <router-link :to="{ name: 'search', params: { query: queryString } }"> -->
+            <span
+                @click="ttSearch()"
+                class="d-flex justify-content-center align-items-center"
+            >
+                <div class="d-flex justify-content-center align-items-center">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </div>
+            </span>
+            <!-- </router-link> -->
+        </a>
+
+        <a :href="`/search/${queryString}`" class="d-block d-md-none ms-link-search">
             <!-- <router-link :to="{ name: 'search', params: { query: queryString } }"> -->
             <span
                 @click="ttSearch()"
@@ -134,6 +147,15 @@ export default {
         gap: 15px;
         border-radius: 25px 0px 0px 25px;
         font-size: 18px;
+    }
+
+    .ms-link-search {
+        span {
+            width: 60px;
+            padding: 15px;
+            margin: 0 !important;
+            border-radius: 25px 25px 25px 25px;
+        }
     }
 
     // Search btn
