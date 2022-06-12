@@ -59,7 +59,7 @@ $j = 0;
                     <div class="box @php echo 'sponsor_'.($i).'_bg'  @endphp">
                         <div class="content">
                             {{-- contatore numero in bg --}}
-                            <h2>{{ $i }}</h2>
+                            <h2>{{ $sponsor->id }}</h2>
 
                             <i class="@php echo $cards[($j)]['icon']; $j++; @endphp"></i>
 
