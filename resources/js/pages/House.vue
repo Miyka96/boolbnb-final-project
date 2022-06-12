@@ -1,13 +1,9 @@
 <template>
-  <div>
-
-    <div class="py-5">
-        <Map :lat="house.position.latitude" :lon="house.position.longitude"/>
-    </div>
+  <div class="container py-5"> 
 
     <div class="container p-4 bg-light d-none d-md-block">
-      <div class="row">
-        <div class="col-12 p-0">
+      <div class="row py-5">
+        <div class="col-12 p-0 mt-5">
           <h2>{{ house.title }}</h2>
           <h6>
             Annuncio di
@@ -30,8 +26,8 @@
     <!-- ******************** SOLO MOBILE ******************** -->
 
     <div class="container-fluid d-md-none d-sm-block bg-light">
-      <div class="row py-2">
-        <div class="col-12 text-center">
+      <div class="row py-5">
+        <div class="col-12 text-center mt-5">
           <h2>{{ house.title }}</h2>
           <h6>
             Annuncio di
@@ -128,6 +124,12 @@
         </div>
       </div>
     </div>
+
+    
+    <div class="py-2">
+        <Map :lat="this.lat" :lon="this.lon"/>
+    </div>
+    
   </div>
 </template>
 
@@ -142,6 +144,8 @@ export default {
     return {
       house: [],
       position: [],
+      lat:"",
+      lon:"",
       services: [],
       visual_data: {
         house_id: this.$route.params.id,
@@ -157,6 +161,8 @@ export default {
         .then((res) => {
           this.house = res.data.house;
           this.position = res.data.house.position;
+          this.lat= res.data.house.position.latitude;
+          this.lon=res.data.house.position.longitude;
           this.services = res.data.house.services;
 
           console.log(res.data.house);
@@ -191,6 +197,7 @@ img {
   object-fit: cover;
   object-position: center;
   display: block;
+  border-radius:10px;
 }
 
 .thumb-wrapper {

@@ -176,8 +176,8 @@ class PositionSeeder extends Seeder
           'zip_code' => 20123
         ],
         [
-          'latitude' => 45.455904,
-          'longitude' => 9.180687,
+          'latitude' => 45.456338394595385,
+          'longitude' => 9.18067472495932,
           'address' => 'Corso di Porta Ticinese 81',
           'city' => 'Milano',
           'country' => 'Italia',
