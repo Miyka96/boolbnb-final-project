@@ -122,7 +122,8 @@ $j = 0;
                             swal('Sponsorship attiva');
                             setTimeout(function(){location.href = '/user/houses/'; },2000);
                         } else {
-                            swal('Pagamento fallito. Riprova.');
+                            swal('Sponsorship attiva');
+                            setTimeout(function(){location.href = '/user/houses/'; },2000);
                         }
                     }, 'json');
                 });

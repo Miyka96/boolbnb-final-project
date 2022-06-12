@@ -42404,7 +42404,7 @@ var render = function () {
           staticClass: "px-3",
           attrs: {
             type: "search",
-            placeholder: "cerca la casa dei tuoi sogni",
+            placeholder: "Cerca la casa dei tuoi sogni",
           },
           domProps: { value: _vm.queryString },
           on: {
