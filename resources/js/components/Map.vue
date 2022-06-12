@@ -17,12 +17,12 @@ export default {
         key: "yQdOXmdWcQjythjoyUwOQaQSJBBNCvPj",
         container: "map",
         zoom: 14,
-        center: [13.36516, 38.11366],
+        center: [this.lon, this.lat],
       });
       // aggiunta controlli mappa
       map.addControl(new tt.FullscreenControl());
       map.addControl(new tt.NavigationControl());
-      new tt.Marker().setLngLat([13.36516, 38.11366]).addTo(map);
+      new tt.Marker().setLngLat([this.lon,this.lat]).addTo(map);
     },
   },
   mounted: function () {

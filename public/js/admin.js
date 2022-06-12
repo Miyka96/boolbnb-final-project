@@ -2776,12 +2776,12 @@ __webpack_require__.r(__webpack_exports__);
         key: "yQdOXmdWcQjythjoyUwOQaQSJBBNCvPj",
         container: "map",
         zoom: 14,
-        center: [13.36516, 38.11366]
+        center: [this.lon, this.lat]
       }); // aggiunta controlli mappa
 
       map.addControl(new tt.FullscreenControl());
       map.addControl(new tt.NavigationControl());
-      new tt.Marker().setLngLat([13.36516, 38.11366]).addTo(map);
+      new tt.Marker().setLngLat([this.lon, this.lat]).addTo(map);
     }
   },
   mounted: function mounted() {
@@ -3480,6 +3480,8 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   components: {
@@ -3489,6 +3491,8 @@ __webpack_require__.r(__webpack_exports__);
     return {
       house: [],
       position: [],
+      lat: "",
+      lon: "",
       services: [],
       visual_data: {
         house_id: this.$route.params.id,
@@ -3504,6 +3508,8 @@ __webpack_require__.r(__webpack_exports__);
       axios.get("/api/houses/".concat(this.$route.params.id)).then(function (res) {
         _this.house = res.data.house;
         _this.position = res.data.house.position;
+        _this.lat = res.data.house.position.latitude;
+        _this.lon = res.data.house.position.longitude;
         _this.services = res.data.house.services;
         console.log(res.data.house);
       })["catch"](function (err) {
@@ -8580,7 +8586,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "img[data-v-40fc0132] {\n  width: 100%;\n  height: 100%;\n  -o-object-fit: cover;\n     object-fit: cover;\n  -o-object-position: center;\n     object-position: center;\n  display: block;\n}\n.thumb-wrapper[data-v-40fc0132] {\n  width: 100%;\n  height: 480px;\n}\n.thumb-wrapper .big-pic[data-v-40fc0132] {\n  width: 100%;\n  height: 100%;\n}\n.thumb-wrapper figure[data-v-40fc0132] {\n  margin: 0;\n  padding: 0;\n  height: 25%;\n}\n.box-shadow[data-v-40fc0132] {\n  box-shadow: 0 4px 10px -4px #333;\n}\nul[data-v-40fc0132] {\n  display: flex;\n  flex-direction: column;\n  gap: 20px;\n  list-style: none;\n}\nul li[data-v-40fc0132] {\n  max-width: 90px;\n  padding: 5px;\n  border-radius: 20px;\n  text-align: center;\n  text-transform: uppercase;\n  font-family: \"Trebuchet MS\", \"Lucida Sans Unicode\", \"Lucida Grande\", \"Lucida Sans\", Arial, sans-serif;\n  font-size: 12px;\n  font-weight: 900;\n  background: #ff385c;\n}\n.ms__btn[data-v-40fc0132] {\n  font-family: \"Trebuchet MS\", \"Lucida Sans Unicode\", \"Lucida Grande\", \"Lucida Sans\", Arial, sans-serif;\n  font-weight: 900;\n  background: #ff385c;\n}\n.ms__font[data-v-40fc0132] {\n  font-family: \"Trebuchet MS\", \"Lucida Sans Unicode\", \"Lucida Grande\", \"Lucida Sans\", Arial, sans-serif;\n  font-weight: 900;\n  font-size: 18px;\n  color: #ff385c;\n}\n.ms__price[data-v-40fc0132] {\n  font-weight: 900;\n  color: #ff385c;\n}", ""]);
+exports.push([module.i, "img[data-v-40fc0132] {\n  width: 100%;\n  height: 100%;\n  -o-object-fit: cover;\n     object-fit: cover;\n  -o-object-position: center;\n     object-position: center;\n  display: block;\n  border-radius: 10px;\n}\n.thumb-wrapper[data-v-40fc0132] {\n  width: 100%;\n  height: 480px;\n}\n.thumb-wrapper .big-pic[data-v-40fc0132] {\n  width: 100%;\n  height: 100%;\n}\n.thumb-wrapper figure[data-v-40fc0132] {\n  margin: 0;\n  padding: 0;\n  height: 25%;\n}\n.box-shadow[data-v-40fc0132] {\n  box-shadow: 0 4px 10px -4px #333;\n}\nul[data-v-40fc0132] {\n  display: flex;\n  flex-direction: column;\n  gap: 20px;\n  list-style: none;\n}\nul li[data-v-40fc0132] {\n  max-width: 90px;\n  padding: 5px;\n  border-radius: 20px;\n  text-align: center;\n  text-transform: uppercase;\n  font-family: \"Trebuchet MS\", \"Lucida Sans Unicode\", \"Lucida Grande\", \"Lucida Sans\", Arial, sans-serif;\n  font-size: 12px;\n  font-weight: 900;\n  background: #ff385c;\n}\n.ms__btn[data-v-40fc0132] {\n  font-family: \"Trebuchet MS\", \"Lucida Sans Unicode\", \"Lucida Grande\", \"Lucida Sans\", Arial, sans-serif;\n  font-weight: 900;\n  background: #ff385c;\n}\n.ms__font[data-v-40fc0132] {\n  font-family: \"Trebuchet MS\", \"Lucida Sans Unicode\", \"Lucida Grande\", \"Lucida Sans\", Arial, sans-serif;\n  font-weight: 900;\n  font-size: 18px;\n  color: #ff385c;\n}\n.ms__price[data-v-40fc0132] {\n  font-weight: 900;\n  color: #ff385c;\n}", ""]);
 
 // exports
 
@@ -42652,24 +42658,10 @@ var render = function () {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", [
-    _c(
-      "div",
-      { staticClass: "py-5" },
-      [
-        _c("Map", {
-          attrs: {
-            lat: _vm.house.position.latitude,
-            lon: _vm.house.position.longitude,
-          },
-        }),
-      ],
-      1
-    ),
-    _vm._v(" "),
+  return _c("div", { staticClass: "container py-5" }, [
     _c("div", { staticClass: "container p-4 bg-light d-none d-md-block" }, [
-      _c("div", { staticClass: "row" }, [
-        _c("div", { staticClass: "col-12 p-0" }, [
+      _c("div", { staticClass: "row py-5" }, [
+        _c("div", { staticClass: "col-12 p-0 mt-5" }, [
           _c("h2", [_vm._v(_vm._s(_vm.house.title))]),
           _vm._v(" "),
           _c("h6", [
@@ -42698,8 +42690,8 @@ var render = function () {
       "div",
       { staticClass: "container-fluid d-md-none d-sm-block bg-light" },
       [
-        _c("div", { staticClass: "row py-2" }, [
-          _c("div", { staticClass: "col-12 text-center" }, [
+        _c("div", { staticClass: "row py-5" }, [
+          _c("div", { staticClass: "col-12 text-center mt-5" }, [
             _c("h2", [_vm._v(_vm._s(_vm.house.title))]),
             _vm._v(" "),
             _c("h6", [
@@ -42853,6 +42845,13 @@ var render = function () {
         ),
       ]),
     ]),
+    _vm._v(" "),
+    _c(
+      "div",
+      { staticClass: "py-2" },
+      [_c("Map", { attrs: { lat: this.lat, lon: this.lon } })],
+      1
+    ),
   ])
 }
 var staticRenderFns = [
