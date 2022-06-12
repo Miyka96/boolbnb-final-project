@@ -106,8 +106,13 @@ $j = 0;
 
 
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
     {{-- DA QUI --}}
+
     <script>    
+        
+        const house_id = 2;
+
         var button = document.querySelector('#submit-button');
         braintree.dropin.create({
             authorization: "{{ \Braintree\ClientToken::generate() }}",
@@ -122,8 +127,20 @@ $j = 0;
                             swal('Sponsorship attiva');
                             setTimeout(function(){location.href = '/user/houses/'; },2000);
                         } else {
+
                             swal('Sponsorship attiva');
-                            setTimeout(function(){location.href = '/user/houses/'; },2000);
+                            
+                                axios
+                                .post("/house/sponsor", this.house_id)
+                                .then((res) => {
+                                console.log(res);
+                                })
+                                .catch((error) => {
+                                console.log(error);
+                                });
+
+                            // setTimeout(function(){location.href = '/user/houses/'; },2000);
+
                         }
                     }, 'json');
                 });
