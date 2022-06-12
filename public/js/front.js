@@ -3044,7 +3044,7 @@ __webpack_require__.r(__webpack_exports__);
       var _this = this;
 
       axios__WEBPACK_IMPORTED_MODULE_0___default.a.post("/send/message", this.form).then(function (res) {
-        sweetalert__WEBPACK_IMPORTED_MODULE_1___default()('messaggio inviato!');
+        sweetalert__WEBPACK_IMPORTED_MODULE_1___default()('Messaggio inviato!');
 
         _this.$router.push({
           name: "house.show",

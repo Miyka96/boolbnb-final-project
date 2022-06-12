@@ -75,7 +75,7 @@ export default {
       axios
         .post("/send/message", this.form)
         .then((res) => {
-          swal('messaggio inviato!');
+          swal('Messaggio inviato!');
           this.$router.push({
             name: "house.show",
             params: this.$route.params.id,
