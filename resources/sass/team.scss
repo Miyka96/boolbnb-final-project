@@ -12,8 +12,20 @@
     color: white;
 
     .row{
-        width: 80%;
+        width: 50%;
         margin-top: 150px;
+
+        @media screen and (max-width: 1024px ){
+            width: 60%;
+        }
+
+        @media screen and (max-width: 860px ){
+            width: 70%;
+        }
+
+        @media screen and (max-width: 320px ){
+            width: 90%;
+        }
     }
 
     .card-team {
