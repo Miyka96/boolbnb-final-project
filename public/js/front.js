@@ -3358,7 +3358,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".search_page[data-v-7262a471] {\n  height: 100vh;\n}\nem[data-v-7262a471] {\n  color: #FF385C;\n  font-style: normal;\n}", ""]);
+exports.push([module.i, "em[data-v-7262a471] {\n  color: #FF385C;\n  font-style: normal;\n}", ""]);
 
 // exports
 
@@ -3396,7 +3396,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "\n#map {\r\n  border-radius: 10px;\r\n  height: 400px;\r\n  width: 100%;\n}\r\n", ""]);
+exports.push([module.i, "\n#map {\n  border-radius: 10px;\n  height: 400px;\n  width: 100%;\n}\n", ""]);
 
 // exports
 
@@ -5357,7 +5357,7 @@ var render = function () {
     "div",
     {
       staticClass:
-        "container-fluid d-flex flex-column align-items-center justify-content-center",
+        "filter_component container-fluid d-flex flex-column align-items-center justify-content-center",
     },
     [
       _c(
@@ -22875,7 +22875,7 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\Users\Micae\dev\boolbnb-final-project\resources\js\front.js */"./resources/js/front.js");
+module.exports = __webpack_require__(/*! /Users/asiademartino/Desktop/progetto_finale/boolbnb-final-project/resources/js/front.js */"./resources/js/front.js");
 
 
 /***/ })

@@ -46,7 +46,7 @@
             <div id="title-error"></div>
          </div>
 
-      <div class="flex-piccolo flex-wrap d-flex align-items-center justify-content-between">
+      <div class="flex-piccolo flex-wrap d-flex justify-content-between">
          {{-- Num camere --}}
          <div class="form-group">
             <label for="room_num">Camere</label>
