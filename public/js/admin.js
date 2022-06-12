@@ -8686,7 +8686,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "\n#map {\n  border-radius: 10px;\n  height: 400px;\n  width: 100%;\n}\n", ""]);
+exports.push([module.i, "\n#map {\r\n  border-radius: 10px;\r\n  height: 400px;\r\n  width: 100%;\n}\r\n", ""]);
 
 // exports
 
@@ -42697,7 +42697,12 @@ var render = function () {
       _c("div", { staticClass: "row rounded-lg overflow-hidden py-2" }, [
         _c("div", { staticClass: "thumb-wrapper" }, [
           _c("figure", { staticClass: "big-pic" }, [
-            _c("img", { attrs: { src: _vm.house.image, alt: _vm.house.name } }),
+            _c("img", {
+              attrs: {
+                src: "/storage/" + _vm.house.image,
+                alt: _vm.house.name,
+              },
+            }),
           ]),
         ]),
       ]),
@@ -57931,8 +57936,8 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /Users/asiademartino/Desktop/progetto_finale/boolbnb-final-project/resources/js/admin.js */"./resources/js/admin.js");
-module.exports = __webpack_require__(/*! /Users/asiademartino/Desktop/progetto_finale/boolbnb-final-project/resources/sass/app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! C:\Users\Micae\dev\boolbnb-final-project\resources\js\admin.js */"./resources/js/admin.js");
+module.exports = __webpack_require__(/*! C:\Users\Micae\dev\boolbnb-final-project\resources\sass\app.scss */"./resources/sass/app.scss");
 
 
 /***/ })

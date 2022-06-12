@@ -46,7 +46,7 @@ class HouseSeeder extends Seeder
         [
             "card_img" => "https://images.pexels.com/photos/106399/pexels-photo-106399.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
             "show_img" => [
-                "full" => "https://images.pexels.com/photos/106399/pexels-photo-106399.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+                "full" => "uploads/casa1",
             ],
         ],
         [
