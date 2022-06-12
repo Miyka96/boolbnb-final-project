@@ -8,7 +8,7 @@
             <div class="wrapper">
                 <h4 class="mb-1 title">Raggio di ricerca (km)</h4>
                 <input
-                    class="mb-1"
+                    class="mb-1 text-center"
                     v-model="radius"
                     type="number"
                     min="1"
@@ -17,7 +17,7 @@
 
                 <h4 class="mb-1 title">Numero minimo di stanze</h4>
                 <input
-                    class="mb-1"
+                    class="mb-1  text-center"
                     v-model="room_num"
                     type="number"
                     min=""
@@ -25,7 +25,7 @@
                 />
 
                 <h4 class="mb-1 title">Numero minimo di letti</h4>
-                <input v-model="beds_num" type="number" max="25" class="mb-2" />
+                <input v-model="beds_num" type="number" max="25" class="mb-2  text-center" />
             </div>
 
             <div class="service_wrapper col-8 animate__animated animate__flipInX">

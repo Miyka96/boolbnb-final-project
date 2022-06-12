@@ -3396,7 +3396,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "\n#map {\n  border-radius: 10px;\n  height: 400px;\n  width: 100%;\n}\n", ""]);
+exports.push([module.i, "\n#map {\r\n  border-radius: 10px;\r\n  height: 400px;\r\n  width: 100%;\n}\r\n", ""]);
 
 // exports
 
@@ -5240,16 +5240,7 @@ var render = function () {
               _vm._v(" "),
               _c("p", { staticClass: "card-price" }, [
                 _c("strong", [_vm._v("€" + _vm._s(_vm.house.cost_per_night))]),
-                _vm._v("/night\n        "),
-              ]),
-              _vm._v(" "),
-              _c("p", { staticClass: "card-rating" }, [
-                _vm._v(
-                  "Id: " +
-                    _vm._s(_vm.house.id) +
-                    ", distanza: " +
-                    _vm._s(_vm.house.distance.toFixed(0))
-                ),
+                _vm._v("/notte\n        "),
               ]),
             ]),
             _vm._v(" "),
@@ -5381,7 +5372,7 @@ var render = function () {
                   expression: "radius",
                 },
               ],
-              staticClass: "mb-1",
+              staticClass: "mb-1 text-center",
               attrs: { type: "number", min: "1", max: "100" },
               domProps: { value: _vm.radius },
               on: {
@@ -5407,7 +5398,7 @@ var render = function () {
                   expression: "room_num",
                 },
               ],
-              staticClass: "mb-1",
+              staticClass: "mb-1  text-center",
               attrs: { type: "number", min: "", max: "15" },
               domProps: { value: _vm.room_num },
               on: {
@@ -5433,7 +5424,7 @@ var render = function () {
                   expression: "beds_num",
                 },
               ],
-              staticClass: "mb-2",
+              staticClass: "mb-2  text-center",
               attrs: { type: "number", max: "25" },
               domProps: { value: _vm.beds_num },
               on: {
@@ -5618,11 +5609,7 @@ var render = function () {
           _c("h6", [
             _vm._v("\n          Annuncio di\n          "),
             _c("span", { staticClass: "ms__font" }, [
-              _vm._v(
-                _vm._s(_vm.house.user.name) +
-                  " " +
-                  _vm._s(_vm.house.user.surname)
-              ),
+              _vm._v(_vm._s(_vm.house.user.name)),
             ]),
           ]),
         ]),
@@ -22875,7 +22862,7 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /Users/asiademartino/Desktop/progetto_finale/boolbnb-final-project/resources/js/front.js */"./resources/js/front.js");
+module.exports = __webpack_require__(/*! D:\Users\Simone\Documents\Progetti\boolbnb-final-project\resources\js\front.js */"./resources/js/front.js");
 
 
 /***/ })

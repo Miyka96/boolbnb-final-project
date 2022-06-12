@@ -10,7 +10,7 @@
           <h6>
             Annuncio di
             <span class="ms__font"
-              >{{ house.user.name }} {{ house.user.surname }}</span
+              >{{ house.user.name }}</span
             >
           </h6>
         </div>

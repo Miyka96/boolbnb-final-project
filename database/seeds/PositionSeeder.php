@@ -185,6 +185,35 @@ class PositionSeeder extends Seeder
         ]
     ];
 
+    // POSIZIONI CASE
+    // 1
+    $positionAdmin1 = new Position();
+    $positionAdmin1->latitude = 45.48706;
+    $positionAdmin1->longitude = 9.1589;
+    $positionAdmin1->address = 'Via Piero Della Francesca 78';
+    $positionAdmin1->city = 'Milano';
+    $positionAdmin1->country = 'Italia';
+    $positionAdmin1->zip_code = 20154;
+    $positionAdmin1->save();
+    // 2
+    $positionAdmin2 = new Position();
+    $positionAdmin2->latitude = 45.45132;
+    $positionAdmin2->longitude = 9.17407;
+    $positionAdmin2->address = 'Via Filippo Argelati 4';
+    $positionAdmin2->city = 'Milano';
+    $positionAdmin2->country = 'Italia';
+    $positionAdmin2->zip_code = 20143;
+    $positionAdmin2->save();
+    // 3
+    $positionAdmin3 = new Position();
+    $positionAdmin3->latitude = 45.47515;
+    $positionAdmin3->longitude = 9.15795;
+    $positionAdmin3->address = 'Via Senofonte 5';
+    $positionAdmin3->city = 'Milano';
+    $positionAdmin3->country = 'Italia';
+    $positionAdmin3->zip_code = 20145;
+    $positionAdmin3->save();
+
     // Attinge dall'array di indirizzi di Milano
     foreach ($addresses as $el) {
       $position = new Position();
@@ -198,7 +227,7 @@ class PositionSeeder extends Seeder
     }
 
     // Generazione casuale di indirizzi
-    for ($i = 0; $i < 79; $i++) {
+    for ($i = 0; $i < 100; $i++) {
       $position = new Position();
       $position->latitude = $faker->latitude($min = -90, $max = 90);
       $position->longitude = $faker->longitude($min = -180, $max = 180);
