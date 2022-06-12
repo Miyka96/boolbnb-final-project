@@ -1,6 +1,6 @@
 <template>
     <div
-        class="container-fluid d-flex flex-column align-items-center justify-content-center"
+        class="filter_component container-fluid d-flex flex-column align-items-center justify-content-center"
     >
         <div
             class="filter_wrapper container d-flex mb-4 pb-4 justify-content-center animate__animated animate__flipInX"

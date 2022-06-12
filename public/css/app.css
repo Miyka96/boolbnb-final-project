@@ -11864,7 +11864,25 @@ body::-webkit-scrollbar-thumb:hover {
 
 @media screen and (max-width: 440px) {
   .user_houses .card .sponsor {
-    font-size: 55%;
+    font-size: 80%;
+  }
+}
+
+@media screen and (max-width: 410px) {
+  .user_houses .card .sponsor {
+    font-size: 70%;
+  }
+}
+
+@media screen and (max-width: 370px) {
+  .user_houses .card .sponsor {
+    font-size: 60%;
+  }
+}
+
+@media screen and (max-width: 330px) {
+  .user_houses .card .sponsor {
+    font-size: 50%;
   }
 }
 
@@ -12071,6 +12089,9 @@ body::-webkit-scrollbar-thumb:hover {
 
 body {
   height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .fixed_footer {
@@ -12322,14 +12343,7 @@ body {
   background-image: url("/images/mare-bg.png");
   background-repeat: no-repeat;
   background-size: cover;
-  height: 100vh;
-}
-
-@media screen and (max-width: 600px) {
-  .house-create,
-  .house-edit {
-    height: 100%;
-  }
+  height: 100%;
 }
 
 .house-create #create-house-form,

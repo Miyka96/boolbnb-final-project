@@ -55,9 +55,6 @@ export default {
 <style lang="scss" scoped>
 @import '../../sass/_variables.scss';
 
-.search_page{
-  height: 100vh;
-}
 
 em {
   color: $highlight;

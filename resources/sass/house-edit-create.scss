@@ -6,11 +6,11 @@
     background-image: url("/images/mare-bg.png");
     background-repeat: no-repeat;
     background-size: cover;
-    height: 100vh;
+    height: 100%;
 
-    @media screen and (max-width: 600px) {
-        height: 100%;
-    }
+    // @media screen and (max-width: 600px) {
+    //     height: 100%;
+    // }
 
     #create-house-form{
         height: 100%;
