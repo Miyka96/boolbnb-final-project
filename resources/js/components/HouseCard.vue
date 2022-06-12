@@ -2,7 +2,7 @@
   <div class="col">
     <router-link tag="a" :to="{ name: 'house.show', params: { id: house.id } }">
       <div class="card" style="width: 18rem">
-        <img :src="house.image" class="card-img-top" alt="" />
+        <img :src="`/storage/${house.image}`" :alt="house.name" class="card-img-top"/>
         <div class="card-body">
           <h5 class="card-title">{{ house.title }}</h5>
           <p class="card-position">{{ house.position.city }}, {{ house.position.country }}</p>

@@ -41729,7 +41729,10 @@ var render = function () {
           _c("div", { staticClass: "card", staticStyle: { width: "18rem" } }, [
             _c("img", {
               staticClass: "card-img-top",
-              attrs: { src: _vm.house.image, alt: "" },
+              attrs: {
+                src: "/storage/" + _vm.house.image,
+                alt: _vm.house.name,
+              },
             }),
             _vm._v(" "),
             _c("div", { staticClass: "card-body" }, [

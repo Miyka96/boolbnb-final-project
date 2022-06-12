@@ -445,7 +445,7 @@ class HouseSeeder extends Seeder
          $house->toilets_num = max(1, round( $house->room_num / 3 ) );
          $house->beds_num = max(1, round( $house->room_num * $faker->randomFloat(2, 1, 2) ) );
 
-         $house->image = $faker->randomElement($housesImg)['card_img'];
+         $house->image = $faker->randomElement($housesImg)['show_img']['full'];
          $house->is_visible = $faker->randomElement([true, true, true, false]);
          $house->cost_per_night = $faker->randomFloat(2, 10, 1000);   
          $house->position_id = $i + 1;

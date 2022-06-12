@@ -124,10 +124,10 @@
 
 
          {{-- Url immagine --}}
-         <label class="d-block">Inserisci un'immagine del tuo appartamento</label>
+         <label>Inserisci un'immagine del tuo appartamento</label>
          <div class="form-group">
-             <input id="image" type="file" name="image" class="@error('image') is-invalid @enderror">
-             <div>Formati validi : jpg, jpeg, png, webp</div>
+             <input id="image" type="file" name="image" class="@error('image') non è supportata @enderror">
+             <div class="text-secondary">Formati validi : jpg, jpeg, png, webp</div>
              @error('image')
                  <div class="alert alert-danger">{{ $message }}</div>
              @enderror
