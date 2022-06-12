@@ -7,6 +7,12 @@
         {{-- <a class="button aggiungi align-self-center" href="{{ route('user.houses.create') }}"><span class="icon">Aggiungi casa</span><i class="text fa-solid fa-circle-plus"></i></a> --}}
 
         <div class="card-wrapper container-fluid d-flex align-items-start">
+
+            <a class="aggiungi-card card  align-items-center justify-content-center"
+                href="{{ route('user.houses.create') }}">
+                <i class="fa-solid fa-plus"></i>
+            </a>
+            
             @foreach ($houses as $house)
                 @if ($house->user_id == auth::user()->id)
                     <a href="/house/{{$house->id}}">
@@ -53,11 +59,6 @@
                     </a>
                 @endif
             @endforeach
-
-            <a class="aggiungi-card card  align-items-center justify-content-center"
-                href="{{ route('user.houses.create') }}">
-                <i class="fa-solid fa-plus"></i>
-            </a>
 
         </div>
 
