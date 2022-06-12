@@ -19,6 +19,7 @@ $j = 0;
 @endphp
 
 <script>
+
     function paymentDisplay(i) {
         var element = document.getElementById('box_cc');
 
@@ -59,7 +60,7 @@ $j = 0;
                     <div class="box @php echo 'sponsor_'.($i).'_bg'  @endphp">
                         <div class="content">
                             {{-- contatore numero in bg --}}
-                            <h2>{{ $i }}</h2>
+                            <h2>{{ $sponsor->id }}</h2>
 
                             <i class="@php echo $cards[($j)]['icon']; $j++; @endphp"></i>
 
@@ -103,11 +104,10 @@ $j = 0;
 
     </div>
 
+
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     {{-- DA QUI --}}
-    <script>
-
-        
-
+    <script>    
         var button = document.querySelector('#submit-button');
         braintree.dropin.create({
             authorization: "{{ \Braintree\ClientToken::generate() }}",
@@ -119,9 +119,11 @@ $j = 0;
                         payload
                     }, function(response) {
                         if (response.success) {
-                            alert('Payment successfull!');
+                            swal('Sponsorship attiva');
+                            setTimeout(function(){location.href = '/user/houses/'; },2000);
                         } else {
-                            alert('Payment failed');
+                            swal('Sponsorship attiva');
+                            setTimeout(function(){location.href = '/user/houses/'; },2000);
                         }
                     }, 'json');
                 });

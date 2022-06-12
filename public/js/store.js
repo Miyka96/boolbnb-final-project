@@ -12704,7 +12704,11 @@ function thumbAnimation() {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
+<<<<<<< HEAD
 module.exports = __webpack_require__(/*! D:\Users\Simone\Documents\Progetti\boolbnb-final-project\resources\js\store.js */"./resources/js/store.js");
+=======
+module.exports = __webpack_require__(/*! C:\Users\Micae\dev\boolbnb-final-project\resources\js\store.js */"./resources/js/store.js");
+>>>>>>> ca9dcf6477d124d2c1f83c2acdd3408457ae40b4
 
 
 /***/ })
