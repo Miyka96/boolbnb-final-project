@@ -10,7 +10,7 @@
    <div class="container-fluid pt-5 mt-5 house-create">
 
         {{-- HOUSE FORM --}}
-        <form action="{{ route('user.houses.store') }}" method="post" id="create-house-form">
+        <form action="{{ route('user.houses.store') }}" method="post" id="create-house-form" enctype="multipart/form-data">
             @csrf
 
          <h1 class="titolo-house-create">Aggiungi una nuova casa</h1>
@@ -124,20 +124,13 @@
 
 
          {{-- Url immagine --}}
+         <label class="d-block">Inserisci un'immagine del tuo appartamento</label>
          <div class="form-group">
-            <label for="image">Immagine</label>
-            <input
-               type="url"
-               class="form-control"
-               name="image"
-               id="image"
-               required
-               {{-- pattern="[/^(http|https):\/\/]" --}}
-               placeholder="Inserisci l'url dell'immagine"
-               value="{{ old('image') }}"
-            >
-            <div id="image-error"></div>
-            
+             <input id="image" type="file" name="image" class="@error('image') is-invalid @enderror">
+             <div>Formati validi : jpg, jpeg, png, webp</div>
+             @error('image')
+                 <div class="alert alert-danger">{{ $message }}</div>
+             @enderror
          </div>
 
          {{-- Costo per notte --}}
