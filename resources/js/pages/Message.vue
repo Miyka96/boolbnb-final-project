@@ -97,6 +97,8 @@ export default {
   height: 90vh;
   background-image: url('/images/Wave-10s-1920px.svg');
   color: white;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 .messages_page{
   height: 100vh;

@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="messages_page d-flex justify-content-center ms___container-fluid">
+    <div class="read_messages_page d-flex justify-content-center ms___container-fluid">
         <div class="ms-messages col-8 p-4 m-4">
 
             <h3 class="mb-3 d-block">
@@ -63,9 +63,7 @@
             background: #C9C4BE;
         }
 
-        .messages_page{
-            height: 90vh;
-        }
+        
 
         .ms-messages {
             box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.1);

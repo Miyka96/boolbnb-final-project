@@ -45,6 +45,7 @@ Route::any('/send/message', 'SendMessageController@send');
 Route::any('/send/visualization', 'VisualizationController@send');
 
 Route::get('/payment/make', 'PaymentsController@make')->name('payment.make');
+Route::post('/house/sponsor', 'HouseSponsorshipController@make');
 
 Route::fallback(function () {
    return view('home');

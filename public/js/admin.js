@@ -8629,7 +8629,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".ms__container-fluid[data-v-6ea885e4] {\n  width: 100vw;\n  height: 90vh;\n  background-image: url(\"/images/Wave-10s-1920px.svg\");\n  color: white;\n}\n.messages_page[data-v-6ea885e4] {\n  height: 100vh;\n  display: flex;\n  padding: 100px 0;\n  flex-direction: column;\n  align-items: center;\n  justify-content: center;\n}\ninput[data-v-6ea885e4]:focus, textarea[data-v-6ea885e4]:focus {\n  outline: none !important;\n  border-color: rgb(219, 59, 91) !important;\n  box-shadow: 0 0 10px rgb(219, 59, 91) !important;\n}\n.form-wrapper[data-v-6ea885e4] {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  justify-content: center;\n  width: 100%;\n}\n.form-group[data-v-6ea885e4] {\n  width: 80%;\n}\n.btn[data-v-6ea885e4] {\n  background-color: rgb(219, 59, 91);\n  border-color: rgb(219, 59, 91);\n}", ""]);
+exports.push([module.i, ".ms__container-fluid[data-v-6ea885e4] {\n  width: 100vw;\n  height: 90vh;\n  background-image: url(\"/images/Wave-10s-1920px.svg\");\n  color: white;\n  background-repeat: no-repeat;\n  background-size: cover;\n}\n.messages_page[data-v-6ea885e4] {\n  height: 100vh;\n  display: flex;\n  padding: 100px 0;\n  flex-direction: column;\n  align-items: center;\n  justify-content: center;\n}\ninput[data-v-6ea885e4]:focus, textarea[data-v-6ea885e4]:focus {\n  outline: none !important;\n  border-color: rgb(219, 59, 91) !important;\n  box-shadow: 0 0 10px rgb(219, 59, 91) !important;\n}\n.form-wrapper[data-v-6ea885e4] {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  justify-content: center;\n  width: 100%;\n}\n.form-group[data-v-6ea885e4] {\n  width: 80%;\n}\n.btn[data-v-6ea885e4] {\n  background-color: rgb(219, 59, 91);\n  border-color: rgb(219, 59, 91);\n}", ""]);
 
 // exports
 
@@ -41729,7 +41729,10 @@ var render = function () {
           _c("div", { staticClass: "card", staticStyle: { width: "18rem" } }, [
             _c("img", {
               staticClass: "card-img-top",
-              attrs: { src: _vm.house.image, alt: "" },
+              attrs: {
+                src: "/storage/" + _vm.house.image,
+                alt: _vm.house.name,
+              },
             }),
             _vm._v(" "),
             _c("div", { staticClass: "card-body" }, [
@@ -42684,7 +42687,12 @@ var render = function () {
       _c("div", { staticClass: "row rounded-lg overflow-hidden py-2" }, [
         _c("div", { staticClass: "thumb-wrapper" }, [
           _c("figure", { staticClass: "big-pic" }, [
-            _c("img", { attrs: { src: _vm.house.image, alt: _vm.house.name } }),
+            _c("img", {
+              attrs: {
+                src: "/storage/" + _vm.house.image,
+                alt: _vm.house.name,
+              },
+            }),
           ]),
         ]),
       ]),

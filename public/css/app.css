@@ -11123,6 +11123,10 @@ body::-webkit-scrollbar-thumb:hover {
   color: white;
 }
 
+.sponsorship_page .content h1 {
+  font-size: 26px;
+}
+
 .sponsorship_page .content h2 {
   position: absolute;
   top: -10px;
@@ -11799,7 +11803,7 @@ body::-webkit-scrollbar-thumb:hover {
 
 .user_houses .card .modifica {
   width: 47%;
-  background-color: rgb(97, 194, 255);
+  background-color: rgb(130, 204, 249);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -11825,7 +11829,7 @@ body::-webkit-scrollbar-thumb:hover {
 .user_houses .card .elimina {
   width: 100%;
   height: 100%;
-  background: red;
+  background: rgb(247, 67, 67);
 }
 
 .user_houses .card .messaggi {
@@ -11891,14 +11895,7 @@ body::-webkit-scrollbar-thumb:hover {
   border: 3px solid grey;
   color: rgb(219, 59, 91);
   font-size: 30px;
-  margin-left: 15px;
   background-color: #f8fafc;
-}
-
-@media screen and (max-width: 700px) {
-  .user_houses .aggiungi-card {
-    display: none;
-  }
 }
 
 .user_houses .button {
@@ -12211,8 +12208,26 @@ body {
 }
 
 .team_page .row {
-  width: 80%;
+  width: 50%;
   margin-top: 150px;
+}
+
+@media screen and (max-width: 1024px) {
+  .team_page .row {
+    width: 60%;
+  }
+}
+
+@media screen and (max-width: 860px) {
+  .team_page .row {
+    width: 70%;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .team_page .row {
+    width: 90%;
+  }
 }
 
 .team_page .card-team {
@@ -12474,5 +12489,12 @@ body {
 .house-edit button {
   background-color: rgb(219, 59, 91);
   border-color: rgb(219, 59, 91);
+}
+
+.read_messages_page {
+  background-image: url("/images/Wave-10s-1920px.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
 }
 

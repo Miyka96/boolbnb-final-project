@@ -17,7 +17,7 @@
       <div class="row rounded-lg overflow-hidden py-2">
         <div class="thumb-wrapper">
           <figure class="big-pic">
-            <img :src="house.image" :alt="house.name" />
+            <img :src="`/storage/${house.image}`" :alt="house.name" />
           </figure>
         </div>
       </div>

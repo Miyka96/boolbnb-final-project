@@ -124,10 +124,10 @@
 
 
          {{-- Url immagine --}}
-         <label class="d-block">Inserisci un'immagine del tuo appartamento</label>
+         <label>Inserisci un'immagine del tuo appartamento</label>
          <div class="form-group">
-             <input id="image" type="file" name="image" class="@error('image') is-invalid @enderror">
-             <div>Formati validi : jpg, jpeg, png, webp</div>
+             <input id="image" type="file" name="image" class="@error('image') non è supportata @enderror">
+             <div class="text-secondary">Formati validi : jpg, jpeg, png, webp</div>
              @error('image')
                  <div class="alert alert-danger">{{ $message }}</div>
              @enderror
@@ -145,7 +145,7 @@
                min="10"
                max="1000"
                step="0.01"
-               placeholder="Inserisci il numero di metri quadri"
+               placeholder="Inserisci il prezzo"
                value="{{ old('cost_per_night') }}"
             >
             <div id="cost_per_night-error"></div>

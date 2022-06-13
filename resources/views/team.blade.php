@@ -40,7 +40,7 @@ $team = [
         <div class="row justify-content-center align-item-center">
 
             @foreach ($team as $item)
-                <div class="col-12col-md-6 col-lg-4">
+                <div class="col-12 col-md-6">
                     <div class="card-team">
                         <div class="picture">
                             <img class="img-fluid" src="{{ asset($item['img']) }}">
