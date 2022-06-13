@@ -17,7 +17,7 @@
                 @if ($house->user_id == auth::user()->id)
                     <a href="/house/{{$house->id}}">
                         <div class="card" style="width: 18rem;">
-                            <img class="card-img-top" src="{{ asset('storage/' .$house->image)}} " alt="Card image cap">
+                            <img class="card-img-top" src="{{ asset('storage/'.$house->image)}} " alt="Card image cap">
                             <div class="card-body">
                                 <h5 class="card-title">{{ $house->title }}</h5>
                                 {{-- <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p> --}}

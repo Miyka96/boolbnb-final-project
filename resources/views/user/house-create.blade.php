@@ -145,7 +145,7 @@
                min="10"
                max="1000"
                step="0.01"
-               placeholder="Inserisci il numero di metri quadri"
+               placeholder="Inserisci il prezzo"
                value="{{ old('cost_per_night') }}"
             >
             <div id="cost_per_night-error"></div>

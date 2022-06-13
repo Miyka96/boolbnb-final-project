@@ -45,7 +45,7 @@ class HouseController extends Controller
     */
    public function store(Request $request)
    {
-      $validated= $request->validate([
+      $validated = $request->validate([
          'title' => 'required|string|min:5|max:255',
          'room_num' => 'required|numeric|min:1', // serve il max?
          'beds_num' => 'required|numeric|min:1',  // serve il max?
@@ -87,8 +87,8 @@ class HouseController extends Controller
 
       $house->save();
 
-      if( array_key_exists('services', $data) ) {
-         $house->services()->sync( $data['services'] );
+      if( array_key_exists('services', $validated) ) {
+         $house->services()->sync( $validated['services'] );
       } else {
          $house->services()->sync([]);
       }
@@ -132,14 +132,14 @@ class HouseController extends Controller
    public function update(Request $request, House $house)
    {
 
-      $request->validate([
+      $validated = $request->validate([
          'title' => 'required|string|min:5|max:255',
          'room_num' => 'required|numeric|min:1', 
          'beds_num' => 'required|numeric|min:1',  
          'toilets_num' => 'required|numeric|min:1',  
          'square_meters' => 'required|numeric|min:20',  
          'position_id' => 'required|exists:positions,id',
-         'image' => 'required|url',
+         'image' => 'nullable|file|mimes:jpeg,jpg,png,webp',
          'is_visible' => 'required|boolean', 
          'user_id' => 'required|exists:users,id',
          'cost_per_night' => 'required|numeric|min:10|max:1000'
@@ -147,13 +147,21 @@ class HouseController extends Controller
 
       $data = $request->all();
 
-      $house->update( $data );
-
-      if( array_key_exists('services', $data) ) {
-         $house->services()->sync( $data['services'] );
+      if( array_key_exists('services', $validated) ) {
+         $house->services()->sync( $validated['services'] );
       } else {
          $house->services()->sync([]);
       }
+
+      if(array_key_exists('image', $validated)){
+         Storage::delete($house->image);
+         $image_path = Storage::put('uploads', $validated['image']);
+         $house->image = $image_path;
+     }
+
+     $house->fill($validated);
+     $house->update( $data );
+
 
       return redirect()->route('user.houses.index'); // aggiungere rotta dell'utente
    }
