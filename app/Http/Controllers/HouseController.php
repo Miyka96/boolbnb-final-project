@@ -153,14 +153,15 @@ class HouseController extends Controller
          $house->services()->sync([]);
       }
 
-      if(array_key_exists('image', $validated)){
-         Storage::delete($house->image);
-         $image_path = Storage::put('uploads', $validated['image']);
-         $house->image = $image_path;
-     }
-
-     $house->fill($validated);
-     $house->update( $data );
+      if(array_key_exists('image', $validated) ) {
+         $image_path= Storage::put('uploads', $validated['image']);
+         $validate['image'] = $image_path;
+      }
+      else{
+         $image_path= $house['image'];
+         $validate['image'] = $image_path;
+      }
+     $house->update( $validate );
 
 
       return redirect()->route('user.houses.index'); // aggiungere rotta dell'utente
