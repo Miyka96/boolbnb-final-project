@@ -11,7 +11,7 @@
       <h1>Modifica l'appartamento n {{ $house->id }}</h1>
 
 
-      <form class="pt-1" action="{{ route('user.houses.update', $house) }}" method="POST" id="create-house-form">
+      <form class="pt-1" action="{{ route('user.houses.update', $house) }}" method="POST" id="create-house-form" enctype="multipart/form-data">
          @csrf
          @method('PUT')
 
@@ -135,19 +135,13 @@
          </div>
 
          {{-- Url immagine --}}
+         <label>Inserisci un'immagine del tuo appartamento</label>
          <div class="form-group">
-            <label for="image">Immagine</label>
-            <input
-               type="url"
-               class="form-control"
-               name="image"
-               id="image"
-               required
-               {{-- pattern="[/^(http|https):\/\/]" --}}
-               placeholder="Inserisci l'url dell'immagine"
-               value="{{ $house->image }}"
-            >
-            <div id="image-error"></div>
+             <input id="image" type="file" name="image" class="@error('image') non è supportata @enderror">
+             <div class="text-secondary">Formati validi : jpg, jpeg, png, webp</div>
+             @error('image')
+                 <div class="alert alert-danger">{{ $message }}</div>
+             @enderror
          </div>
 
          {{-- Costo per notte --}}
