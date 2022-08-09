@@ -10,7 +10,7 @@
    <div class="container-fluid pt-5 mt-5 house-create">
 
         {{-- HOUSE FORM --}}
-        <form action="{{ route('user.houses.store') }}" method="post" id="create-house-form" enctype="multipart/form-data">
+        <form action="{{ route('user.houses.store') }}" method="post" id="create-house-form">
             @csrf
 
          <h1 class="titolo-house-create">Aggiungi una nuova casa</h1>
