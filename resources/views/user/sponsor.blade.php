@@ -103,10 +103,11 @@ $j = 0;
 
     </div>
 
-
-    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     {{-- DA QUI --}}
-    <script>    
+    <script>
+
+        
+
         var button = document.querySelector('#submit-button');
         braintree.dropin.create({
             authorization: "{{ \Braintree\ClientToken::generate() }}",
@@ -120,8 +121,7 @@ $j = 0;
                         if (response.success) {
                             alert('Payment successfull!');
                         } else {
-                            swal('Sponsorship attiva');
-                            setTimeout(function(){location.href = '/user/houses/'; },2000);
+                            alert('Payment failed');
                         }
                     }, 'json');
                 });

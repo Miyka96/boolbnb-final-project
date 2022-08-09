@@ -6,7 +6,7 @@
             v-model="queryString"
             @keyup="searchItems()"
             class="px-3"
-            placeholder="Cerca la casa dei tuoi sogni"
+            placeholder="cerca la casa dei tuoi sogni"
         />
 
         <a :href="`/search/${queryString}`">

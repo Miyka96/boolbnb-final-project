@@ -55,7 +55,6 @@
 
 <script>
 import axios from "axios";
-import swal from 'sweetalert';
 
 export default {
   name: "PostFormAxios",
@@ -75,7 +74,6 @@ export default {
       axios
         .post("/send/message", this.form)
         .then((res) => {
-          swal('Messaggio inviato!');
           this.$router.push({
             name: "house.show",
             params: this.$route.params.id,

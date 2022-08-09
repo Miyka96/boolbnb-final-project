@@ -124,6 +124,7 @@
 
 
          {{-- Url immagine --}}
+<<<<<<< HEAD
          <label>Inserisci un'immagine del tuo appartamento</label>
          <div class="form-group">
              <input id="image" type="file" name="image" class="@error('image') non è supportata @enderror">
@@ -131,6 +132,22 @@
              @error('image')
                  <div class="alert alert-danger">{{ $message }}</div>
              @enderror
+=======
+         <div class="form-group">
+            <label for="image">Immagine</label>
+            <input
+               type="url"
+               class="form-control"
+               name="image"
+               id="image"
+               required
+               {{-- pattern="[/^(http|https):\/\/]" --}}
+               placeholder="Inserisci l'url dell'immagine"
+               value="{{ old('image') }}"
+            >
+            <div id="image-error"></div>
+            
+>>>>>>> parent of 16ac19d (Merge branch 'develop' of https://github.com/Glabdugrib/boolbnb-final-project into develop)
          </div>
 
          {{-- Costo per notte --}}

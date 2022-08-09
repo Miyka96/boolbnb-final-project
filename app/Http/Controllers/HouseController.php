@@ -44,7 +44,7 @@ class HouseController extends Controller
     */
    public function store(Request $request)
    {
-      $validated= $request->validate([
+      $request->validate([
          'title' => 'required|string|min:5|max:255',
          'room_num' => 'required|numeric|min:1', // serve il max?
          'beds_num' => 'required|numeric|min:1',  // serve il max?
