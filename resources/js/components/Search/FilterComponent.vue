@@ -161,7 +161,7 @@ button {
 .container-fluid {
     padding: 80px 0;
     background-color: white;
-    opacity: 80%;
+    // opacity: 80%;
     display: flex;
     justify-content: center;
     align-items: flex-start;
