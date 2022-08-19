@@ -8,98 +8,62 @@ use App\House;
 
 class MessageController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
-    {
-        
-        $messages= Message::with(['house'])->get();
 
-        return view('user.messages-index', compact('messages'));
-    }
+  public function index(House $house)
+  {
+    $messages= Message::with(['house'])->get();
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        // create message dovrebbe stare in entrambi i router, anche quello vue. Serve API ? 
-        
-    }
+    return view('user.messages-index', compact('messages'));
+  }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        $request->validate([
-            'name' => 'required|string|min:4',
-            'email' => 'required|email',
-            'telephone' => 'required|numeric|min:8',  
-            'content' => 'required|string|min:20'
-         ]);
-   
-         $data = $request->all();
 
-         $message = new Message();
+  // public function send(Request $request){
 
-         $message->sent_at = now();
+  //   $name = $request->name;
+  //   $email = $request->email;
+  //   $telephone= $request->telephone;
+  //   $content = $request->content;
+  //   $house_id = $request->house_id;
+  //   $sent_at = now();
 
-         $message->fill( $data );
-         $message->save();
-         return redirect()->route('user.houses.index'); //indirizzare verso la show
-    }
+  //   $add= DB::table('messages')->insert([
+  //       'name' => $name,
+  //       'email' => $email,
+  //       'telephone' => $telephone,
+  //       'content' => $content,
+  //       'house_id' => $house_id,
+  //       'sent_at' => $sent_at
+  //   ]);
+  // }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Message  $message
-     * @return \Illuminate\Http\Response
-     */
-    public function show(Message $message)
-    {
-        //
-    }
+  public function create() // public function create(House $house)
+  {
+    return view('user.house-create', compact(['services','house']));
+  }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Message  $message
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(Message $message)
-    {
-        //
-    }
+  public function store(Request $request)
+  {
+    // validations // [TODO] da ricontrollare
+    $request->validate([
+      'name' => 'required|string|min:4',
+      'email' => 'required|email',
+      'telephone' => 'required|numeric|min:8',  
+      'content' => 'required|string|min:20'
+    ]);
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Message  $message
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, Message $message)
-    {
-        //
-    }
+    // recall form data
+    $data = $request->all();
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Message  $message
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(Message $message)
-    {
-        //
-    }
+    // istantiate Message
+    $message = new Message();
+    $message->fill( $data );
+    $message->sent_at = now();
+    $message->house_id = $request->house_id;
+
+    $message->save();
+
+    // [TODO] aggiungere feedback invio messaggio
+
+    return redirect()->route('user.houses.index'); // [TODO] redirect verso la show
+  }
 }
