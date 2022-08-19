@@ -120,8 +120,10 @@ $j = 0;
                     }, function(response) {
                         if (response.success) {
                             alert('Payment successfull!');
+                            console.log(response)
                         } else {
                             alert('Payment failed');
+                            console.log(response)
                         }
                     }, 'json');
                 });
