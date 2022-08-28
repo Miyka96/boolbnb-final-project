@@ -119,10 +119,10 @@ $j = 0;
                         payload
                     }, function(response) {
                         if (response.success) {
-                            alert('Payment successfull!');
+                            swal("Good job!", "Payment Successful!", "success");
                             console.log(response)
                         } else {
-                            alert('Payment failed');
+                            swal("Something went wrong",'Payment failed',"error");
                             console.log(response)
                         }
                     }, 'json');
