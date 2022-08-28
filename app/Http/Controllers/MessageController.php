@@ -11,7 +11,7 @@ class MessageController extends Controller
 
   public function index(House $house)
   {
-    $messages= Message::with(['house'])->get();
+    $messages= Message::with(['house'])->orderBy('sent_at','desc')->get();
 
     return view('user.messages-index', compact('messages'));
   }
