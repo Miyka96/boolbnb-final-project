@@ -13,10 +13,11 @@
                     {{ $message->name }}
                 </h5>
                 <span class="d-none d-sm-inline ml-1">
-                    sent at
+                    inviato il
                 </span>
                 <span>
-                    {{ $message->sent_at }}
+                    {{ \Carbon\Carbon::parse($message->sent_at)->format('d-m-Y H:i') }}
+                    
                 </span>
                 <p>
                     {{ $message->content }}
