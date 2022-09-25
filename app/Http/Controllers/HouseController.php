@@ -63,11 +63,18 @@ class HouseController extends Controller
     // recall form data
     $data = $request->all();
 
+
+    $image_path= Storage::put('uploads', $validated['image']);
+    $validate['image'] = $image_path;
+    
     // instantiate House
     $house = new House();
     $house->position_id= $position->id;
     $house->fill($data);
     $house->save();
+
+    // image
+
 
     // link existing services to House
     if(array_key_exists('services', $validated)) {
@@ -75,8 +82,6 @@ class HouseController extends Controller
     } else {
         $house->services()->sync([]);
     }
-
-    // [TODO] add feedback message for the user
 
     return redirect()->route('user.houses.index');
   }
