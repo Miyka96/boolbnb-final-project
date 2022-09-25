@@ -8,7 +8,7 @@ use App\Service;
 use App\Position;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
-
+use Illuminate\Support\Facades\Storage;
 class HouseController extends Controller
 {
   public function index()
@@ -35,7 +35,7 @@ class HouseController extends Controller
         'beds_num' => 'required|numeric|min:1',  // [TODO] serve il max?
         'toilets_num' => 'required|numeric|min:1',  // [TODO] serve il max?
         'square_meters' => 'required|numeric|min:20',  
-        'image' => 'required|url',
+        'image' => 'nullable|file|mimes:jpeg,jpg,png,webp',
         'is_visible' => 'boolean',
         'user_id' => 'required',
         'cost_per_night' => 'required|numeric|min:10|max:1000' 
